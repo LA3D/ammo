@@ -1,71 +1,210 @@
+@prefix : <https://w3id.org/ammo/core/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix wd: <http://wikidata.org/entity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix sio: <http://semanticscience.org/resource/> .
+@prefix ammo: <https://w3id.org/ammo/full/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix time: <http://www.w3.org/2006/time#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix wd: <http://wikidata.org/entity/> .
-@prefix sdo: <https://schema.org/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
-
-@prefix : <https://w3id.org/ammo/core/> .
-@prefix ammo: <https://w3id.org/ammo/full/> .
-@prefix ammocore: <https://w3id.org/ammo/core/> .
 @prefix ammomd: <https://w3id.org/ammo/metadata/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ammocore: <https://w3id.org/ammo/core/> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 @base <https://w3id.org/ammo/core/> .
 
-
 <https://w3id.org/ammo/core/> rdf:type owl:Ontology ;
-        dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
-        dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
-        dcterms:created "2022-02-15"^^xsd:date ;
-        dcterms:modified "2022-02-21"^^xsd:date ;
-        owl:versionIRI <https://w3id.org/ammo/core/0.1> ;
-        owl:versionInfo "0.1"@en ;
-        vann:preferredNamespacePrefix "ammocore" ;
-        vann:preferredNamespaceUri "http://w3id.org/ammo/core/" ;
-        dcterms:description "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en ;
-        dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-        dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
-        sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
-        dcterms:publisher wd:Q178848, ammo:Simbachain ;
-        dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
-.
+                               owl:versionIRI <https://w3id.org/ammo/core/0.1> ;
+                               owl:imports <http://semanticscience.org/ontology/sio/v1.54/sio-release.owl> ;
+                               dc:contributor "Christopher Sweet" ;
+                               dc:creator "Charles Vardeman" ;
+                               dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
+                               dcterms:created "2022-02-15"^^xsd:date ;
+                               dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+                               dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
-<https://orcid.org/0000-0003-4091-6059>
-    a sdo:Person ;
-    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
-    sdo:name "Charles F Vardeman II" ;
-.
+Contributions and Discussion Welcomed.
+Github: https://github.com/LA3D/ammo"""@en ;
+                               dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+                               dcterms:modified "2022-02-21"^^xsd:date ;
+                               dcterms:publisher wd:Q178848 ,
+                                                 ammo:Simbachain ;
+                               dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                               dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
+                               vann:preferredNamespacePrefix "ammocore" ;
+                               vann:preferredNamespaceUri "http://w3id.org/ammo/core/" ;
+                               owl:versionInfo "0.1"@en ;
+                               sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
 
-wd:Q178848
-    a sdo:Organization;
-    sdo:name "University of Notre Dame"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI;
-.
+#################################################################
+#    Annotation properties
+#################################################################
 
-<https://orcid.org/0000-0001-8214-7177>
-    a sdo:Person ;
-    sdo:email "csweet1@nd.edu"@en ;
-    sdo:name "Christopher Sweet"@en ;
-.
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
 
-wd:Q108576266
-    a sdo:Organization ;
-    sdo:name "Center for Research Computing"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
-.
 
-# Simbachain needs a proper identifier...
-ammo:Simbachain
-    a sdo:Organization ;
-    sdo:name "Simbachain"@en ;
-    sdo:url "https://simbachain.com/"^^xsd:anyURI ;
-.
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom
+cpannotationschema:extractedFrom rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+sdo:email rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/license
+sdo:license rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+sdo:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+sdo:url rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://schema.org/Organization
+sdo:Organization rdf:type owl:Class ;
+                 rdfs:subClassOf ammocore:Agent .
+
+
+###  https://schema.org/Person
+sdo:Person rdf:type owl:Class ;
+           rdfs:subClassOf ammocore:Agent .
+
+
+###  https://w3id.org/ammo/core/Agent
+ammocore:Agent rdf:type owl:Class ;
+               rdfs:subClassOf sio:SIO_000000 ;
+               dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+               dc:date "2022-02-22T21:50:26Z"^^xsd:dateTime .
+
+
+###  https://w3id.org/ammo/core/ComponentPart
+ammocore:ComponentPart rdf:type owl:Class ;
+                       rdfs:subClassOf ammocore:DesignedArtifact ;
+                       dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                       dc:date "2022-02-22T22:15:01Z"^^xsd:dateTime .
+
+
+###  https://w3id.org/ammo/core/DesignedArtifact
+ammocore:DesignedArtifact rdf:type owl:Class ;
+                          rdfs:subClassOf ammocore:PhysicslArtifact ;
+                          dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                          dc:date "2022-02-22T21:58:53Z"^^xsd:dateTime ;
+                          cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                          rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+                          rdfs:label "Designed Artifact" .
+
+
+###  https://w3id.org/ammo/core/MaterialTransformation
+ammocore:MaterialTransformation rdf:type owl:Class ;
+                                rdfs:subClassOf sio:SIO_000006 ;
+                                dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                                dc:date "2022-02-22T22:57:52Z"^^xsd:dateTime ;
+                                cpannotationschema:extractedFrom <https://raw.githubusercontent.com/Vocamp/MaterialTransformation/master/owl/MaterialTransformationPattern.owl> ;
+                                rdfs:label "Material Transformation"@en ;
+                                rdfs:seeAlso <http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation> .
+
+
+###  https://w3id.org/ammo/core/ObjectAggregate
+ammocore:ObjectAggregate rdf:type owl:Class ;
+                         rdfs:subClassOf ammocore:PhysicalObject ;
+                         dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                         dc:date "2022-02-22T22:07:42Z"^^xsd:dateTime ;
+                         cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                         rdfs:comment """An aggregate of distributed objects, members of a same Collection, e.g. the stars in a constellation, the parts of a car, the employees of a company, the entries from an encyclopedia, the concepts expressed in a speech, etc.
+It cannot be defined by means of an equivalence axiom, because it'd require the same Collection for all members, an axiom that cannot be expressed in OWL."""@en ;
+                         rdfs:label "Object Aggregate"@en .
+
+
+###  https://w3id.org/ammo/core/PhysicalObject
+ammocore:PhysicalObject rdf:type owl:Class ;
+                        rdfs:subClassOf sio:SIO_000004 ;
+                        dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                        dc:date "2022-02-22T21:57:29Z"^^xsd:dateTime ;
+                        cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                        rdfs:comment "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)."^^xsd:string ;
+                        rdfs:label "Physical Object"@en .
+
+
+###  https://w3id.org/ammo/core/PhysicslArtifact
+ammocore:PhysicslArtifact rdf:type owl:Class ;
+                          rdfs:subClassOf ammocore:PhysicalObject ;
+                          dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                          dc:date "2022-02-22T21:58:29Z"^^xsd:dateTime ;
+                          cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                          rdfs:comment """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
+                          rdfs:label "Physical Artifact" .
+
+
+###  https://w3id.org/ammo/core/System
+ammocore:System rdf:type owl:Class ;
+                rdfs:subClassOf ammocore:DesignedArtifact ;
+                dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                dc:date "2022-02-22T22:15:14Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://wikidata.org/entity/Q108576266
+wd:Q108576266 rdf:type owl:NamedIndividual ,
+                       sdo:Organization ;
+              sdo:name "Center for Research Computing"@en ;
+              sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+
+###  http://wikidata.org/entity/Q178848
+wd:Q178848 rdf:type owl:NamedIndividual ,
+                    sdo:Organization ;
+           sdo:name "University of Notre Dame"@en ;
+           sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+
+###  https://orcid.org/0000-0001-8214-7177
+<https://orcid.org/0000-0001-8214-7177> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:email "csweet1@nd.edu"@en ;
+                                        sdo:name "Christopher Sweet"@en .
+
+
+###  https://orcid.org/0000-0003-4091-6059
+<https://orcid.org/0000-0003-4091-6059> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+                                        sdo:name "Charles F Vardeman II" .
+
+
+###  https://w3id.org/ammo/full/Simbachain
+ammo:Simbachain rdf:type owl:NamedIndividual ,
+                         sdo:Organization ;
+                sdo:name "Simbachain"@en ;
+                sdo:url "https://simbachain.com/"^^xsd:anyURI .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
