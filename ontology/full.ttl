@@ -1,18 +1,74 @@
-@prefix : <https://w3id.org/ammo/full/> .
-@prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix sio: <http://semanticscience.org/resource/> .
-@prefix prov: <> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix sdo: <https://schema.org/sdo/>.
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+
+@prefix : <https://w3id.org/ammo/core/> .
+@prefix ammo: <https://w3id.org/ammo/full/> .
+@prefix ammocore: <https://w3id.org/ammo/core/> .
+@prefix ammomd: <https://w3id.org/ammo/metadata/> .
 @base <https://w3id.org/ammo/full/> .
 
+<https://w3id.org/ammo/full/> rdf:type owl:Ontology ;
+        dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+        dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
+        dcterms:created "2022-02-15"^^xsd:date ;
+        dcterms:modified "2022-02-21"^^xsd:date ;
+        owl:versionInfo "0.1"@en ;
+        owl:versionIRI <https://w3id.org/ammo/full/0.1> ;
+        vann:preferredNamespacePrefix "ammocore"@en ;
+        vann:preferredNamespaceUri "http://w3id.org/ammo/core/" ;
+        dcterms:description "Ontology to support the use of additive manufacturing for the production of parts in maintenance operations."@en ;
+        dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+        dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+        sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
+        dcterms:publisher wd:Q178848, ammo:Simbachain ;
+        dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
+        skos:historyNote """Version 0.1 is the first release of the core ontology constructed from the Agent, Event, Material Transformation, and Designed Artifact System Patterns
+                * Creation of Core Module
+                * Creation of Units Module and alignment to QUDT"""@en ;
+.
 
+
+<https://orcid.org/0000-0003-4091-6059>
+    a sdo:Person ;
+    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+    sdo:name "Charles F Vardeman II" ;
+.
+
+<https://orcid.org/0000-0001-8214-7177>
+    a sdo:Person ;
+    sdo:email "csweet1@nd.edu"@en ;
+    sdo:name "Christopher Sweet"@en ;
+.
+
+wd:Q178848
+    a sdo:Organization;
+    sdo:name "University of Notre Dame"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI;
+.
+
+wd:Q108576266
+    a sdo:Organization ;
+    sdo:name "Center for Research Computing"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
+.
+
+# Simbachain needs a proper identifier...
+ammo:Simbachain
+    a sdo:Organization ;
+    sdo:name "Simbachain"@en ;
+    sdo:url "https://simbachain.com/"^^xsd:anyURI ;
+.
