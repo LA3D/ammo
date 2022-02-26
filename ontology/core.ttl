@@ -24,8 +24,10 @@
                                owl:versionIRI <https://w3id.org/ammo/core/0.1> ;
                                owl:imports <http://semanticscience.org/ontology/sio/v1.54/sio-release.owl> ;
                                dc:contributor "Christopher Sweet" ;
+                               dc:contributor "Donald Brower";
                                dc:creator "Charles Vardeman" ;
                                dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
+                               dcterms:contributor <https://orcid.org/0000-0001-7347-546X> ;
                                dcterms:created "2022-02-15"^^xsd:date ;
                                dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
                                dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
@@ -102,19 +104,20 @@ ammocore:Agent rdf:type owl:Class ;
 
 ###  https://w3id.org/ammo/core/ComponentPart
 ammocore:ComponentPart rdf:type owl:Class ;
-                       rdfs:subClassOf ammocore:DesignedArtifact ;
+                       rdfs:subClassOf ammocore:DesignedObject ;
                        dc:creator <http://orcid.org/0000-0003-4091-6059> ;
                        dc:date "2022-02-22T22:15:01Z"^^xsd:dateTime .
 
 
-###  https://w3id.org/ammo/core/DesignedArtifact
-ammocore:DesignedArtifact rdf:type owl:Class ;
-                          rdfs:subClassOf ammocore:PhysicslArtifact ;
-                          dc:creator <http://orcid.org/0000-0003-4091-6059> ;
-                          dc:date "2022-02-22T21:58:53Z"^^xsd:dateTime ;
-                          cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-                          rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
-                          rdfs:label "Designed Artifact" .
+###  https://w3id.org/ammo/core/DesignedObject
+ammocore:DesignedObject rdf:type owl:Class ;
+                        rdfs:subClassOf ammocore:PhysicslArtifact ;
+                        dc:creator <http://orcid.org/0000-0003-4091-6059> ;
+                        dc:date "2022-02-22T21:58:53Z"^^xsd:dateTime ;
+                        cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                        skos:exactMatch <> ;
+                        rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+                        rdfs:label "Designed Object" .
 
 
 ###  https://w3id.org/ammo/core/MaterialTransformation
@@ -129,7 +132,7 @@ ammocore:MaterialTransformation rdf:type owl:Class ;
 
 ###  https://w3id.org/ammo/core/ObjectAggregate
 ammocore:ObjectAggregate rdf:type owl:Class ;
-                         rdfs:subClassOf ammocore:PhysicalObject ;
+                         rdfs:subClassOf sio:SIO_010410 ;
                          dc:creator <http://orcid.org/0000-0003-4091-6059> ;
                          dc:date "2022-02-22T22:07:42Z"^^xsd:dateTime ;
                          cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
@@ -140,7 +143,7 @@ It cannot be defined by means of an equivalence axiom, because it'd require the 
 
 ###  https://w3id.org/ammo/core/PhysicalObject
 ammocore:PhysicalObject rdf:type owl:Class ;
-                        rdfs:subClassOf sio:SIO_000004 ;
+                        rdfs:subClassOf sio:SIO_010410 ;
                         dc:creator <http://orcid.org/0000-0003-4091-6059> ;
                         dc:date "2022-02-22T21:57:29Z"^^xsd:dateTime ;
                         cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
@@ -153,17 +156,15 @@ ammocore:PhysicslArtifact rdf:type owl:Class ;
                           rdfs:subClassOf ammocore:PhysicalObject ;
                           dc:creator <http://orcid.org/0000-0003-4091-6059> ;
                           dc:date "2022-02-22T21:58:29Z"^^xsd:dateTime ;
+                          dcterms:description "Physical object made or shaped by human hand"@en ;
                           cpannotationschema:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-                          rdfs:comment """Any PhysicalObject that isDescribedBy a Plan .
-This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
-FunctionalSubstance(s) are included here as well.
-Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
-                          rdfs:label "Physical Artifact" .
+                          rdfs:label "Artificial Physical Object" ;
+                          rdfs:seeAlso "https://www.wikidata.org/wiki/Q8205328"@en .
 
 
 ###  https://w3id.org/ammo/core/System
 ammocore:System rdf:type owl:Class ;
-                rdfs:subClassOf ammocore:DesignedArtifact ;
+                rdfs:subClassOf ammocore:DesignedObject ;
                 dc:creator <http://orcid.org/0000-0003-4091-6059> ;
                 dc:date "2022-02-22T22:15:14Z"^^xsd:dateTime .
 
@@ -192,6 +193,11 @@ wd:Q178848 rdf:type owl:NamedIndividual ,
                                         sdo:email "csweet1@nd.edu"@en ;
                                         sdo:name "Christopher Sweet"@en .
 
+###  https://orcid.org/0000-0001-8214-7177
+<https://orcid.org/0000-0001-7347-546X> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:email "dbrower@nd.edu"@en ;
+                                        sdo:name "Donald Brower"@en .
 
 ###  https://orcid.org/0000-0003-4091-6059
 <https://orcid.org/0000-0003-4091-6059> rdf:type owl:NamedIndividual ,

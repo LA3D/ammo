@@ -44,4 +44,13 @@ The latest version of the full ontology can be found at https://w3id.org/ammo/fu
 
 Please use this GitHub repository's [Issue tracker](https://github.com/LA3D/ammo/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
 
+### Direct Contact
+
+**Charles Vardeman**
+_Research Assistant Professor_
+[Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)
+<cvardema@nd.edu>
+Github: [charlesvardeman](https://github.com/charlesvardeman)
+ORCID: [0000-0003-4091-6059](https://orcid.org/0000-0003-4091-6059)
+
 ## Acknowledgements
