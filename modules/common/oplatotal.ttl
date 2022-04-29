@@ -1,0 +1,202 @@
+@prefix : <http://ontologydesignpatterns.org/opla#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontologydesignpatterns.org/opla> .
+
+<http://ontologydesignpatterns.org/opla> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-core#derivedFromModule
+<http://ontologydesignpatterns.org/opla-core#derivedFromModule> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:comment "The annotated ontology is based off of some ontology module, but not necesarily a generalization or a specialization." ;
+                                                                rdfs:range <http://ontologydesignpatterns.org/opla-core#Module> ;
+                                                                rdfs:domain <http://ontologydesignpatterns.org/opla-core#Module> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#derivedFromPattern
+<http://ontologydesignpatterns.org/opla-core#derivedFromPattern> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:comment "The annotated ontology is based off of some Ontology Design Pattern, but not necesarily a generalization or a specialization." ;
+                                                                 rdfs:range <http://ontologydesignpatterns.org/opla-core#Pattern> ;
+                                                                 rdfs:domain <http://ontologydesignpatterns.org/opla-core#Pattern> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#extractedFrom
+<http://ontologydesignpatterns.org/opla-core#extractedFrom> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:comment "Is adapted from cp-annotation-schema This annotation should be used to indicate that a pattern has been created from where one originally did not exist. Otherwise, opla-core:derivedFrom should be used." ;
+                                                            rdfs:range <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> ;
+                                                            rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#generalizationOfModule
+<http://ontologydesignpatterns.org/opla-core#generalizationOfModule> rdf:type owl:AnnotationProperty ;
+                                                                     rdfs:comment "The annotated ontology is derived from and generalized from the reference module." ;
+                                                                     rdfs:range <http://ontologydesignpatterns.org/opla-core#Module> ;
+                                                                     rdfs:domain <http://ontologydesignpatterns.org/opla-core#Module> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#generalizationOfPattern
+<http://ontologydesignpatterns.org/opla-core#generalizationOfPattern> rdf:type owl:AnnotationProperty ;
+                                                                      rdfs:comment "The annotated ontology is derived from and generalized by some reference Ontology Design Pattern." ;
+                                                                      rdfs:range <http://ontologydesignpatterns.org/opla-core#Pattern> ;
+                                                                      rdfs:domain <http://ontologydesignpatterns.org/opla-core#Pattern> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#hasRelatedModule
+<http://ontologydesignpatterns.org/opla-core#hasRelatedModule> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:comment "Is related to some other ontology module.  Does not need to be derived from, simply share in intent." ;
+                                                               rdfs:range <http://ontologydesignpatterns.org/opla-core#Module> ;
+                                                               rdfs:domain <http://ontologydesignpatterns.org/opla-core#Module> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#hasRelatedPattern
+<http://ontologydesignpatterns.org/opla-core#hasRelatedPattern> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:comment "Is related to some other Ontology Design Pattern.  Does not need to be derived from, simply share in intent." ;
+                                                                rdfs:range <http://ontologydesignpatterns.org/opla-core#Pattern> ;
+                                                                rdfs:domain <http://ontologydesignpatterns.org/opla-core#Pattern> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#isNativeTo
+<http://ontologydesignpatterns.org/opla-core#isNativeTo> rdf:type owl:AnnotationProperty ;
+                                                         rdfs:comment "Should be used to express the provenance of some ontological entity. This annotation is not functional, e.g. some entity may be native to more than one pattern, e.g. the Agent may belong to both AgentRole and Provenance patterns." ;
+                                                         rdfs:range <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> ;
+                                                         rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalEntity> ,
+                                                                     <http://ontologydesignpatterns.org/opla-core#Ontology> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#ofExternalType
+<http://ontologydesignpatterns.org/opla-core#ofExternalType> rdf:type owl:AnnotationProperty ;
+                                                             rdfs:comment "Should be used to indicate that another pattern may hook into this entity. For example, a hook might indicate that the pattern developer acknowledges a certain concept is out of scope of the particular pattern." ;
+                                                             rdfs:domain <http://ontologydesignpatterns.org/opla-core#Class> ,
+                                                                         <http://ontologydesignpatterns.org/opla-core#Individual> ,
+                                                                         <http://ontologydesignpatterns.org/opla-core#Property> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#resusesPatternAsTemplate
+<http://ontologydesignpatterns.org/opla-core#resusesPatternAsTemplate> rdf:type owl:AnnotationProperty ;
+                                                                       rdfs:range <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> ;
+                                                                       rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#specializationOfModule
+<http://ontologydesignpatterns.org/opla-core#specializationOfModule> rdf:type owl:AnnotationProperty ;
+                                                                     rdfs:comment "The annotated ontology is derived from and specialized by some reference module." .
+
+
+###  http://ontologydesignpatterns.org/opla-core#specializationOfPattern
+<http://ontologydesignpatterns.org/opla-core#specializationOfPattern> rdf:type owl:AnnotationProperty ;
+                                                                      rdfs:comment "The annotated ontology is derived from and specialized by some reference Ontology Design Pattern." ;
+                                                                      rdfs:range <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> ;
+                                                                      rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#addressesScenarios
+<http://ontologydesignpatterns.org/opla-cp#addressesScenarios> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:comment "Describes a potential or existing usecase or instantiation of the ontology design pattern. It should describe the commitments necesarry to make the instantiation possible." ;
+                                                               rdfs:range xsd:string ;
+                                                               rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#coversRequirement
+<http://ontologydesignpatterns.org/opla-cp#coversRequirement> rdf:type owl:AnnotationProperty ;
+                                                              rdfs:comment "Should point to a blank node, wherein a competency question and SPARQL query should be paired." ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#hasCompetencyQuestion
+<http://ontologydesignpatterns.org/opla-cp#hasCompetencyQuestion> rdf:type owl:AnnotationProperty ;
+                                                                  rdfs:comment "Points to an example competency question that can be evaluated against the annotated ontology, as expressed in natural language." ;
+                                                                  rdfs:range xsd:string ;
+                                                                  rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#hasConsequence
+<http://ontologydesignpatterns.org/opla-cp#hasConsequence> rdf:type owl:AnnotationProperty ;
+                                                           rdfs:comment "Describes a potential gain and drawback when using the annotated module or pattern. For example, it may be used to express the impact of an ontological commitment." ;
+                                                           rdfs:range xsd:string ;
+                                                           rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#hasUnitTest
+<http://ontologydesignpatterns.org/opla-cp#hasUnitTest> rdf:type owl:AnnotationProperty ;
+                                                        rdfs:comment "Points to an example SPARQL query that can be evaluated against the content of the annotated ontology. It should be paired with a natural language description, e.g. Competency Question." ;
+                                                        rdfs:range xsd:string ;
+                                                        rdfs:domain <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPosition
+<http://ontologydesignpatterns.org/opla-sd#entityPosition> rdf:type owl:AnnotationProperty ;
+                                                           rdfs:comment "This property has a blank node as its target. This blank node is intended to “encapsulate” all other position related annotations." ;
+                                                           rdfs:domain <http://ontologydesignpatterns.org/opla-core#Class> .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionX
+<http://ontologydesignpatterns.org/opla-sd#entityPositionX> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:comment "This property specifies the X coordinate (expressed as a double) of a node in a schema diagram." ;
+                                                            rdfs:range rdfs:Literal .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionY
+<http://ontologydesignpatterns.org/opla-sd#entityPositionY> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:comment "This property specifies the Y coordinate (expressed as a double) of a node in a schema diagram." ;
+                                                            rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-core#Axiom
+<http://ontologydesignpatterns.org/opla-core#Axiom> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalEntity> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Class
+<http://ontologydesignpatterns.org/opla-core#Class> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalEntity> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Individual
+<http://ontologydesignpatterns.org/opla-core#Individual> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalEntity> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Module
+<http://ontologydesignpatterns.org/opla-core#Module> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#OntologicalCollection
+<http://ontologydesignpatterns.org/opla-core#OntologicalCollection> rdf:type owl:Class .
+
+
+###  http://ontologydesignpatterns.org/opla-core#OntologicalEntity
+<http://ontologydesignpatterns.org/opla-core#OntologicalEntity> rdf:type owl:Class .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Ontology
+<http://ontologydesignpatterns.org/opla-core#Ontology> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Pattern
+<http://ontologydesignpatterns.org/opla-core#Pattern> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalCollection> .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Property
+<http://ontologydesignpatterns.org/opla-core#Property> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://ontologydesignpatterns.org/opla-core#OntologicalEntity> .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi
