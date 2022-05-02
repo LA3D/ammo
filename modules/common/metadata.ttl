@@ -27,8 +27,8 @@
 @prefix ammomd: <https://w3id.org/ammo/metadata/> .
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
+                               rdfs:label "Additive Manufacturing for Maintenance Operations Ontology";
                                owl:versionIRI <https://w3id.org/ammo/ont/versions/0.0.1> ;
-                               owl:imports <http://semanticscience.org/ontology/sio/v1.54/sio-release.owl> ;
                                dc:contributor "Christopher Sweet" ;
                                dc:contributor "Donald Brower";
                                dc:creator "Charles Vardeman" ;

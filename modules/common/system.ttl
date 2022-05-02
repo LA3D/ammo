@@ -1,19 +1,143 @@
+@prefix : <https://w3id.org/ammo/ont/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix wd: <http://wikidata.org/entity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdo: <https://schema.org/> .
-@prefix sio: <http://semanticscience.org/resource/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@base <https://w3id.org/ammo/ont/> .
+
+<https://w3id.org/ammo/ont/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/ammo/ont/hasComponent
+ammo:hasComponent rdf:type owl:ObjectProperty ;
+                  rdfs:domain ammo:DesignedPhysicalSystem ;
+                  rdfs:range ammo:DesignedComponent ;
+                  rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                  rdfs:label "has component" .
+
+
+###  https://w3id.org/ammo/ont/isComponentOf
+ammo:isComponentOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain ammo:DesignedComponent ;
+                   rdfs:range ammo:DesignedPhysicalSystem ;
+                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                   rdfs:label "is component of" .
+
+
+###  https://w3id.org/ammo/ont/isDescribedBy
+ammo:isDescribedBy rdf:type owl:ObjectProperty ;
+                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                   rdfs:label "is described by" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/ammo/ont/Design
+ammo:Design rdf:type owl:Class ;
+            rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
+            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+            rdfs:label "Design" .
+
+
+###  https://w3id.org/ammo/ont/DesignedArtifact
+ammo:DesignedArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf ammo:PhysicalArtifact ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ammo:isDescribedBy ;
+                                        owl:someValuesFrom ammo:Design
+                                      ] ;
+                      rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+                      rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                      rdfs:label "Designed Artifact" .
+
+
+###  https://w3id.org/ammo/ont/DesignedComponent
+ammo:DesignedComponent rdf:type owl:Class ;
+                       rdfs:subClassOf ammo:DesignedArtifact ;
+                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                       rdfs:label "Designed Component" .
+
+
+###  https://w3id.org/ammo/ont/DesignedPhysicalSystem
+ammo:DesignedPhysicalSystem rdf:type owl:Class ;
+                            rdfs:subClassOf ammo:PhysicalArtifact ,
+                                            ammo:PhysicalSystem ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty ammo:isDescribedBy ;
+                                              owl:someValuesFrom ammo:SystemDesign
+                                            ] ;
+                            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                            rdfs:label "Designed Physical System" .
+
+
+###  https://w3id.org/ammo/ont/PhysicalArtifact
+ammo:PhysicalArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf ammo:PhysicalObject ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ammo:isDescribedBy ;
+                                        owl:someValuesFrom ammo:Plan
+                                      ] ;
+                      rdfs:comment """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
+                      rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                      rdfs:label "Physical Artifact" .
+
+
+###  https://w3id.org/ammo/ont/PhysicalObject
+ammo:PhysicalObject rdf:type owl:Class ;
+                    rdfs:comment "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." ;
+                    rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                    rdfs:label "Physical Object" .
+
+
+###  https://w3id.org/ammo/ont/PhysicalSystem
+ammo:PhysicalSystem rdf:type owl:Class ;
+                    rdfs:subClassOf ammo:PhysicalObject ;
+                    rdfs:comment """A physical object that isDescribedBy a SystemDesign .
+I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
+Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" ;
+                    rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                    rdfs:label "Physical System" .
+
+
+###  https://w3id.org/ammo/ont/Plan
+ammo:Plan rdf:type owl:Class ;
+          rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan" ;
+          rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+          rdfs:label "Plan" .
+
+
+###  https://w3id.org/ammo/ont/SystemDesign
+ammo:SystemDesign rdf:type owl:Class ;
+                  rdfs:subClassOf ammo:Design ;
+                  rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations." ;
+                  rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                  rdfs:label "System Design" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://w3id.org/ammo/ont/> rdfs:comment "" ;
+                             rdfs:label "system ontology design pattern" .
+
+
+###  Generated by the OWL API (version 5.1.17) https://github.com/owlcs/owlapi/
