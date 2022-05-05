@@ -23,12 +23,9 @@
 @prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
 @base <https://w3id.org/ammo/ont/> .
 
-# TODO: Determine if we need dereferencable modules
-@prefix ammomd: <https://w3id.org/ammo/metadata/> .
-
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
                                rdfs:label "Additive Manufacturing for Maintenance Operations Ontology";
-                               owl:versionIRI <https://w3id.org/ammo/ont/versions/0.0.1> ;
+                               owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
                                dc:contributor "Christopher Sweet" ;
                                dc:contributor "Donald Brower";
                                dc:creator "Charles Vardeman" ;

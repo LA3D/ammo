@@ -1,0 +1,205 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#endsAt
+:endsAt rdf:type owl:ObjectProperty .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasFix
+:hasFix rdf:type owl:ObjectProperty ;
+        owl:propertyChainAxiom ( :hasSegment
+                                 :endsAt
+                               ) ,
+                               ( :hasSegment
+                                 :startsFrom
+                               ) ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasFixInverse
+:hasFixInverse rdf:type owl:ObjectProperty ;
+               owl:inverseOf :nextFix ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasNext
+:hasNext rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasSuccessor ;
+         owl:inverseOf :hasPrevious ;
+         owl:propertyChainAxiom ( [ owl:inverseOf :startsFrom
+                                  ]
+                                  :endsAt
+                                ) ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasPredecessor
+:hasPredecessor rdf:type owl:ObjectProperty ;
+                owl:inverseOf :hasSuccessor ;
+                <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasPrevious
+:hasPrevious rdf:type owl:ObjectProperty ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasSegment
+:hasSegment rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasSegmentInverse ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasSegmentInverse
+:hasSegmentInverse rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#hasSuccessor
+:hasSuccessor rdf:type owl:ObjectProperty ;
+              owl:propertyChainAxiom ( :hasSuccessor
+                                       :hasSuccessor
+                                     ) ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#nextFix
+:nextFix rdf:type owl:ObjectProperty ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#startsFrom
+:startsFrom rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#EndingFix
+:EndingFix rdf:type owl:Class ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#Fix
+:Fix rdf:type owl:Class ;
+     <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#Segment
+:Segment rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :hasSegment
+                                          ] ;
+                           owl:someValuesFrom :Trajectory
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :endsAt ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Fix
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :startsFrom ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Fix
+                         ] ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#StartingFix
+:StartingFix rdf:type owl:Class ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory#Trajectory
+:Trajectory rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSegment ;
+                              owl:someValuesFrom :Segment
+                            ] ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( :Fix
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty [ owl:inverseOf :endsAt
+                                                           ] ;
+                                            owl:someValuesFrom :Segment
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf :StartingFix
+] .
+
+
+[ owl:intersectionOf ( :Fix
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty [ owl:inverseOf :startsFrom
+                                                           ] ;
+                                            owl:someValuesFrom :Segment
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf :EndingFix
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasFix ;
+  owl:someValuesFrom :Segment ;
+  rdfs:subClassOf :Trajectory
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasFixInverse ;
+  owl:someValuesFrom :Trajectory ;
+  rdfs:subClassOf :Fix
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSegment ;
+  owl:someValuesFrom :Segment ;
+  rdfs:subClassOf :Trajectory
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSegmentInverse ;
+  owl:someValuesFrom :Trajectory ;
+  rdfs:subClassOf :Segment
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

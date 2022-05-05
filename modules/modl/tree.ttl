@@ -1,0 +1,190 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/tree#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/tree> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/tree> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasAncestor
+:hasAncestor rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasDescendant ;
+             rdf:type owl:IrreflexiveProperty ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasChild
+:hasChild rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasDescendant ;
+          owl:inverseOf :hasParent ;
+          rdf:type owl:IrreflexiveProperty ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasDescendant
+:hasDescendant rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty ;
+               owl:propertyChainAxiom ( :hasDescendant
+                                        :hasDescendant
+                                      ) ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasParent
+:hasParent rdf:type owl:ObjectProperty ,
+                    owl:IrreflexiveProperty ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasSibling
+:hasSibling rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasSibling ;
+            rdf:type owl:IrreflexiveProperty ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#hasOutDegree
+:hasOutDegree rdf:type owl:DatatypeProperty ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#LeafNode
+:LeafNode rdf:type owl:Class ;
+          rdfs:subClassOf :TreeNode ,
+                          [ owl:intersectionOf ( :TreeNode
+                                                 [ rdf:type owl:Class ;
+                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasChild ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ,
+                          [ owl:intersectionOf ( :TreeNode
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasOutDegree ;
+                                                   owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                       owl:oneOf [ rdf:type rdf:List ;
+                                                                                   rdf:first 0 ;
+                                                                                   rdf:rest rdf:nil
+                                                                                 ]
+                                                                     ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#RootNode
+:RootNode rdf:type owl:Class ;
+          rdfs:subClassOf :TreeNode ,
+                          [ owl:intersectionOf ( :TreeNode
+                                                 [ rdf:type owl:Class ;
+                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasParent ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/tree#TreeNode
+:TreeNode rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAncestor ;
+                            owl:allValuesFrom :TreeNode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasChild ;
+                            owl:allValuesFrom :TreeNode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDescendant ;
+                            owl:allValuesFrom :TreeNode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasParent ;
+                            owl:allValuesFrom :TreeNode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSibling ;
+                            owl:allValuesFrom :TreeNode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOutDegree ;
+                            owl:allValuesFrom xsd:positiveInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOutDegree ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:positiveInteger
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( :TreeNode
+                       [ rdf:type owl:Class ;
+                         owl:complementOf :LeafNode
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ owl:intersectionOf ( :TreeNode
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasChild ;
+                                           owl:someValuesFrom :TreeNode
+                                         ]
+                                       ) ;
+                    rdf:type owl:Class
+                  ]
+] .
+
+
+[ owl:intersectionOf ( :TreeNode
+                       [ rdf:type owl:Class ;
+                         owl:complementOf :RootNode
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ owl:intersectionOf ( :TreeNode
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasParent ;
+                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         ]
+                                       ) ;
+                    rdf:type owl:Class
+                  ]
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

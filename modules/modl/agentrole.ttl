@@ -1,0 +1,123 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole> rdf:type owl:Ontology ;
+                                                                                      <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#hasRelatedPattern
+<http://ontologydesignpatterns.org/opla#hasRelatedPattern> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#ofExternalType
+<http://ontologydesignpatterns.org/opla#ofExternalType> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#hasTemporalExtent
+:hasTemporalExtent rdf:type owl:ObjectProperty ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#isPerformedBy
+:isPerformedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :performsAgentRole ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#isProvidedBy
+:isProvidedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :providesAgentRole ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#performsAgentRole
+:performsAgentRole rdf:type owl:ObjectProperty ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#providesAgentRole
+:providesAgentRole rdf:type owl:ObjectProperty ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTemporalExtent ;
+                            owl:allValuesFrom :TemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :providesAgentRole ;
+                            owl:allValuesFrom :AgentRole
+                          ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#Agent
+:Agent rdf:type owl:Class ;
+       <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal ;
+       <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#AgentRole
+:AgentRole rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :isPerformedBy ;
+                             owl:allValuesFrom :Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTemporalExtent ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :TemporalExtent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isPerformedBy ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Agent
+                           ] ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole#TemporalExtent
+:TemporalExtent rdf:type owl:Class ;
+                <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole"^^rdfs:Literal ;
+                <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasTemporalExtent ;
+  owl:someValuesFrom :TemporalExtent ;
+  rdfs:subClassOf :AgentRole
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :isPerformedBy ;
+  owl:someValuesFrom :Agent ;
+  rdfs:subClassOf :AgentRole
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

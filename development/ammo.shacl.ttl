@@ -1,1 +1,107 @@
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wd:Q108576266 a owl:NamedIndividual,
+        sdo:Organization ;
+    sdo:name "Center for Research Computing"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+<https://w3id.org/ammo/shapes/shacl> a owl:Ontology ;
+    rdfs:label "Additive Manufacturing for Maintenance Operations Ontology SHACL Shapes" ;
+    dc:contributor "Christopher Sweet",
+        "Donald Brower" ;
+    dc:creator "Charles Vardeman" ;
+    dcterms:contributor <https://orcid.org/0000-0001-7347-546X>,
+        <https://orcid.org/0000-0001-8214-7177> ;
+    dcterms:created "2022-02-15"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+    dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
+
+Contributions and Discussion Welcomed.
+Github: https://github.com/LA3D/ammo"""@en ;
+    dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+    dcterms:modified "2022-02-21"^^xsd:date,
+        "2022-04-29"^^xsd:date ;
+    dcterms:publisher wd:Q178848,
+        ammo:Simbachain ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dcterms:title "Additive Manufacturing for Maintancence Operations Shapes"@en ;
+    vann:preferredNamespacePrefix "ammo" ;
+    vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
+    owl:versionIRI <https://w3id.org/ammo/shapes/shacl/releases/0.0.1> ;
+    owl:versionInfo "0.0.1"@en ;
+    sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+
+ammosh: a owl:Ontology .
+
+ammosh:DesignedComponentShape a sh:NodeShape ;
+    sh:TargetClass ammo:DesignedComponent ;
+    sh:property [ sh:class ammo:ComponentIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Component Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasidentifier ;
+            sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
+            sh:severity sh:Violation ],
+        [ sh:class ammo:DesignedPhysicalSystem ;
+            sh:minCount 0 ;
+            sh:name "Designed Physical System" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:isComponentOf ] .
+
+ammosh:DesignedPhysicalSystemShape a sh:NodeShape ;
+    sh:property [ sh:class ammo:DesignedPhysicalSystem ;
+            sh:minCount 0 ;
+            sh:name "Subsystem" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasSubsystem ],
+        [ sh:class ammo:DesignedComponent ;
+            sh:minCount 0 ;
+            sh:name "Designed Component" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasComponent ],
+        [ sh:class ammo:SystemIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "System Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasidentifier ;
+            sh:resultMessage "Each identifier MUST have 1 system identifier" ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ammo:DesignedPhysicalSystem .
+
+wd:Q178848 a owl:NamedIndividual,
+        sdo:Organization ;
+    sdo:name "University of Notre Dame"@en ;
+    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+<https://orcid.org/0000-0001-7347-546X> a owl:NamedIndividual,
+        sdo:Person ;
+    sdo:email "dbrower@nd.edu"@en ;
+    sdo:name "Donald Brower"@en .
+
+<https://orcid.org/0000-0001-8214-7177> a owl:NamedIndividual,
+        sdo:Person ;
+    sdo:email "csweet1@nd.edu"@en ;
+    sdo:name "Christopher Sweet"@en .
+
+<https://orcid.org/0000-0003-4091-6059> a owl:NamedIndividual,
+        sdo:Person ;
+    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+    sdo:name "Charles F Vardeman II" .
+
+ammo:Simbachain a owl:NamedIndividual,
+        sdo:Organization ;
+    sdo:name "Simbachain"@en ;
+    sdo:url "https://simbachain.com/"^^xsd:anyURI .
 

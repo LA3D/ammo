@@ -1,0 +1,107 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/event#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/event> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/event> rdf:type owl:Ontology ;
+                                                                                  <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/participantrole"^^rdfs:Literal ,
+                                                                                                                                             "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#hasRelatedPattern
+<http://ontologydesignpatterns.org/opla#hasRelatedPattern> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#ofExternalType
+<http://ontologydesignpatterns.org/opla#ofExternalType> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#hasSpatiotemporalExtent
+:hasSpatiotemporalExtent rdf:type owl:ObjectProperty ;
+                         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#providesParticipantRole
+:providesParticipantRole rdf:type owl:ObjectProperty ;
+                         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#subEventOf
+:subEventOf rdf:type owl:ObjectProperty ;
+            owl:propertyChainAxiom ( :subEventOf
+                                     :subEventOf
+                                   ) ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSpatiotemporalExtent ;
+                            owl:allValuesFrom :SpatiotemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :providesParticipantRole ;
+                            owl:allValuesFrom :ParticipantRole
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :subEventOf ;
+                            owl:allValuesFrom :Event
+                          ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :providesParticipantRole ;
+                         owl:someValuesFrom :ParticipantRole
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSpatiotemporalExtent ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :SpatiotemporalExtent
+                       ] ;
+       <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#ParticipantRole
+:ParticipantRole rdf:type owl:Class ;
+                 <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal ;
+                 <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/event#SpatiotemporalExtent
+:SpatiotemporalExtent rdf:type owl:Class ;
+                      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/event"^^rdfs:Literal ;
+                      <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :subEventOf ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Event
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

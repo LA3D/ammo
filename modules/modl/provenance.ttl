@@ -1,0 +1,121 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/provenance> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/provenance> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#ofExternalType
+<http://ontologydesignpatterns.org/opla#ofExternalType> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#attributedTo
+:attributedTo rdf:type owl:ObjectProperty ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#generatedBy
+:generatedBy rdf:type owl:ObjectProperty ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#performedBy
+:performedBy rdf:type owl:ObjectProperty ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#used
+:used rdf:type owl:ObjectProperty ;
+      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#wasDerivedFrom
+:wasDerivedFrom rdf:type owl:ObjectProperty ;
+                <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#Agent
+:Agent rdf:type owl:Class ;
+       <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal ;
+       <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#EntityWithProvenance
+:EntityWithProvenance rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :attributedTo ;
+                                        owl:allValuesFrom :Agent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :generatedBy ;
+                                        owl:allValuesFrom :ProvenanceActivity
+                                      ] ;
+                      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/provenance#ProvenanceActivity
+:ProvenanceActivity rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :performedBy ;
+                                      owl:allValuesFrom :Agent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :used ;
+                                      owl:allValuesFrom :EntityWithProvenance
+                                    ] ;
+                    <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/provenance"^^rdfs:Literal ;
+                    <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :attributedTo ;
+  owl:someValuesFrom :Agent ;
+  rdfs:subClassOf :EntityWithProvenance
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :generatedBy ;
+  owl:someValuesFrom :ProvenanceActivity ;
+  rdfs:subClassOf :EntityWithProvenance
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :performedBy ;
+  owl:someValuesFrom :Agent ;
+  rdfs:subClassOf :ProvenanceActivity
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :used ;
+  owl:someValuesFrom :EntityWithProvenance ;
+  rdfs:subClassOf :ProvenanceActivity
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

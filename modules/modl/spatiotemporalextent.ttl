@@ -1,0 +1,275 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent> rdf:type owl:Ontology ;
+                                                                                                 <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/sequence"^^rdfs:Literal ,
+                                                                                                                                                            "https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"^^rdfs:Literal .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#hasRelatedPattern
+<http://ontologydesignpatterns.org/opla#hasRelatedPattern> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#ofExternalType
+<http://ontologydesignpatterns.org/opla#ofExternalType> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#atPlace
+:atPlace rdf:type owl:ObjectProperty ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#atTime
+:atTime rdf:type owl:ObjectProperty ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#endsAt
+:endsAt rdf:type owl:ObjectProperty ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasFix
+:hasFix rdf:type owl:ObjectProperty ;
+        owl:inverseOf :hasFixInverse ;
+        owl:propertyChainAxiom ( :hasSegment
+                                 :endsAt
+                               ) ,
+                               ( :hasSegment
+                                 :startsFrom
+                               ) ;
+        <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasFixInverse
+:hasFixInverse rdf:type owl:ObjectProperty ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasNext
+:hasNext rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasSuccessor ;
+         owl:inverseOf :hasPrevious ;
+         owl:propertyChainAxiom ( [ owl:inverseOf :startsFrom
+                                  ]
+                                  :endsAt
+                                ) ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasPredecessor
+:hasPredecessor rdf:type owl:ObjectProperty ;
+                owl:inverseOf :hasSuccessor ;
+                <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasPrevious
+:hasPrevious rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasSegment
+:hasSegment rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasSegmentInverse ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasSegmentInverse
+:hasSegmentInverse rdf:type owl:ObjectProperty ;
+                   <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasSpatiotemporalExtent
+:hasSpatiotemporalExtent rdf:type owl:ObjectProperty ;
+                         <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasSuccessor
+:hasSuccessor rdf:type owl:ObjectProperty ;
+              owl:propertyChainAxiom ( :hasSuccessor
+                                       :hasSuccessor
+                                     ) ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#hasTrajectory
+:hasTrajectory rdf:type owl:ObjectProperty ;
+               <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#nextFix
+:nextFix rdf:type owl:ObjectProperty ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#startsFrom
+:startsFrom rdf:type owl:ObjectProperty ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "ExternalTypehttps://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :atPlace ;
+                            owl:allValuesFrom :Place
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :atTime ;
+                            owl:allValuesFrom :Time
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSpatiotemporalExtent ;
+                            owl:allValuesFrom :SpatiotemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTrajectory ;
+                            owl:allValuesFrom :Trajectory
+                          ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#EndingFix
+:EndingFix rdf:type owl:Class ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#Fix
+:Fix rdf:type owl:Class ;
+     <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#Place
+:Place rdf:type owl:Class ;
+       <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal ;
+       <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#Segment
+:Segment rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :hasSegment
+                                          ] ;
+                           owl:someValuesFrom :Trajectory
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :endsAt ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Fix
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :startsFrom ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Fix
+                         ] ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#SpatiotemporalExtent
+:SpatiotemporalExtent rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTrajectory ;
+                                        owl:someValuesFrom :Trajectory
+                                      ] ;
+                      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#StartingFix
+:StartingFix rdf:type owl:Class ;
+             <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#Time
+:Time rdf:type owl:Class ;
+      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal ;
+      <http://ontologydesignpatterns.org/opla#ofExternalType> "ofExternalType"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent#Trajectory
+:Trajectory rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSegment ;
+                              owl:someValuesFrom :Segment
+                            ] ;
+            <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/spatiotemporalextent"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( :Fix
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty [ owl:inverseOf :endsAt
+                                                           ] ;
+                                            owl:someValuesFrom :Segment
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf :StartingFix
+] .
+
+
+[ owl:intersectionOf ( :Fix
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty [ owl:inverseOf :startsFrom
+                                                           ] ;
+                                            owl:someValuesFrom :Segment
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf :EndingFix
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasFix ;
+  owl:someValuesFrom :Segment ;
+  rdfs:subClassOf :Trajectory
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasFixInverse ;
+  owl:someValuesFrom :Trajectory ;
+  rdfs:subClassOf :Fix
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSegment ;
+  owl:someValuesFrom :Segment ;
+  rdfs:subClassOf :Trajectory
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSegmentInverse ;
+  owl:someValuesFrom :Trajectory ;
+  rdfs:subClassOf :Segment
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

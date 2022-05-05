@@ -12,7 +12,10 @@
 @prefix ammo: <https://w3id.org/ammo/ont/> .
 @base <https://w3id.org/ammo/ont/> .
 
-<https://w3id.org/ammo/ont/> rdf:type owl:Ontology .
+<https://w3id.org/ammo/module/system> rdf:type opla:Module ;
+              skos:prefLabel "ammo system module" ;
+              skos:note """Module definitons for System""";
+.
 
 #################################################################
 #    Object Properties
@@ -60,7 +63,9 @@ ammo:DesignedArtifact rdf:type owl:Class ;
                                         owl:onProperty ammo:isDescribedBy ;
                                         owl:someValuesFrom ammo:Design
                                       ] ;
-                      rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+                      skos:definition """A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc.""" ;
+                      skos:note """Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite""" ;
+                      opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl>;
                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                       rdfs:label "Designed Artifact" .
 
@@ -81,6 +86,7 @@ ammo:DesignedPhysicalSystem rdf:type owl:Class ;
                                               owl:someValuesFrom ammo:SystemDesign
                                             ] ;
                             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                            opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                             rdfs:label "Designed Physical System" .
 
 
@@ -91,34 +97,37 @@ ammo:PhysicalArtifact rdf:type owl:Class ;
                                         owl:onProperty ammo:isDescribedBy ;
                                         owl:someValuesFrom ammo:Plan
                                       ] ;
-                      rdfs:comment """Any PhysicalObject that isDescribedBy a Plan .
+                      skos:definition """Any PhysicalObject that isDescribedBy a Plan .
 This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
 FunctionalSubstance(s) are included here as well.
 Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                      opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                       rdfs:label "Physical Artifact" .
 
 
 ###  https://w3id.org/ammo/ont/PhysicalObject
 ammo:PhysicalObject rdf:type owl:Class ;
-                    rdfs:comment "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." ;
+                    skos:definition """Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary).""" ;
                     rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                     rdfs:label "Physical Object" .
 
 
 ###  https://w3id.org/ammo/ont/PhysicalSystem
 ammo:PhysicalSystem rdf:type owl:Class ;
                     rdfs:subClassOf ammo:PhysicalObject ;
-                    rdfs:comment """A physical object that isDescribedBy a SystemDesign .
+                    skos:definition """A physical object that isDescribedBy a SystemDesign .
 I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
 Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" ;
                     rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                     rdfs:label "Physical System" .
 
 
 ###  https://w3id.org/ammo/ont/Plan
 ammo:Plan rdf:type owl:Class ;
-          rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan" ;
+          rdfs:comment """A Description having an explicit Goal, to be achieved by executing the plan""" ;
           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
           rdfs:label "Plan" .
 
@@ -128,6 +137,7 @@ ammo:SystemDesign rdf:type owl:Class ;
                   rdfs:subClassOf ammo:Design ;
                   rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations." ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                  opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                   rdfs:label "System Design" .
 
 

@@ -28,4 +28,4 @@ $pylodecmd ./development/${ONTOLOGY}.ttl -o ./development/${ONTOLOGY}.html
 echo "Merging Shapes"
 $mergecmd merge $shapefiles -f ttl -o ./development
 mv ./development/merged.ttl ./development/${SHACL}.ttl
-# $pylodecmd $SHACL
+$pylodecmd $SHACL

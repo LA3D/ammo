@@ -1,0 +1,135 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/list#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/list> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/list> rdf:type owl:Ontology ;
+                                                                                 <http://ontologydesignpatterns.org/opla#generatlizationOfPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/tree"^^rdfs:Literal .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#generatlizationOfPattern
+<http://ontologydesignpatterns.org/opla#generatlizationOfPattern> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/list#hasNext
+:hasNext rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasSuccessor ;
+         <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/list"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/list#hasSuccessor
+:hasSuccessor rdf:type owl:ObjectProperty ,
+                       owl:IrreflexiveProperty ;
+              owl:propertyChainAxiom ( :hasNext
+                                       :hasSuccessor
+                                     ) ;
+              <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/list"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/list#FirstItem
+:FirstItem rdf:type owl:Class ;
+           rdfs:subClassOf :ListItem ,
+                           [ owl:intersectionOf ( :ListItem
+                                                  [ rdf:type owl:Class ;
+                                                    owl:complementOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty [ owl:inverseOf :hasNext
+                                                                                      ] ;
+                                                                       owl:someValuesFrom owl:Thing
+                                                                     ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+           <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/list"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/list#LastItem
+:LastItem rdf:type owl:Class ;
+          rdfs:subClassOf :ListItem ,
+                          [ owl:intersectionOf ( :ListItem
+                                                 [ rdf:type owl:Class ;
+                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasNext ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/list"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/list#ListItem
+:ListItem rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasNext ;
+                            owl:allValuesFrom :ListItem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasNext
+                                           ] ;
+                            owl:allValuesFrom :ListItem
+                          ] ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/list"^^rdfs:Literal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( :ListItem
+                       [ rdf:type owl:Class ;
+                         owl:complementOf :FirstItem
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ owl:intersectionOf ( :ListItem
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty [ owl:inverseOf :hasNext
+                                                          ] ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :ListItem
+                                         ]
+                                       ) ;
+                    rdf:type owl:Class
+                  ]
+] .
+
+
+[ owl:intersectionOf ( :ListItem
+                       [ rdf:type owl:Class ;
+                         owl:complementOf :LastItem
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ owl:intersectionOf ( :ListItem
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasNext ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :ListItem
+                                         ]
+                                       ) ;
+                    rdf:type owl:Class
+                  ]
+] .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

@@ -1,9 +1,11 @@
 @prefix ammo: <https://w3id.org/ammo/ont/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -12,6 +14,10 @@ wd:Q108576266 a owl:NamedIndividual,
         sdo:Organization ;
     sdo:name "Center for Research Computing"@en ;
     sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+
+<https://w3id.org/ammo/module/system> a opla:Module ;
+    skos:note "Module definitons for System" ;
+    skos:prefLabel "ammo system module" .
 
 ammo:hasComponent a owl:ObjectProperty ;
     rdfs:label "has component" ;
@@ -47,20 +53,23 @@ wd:Q178848 a owl:NamedIndividual,
 
 ammo:DesignedArtifact a owl:Class ;
     rdfs:label "Designed Artifact" ;
-    rdfs:comment "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty ammo:isDescribedBy ;
             owl:someValuesFrom ammo:Design ],
-        ammo:PhysicalArtifact .
+        ammo:PhysicalArtifact ;
+    skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+    skos:note "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite" .
 
 ammo:PhysicalSystem a owl:Class ;
     rdfs:label "Physical System" ;
-    rdfs:comment """A physical object that isDescribedBy a SystemDesign .
-I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
-Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
-    rdfs:subClassOf ammo:PhysicalObject .
+    rdfs:subClassOf ammo:PhysicalObject ;
+    skos:definition """A physical object that isDescribedBy a SystemDesign .
+I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
+Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" .
 
 ammo:Plan a owl:Class ;
     rdfs:label "Plan" ;
@@ -74,6 +83,7 @@ ammo:Simbachain a owl:NamedIndividual,
 
 ammo:SystemDesign a owl:Class ;
     rdfs:label "System Design" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations." ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf ammo:Design .
@@ -92,6 +102,7 @@ ammo:DesignedComponent a owl:Class ;
 
 ammo:DesignedPhysicalSystem a owl:Class ;
     rdfs:label "Designed Physical System" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty ammo:isDescribedBy ;
@@ -101,28 +112,29 @@ ammo:DesignedPhysicalSystem a owl:Class ;
 
 ammo:PhysicalArtifact a owl:Class ;
     rdfs:label "Physical Artifact" ;
-    rdfs:comment """Any PhysicalObject that isDescribedBy a Plan .
-This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
-FunctionalSubstance(s) are included here as well.
-Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty ammo:isDescribedBy ;
             owl:someValuesFrom ammo:Plan ],
-        ammo:PhysicalObject .
+        ammo:PhysicalObject ;
+    skos:definition """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" .
 
 ammo:PhysicalObject a owl:Class ;
     rdfs:label "Physical Object" ;
-    rdfs:comment "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." ;
-    rdfs:isDefinedBy ammo: .
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
 
 ammo:isDescribedBy a owl:ObjectProperty ;
     rdfs:label "is described by" ;
     rdfs:isDefinedBy ammo: .
 
 ammo: a owl:Ontology ;
-    rdfs:label "Additive Manufacturing for Maintenance Operations Ontology",
-        "system ontology design pattern" ;
+    rdfs:label "Additive Manufacturing for Maintenance Operations Ontology" ;
     dc:contributor "Christopher Sweet",
         "Donald Brower" ;
     dc:creator "Charles Vardeman" ;
@@ -143,8 +155,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
-    rdfs:comment "" ;
-    owl:versionIRI <https://w3id.org/ammo/ont/versions/0.0.1> ;
+    owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
     owl:versionInfo "0.0.1"@en ;
     sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
 

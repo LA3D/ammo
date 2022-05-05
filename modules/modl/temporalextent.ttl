@@ -1,0 +1,110 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent> rdf:type owl:Ontology ;
+                                                                                           <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/sequence"^^rdfs:Literal .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#hasRelatedPattern
+<http://ontologydesignpatterns.org/opla#hasRelatedPattern> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#contains
+:contains rdf:type owl:ObjectProperty ;
+          <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#endsAt
+:endsAt rdf:type owl:ObjectProperty ;
+        <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#hasReferenceSystem
+:hasReferenceSystem rdf:type owl:ObjectProperty ;
+                    <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#startsFrom
+:startsFrom rdf:type owl:ObjectProperty ;
+            <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#ComplexTemporalExtent
+:ComplexTemporalExtent rdf:type owl:Class ;
+                       <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#PointInTime
+:PointInTime rdf:type owl:Class ;
+             rdfs:subClassOf :ComplexTemporalExtent ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasReferenceSystem ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :ReferenceSystem
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasValue ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Value
+                             ] ;
+             <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#ReferenceSystem
+:ReferenceSystem rdf:type owl:Class ;
+                 <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#TemporalExtent
+:TemporalExtent rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :contains ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :ComplexTemporalExtent
+                                ] ;
+                <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#TimeInterval
+:TimeInterval rdf:type owl:Class ;
+              rdfs:subClassOf :ComplexTemporalExtent ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :endsAt ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PointInTime
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :startsFrom ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PointInTime
+                              ] ;
+              <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent#Value
+:Value rdf:type owl:Class ;
+       <http://ontologydesignpatterns.org/opla#hasRelatedPattern> "https://archive.org/services/purl/domain/modular_ontology_design_library/temporalextent"^^rdfs:Literal .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi

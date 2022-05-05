@@ -16,6 +16,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 
 
 
@@ -23,12 +24,10 @@
 @prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
 @base <https://w3id.org/ammo/ont/> .
 
-# TODO: Determine if we need dereferencable modules
-@prefix ammomd: <https://w3id.org/ammo/metadata/> .
 
-<https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
-                               rdfs:label "Additive Manufacturing for Maintenance Operations Ontology";
-                               owl:versionIRI <https://w3id.org/ammo/ont/versions/0.0.1> ;
+<https://w3id.org/ammo/shapes/shacl> rdf:type owl:Ontology ;
+                               rdfs:label "Additive Manufacturing for Maintenance Operations Ontology SHACL Shapes";
+                               owl:versionIRI <https://w3id.org/ammo/shapes/shacl/releases/0.0.1> ;
                                dc:contributor "Christopher Sweet" ;
                                dc:contributor "Donald Brower";
                                dc:creator "Charles Vardeman" ;
@@ -46,7 +45,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:publisher wd:Q178848 ,
                                                  ammo:Simbachain ;
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-                               dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
+                               dcterms:title "Additive Manufacturing for Maintancence Operations Shapes"@en ;
                                vann:preferredNamespacePrefix "ammo" ;
                                vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
                                owl:versionInfo "0.0.1"@en ;

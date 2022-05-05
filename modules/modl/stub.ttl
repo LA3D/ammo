@@ -1,0 +1,120 @@
+@prefix : <https://archive.org/services/purl/domain/modular_ontology_design_library/stub#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://archive.org/services/purl/domain/modular_ontology_design_library/stub> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/stub> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla#isNativeTo
+<http://ontologydesignpatterns.org/opla#isNativeTo> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/stub#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/stub"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasValue ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:unionOf ( rdf:PlainLiteral
+                                                              rdf:XMLLiteral
+                                                              rdfs:Literal
+                                                              xsd:NCName
+                                                              xsd:NMTOKEN
+                                                              xsd:Name
+                                                              xsd:anyURI
+                                                              xsd:base64Binary
+                                                              xsd:boolean
+                                                              xsd:byte
+                                                              xsd:dateTime
+                                                              xsd:dateTimeStamp
+                                                              xsd:decimal
+                                                              xsd:double
+                                                              xsd:float
+                                                              xsd:hexBinary
+                                                              xsd:int
+                                                              xsd:integer
+                                                              xsd:language
+                                                              xsd:long
+                                                              xsd:negativeInteger
+                                                              xsd:nonNegativeInteger
+                                                              xsd:nonPositiveInteger
+                                                              xsd:normalizedString
+                                                              xsd:positiveInteger
+                                                              xsd:short
+                                                              xsd:string
+                                                              xsd:token
+                                                              xsd:unsignedByte
+                                                              xsd:unsignedInt
+                                                              xsd:unsignedLong
+                                                              xsd:unsignedShort
+                                                              owl:rational
+                                                              owl:real
+                                                            )
+                                              ]
+                          ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/stub#Stub
+:Stub rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasValue ;
+                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                             owl:unionOf ( rdf:PlainLiteral
+                                                           rdf:XMLLiteral
+                                                           rdfs:Literal
+                                                           xsd:NCName
+                                                           xsd:NMTOKEN
+                                                           xsd:Name
+                                                           xsd:anyURI
+                                                           xsd:base64Binary
+                                                           xsd:boolean
+                                                           xsd:byte
+                                                           xsd:dateTime
+                                                           xsd:dateTimeStamp
+                                                           xsd:decimal
+                                                           xsd:double
+                                                           xsd:float
+                                                           xsd:hexBinary
+                                                           xsd:int
+                                                           xsd:integer
+                                                           xsd:language
+                                                           xsd:long
+                                                           xsd:negativeInteger
+                                                           xsd:nonNegativeInteger
+                                                           xsd:nonPositiveInteger
+                                                           xsd:normalizedString
+                                                           xsd:positiveInteger
+                                                           xsd:short
+                                                           xsd:string
+                                                           xsd:token
+                                                           xsd:unsignedByte
+                                                           xsd:unsignedInt
+                                                           xsd:unsignedLong
+                                                           xsd:unsignedShort
+                                                           owl:rational
+                                                           owl:real
+                                                         )
+                                           ]
+                      ] ;
+      <http://ontologydesignpatterns.org/opla#isNativeTo> "https://archive.org/services/purl/domain/modular_ontology_design_library/stub"^^rdfs:Literal .
+
+
+###  Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi
