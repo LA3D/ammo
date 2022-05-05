@@ -1,0 +1,74 @@
+@prefix : <https://w3id.org/ammo/shapes/shacl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> ..
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
+@base <https://w3id.org/ammo/shapes/shacl/> .
+
+<https://w3id.org/ammo/shapes/shacl/> rdf:type owl:Ontology .
+
+ammosh:DesignedPhysicalSystemShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass ammo:DesignedPhysicalSystem ;
+    # Designed Physical Systems have 0 or more subsystems
+    sh:property [
+        sh:path ammo:hasSubsystem ;
+        sh:class ammo:DesignedPhysicalSystem ;
+        sh:minCount 0 ;
+        sh:name "Subsystem" ;
+        sh:nodeKind sh:IRI ;
+    ];
+
+    # Designed Physical Systems have 0 or more Designed Components
+    sh:property [
+        sh:path ammo:hasComponent ;
+        sh:class ammo:DesignedComponent ;
+        sh:minCount 0 ;
+        sh:name "Designed Component" ;
+        sh:nodeKind sh:IRI ;
+
+    ];
+
+    # Designed Physical Systems has 1 and only 1 System Identifier
+    sh:property [
+        sh:path ammo:hasidentifier ;
+        sh:class ammo:SystemIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "System Identifier" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each identifier MUST have 1 system identifier" ;
+
+    ]
+.
+
+ammosh:DesignedComponentShape
+    rdf:type sh:NodeShape ;
+    sh:TargetClass ammo:DesignedComponent ;
+    sh:property [
+        sh:path ammo:hasidentifier ;
+        sh:class ammo:ComponentIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "Component Identifier" ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
+    ] ;
+    sh:property [
+        sh:path ammo:isComponentOf ;
+        sh:class ammo:DesignedPhysicalSystem ;
+        sh:minCount 0;
+        sh:name "Designed Physical System" ;
+        sh:nodeKind sh:IRI ;
+    ]
+.
