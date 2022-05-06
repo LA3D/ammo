@@ -1,0 +1,2 @@
+metadata,./modules/common/metadata-shacl.ttl
+system,./modules/common/system.shacl.ttl
