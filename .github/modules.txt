@@ -1,2 +1,3 @@
 metadata,./modules/common/metadata.ttl
 system,./modules/common/system.ttl
+process,./modules/common/process.ttl

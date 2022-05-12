@@ -1,2 +1,3 @@
 metadata,./modules/common/metadata-shacl.ttl
 system,./modules/common/system.shacl.ttl
+process,./modules/common/process.shacl.ttl
