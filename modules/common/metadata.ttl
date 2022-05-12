@@ -25,7 +25,7 @@
 @base <https://w3id.org/ammo/ont/> .
 
 
-# TODO: Add omv ontology metadata that describes formalizm.
+# TODO: Add omv ontology metadata that describes formalism using omv ontology
 
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
@@ -74,13 +74,12 @@
                                    sdo:affiliation "Simbachain Inc";
                                ];
                                dcterms:created "2022-02-15"^^xsd:date ;
-                               dcterms:modified "2022-04-29"^^xsd:date ;
+                               dcterms:modified "2022-05-12"^^xsd:date ;
                                dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
 Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
-                               dcterms:modified "2022-02-21"^^xsd:date ;
 
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
 
