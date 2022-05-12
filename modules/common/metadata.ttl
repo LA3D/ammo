@@ -1,6 +1,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix wd: <http://wikidata.org/entity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sdo: <https://schema.org/> .
 @prefix sio: <http://semanticscience.org/resource/> .
@@ -23,71 +24,68 @@
 @prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
 @base <https://w3id.org/ammo/ont/> .
 
+
+# TODO: Add omv ontology metadata that describes formalizm.
+
+
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
                                rdfs:label "Additive Manufacturing for Maintenance Operations Ontology";
+                               dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
                                owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
-                               dc:contributor "Christopher Sweet" ;
-                               dc:contributor "Donald Brower";
-                               dc:creator "Charles Vardeman" ;
-                               dcterms:contributor <https://orcid.org/0000-0001-8214-7177> ;
-                               dcterms:contributor <https://orcid.org/0000-0001-7347-546X> ;
+                               owl:versionInfo "0.0.1"@en ;
+                               dcterms:publisher [
+                                   a sdo:Organization ;
+		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
+		                           sdo:url "https//crc.nd.edu"^^xsd:anyURI ;
+                                   owl:sameAs wd:Q178848 ;
+                               ],
+                               [
+                                   a sdo:Organization ;
+                                   sdo:name "Simba Chain" ;
+                                   sdo:url "https://simbachain.com/";
+                               ];
+                               dcterms:creator [
+                                   a sdo:Person ;
+                                   sdo:name "Charles F. Vardeman II" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+                                   sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ;
+                               ];
+                               dcterms:contributor [
+                                   a sdo:Person ;
+                                   sdo:name "Christopher Sweet" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ;
+
+                               ],
+                               [
+                                   a sdo:Person ;
+                                   sdo:name "Donald Brower" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ;
+                               ],
+                               [
+                                   a sdo:Person ;
+                                   sdo:name "Matthew Welz" ;
+                                   sdo:affiliation "Simbachain Inc";
+                               ],
+                               [
+                                   a sdo:Person ;
+                                   sdo:name "Kirsten Stor" ;
+                                   sdo:affiliation "Simbachain Inc";
+                               ];
                                dcterms:created "2022-02-15"^^xsd:date ;
                                dcterms:modified "2022-04-29"^^xsd:date ;
-                               dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
                                dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
 Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
                                dcterms:modified "2022-02-21"^^xsd:date ;
-                               dcterms:publisher wd:Q178848 ,
-                                                 ammo:Simbachain ;
+
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-                               dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
+
                                vann:preferredNamespacePrefix "ammo" ;
                                vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
-                               owl:versionInfo "0.0.1"@en ;
+
                                sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://wikidata.org/entity/Q108576266
-wd:Q108576266 rdf:type owl:NamedIndividual ,
-                       sdo:Organization ;
-              sdo:name "Center for Research Computing"@en ;
-              sdo:url "https://crc.nd.edu"^^xsd:anyURI .
-
-
-###  http://wikidata.org/entity/Q178848
-wd:Q178848 rdf:type owl:NamedIndividual ,
-                    sdo:Organization ;
-           sdo:name "University of Notre Dame"@en ;
-           sdo:url "https://crc.nd.edu"^^xsd:anyURI .
-
-
-###  https://orcid.org/0000-0001-8214-7177
-<https://orcid.org/0000-0001-8214-7177> rdf:type owl:NamedIndividual ,
-                                                 sdo:Person ;
-                                        sdo:email "csweet1@nd.edu"@en ;
-                                        sdo:name "Christopher Sweet"@en .
-
-###  https://orcid.org/0000-0001-8214-7177
-<https://orcid.org/0000-0001-7347-546X> rdf:type owl:NamedIndividual ,
-                                                 sdo:Person ;
-                                        sdo:email "dbrower@nd.edu"@en ;
-                                        sdo:name "Donald Brower"@en .
-
-###  https://orcid.org/0000-0003-4091-6059
-<https://orcid.org/0000-0003-4091-6059> rdf:type owl:NamedIndividual ,
-                                                 sdo:Person ;
-                                        sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
-                                        sdo:name "Charles F Vardeman II" .
-
-
-###  https://w3id.org/ammo/full/Simbachain
-ammo:Simbachain rdf:type owl:NamedIndividual ,
-                         sdo:Organization ;
-                sdo:name "Simbachain"@en ;
-                sdo:url "https://simbachain.com/"^^xsd:anyURI .

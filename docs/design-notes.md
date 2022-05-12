@@ -13,6 +13,12 @@ Most of the AMMO System Module has been extracted from Object Hierarcy in the [D
 
 ### Process and Material Transformation
 
+The Semantic Science Integrated Ontology
+
+### Design Data Catalog
+
+### Quantity Kinds for Specifications and Observations in QUDT
+
 ## Existing Additive Manufacturing Ontologies
 
 ### [Common Core Ontology](https://github.com/CommonCoreOntology/CommonCoreOntologies)
@@ -32,6 +38,8 @@ The Nanomine [Ontology](https://raw.githubusercontent.com/tetherless-world/nanom
 - [Data Catalog Vocabulary Version 3](https://www.w3.org/TR/vocab-dcat-3/) and [Github Repo](https://github.com/w3c/dxwg)
 - W3C Prov-O: The PROV Ontology [Prov-O](https://www.w3.org/TR/prov-o/)
 - If needed for observations and sensors: W3C Semantic Sensor Network Sensor, Observation, Sample, and Actuator ([SOSA](https://www.w3.org/TR/vocab-ssn/))
+
+## Spatial Data
 
 ## Alignments
 
@@ -74,5 +82,9 @@ Simon Cox suggested an alignment between SOSA and BFO/SIO Quality.
 ssn:Property owl:equivalentClass sio:000005 #SIO quality
 sosa:ObservableProperty rdfs:subClassOf sio:000005 #SIO quality
 ```
+
+RDA I-Adopt has released a set of [guidelines](https://doi.org/10.15497/RDA00071) and [Ontology](https://i-adopt.github.io/index.html) to help clarify the relationship between and Observable Property and a variable of interest. [Alignments to SOSA are also available](https://github.com/i-adopt).
+
+Additionally, [SOSA-SHACL: Shapes Constraint for the Sensor, Observation, Sample, and Actuator Ontology](https://dl.acm.org/doi/fullHtml/10.1145/3502223.3502235) paper has a section on SHACL constraints for the results documents. It is contained in a github repository [KWG-SHACL](https://github.com/KnowWhereGraph/KWG-SHACL) and [example test graphs](https://github.com/KnowWhereGraph/KWG-SHACL/tree/main/test/example-graphs).
 
 [Spatial Data on the Web Issue](https://github.com/w3c/sdw/issues/1267) "modeling units on properties instead of results"
