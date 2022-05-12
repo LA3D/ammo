@@ -2,6 +2,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -12,6 +13,31 @@
 <https://w3id.org/ammo/module/system> a opla:Module ;
     skos:note "Module definitons for System" ;
     skos:prefLabel "ammo system module" .
+
+ammo:Capability a owl:Class ;
+    rdfs:label "capability" ;
+    rdfs:comment "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger)." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:RealizableEntity ;
+    prov:wasQuotedFrom "http://semanticscience.org/resource/" .
+
+ammo:Role a owl:Class ;
+    rdfs:label "role" ;
+    rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:RealizableEntity .
+
+ammo:existsAt a owl:ObjectProperty ;
+    rdfs:label "exists at" ;
+    rdfs:domain ammo:Process ;
+    rdfs:isDefinedBy <https://w3id.org/ammo/module/process/> ;
+    rdfs:range ammo:TimeInterval .
+
+ammo:hasAttribute a owl:ObjectProperty ;
+    rdfs:label "has attribute" ;
+    rdfs:domain ammo:Object ;
+    rdfs:isDefinedBy <https://w3id.org/module/process/> ;
+    rdfs:range ammo:RealizableEntity .
 
 ammo:hasComponent a owl:ObjectProperty ;
     rdfs:label "has component" ;
@@ -24,6 +50,26 @@ ammo:isComponentOf a owl:ObjectProperty ;
     rdfs:domain ammo:DesignedComponent ;
     rdfs:isDefinedBy ammo: ;
     rdfs:range ammo:DesignedPhysicalSystem .
+
+ammo:isParticipantIn a owl:ObjectProperty ;
+    rdfs:label "is participant in" ;
+    rdfs:domain ammo:Object ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Process .
+
+ammo:isRealizedIn a owl:ObjectProperty ;
+    rdfs:label "is realized in" ;
+    rdfs:domain ammo:RealizableEntity ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Process .
+
+<https://w3id.org/ammo/module/process/> a opla:Module,
+        owl:Ontology .
+
+ammo:Attribute a owl:Class ;
+    rdfs:label "Attribute" ;
+    rdfs:comment "An attribute is a characteristic of some entity." ;
+    rdfs:isDefinedBy ammo: .
 
 ammo:DesignedArtifact a owl:Class ;
     rdfs:label "Designed Artifact" ;
@@ -57,6 +103,10 @@ ammo:SystemDesign a owl:Class ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf ammo:Design .
 
+ammo:TimeInterval a owl:Class ;
+    rdfs:label "Time Interval" ;
+    rdfs:isDefinedBy ammo: .
+
 ammo:Design a owl:Class ;
     rdfs:label "Design" ;
     rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
@@ -79,6 +129,11 @@ ammo:DesignedPhysicalSystem a owl:Class ;
         ammo:PhysicalArtifact,
         ammo:PhysicalSystem .
 
+ammo:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:comment "Every thing is an entity." ;
+    rdfs:isDefinedBy ammo: .
+
 ammo:PhysicalArtifact a owl:Class ;
     rdfs:label "Physical Artifact" ;
     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
@@ -98,9 +153,37 @@ ammo:PhysicalObject a owl:Class ;
     rdfs:isDefinedBy ammo: ;
     skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
 
+ammo:hasProperPart a owl:ObjectProperty ;
+    rdfs:label "has proper part" ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:Object a owl:Class ;
+    rdfs:label "Object" ;
+    rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:hasProperPart ;
+            owl:someValuesFrom ammo:Object ],
+        ammo:Entity .
+
 ammo:isDescribedBy a owl:ObjectProperty ;
     rdfs:label "is described by" ;
     rdfs:isDefinedBy ammo: .
+
+ammo:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:comment "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:hasProperPart ;
+            owl:someValuesFrom ammo:Process ],
+        ammo:Entity .
+
+ammo:RealizableEntity a owl:Class ;
+    rdfs:label "Realizable Entity" ;
+    rdfs:comment "A realizable entity is an attribute that is exhibited under some condition and is realized in some process." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Attribute .
 
 ammo: a owl:Ontology ;
     dcterms:contributor [ a sdo:Person ;
