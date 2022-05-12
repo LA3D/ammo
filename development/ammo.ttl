@@ -1,5 +1,4 @@
 @prefix ammo: <https://w3id.org/ammo/ont/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,11 +8,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-wd:Q108576266 a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "Center for Research Computing"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
 
 <https://w3id.org/ammo/module/system> a opla:Module ;
     skos:note "Module definitons for System" ;
@@ -30,26 +24,6 @@ ammo:isComponentOf a owl:ObjectProperty ;
     rdfs:domain ammo:DesignedComponent ;
     rdfs:isDefinedBy ammo: ;
     rdfs:range ammo:DesignedPhysicalSystem .
-
-wd:Q178848 a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "University of Notre Dame"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
-
-<https://orcid.org/0000-0001-7347-546X> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "dbrower@nd.edu"@en ;
-    sdo:name "Donald Brower"@en .
-
-<https://orcid.org/0000-0001-8214-7177> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "csweet1@nd.edu"@en ;
-    sdo:name "Christopher Sweet"@en .
-
-<https://orcid.org/0000-0003-4091-6059> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
-    sdo:name "Charles F Vardeman II" .
 
 ammo:DesignedArtifact a owl:Class ;
     rdfs:label "Designed Artifact" ;
@@ -75,11 +49,6 @@ ammo:Plan a owl:Class ;
     rdfs:label "Plan" ;
     rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan" ;
     rdfs:isDefinedBy ammo: .
-
-ammo:Simbachain a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "Simbachain"@en ;
-    sdo:url "https://simbachain.com/"^^xsd:anyURI .
 
 ammo:SystemDesign a owl:Class ;
     rdfs:label "System Design" ;
@@ -134,14 +103,26 @@ ammo:isDescribedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy ammo: .
 
 ammo: a owl:Ontology ;
-    rdfs:label "Additive Manufacturing for Maintenance Operations Ontology" ;
-    dc:contributor "Christopher Sweet",
-        "Donald Brower" ;
-    dc:creator "Charles Vardeman" ;
-    dcterms:contributor <https://orcid.org/0000-0001-7347-546X>,
-        <https://orcid.org/0000-0001-8214-7177> ;
+    dcterms:contributor [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Christopher Sweet" ;
+            sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Donald Brower" ;
+            sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Matthew Welz" ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Kirsten Stor" ] ;
     dcterms:created "2022-02-15"^^xsd:date ;
-    dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+    dcterms:creator [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+            sdo:name "Charles F. Vardeman II" ;
+            sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ] ;
     dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
@@ -149,10 +130,15 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
     dcterms:modified "2022-02-21"^^xsd:date,
         "2022-04-29"^^xsd:date ;
-    dcterms:publisher wd:Q178848,
-        ammo:Simbachain ;
+    dcterms:publisher [ a sdo:Organization ;
+            owl:sameAs wd:Q178848 ;
+            sdo:name "Center for Research Computing, University of Notre Dame" ;
+            sdo:url "https//crc.nd.edu"^^xsd:anyURI ],
+        [ a sdo:Organization ;
+            sdo:name "Simba Chain" ;
+            sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
+    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
     owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;

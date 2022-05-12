@@ -29,7 +29,6 @@
 
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
-                               rdfs:label "Additive Manufacturing for Maintenance Operations Ontology";
                                dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
                                owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
                                owl:versionInfo "0.0.1"@en ;
