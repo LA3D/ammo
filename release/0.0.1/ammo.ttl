@@ -1,25 +1,128 @@
 @prefix ammo: <https://w3id.org/ammo/ont/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wd: <http://wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-wd:Q108576266 a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "Center for Research Computing"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
+<https://w3id.org/ammo/module/system> a opla:Module ;
+    skos:note "Module definitons for System" ;
+    skos:prefLabel "ammo system module" .
+
+ammo:hasComponent a owl:ObjectProperty ;
+    rdfs:label "has component" ;
+    rdfs:domain ammo:DesignedPhysicalSystem ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignedComponent .
+
+ammo:isComponentOf a owl:ObjectProperty ;
+    rdfs:label "is component of" ;
+    rdfs:domain ammo:DesignedComponent ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignedPhysicalSystem .
+
+ammo:DesignedArtifact a owl:Class ;
+    rdfs:label "Designed Artifact" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:Design ],
+        ammo:PhysicalArtifact ;
+    skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
+    skos:note "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite" .
+
+ammo:PhysicalSystem a owl:Class ;
+    rdfs:label "Physical System" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:PhysicalObject ;
+    skos:definition """A physical object that isDescribedBy a SystemDesign .
+I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
+Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" .
+
+ammo:Plan a owl:Class ;
+    rdfs:label "Plan" ;
+    rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan" ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:SystemDesign a owl:Class ;
+    rdfs:label "System Design" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Design .
+
+ammo:Design a owl:Class ;
+    rdfs:label "Design" ;
+    rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:DesignedComponent a owl:Class ;
+    rdfs:label "Designed Component" ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:DesignedArtifact .
+
+ammo:DesignedPhysicalSystem a owl:Class ;
+    rdfs:label "Designed Physical System" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:SystemDesign ],
+        ammo:PhysicalArtifact,
+        ammo:PhysicalSystem .
+
+ammo:PhysicalArtifact a owl:Class ;
+    rdfs:label "Physical Artifact" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:Plan ],
+        ammo:PhysicalObject ;
+    skos:definition """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" .
+
+ammo:PhysicalObject a owl:Class ;
+    rdfs:label "Physical Object" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
+
+ammo:isDescribedBy a owl:ObjectProperty ;
+    rdfs:label "is described by" ;
+    rdfs:isDefinedBy ammo: .
 
 ammo: a owl:Ontology ;
-    dc:contributor "Christopher Sweet",
-        "Donald Brower" ;
-    dc:creator "Charles Vardeman" ;
-    dcterms:contributor <https://orcid.org/0000-0001-7347-546X>,
-        <https://orcid.org/0000-0001-8214-7177> ;
+    dcterms:contributor [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Christopher Sweet" ;
+            sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Donald Brower" ;
+            sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Matthew Welz" ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Kirsten Stor" ] ;
     dcterms:created "2022-02-15"^^xsd:date ;
-    dcterms:creator <https://orcid.org/0000-0003-4091-6059> ;
+    dcterms:creator [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+            sdo:name "Charles F. Vardeman II" ;
+            sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ] ;
     dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
@@ -27,39 +130,18 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
     dcterms:modified "2022-02-21"^^xsd:date,
         "2022-04-29"^^xsd:date ;
-    dcterms:publisher wd:Q178848,
-        ammo:Simbachain ;
+    dcterms:publisher [ a sdo:Organization ;
+            owl:sameAs wd:Q178848 ;
+            sdo:name "Center for Research Computing, University of Notre Dame" ;
+            sdo:url "https//crc.nd.edu"^^xsd:anyURI ],
+        [ a sdo:Organization ;
+            sdo:name "Simba Chain" ;
+            sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology Core"@en ;
-    vann:preferredNamespacePrefix "ammocore" ;
-    vann:preferredNamespaceUri "http://w3id.org/ammo/core/" ;
-    owl:imports <http://semanticscience.org/ontology/sio/v1.54/sio-release.owl> ;
-    owl:versionIRI <https://w3id.org/ammo/core/0.1> ;
+    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
+    vann:preferredNamespacePrefix "ammo" ;
+    vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
+    owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
     owl:versionInfo "0.0.1"@en ;
     sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
-
-wd:Q178848 a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "University of Notre Dame"@en ;
-    sdo:url "https://crc.nd.edu"^^xsd:anyURI .
-
-<https://orcid.org/0000-0001-7347-546X> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "dbrower@nd.edu"@en ;
-    sdo:name "Donald Brower"@en .
-
-<https://orcid.org/0000-0001-8214-7177> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "csweet1@nd.edu"@en ;
-    sdo:name "Christopher Sweet"@en .
-
-<https://orcid.org/0000-0003-4091-6059> a owl:NamedIndividual,
-        sdo:Person ;
-    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
-    sdo:name "Charles F Vardeman II" .
-
-ammo:Simbachain a owl:NamedIndividual,
-        sdo:Organization ;
-    sdo:name "Simbachain"@en ;
-    sdo:url "https://simbachain.com/"^^xsd:anyURI .
 

@@ -11,26 +11,27 @@ SHACL=ammo.shacl
 
 VERSION=` grep -i versionInfo modules/common/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
 
-if [ -f "$ONTOLOGY" ]; then
-    rm ${ONTOLOGY}.ttl
+# Make sure the version directory exists
+if [ ! -d "./release/${VERSION}" ]; then
+    mkdir ./release/${VERSION}
 fi
 
-if [ -f "$SHACL" ]; then
-    rm  ${SHACL}.ttl
+if [ -f "./release/${VERSION}/${ONTOLOGY}" ]; then
+    rm ./release/${VERSION}/${ONTOLOGY}.ttl
 fi
 
-$mergecmd merge $files -f ttl -o ./
-mv merged.ttl ${ONTOLOGY}.ttl
-$pylodecmd ${ONTOLOGY}.ttl -o ${ONTOLOGY}.html
-
-$mergecmd merge $shapefiles -f ttl -o ./
-mv merged.ttl ${SHACL}.ttl
-# $pylodecmd $SHACL
-
-# Copy ontology file to a specific version
-if [ ! -d "./versions/${VERSION}" ]; then
-    mkdir ./versions/${VERSION}
-    cp -f ${ONTOLOGY}.* ${SHACL}.* ./versions/${VERSION}
-else
-    cp -f ${ONTOLOGY}.* ${SHACL}.* ./versions/${VERSION}
+if [ -f "./release/${VERSION}/${SHACL}" ]; then
+    rm  ./release/${VERSION}/${SHACL}.ttl
 fi
+
+echo "Merging Ontology into Release ${VERSION}"
+$mergecmd merge $files -f ttl -o ./release/${VERSION}
+mv ./release/${VERSION}/merged.ttl ./release/${VERSION}/${ONTOLOGY}.ttl
+echo "Generating HTML Ontology Documentation for Release ${VERSION}"
+$pylodecmd ./release/${VERSION}/${ONTOLOGY}.ttl -o ./release/${VERSION}/${ONTOLOGY}.html
+
+echo "Merging SHACL Shapes into Release ${VERSION}"
+$mergecmd merge $shapefiles -f ttl -o ./release/${VERSION}
+mv ./release/${VERSION}/merged.ttl ./release/${VERSION}/${SHACL}.ttl
+echo "Generating HTML SHACL Shapes Documentation for Release ${VERSION}"
+$pylodecmd ./release/${VERSION}/${SHACL}.ttl -o ./release/${VERSION}/${SHACL}.html

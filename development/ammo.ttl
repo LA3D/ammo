@@ -133,7 +133,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:publisher [ a sdo:Organization ;
             owl:sameAs wd:Q178848 ;
             sdo:name "Center for Research Computing, University of Notre Dame" ;
-            sdo:url "https//crc.nd.edu"^^xsd:anyURI ],
+            sdo:url "https://crc.nd.edu"^^xsd:anyURI ],
         [ a sdo:Organization ;
             sdo:name "Simba Chain" ;
             sdo:url "https://simbachain.com/" ] ;

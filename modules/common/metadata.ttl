@@ -35,7 +35,7 @@
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
-		                           sdo:url "https//crc.nd.edu"^^xsd:anyURI ;
+		                           sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
                                    owl:sameAs wd:Q178848 ;
                                ],
                                [

@@ -4,8 +4,8 @@
 pdmdir=`pdm info |grep Packages | cut -d: -f2`
 mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
 pylodecmd="pdm run pylode"
-files='./modules/common/metadata.ttl ./modules/common/system.ttl '
-shapefiles='./modules/common/metadata-shacl.ttl ./modules/common/system.shacl.ttl'
+files=$(cat .github/modules.txt | awk -F, '{print $2}')
+shapefiles=$(cat .github/shapes.txt | awk -F, '{print $2}')
 ONTOLOGY=ammo
 SHACL=ammo.shacl
 
