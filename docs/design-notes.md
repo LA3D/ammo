@@ -13,7 +13,17 @@ Most of the AMMO System Module has been extracted from Object Hierarcy in the [D
 
 ### Process and Material Transformation
 
-The Semantic Science Integrated Ontology
+The [Semantic Science Integrated Ontology](https://jbiomedsem.biomedcentral.com/articles/10.1186/2041-1480-5-14) contains a core conceptual pattern for processes. The pattern requires modeling through the attribute class that is the top class for Quality
+
+> A quality is an attribute that is intrinsically associated with its bearer (or its parts), but whose >presence/absence and observed/measured value may vary.)
+
+```mermaid
+graph TD;
+sio:ObjectQuality --rdfs:subClassOf-->sio:Quality --rdfs:subClassOf--> sio:Attribute
+```
+
+The current pattern from [Gra.fo](https://app.gra.fo/editor/0bf9d8f7-ae73-4eea-bc99-041019393f00/public?token=2ce85b55b60d147750e9fb8ca646aef545522deeebee6a99648cbbd6087e95b9)
+![Grafo Pattern](./grafo/Process.png)
 
 ### Design Data Catalog
 
@@ -86,5 +96,10 @@ sosa:ObservableProperty rdfs:subClassOf sio:000005 #SIO quality
 RDA I-Adopt has released a set of [guidelines](https://doi.org/10.15497/RDA00071) and [Ontology](https://i-adopt.github.io/index.html) to help clarify the relationship between and Observable Property and a variable of interest. [Alignments to SOSA are also available](https://github.com/i-adopt).
 
 Additionally, [SOSA-SHACL: Shapes Constraint for the Sensor, Observation, Sample, and Actuator Ontology](https://dl.acm.org/doi/fullHtml/10.1145/3502223.3502235) paper has a section on SHACL constraints for the results documents. It is contained in a github repository [KWG-SHACL](https://github.com/KnowWhereGraph/KWG-SHACL) and [example test graphs](https://github.com/KnowWhereGraph/KWG-SHACL/tree/main/test/example-graphs).
+
+Quantity of Stuff ODP
+Quantity of stuff from [A Tutorial on Modular Ontology Modeling with Ontology Design Patterns:
+The Cooking Recipes Ontology](https://daselab.cs.ksu.edu/sites/default/files/mom-recipes-example.pdf)
+![Quantity of stuff](./grafo/Process.png)
 
 [Spatial Data on the Web Issue](https://github.com/w3c/sdw/issues/1267) "modeling units on properties instead of results"
