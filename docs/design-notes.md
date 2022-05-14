@@ -100,6 +100,6 @@ Additionally, [SOSA-SHACL: Shapes Constraint for the Sensor, Observation, Sample
 Quantity of Stuff ODP
 Quantity of stuff from [A Tutorial on Modular Ontology Modeling with Ontology Design Patterns:
 The Cooking Recipes Ontology](https://daselab.cs.ksu.edu/sites/default/files/mom-recipes-example.pdf)
-![Quantity of stuff](./grafo/Process.png)
+![Quantity of stuff](./grafo/quantityofstuff.png)
 
 [Spatial Data on the Web Issue](https://github.com/w3c/sdw/issues/1267) "modeling units on properties instead of results"

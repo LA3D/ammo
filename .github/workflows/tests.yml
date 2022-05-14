@@ -2,7 +2,7 @@ name: Test driven ontology development workflow
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - "**.md"
 jobs:
