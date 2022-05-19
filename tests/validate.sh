@@ -9,8 +9,8 @@ if [ -f "./apache-jena-${JENAVERSION}/bin/riot" ]; then
 else
     RIOT="riot"
 fi
-ONTPATHS=$(cat .github/modules.txt | awk -F, '{print $2}')
-SHAPEPATHS=$(cat .github/shapes.txt | awk -F, '{print $2}')
+ONTPATHS=$(cat tests/modules.txt | awk -F, '{print $2}')
+SHAPEPATHS=$(cat tests/shapes.txt | awk -F, '{print $2}')
 
 echo "Validating Ontology Modules"
 for path in "$ONTPATHS"
