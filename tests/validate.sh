@@ -2,7 +2,7 @@
 
 set -e
 
-JENAVERSION="4.4.0"
+JENAVERSION="4.5.0"
 
 if [ -f "./apache-jena-${JENAVERSION}/bin/riot" ]; then
     RIOT="./apache-jena-${JENAVERSION}/bin/riot"

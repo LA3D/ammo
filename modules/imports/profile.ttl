@@ -1,0 +1,92 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/profile/ontpub>
+    a prof:Profile ;
+    dcterms:created "2020-06-13"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+    dcterms:modified "2022-04-07"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/agldwg> ;
+    skos:definition """This is a profile of the OWL, RDFS, schema.org and SKOS ontologies used to define and annotate ontologies. It supplies requirements, defines testable rules and some other supporting resources for its use.
+    
+This profile is formulated according to the Profiles Vocabulary."""@en ;
+    skos:prefLabel "Ontology Publication Profile of OWL, RDFS, schema.org and SKOS (OntPub)" ;
+    prof:hasResource 
+        <https://w3id.org/profile/ontpub/spec> ,
+        <https://w3id.org/profile/ontpub/validator> ,
+        <https://w3id.org/profile/vocpub/htv> ,
+        <https://w3id.org/profile/ontpub/repo> ,
+        <https://w3id.org/profile/ontpub/example-01-valid> ,
+        <https://w3id.org/profile/ontpub/example-01-invalid> ;
+    prof:isProfileOf 
+        <http://www.w3.org/TR/owl-rdf-based-semantics> ,
+        <https://www.w3.org/TR/rdf-schema/> ,
+        <https://schema.org> ,
+        <https://www.w3.org/TR/skos-reference/> ;
+.
+    
+<https://w3id.org/profile/ontpub/spec>
+    skos:prefLabel "Specification Document"@en ;
+    dcterms:description "The normative, human-readable, listing of profile requirements"@en ;
+    dcterms:conformsTo <https://www.w3.org/TR/html52/> ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://w3id.org/profile/ontpub/spec"^^xsd:anyURI ;
+    prof:hasRole role:specification
+.
+
+<https://w3id.org/profile/ontpub/validator>
+    skos:prefLabel "Validator in SHACL"@en ;
+    dcterms:description "A SHACL Shapes file to be used to test the conformance of RDF data to this profile"@en ;
+    dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://w3id.org/profile/ontpub/validator"^^xsd:anyURI ;
+    prof:hasRole role:validation
+.
+
+<https://w3id.org/profile/vocpub/htv>
+    skos:prefLabel "VocPub's How to Validate"@en ;
+    dcterms:description "Written instructions on how to use the VocPub profile's validator on data which applies to this profile too."@en ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://w3id.org/profile/vocpub/htv"^^xsd:anyURI ;
+    prof:hasRole role:guidance
+.
+
+<https://w3id.org/profile/ontpub/repo>
+    skos:prefLabel "Profile code repository"@en ;
+    dcterms:description "Code repository storing all Profile artifacts"@en ;
+    prof:hasArtifact "https://w3id.org/profile/ontpub/repo"^^xsd:anyURI ;
+    prof:hasRole role:repository
+.
+
+<https://w3id.org/profile/ontpub/example-01-valid>
+    skos:prefLabel "Example 01 Valid"@en ;
+    dcterms:description "Example RDF data valid according to the validator"@en ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://w3id.org/profile/ontpub/example-01-valid"^^xsd:anyURI ;
+    prof:hasRole role:example ;
+    dcterms:conformsTo <https://w3id.org/profile/ontpub> ;
+.
+
+<https://w3id.org/profile/ontpub/example-01-invalid>
+    skos:prefLabel "Example 01 Inalid"@en ;
+    dcterms:description "Example RDF data invalid according to the validator. Notes on the invalid elements are given at the top of the file"@en ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://w3id.org/profile/ontpub/example-01-invalid"^^xsd:anyURI ;
+    prof:hasRole role:example ;
+.
+
+<https://linked.data.gov.au/org/agldwg> a sdo:Organization ;
+    sdo:name "Australian Government Linked Data Working Group" ;
+    sdo:url "https://www.linked.data.gov.au"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0002-8742-7730> a sdo:Person ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nicholas.car@anu.edu.au"^^xsd:anyURI ;
+    sdo:identifier "ttps://orcid.org/0000-0002-8742-7730"^^xsd:anyURI ;
+.

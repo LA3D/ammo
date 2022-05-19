@@ -20,7 +20,12 @@ jobs:
         with:
           distribution: "temurin" # See 'Supported distributions' for available options
           java-version: "11"
-      - name: Install dependencies
+      - name: Install Java Jena Command Line tools
+        run: |
+          curl -O https://dlcdn.apache.org/jena/binaries/apache-jena-4.5.0.tar.gz
+          tar xzf apache-jena-4.5.0.tar.gz
+          sh ./tests/validate.sh
+      - name: Install Python dependencies using pdm
         run: |
           python -m pip install --upgrade pip
           pip install pdm
@@ -29,8 +34,3 @@ jobs:
         working-directory: ./tests
         run: |
           make
-      - name: Test java
-        run: |
-          curl -O https://dlcdn.apache.org/jena/binaries/apache-jena-4.5.0.tar.gz
-          tar xzf apache-jena-4.4.0.tar.gz
-          sh ./.github/validate.sh
