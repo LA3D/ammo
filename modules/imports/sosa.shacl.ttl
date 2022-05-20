@@ -1,0 +1,749 @@
+#### These are SHACL shapes for the SOSA ontology ####
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-shacl: <http://stko-kwg.geog.ucsb.ed/sosa-shacl/> .
+
+#########################  Shapes for classes (14 in total in SOSA) ############################
+
+### Shape for class sosa:ActuatorableProperty 
+sosa-shacl:ActuatablePropertyConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:ActuatableProperty ;
+	
+	sh:property [
+	 	sh:path sosa:isActedOnBy ;
+	 	rdfs:comment "An actuatable property can only be acted on by an actuation."@en ;
+		sh:class sosa:Actuation ;
+	].
+
+### Shape for class sosa:Actuation
+sosa-shacl:ActuationConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Actuation ;
+	
+	sh:property [
+	 	sh:path sosa:madeByActuator ;
+	 	rdfs:comment "An actuation is made by mostly one actuator."@en ;
+		sh:class sosa:Actuator ;
+		#sh:minCount 1 ; 
+		sh:maxCount 1 ; 
+	];
+	sh:property [
+	 	sh:path sosa:usedProcedure ;
+	 	rdfs:comment "An actuation is made through a procedure."@en ;
+		sh:class sosa:Procedure ;
+	];
+	sh:property [
+	 	sh:path sosa:hasFeatureOfInterest ;
+	 	rdfs:comment "An actuation has one and only one feature of interest."@en ;
+		sh:class sosa:FeatureOfInterest ;
+		sh:minCount 1 ; 
+		sh:maxCount 1 ; 
+	];
+	sh:property [
+	 	sh:path sosa:actsOnProperty ;
+	 	rdfs:comment "An actuation acts at least on one actuable property."@en ;
+		sh:class sosa:ActuatableProperty ;
+		sh:minCount 1 ; 
+	];
+	sh:property [
+		rdfs:comment "An actuation can have hasResult or hasSimpleResult as the result, but not neither."@en ;
+		sh:or (
+			[
+			sh:path sosa:hasResult ;
+		 	sh:minCount 1 ;
+		 	sh:maxCount 1 ; 
+		 	sh:class sosa:Result ; 
+			]
+			[
+			sh:path sosa:hasSimpleResult ;
+			sh:minCount 1 ;
+			sh:maxCount 1 ; 
+			] 		   
+		) 	
+	] ;
+	sh:property [
+	    rdfs:comment "An actuatiin has to have either one phenomenonTime or one resultTime."@en ;
+	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
+	    ### has to be later than phenomenon time  
+		sh:or (
+			[
+			sh:path sosa:phenomenonTime ;
+		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ;
+		 	sh:class time:TemporalEntity ; 
+			]
+			[
+			sh:path sosa:resultTime ;
+			sh:maxCount 1 ;
+			sh:minCount 1 ;
+			sh:datatype xsd:dateTime ;
+			] 		   
+		) 
+	].
+
+### Shape for class sosa:Actuator 
+sosa-shacl:ActuatorConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Actuator ;
+	
+	sh:property [
+	 	sh:path ssn:implements ;
+	 	rdfs:comment "An actuator implements at least one actuation."@en ;
+		sh:minCount 1 ; 
+	];
+	
+	sh:property [
+	 	sh:path ssn:forProperty ;
+	 	rdfs:comment "An actuator corresponds to the actuatable property."@en ;
+		sh:class sosa:ActuatableProperty ;
+	];
+	
+	sh:property [
+	 	sh:path sosa:madeActuation ;
+	 	rdfs:comment "A actuator makes actuation(s)."@en ;
+		sh:class sosa:Actuation ;
+	].
+	
+### Shapes for the class sosa:FeatureOfInterest 
+sosa-shacl:FeatureOfInterestConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:FeatureOfInterest ;
+
+	sh:property [
+		sh:path sosa:hasSample ;
+		rdfs:comment "The sample of a feature of interest has to be from the class sosa:Sample."@en ;
+		sh:class sosa:Sample ;				
+	] ;
+
+	sh:property [
+		sh:path ssn:hasProperty ;
+		rdfs:comment "The property of a feature of interest has to be from the class ssn:Property."@en ;
+		sh:class ssn:Property ;
+		#sh:minCount 1 ;  ## there are cases where a feature of interst has no property
+	] .
+
+### Shape for class sosa:ObservableProperty
+sosa-shacl:ObservablePropertyConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:ObservableProperty ;
+	sh:property [
+		sh:path sosa:isObservedBy ;
+		rdfs:comment "An observable property can only be observed by instances from class sosa:Sensor."@en ;
+		sh:class sosa:Sensor ;				
+	] .	 
+
+### Shapes for class sosa:ObservationCollection
+sosa-shacl:ObservationCollectionConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:ObservationCollection ;
+	sh:property [
+		sh:path sosa:hasMember ;
+		rdfs:comment "We mandate the existence of a filler for sosa:hasMember." ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:path sosa:hasFeatureOfInterest ;
+		rdfs:comment "We constrain the number of fillers of sosa:hasFeatureOfInterest, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;		
+	] ;
+	sh:property [
+		sh:path sosa:hasUltimateFeatureOfInterest ;
+		rdfs:comment "We constrain the number of fillers of sosa:hasUltimateFeatureOfInterest, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:madeBySensor ;
+		rdfs:comment "We constrain the number of fillers of sosa:madeBySensor, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:observedProperty ;
+		rdfs:comment "We constrain the number of fillers of sosa:observedProperty, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:phenomenonTime ;
+		rdfs:comment "We constrain the number of fillers of sosa:phenomenonTime, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:resultTime ;
+		rdfs:comment "We constrain the number of fillers of sosa:resultTime, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] ;
+	sh:property [
+		sh:path sosa:usedProcedure ;
+		rdfs:comment "We constrain the number of fillers of sosa:usedProcedure, when the domain is sosa:ObservationCollection, to 1." ;
+		sh:maxCount 1 ;			
+	] .
+
+### Shapes for class sosa:Observation 
+sosa-shacl:ObservationConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Observation ;
+
+	sh:property [
+		sh:path sosa:madeBySensor ;
+		rdfs:comment "An observation is made by at most one sensor and the sensor can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class sosa:Sensor ;
+	] ;
+
+	sh:property [
+	 	sh:path sosa:usedProcedure  ;
+	 	rdfs:comment "An observation can only made via a procedure."@en ;
+		sh:class sosa:Procedure ;	
+	] ;
+	sh:property [
+	 	sh:path sosa:hasFeatureOfInterst ;
+	 	rdfs:comment "An observation is made on one and exactly one feature of interest."@en ;
+		sh:maxCount 1 ; 
+		sh:minCount 1 ;
+		sh:class sosa:FeatureOfInterest ;
+	] ;
+	sh:property [
+		sh:path sosa:observedProperty ;
+		rdfs:comment "An observation is about one and only one obervable property."@en ;
+		sh:maxCount 1 ;
+		sh:minCount 1 ; 
+		sh:class sosa:ObservableProperty ;			
+	] ;
+	sh:property [
+		sh:path ssn:wasOriginatedBy ;
+		rdfs:comment "An observation is originated from at most one stimulus and the stimulus can be implicit (unknown)."@en ;
+		sh:maxCount 1 ;
+		sh:class ssn:Stimulus ;			
+	] ;
+	sh:property [
+	    rdfs:comment "An observation has to have one phenomenon time or one result time. Having both is OK but the result time has to be latter than the phenomenon time."@en ;
+	    ### a missing constraint here is that if both phenomenonTime and resultTime exist, resultTime 
+	    ### has to be later than phenomenon time  
+		sh:or (
+			[
+			sh:path sosa:phenomenonTime ;
+		 	sh:maxCount 1 ;
+		 	sh:minCount 1 ;
+		 	sh:class time:TemporalEntity ; 
+			]
+			[
+			sh:path sosa:resultTime ;
+			sh:maxCount 1 ;
+			sh:minCount 1 ;
+			sh:datatype xsd:dateTime ;
+			] 		   
+		) 
+	] ;
+	sh:property [
+		rdfs:comment "An observation has to have a result or a simple result. Having both is OK."@en ;
+		sh:or (
+			[
+			sh:path sosa:hasResult ;
+		 	sh:minCount 1 ;
+		 	sh:class sosa:Result ; 
+			]
+			[
+			sh:path sosa:hasSimpleResult ;
+			sh:minCount 1 ;
+			] 		   
+		) 	
+	] .
+
+### Shapes for class sosa:Platform
+sosa-shacl:PlatformConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Platform ;
+	sh:property [
+		sh:path sosa:hosts ;
+		rdfs:comment "A platform only hosts a system."@en ;
+		sh:class ssn:System ;
+		
+	] ;
+	sh:property [
+		sh:path ssn:inDeployment ;
+		rdfs:comment "A platform is in deployment of a deployment."@en ;
+		sh:class ssn:Deployment ;
+	] .
+
+### Shapes for class sosa:Procedure
+sosa-shacl:ProcedureConstraint
+	a sh:NodeShape ;
+	sh:targetClass ssn:Procedure ;
+	
+	sh:property [
+		sh:path ssn:hasInput ;
+		rdfs:comment "A procdedure has input."@en ;
+		sh:class ssn:Input ;	
+	] ;
+	sh:property [
+		sh:path ssn:hasOutput ;
+		rdfs:comment "A procedure has output."@en ;
+		sh:class ssn:Output ;
+	] ;
+	sh:property [
+		sh:path ssn:implementedBy ;
+		rdfs:comment "A procedure is implemented by a system."@en ;
+		sh:class ssn:System ;
+	] .
+
+### Shapes for class sosa:Result
+sosa-shacl:ResultConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Result ;
+	sh:property [
+			sh:path sosa:isResultOf ;
+			rdfs:comment "A result is from at least one observation/actuation/sampling."@en ;
+			sh:minCount 1 ;
+			sh:or ( ## this might be the same to the property constraint of isResultOf (?)
+				[ sh:class sosa:Observation ]  # sh:class sosa:Observation ;  ## this overlaps with the ObservationConstraint 
+				[ sh:class sosa:Actuation ] 
+				[ sh:class sosa:Sampling ] 
+			) ;
+		] .
+
+### Shape for class sosa:Sample
+sosa-shacl:SampleConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sample ;
+	sh:property [
+	 	sh:path sosa:isResultOf ;
+	 	rdfs:comment "A sample is the result of at least one sampling act."@en ;
+		sh:class sosa:Sampling ;
+		sh:minCount 1 ; 
+	] ;
+	sh:property [
+	 	sh:path sosa:isSampleOf ;
+	 	rdfs:comment "A sample is representative of at least one feature of interest."@en ;
+		sh:class sosa:FeatureOfInterest ;
+		sh:minCount 1 ; 
+	] .
+
+### Shape for class sosa:Sampler
+sosa-shacl:SamplerConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sampler ;
+	
+	sh:property [
+		sh:path ssn:implements ;
+		rdfs:comment "A sampler has to implement at least one sampling procedure."@en ;
+		sh:minCount 1 ; 				
+	] ;
+	sh:property [
+		sh:path sosa:madeSampling ;
+		rdfs:comment "A sampler makes sampling."@en ;
+		sh:class sosa:Sampling ;					
+	] .
+
+### Shape for class sosa:Sampling
+sosa-shacl:SamplingConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sampling ;
+	
+	sh:property [
+		sh:path sosa:madeBySampler ;
+		rdfs:comment "A sampling act is made by one and only one sampler."@en ;
+		sh:class sosa:Sampler ;	
+		#sh:minCount 1 ; ## the sampler might be implicit	
+		sh:maxCount 1 ;
+	] ;
+	
+	sh:property [
+		sh:path sosa:hasFeatureOfInterest ;
+		rdfs:comment "A sampling act is carried out for one and only one feature of interest."@en ;
+		sh:class sosa:FeatureOfInterest ;	
+		sh:minCount 1 ;		
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:path sosa:hasResult ;
+		rdfs:comment "A sampling act always results in at least one sample."@en ;
+		sh:class sosa:Sample ;	
+		sh:minCount 1 ;		
+	] ;
+	sh:property [
+		sh:path sosa:usedProcedure ;
+		rdfs:comment "A sampling act applies a procedure."@en ;
+		sh:class sosa:Procedure ;	
+	];
+	sh:property [
+		sh:path sosa:resultTime ;
+		rdfs:comment "A sampling act produces a result during exactly one temporal entity."@en ;
+		sh:minCount 1 ;		
+		sh:maxCount 1 ;	
+	].
+
+### Shapes for class sosa:Sensor
+sosa-shacl:SensorConstraint
+	a sh:NodeShape ;
+	sh:targetClass sosa:Sensor ;
+	##  We choose not to require a filler for ssn:implements.
+
+	sh:property [
+		sh:path sosa:observes ;
+		rdfs:comment "A sensor oberses observable property."@en ;
+		sh:class sosa:ObservableProperty ;
+	] ;
+	sh:property [
+		sh:path ssn:detects ;
+		rdfs:comment "A sensor detects observation."@en ;
+		sh:class sosa:Stimulus ;
+	] ;
+	sh:property [
+		sh:path sosa:madeObservation ;
+		rdfs:comment "A sensor makes observations."@en ;
+		sh:class sosa:Observation ;	
+	] .
+
+
+###################### Shapes for object properties (23 in total in SOSA)######################
+### Shapes for class sosa:actsOnProperty
+sosa-shacl:actsOnPropertyDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:actsOnProperty ;
+	rdfs:comment "We restrict the domain of sosa:actsOnProperty to sosa:Actuation" ;
+	sh:class sosa:Actuation .
+
+sosa-shacl:actsOnPropertyRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:actsOnProperty ;
+	rdfs:comment "We restrict the range of sosa:actsOnProperty to sosa:ActuatableProperty" ;
+	sh:class sosa:ActuatableProperty .
+
+### Shapes for property sosa:hasFeatureOfInterest
+sosa-shacl:hasFeatureOfInterestOfDomainConstraint
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:hasFeatureOfInterest ;
+	rdfs:comment "We restrict the domain of sosa:hasFeatureOfInterest to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
+
+sosa-shacl:hasFeatureOfInterestOfRangeConstraint
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:hasFeatureOfInterest ;
+	rdfs:comment "We restrict the range of sosa:hasFeatureOfInterest to sosa:FeatureOfInterest, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:FeatureOfInterest ]
+			[ sh:class sosa:Sample ]
+		  ) .
+
+### Shapes for property sosa:hasResult
+sosa-shacl:hasResultDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:hasResult ;
+	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
+
+sosa-shacl:hasResultRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:hasResult ;
+	rdfs:comment "We restrict the range of sosa:hosts to sosa:Result, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:Result ]
+			[ sh:class sosa:Sample ]
+		  ) .
+
+### Shapes for class sosa:hasSample
+sosa-shacl:hasSampleDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sh:hasSample ;
+	rdfs:comment "We restrict the domain of sosa:hasSample to sosa:FeatureOfInterest" ;
+	sh:class sosa:FeatureOfInterest .
+
+sosa-shacl:hasSampleRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sh:hasSample ;
+	rdfs:comment "We restrict the range of sosa:hasSample to sosa:Sample" ;
+	sh:class sosa:Sample .
+
+
+### Shapes for property sosa:hasSimpleResult
+sosa-shacl:hasSimpleResultDomainConstraint
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:hasSimpleResult ;
+	rdfs:comment "We restrict the domain of sosa:hasSimpleResult to sosa:Observation, sosa:Actuation" ;
+	sh:or (
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Actuation ]
+		  ) .
+
+
+### Shapes for property sosa:hosts
+sosa-shacl:hostsDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the domain of sosa:hosts to sosa:Platform" ;
+	sh:class  	sosa:Platform .
+
+sosa-shacl:hostsRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the range of sosa:hosts to sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
+	sh:or (
+			[ sh:class sosa:Actuator ]
+			[ sh:class sosa:Sensor ]
+			[ sh:class sosa:Sampler ]
+			[ sh:class sosa:Platform ]
+		  ) .
+
+### Shapes for class sosa:isActedOnBy
+sosa-shacl:isActedOnByDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isActedOnBy ;
+	rdfs:comment "We restrict the domain of sosa:isActedOnBy to sosa:ActuatableProperty" ;
+	sh:class sosa:ActuatableProperty .
+
+sosa-shacl:isActedOnByRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:isActedOnBy ;
+	rdfs:comment "We restrict the range of sosa:isActedOnBy to sosa:Actuation" ;
+	sh:class sosa:Actuation .
+
+
+### Shapes for property sosa:isFeatureOfInterestOf
+sosa-shacl:isFeatureOfInterestOfDomainConstraint
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isFeatureOfInterest ;
+	rdfs:comment "We restrict the domain of sosa:isFeatureOfInterest to sosa:FeatureOfInterest, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:FeatureOfInterest ]
+			[ sh:class sosa:Sample ]
+		  ) .
+
+sosa-shacl:isFeatureOfInterestOfRangeConstraint
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:hosts ;
+	rdfs:comment "We restrict the range of sosa:isFeatureOfInterest to sosa:Observation, sosa:Actuation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
+
+### Shapes for property sosa:isHostedBy
+sosa-shacl:isHostedByDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isHostedBy ;
+	rdfs:comment "We restrict the domain of sosa:isHostedBy to 	sosa:Actuator, sosa:Sensor, sosa:Sampler, or sosa:Platform" ;
+	sh:or (
+			[ sh:class sosa:Actuator ]
+			[ sh:class sosa:Sensor ]
+			[ sh:class sosa:Sampler ]
+			[ sh:class sosa:Platform ]
+		  ) .
+
+sosa-shacl:isHostedByRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:isHostedBy ;
+	rdfs:comment "We restrict the range of sosa:isHostedBy to sosa:Platform" ;
+	sh:class sosa:Platform .
+
+### Shapes for property sosa:isObservedBy
+sosa-shacl:isObservedByDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isObservedBy ;
+	rdfs:comment "We restrict the domain of sosa:isObservedBy to sosa:Sensor" ;
+	sh:class sosa:ObservableProperty .
+
+sosa-shacl:isObservedByRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:isObservedBy ;
+	rdfs:comment "We restrict the range of sosa:isObservedBy to sosa:ObservableProperty" ;
+	sh:class sosa:Sensor .
+
+### Shapes for property sosa:isResultOf
+sosa-shacl:isResultOfDomainConstraint
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isResultOf ;
+	rdfs:comment "We restrict the domain of sosa:isResultOf to sosa:Result, sosa:Sample" ;
+	sh:or (
+			[ sh:class sosa:Result ]
+			[ sh:class sosa:Sample ]
+		  ) .
+
+sosa-shacl:isResultOfRangeConstraint
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:isResultOf ;
+	rdfs:comment "We restrict the range of sosa:isResultOf to sosa:Actuation, sosa:Observation, and sosa:Sampling";
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
+
+### Shapes for class sosa:isSampleOf
+sosa-shacl:isSampleOfDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:isSampleOf ;
+	rdfs:comment "We restrict the domain of sosa:isSampleOf to sosa:Sample" ;
+	sh:class sosa:Sample .
+
+sosa-shacl:isSampleOfRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:isSampleOf ;
+	rdfs:comment "We restrict the range of sosa:isSampleOf to sosa:FeatureOfInterest" ;
+	sh:class sosa:FeatureOfInterest .
+
+### Shapes for class sosa:madeActuation
+sosa-shacl:madeActuationDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeActuation ;
+	rdfs:comment "We restrict the domain of sosa:madeActuation to sosa:Actuator" ;
+	sh:class sosa:Actuator .
+
+sosa-shacl:madeActuationRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeActuation ;
+	rdfs:comment "We restrict the range of sosa:madeActuation to sosa:Actuation" ;
+	sh:class sosa:Actuation .
+
+### Shapes for class sosa:madeByActuator
+sosa-shacl:madeByActuatorDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeByActuator ;
+	rdfs:comment "We restrict the domain of sosa:madeByActuator to sosa:Actuation" ;
+	sh:class sosa:Actuation .
+
+sosa-shacl:madeByActuatorRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeByActuator ;
+	rdfs:comment "We restrict the range of sosa:madeByActuator to sosa:Actuator" ;
+	sh:class sosa:Actuator .
+
+### Shapes for property sosa:madeBySampler
+sosa-shacl:madeBySamplerDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeBySampler ;
+	rdfs:comment "We restrict the domain of sosa:madeBySampler to sosa:Sampling" ;
+	sh:class sosa:Sampling .
+
+sosa-shacl:madeBySamplerRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeBySampler ;
+	rdfs:comment "We restrict the range of sosa:madeBySampler to sosa:Sampler" ;
+	sh:class sosa:Sampler .
+
+### Shapes for class sosa:madeBySensor
+sosa-shacl:madeBySensorDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeBySensor ;
+	rdfs:comment "We restrict the domain of sosa:madeBySensor to sosa:Observation" ;
+	sh:class sosa:Observation .
+
+sosa-shacl:madeBySensorRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeBySensor ;
+	rdfs:comment "We restrict the range of sosa:madeBySensor to sosa:BySensor" ;
+	sh:class sosa:Sensor .
+
+### Shapes for class sosa:madeObservation
+sosa-shacl:madeObservationDomainConstraint
+	a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeObservation ;
+	rdfs:comment "We restrict the domain of sosa:madeObservation to sosa:Sensor" ;
+	sh:class sosa:Sensor .
+
+sosa-shacl:madeObservationRangeConstraint
+	a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeObservation ;
+	rdfs:comment "We restrict the range of sosa:madeObservation to sosa:Observation" ;
+	sh:class sosa:Observation .
+
+### Shapes for property sosa:madeSampling
+sosa-shacl:madeSamplingDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:madeSampling ;
+	rdfs:comment "We restrict the domain of sosa:madeSampling to sosa:Sampler" ;
+	sh:class sosa:Sampler .
+
+sosa-shacl:madeSamplingRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:madeSampling ;
+	rdfs:comment "We restrict the range of sosa:madeSampling to sosa:Sampling" ;
+	sh:class sosa:Sampling .
+
+### Shapes for property sosa:observes
+sosa-shacl:observesDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:observes ;
+	rdfs:comment "We restrict the domain of sosa:observes to sosa:Sensor" ;
+	sh:class sosa:Sensor .
+
+sosa-shacl:observesRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:observes ;
+	rdfs:comment "We restrict the range of sosa:observes to sosa:ObservableProperty" ;
+	sh:class sosa:ObservableProperty .
+
+### Shapes for property sosa:observedProperty
+sosa-shacl:observedPropertyDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:observedProperty ;
+	rdfs:comment "We restrict the domain of sosa:observedProperty to sosa:Observation" ;
+	sh:class  	sosa:Observation .
+
+sosa-shacl:observedPropertyRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:observedProperty ;
+	rdfs:comment "We restrict the range of sosa:observedProperty to sosa:ObservableProperty" ;
+	sh:class sosa:ObservableProperty .
+
+### Shapes for property sosa:phenomenonTime
+sosa-shacl:phenomenonTimeDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:phenomenonTime ;
+	rdfs:comment "We restrict the domain of sosa:phenomenonTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+		  [sh:class sosa:Actuation ]
+		  [sh:class sosa:Observation ]
+		  [sh:class sosa:Sampling ]
+		)  .
+
+sosa-shacl:phenomenonTimeRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:phenomenonTime ;
+	rdfs:comment "We restrict the range of sosa:phenomenonTime to time:TemporalEntity" ;
+	sh:class time:TemporalEntity .
+
+### Shapes for property sosa:resultTime
+sosa-shacl:resultTimeDomainConstraint
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:resultTime ;
+	rdfs:comment "We restrict the domain of sosa:resultTime to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		  ) .
+
+sosa-shacl:resultTimeRangeConstraint
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:resultTime ;
+	rdfs:comment "We restrict the range of sosa:resultTime to xsd:dateTime";
+	sh:datatype xsd:dateTime . 
+
+### Shapes for property sosa:usedProcedure
+sosa-shacl:usedProcedureDomainConstraint 
+    a sh:NodeShape ;
+	sh:targetSubjectsOf sosa:usedProcedure ;
+	rdfs:comment "We restrict the domain of sosa:usedProcedure to sosa:Actuation, sosa:Observation, sosa:Sampling" ;
+	sh:or (
+			[ sh:class sosa:Actuation ]
+			[ sh:class sosa:Observation ]
+			[ sh:class sosa:Sampling ]
+		).
+
+sosa-shacl:usedProcedureRangeConstraint 
+    a sh:NodeShape ;
+	sh:targetObjectsOf sosa:usedProcedure ;
+	rdfs:comment "We restrict the range of sosa:usedProcedure to sosa:Procedure" ;
+	sh:class sosa:Procedure .

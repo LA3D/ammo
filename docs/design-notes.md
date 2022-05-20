@@ -27,6 +27,8 @@ The current pattern from [Gra.fo](https://app.gra.fo/editor/0bf9d8f7-ae73-4eea-b
 
 ### Design Data Catalog
 
+#### HCLS Group ShEx and SHACL for [HCLS dataset description files](https://www.w3.org/TR/hcls-dataset/) in [Michel Dumontier's github](https://github.com/micheldumontier/hcls-shex)
+
 ### Quantity Kinds for Specifications and Observations in QUDT
 
 ## Existing Additive Manufacturing Ontologies
