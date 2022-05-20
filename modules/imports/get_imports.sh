@@ -36,6 +36,14 @@ curl -O https://raw.githubusercontent.com/qudt/qudt-public-repo/master/vocab/uni
 curl -O https://github.com/qudt/qudt-public-repo/blob/master/schema/SCHEMA_QUDT-v2.1.ttl
 
 
+# Semantic Science Integrated Ontology
+# TODO: Only import release modules https://github.com/MaastrichtU-IDS/semanticscience/tree/master/ontology/sio/release as needed since sio is pretty large
+curl -O https://raw.githubusercontent.com/MaastrichtU-IDS/semanticscience/master/ontology/sio.owl
+if  [ -x "$(command -v riot)" ]; then
+  riot --output=turtle sio.owl > sio.ttl
+  rm sio.owl
+fi
+
 # W3C DCAT v2.0 -- Note content negotiation for turtle serialization by default returns html docs
 # curl -H "Accept: text/turtle" -O http://www.w3.org/ns/dcat
 
