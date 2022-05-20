@@ -55,6 +55,9 @@ curl -O https://raw.githubusercontent.com/w3c/dxwg/gh-pages/dcat/rdf/dcat3.ttl
 # DCAT Profiles
 curl -H "Accept: text/turtle" -O http://www.w3.org/ns/dx/prof/
 
+# W3C Location Ontology
+curl -O https://www.w3.org/ns/locn.ttl
+
 # Ontpub profile https://agldwg.github.io/ontpub-profile/profile.html
 curl -O https://raw.githubusercontent.com/AGLDWG/ontpub-profile/main/profile.ttl
 
