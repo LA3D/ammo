@@ -10,9 +10,17 @@
 - [Additive Manufacturing](https://www.wikidata.org/wiki/Q360931)
 - [Workpiece](https://www.wikidata.org/wiki/Q2560552)
 
+### Instances of 3d Printer
+
+- [Wikidata Sparql Results](https://w.wiki/5Dqa)
+- [Prusa i3](https://www.wikidata.org/wiki/Q24885444)
+
 ## Material Properties
 
 - [SAE 316L Stainless Steel](https://www.wikidata.org/wiki/Q28453931)
+- [Alloy SPARQL Query](https://w.wiki/5DqL)
+- [Stainless Steel](https://w.wiki/5DqM)
+- [austenitic stainless steel ](https://w.wiki/5DqP)
 
 ### Modeling of printer type and part of series
 
