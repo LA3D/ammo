@@ -70,11 +70,13 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                    a sdo:Person ;
                                    sdo:name "Matthew Welz" ;
                                    sdo:affiliation "Simbachain Inc";
+                                   sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ;
                                ],
                                [
                                    a sdo:Person ;
                                    sdo:name "Kirsten Stor" ;
                                    sdo:affiliation "Simbachain Inc";
+                                   sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ; 
                                ];
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                                vann:preferredNamespacePrefix "ammosh" ;

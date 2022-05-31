@@ -67,11 +67,13 @@
                                    a sdo:Person ;
                                    sdo:name "Matthew Welz" ;
                                    sdo:affiliation "Simbachain Inc";
+                                   sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ;
                                ],
                                [
                                    a sdo:Person ;
                                    sdo:name "Kirsten Stor" ;
                                    sdo:affiliation "Simbachain Inc";
+                                   sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ;
                                ];
                                dcterms:created "2022-02-15"^^xsd:date ;
                                dcterms:modified "2022-05-12"^^xsd:date ;
