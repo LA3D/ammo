@@ -3,6 +3,7 @@
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix sio: <http://semanticscience.org/resource/> .
@@ -22,11 +23,29 @@ ammo:Capability a owl:Class ;
     rdfs:subClassOf ammo:RealizableEntity ;
     prov:wasQuotedFrom "http://semanticscience.org/resource/" .
 
+ammo:MaterialTransformation a owl:Class ;
+    rdfs:label "Material Transformation" ;
+    rdfs:comment "A material transformation is a process that transforms material from one form to another." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Process .
+
 ammo:Role a owl:Class ;
     rdfs:label "role" ;
     rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." ;
     rdfs:isDefinedBy ammo: ;
     rdfs:subClassOf ammo:RealizableEntity .
+
+ammo:describes a owl:ObjectProperty ;
+    rdfs:label "describes" ;
+    rdfs:domain ammo:Design ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Component .
+
+ammo:designspecifcationtype a owl:ObjectProperty ;
+    rdfs:label "designSpecifcationType" ;
+    rdfs:domain ammo:DesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Designspecificationtype .
 
 ammo:existsAt a owl:ObjectProperty ;
     rdfs:label "exists at" ;
@@ -55,6 +74,18 @@ ammo:hasComponentPart a owl:ObjectProperty ;
     owl:inverseOf ammo:isComponentPartOf ;
     skos:example "a human has blood as a component part"@en .
 
+ammo:hasmaterial a owl:ObjectProperty ;
+    rdfs:label "hasMaterial" ;
+    rdfs:domain ammo:Materialdesignspecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Material .
+
+ammo:hasquantitykind a owl:ObjectProperty ;
+    rdfs:label "hasQuantityKind" ;
+    rdfs:domain ammo:Quantity ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Quantitykind .
+
 ammo:isComponentOf a owl:ObjectProperty ;
     rdfs:label "is component of" ;
     rdfs:domain ammo:DesignedComponent ;
@@ -73,6 +104,12 @@ ammo:isRealizedIn a owl:ObjectProperty ;
     rdfs:isDefinedBy ammo: ;
     rdfs:range ammo:Process .
 
+ammo:isSpecifiedBy a owl:ObjectProperty ;
+    rdfs:label "is specified by" ;
+    rdfs:domain ammo:Component ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignSpecification .
+
 ammo:isSurroundedBy a owl:ObjectProperty ;
     rdfs:label "is surrounded by"@en ;
     dcterms:description "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."@en ;
@@ -80,6 +117,18 @@ ammo:isSurroundedBy a owl:ObjectProperty ;
     rdfs:subPropertyOf ammo:isContainedIn ;
     owl:equivalentProperty sio:SIO_000323 ;
     owl:inverseOf ammo:surrounds .
+
+ammo:ofquantity a owl:ObjectProperty ;
+    rdfs:label "ofQuantity" ;
+    rdfs:domain ammo:Quantitydesignspecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Quantity .
+
+ammo:specifies a owl:ObjectProperty ;
+    rdfs:label "specifies" ;
+    rdfs:domain ammo:DesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Component .
 
 <https://w3id.org/ammo/module/process/> a opla:Module,
         owl:Ontology .
@@ -99,6 +148,10 @@ ammo:DesignedArtifact a owl:Class ;
         ammo:PhysicalArtifact ;
     skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
     skos:note "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite" .
+
+ammo:Designspecificationtype a owl:Class ;
+    rdfs:label "DesignSpecificationType" ;
+    rdfs:isDefinedBy ammo: .
 
 ammo:PhysicalSystem a owl:Class ;
     rdfs:label "Physical System" ;
@@ -180,13 +233,6 @@ ammo:surrounds a owl:ObjectProperty ;
     rdfs:subPropertyOf ammo:contains ;
     owl:equivalentProperty sio:SIO_000324 .
 
-ammo:Design a owl:Class ;
-    rdfs:label "Design" ;
-    rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
-A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
-While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
-    rdfs:isDefinedBy ammo: .
-
 ammo:DesignedComponent a owl:Class ;
     rdfs:label "Designed Component" ;
     rdfs:isDefinedBy ammo: ;
@@ -203,12 +249,9 @@ ammo:DesignedPhysicalSystem a owl:Class ;
         ammo:PhysicalSystem .
 
 ammo:Entity a owl:Class ;
-    rdfs:label "Entity",
-        "entity"@en ;
+    rdfs:label "entity"@en ;
     dcterms:description "Every thing is an entity."@en ;
-    rdfs:comment "Every thing is an entity." ;
-    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl>,
-        ammo: ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
     owl:equivalentClass sio:SIO_000000 .
 
 ammo:PhysicalArtifact a owl:Class ;
@@ -229,6 +272,12 @@ ammo:PhysicalObject a owl:Class ;
     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
     skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
+
+ammo:Quantity a owl:Class ;
+    rdfs:label "Quantity" ;
+    rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent." ;
+    rdfs:isDefinedBy ammo: ;
+    owl:equivalentClass qudt:Quantity .
 
 ammo:isDirectPartOf a owl:ObjectProperty ;
     rdfs:label "is direct part of"@en ;
@@ -286,8 +335,10 @@ ammo:hasProperPart a owl:AsymmetricProperty,
     rdfs:label "has proper part",
         "has proper part"@en ;
     dcterms:description "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."@en ;
+    rdfs:domain ammo:Design ;
     rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl>,
         ammo: ;
+    rdfs:range ammo:DesignSpecification ;
     rdfs:subPropertyOf ammo:hasPart ;
     owl:equivalentProperty sio:SIO_000053 ;
     owl:inverseOf ammo:isProperPartOf ;
@@ -295,6 +346,25 @@ ammo:hasProperPart a owl:AsymmetricProperty,
 
 ammo:isDescribedBy a owl:ObjectProperty ;
     rdfs:label "is described by" ;
+    rdfs:domain ammo:Component ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Design .
+
+ammo:DesignSpecification a owl:Class ;
+    rdfs:label "Design Specification" ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:RealizableEntity a owl:Class ;
+    rdfs:label "Realizable Entity" ;
+    rdfs:comment "A realizable entity is an attribute that is exhibited under some condition and is realized in some process." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Attribute .
+
+ammo:Design a owl:Class ;
+    rdfs:label "Design" ;
+    rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
     rdfs:isDefinedBy ammo: .
 
 ammo:Process a owl:Class ;
@@ -305,12 +375,6 @@ ammo:Process a owl:Class ;
             owl:onProperty ammo:hasProperPart ;
             owl:someValuesFrom ammo:Process ],
         ammo:Entity .
-
-ammo:RealizableEntity a owl:Class ;
-    rdfs:label "Realizable Entity" ;
-    rdfs:comment "A realizable entity is an attribute that is exhibited under some condition and is realized in some process." ;
-    rdfs:isDefinedBy ammo: ;
-    rdfs:subClassOf ammo:Attribute .
 
 ammo: a owl:Ontology ;
     dcterms:contributor [ a sdo:Person ;
@@ -323,10 +387,12 @@ ammo: a owl:Ontology ;
             sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
         [ a sdo:Person ;
             sdo:affiliation "Simbachain Inc" ;
-            sdo:name "Matthew Welz" ],
+            sdo:name "Matthew Welz" ;
+            sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ],
         [ a sdo:Person ;
             sdo:affiliation "Simbachain Inc" ;
-            sdo:name "Kirsten Stor" ] ;
+            sdo:name "Kirsten Stor" ;
+            sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ] ;
     dcterms:created "2022-02-15"^^xsd:date ;
     dcterms:creator [ a sdo:Person ;
             sdo:affiliation "University of Notre Dame" ;

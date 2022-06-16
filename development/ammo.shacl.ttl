@@ -19,10 +19,12 @@
             sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
         [ a sdo:Person ;
             sdo:affiliation "Simbachain Inc" ;
-            sdo:name "Matthew Welz" ],
+            sdo:name "Matthew Welz" ;
+            sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ],
         [ a sdo:Person ;
             sdo:affiliation "Simbachain Inc" ;
-            sdo:name "Kirsten Stor" ] ;
+            sdo:name "Kirsten Stor" ;
+            sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ] ;
     dcterms:creator [ a sdo:Person ;
             sdo:affiliation "University of Notre Dame" ;
             sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
