@@ -57,7 +57,7 @@ ammo:describes rdf:type owl:ObjectProperty ;
 ### https://w3id.org/ammo/ont/designspecifcationtype
 ammo:designspecifcationtype rdf:type owl:ObjectProperty ;
                           rdfs:domain ammo:DesignSpecification ;
-                          rdfs:range ammo:Designspecificationtype ;
+                          rdfs:range ammo:DesignSpecificationType ;
                           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                           rdfs:label "designSpecifcationType" .
 
@@ -71,21 +71,11 @@ ammo:hasProperPart rdf:type owl:ObjectProperty ;
 
 
 ###  https://w3id.org/ammo/ont/hasmaterial
-ammo:hasmaterial rdf:type owl:ObjectProperty ;
-               rdfs:domain ammo:Materialdesignspecification ;
+ammo:hasMaterial rdf:type owl:ObjectProperty ;
+               rdfs:domain ammo:MaterialDesignSpecification ;
                rdfs:range ammo:Material ;
                rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                rdfs:label "hasMaterial" .
-
-
-### https://w3id.org/ammo/ont/hasquantitykind
-ammo:hasquantitykind rdf:type owl:ObjectProperty ;
-                   rdfs:domain ammo:Quantity ;
-                   rdfs:range ammo:Quantitykind ;
-                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-                   rdfs:label "hasQuantityKind" .
-
-
 
 ###  https://w3id.org/ammo/ont/isDescribedBy
 ammo:isDescribedBy rdf:type owl:ObjectProperty ;
@@ -105,7 +95,7 @@ ammo:isSpecifiedBy rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/ammo/ont/ofquantity
 ammo:ofquantity rdf:type owl:ObjectProperty ;
-              rdfs:domain ammo:Quantitydesignspecification ;
+              rdfs:domain ammo:QuantityDesignSpecification ;
               rdfs:range ammo:Quantity ;
               rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
               rdfs:label "ofQuantity" .
@@ -151,7 +141,7 @@ ammo:DesignSpecification rdf:type owl:Class ;
 
 
 ### https://w3id.org/ammo/ont/Designspecificationtype
-ammo:Designspecificationtype rdf:type owl:Class ;
+ammo:DesignSpecificationType rdf:type owl:Class ;
                            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                            rdfs:label "DesignSpecificationType" .
 

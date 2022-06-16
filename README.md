@@ -12,14 +12,19 @@ Ontology is modeled using [RDFS-Plus](http://mlwiki.org/index.php/RDFS-Plus) lev
 
 ## Testing
 
+Development of AMMO uses [Github Actions](https://github.com/features/actions) to perform CI/CD of the ontology. It runs a [SHACL](https://www.w3.org/TR/shacl/) test suite against sample knowledge graph fragments using [pyshacl](https://github.com/RDFLib/pySHACL) and the [sharness](https://github.com/chriscool/sharness) [Test Anything Protocol](http://testanything.org). Results can be reviewed in the [actions page](https://github.com/LA3D/ammo/actions) of the AMMO Github repository.
+
 ## Persistent Identifiers and Namespace
+
+This ontology uses [w3id.org](https://w3id.org) persistent identifiers for namespaces. The rules for dereferencing the ontology using [content-negotiation](https://www.w3.org/TR/cooluris/#implementation)
+can be found in the [doc/w3id](doc/w3id) subdirectory.
 
 ### Internal Namespaces
 
-| Prefix         | URI                            | Description            |
-| -------------- | ------------------------------ | ---------------------- |
-| @prefix ammoc  | https://w3id.org/ammo/core     | Ammo Core Ontology     |
-| @prefix ammomd | https://w3id.org/ammo/metadata | Ammo Ontology Metadata |
+| Prefix         | URI                                 | Description            |
+| -------------- | ----------------------------------- | ---------------------- |
+| @prefix ammo   | https://w3id.org/ammo/ont/          | Ammo Core Ontology     |
+| @prefix ammosh | https://w3id.org/ammo/shapes/shacl/ | Ammo Ontology Metadata |
 
 ### External Namespaces
 
@@ -38,19 +43,21 @@ Ontology is modeled using [RDFS-Plus](http://mlwiki.org/index.php/RDFS-Plus) lev
 
 ## Versions
 
-The latest version of the full ontology can be found at https://w3id.org/ammo/full/ and specific versions of the full ontology https://w3id.org/ammo/full/x.x/ where x.x is the version identifier. Individual modules can likewise be referenced using https://w3id.org/ammo/{module}/ and https://w3id.org/ammo/{module}/x.x/.
+The latest version of the full ontology can be found at https://w3id.org/ammo/development/ and specific release versions can be found at https://w3id.org/ammo/release/{version number}/.
 
 ## Contact
 
 Please use this GitHub repository's [Issue tracker](https://github.com/LA3D/ammo/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
 
-### Direct Contact
-
-**Charles Vardeman**
-_Research Assistant Professor_
-[Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)
-<cvardema@nd.edu>
-Github: [charlesvardeman](https://github.com/charlesvardeman)
-ORCID: [0000-0003-4091-6059](https://orcid.org/0000-0003-4091-6059)
-
 ## Acknowledgements
+
+---
+
+## Direct Contact
+
+**Charles Vardeman**  
+_Research Assistant Professor_  
+[Center for Research Computing](https://crc.nd.edu), [University of Notre Dame](https://nd.edu)  
+<cvardema@nd.edu>  
+Github: [charlesvardeman](https://github.com/charlesvardeman)  
+ORCID: [0000-0003-4091-6059](https://orcid.org/0000-0003-4091-6059)
