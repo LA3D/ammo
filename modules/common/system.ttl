@@ -5,6 +5,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
@@ -43,6 +46,81 @@ ammo:isDescribedBy rdf:type owl:ObjectProperty ;
                    rdfs:label "is described by" .
 
 
+### https://w3id.org/ammo/ont/describes
+ammo:describes rdf:type owl:ObjectProperty ;
+             rdfs:domain ammo:Design ;
+             rdfs:range ammo:Component ;
+             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+             rdfs:label "describes" .
+
+
+### https://w3id.org/ammo/ont/designspecifcationtype
+ammo:designspecifcationtype rdf:type owl:ObjectProperty ;
+                          rdfs:domain ammo:DesignSpecification ;
+                          rdfs:range ammo:Designspecificationtype ;
+                          rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                          rdfs:label "designSpecifcationType" .
+
+
+###  https://w3id.org/ammo/ont/hasProperPart
+ammo:hasProperPart rdf:type owl:ObjectProperty ;
+                 rdfs:domain ammo:Design ;
+                 rdfs:range ammo:DesignSpecification ;
+                 rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                 rdfs:label "has proper part" .
+
+
+###  https://w3id.org/ammo/ont/hasmaterial
+ammo:hasmaterial rdf:type owl:ObjectProperty ;
+               rdfs:domain ammo:Materialdesignspecification ;
+               rdfs:range ammo:Material ;
+               rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+               rdfs:label "hasMaterial" .
+
+
+### https://w3id.org/ammo/ont/hasquantitykind
+ammo:hasquantitykind rdf:type owl:ObjectProperty ;
+                   rdfs:domain ammo:Quantity ;
+                   rdfs:range ammo:Quantitykind ;
+                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                   rdfs:label "hasQuantityKind" .
+
+
+
+###  https://w3id.org/ammo/ont/isDescribedBy
+ammo:isDescribedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain ammo:Component ;
+                 rdfs:range ammo:Design ;
+                 rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                 rdfs:label "is described by" .
+
+
+### https://w3id.org/ammo/ont/isSpecifiedBy
+ammo:isSpecifiedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain ammo:Component ;
+                 rdfs:range ammo:DesignSpecification ;
+                 rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                 rdfs:label "is specified by" .
+
+
+###  https://w3id.org/ammo/ont/ofquantity
+ammo:ofquantity rdf:type owl:ObjectProperty ;
+              rdfs:domain ammo:Quantitydesignspecification ;
+              rdfs:range ammo:Quantity ;
+              rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+              rdfs:label "ofQuantity" .
+
+
+###  https://w3id.org/ammo/ont/specifies
+ammo:specifies rdf:type owl:ObjectProperty ;
+             rdfs:domain ammo:DesignSpecification ;
+             rdfs:range ammo:Component ;
+             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+             rdfs:label "specifies" .
+
+
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -54,6 +132,35 @@ A design is usually accompanied by the rationales behind the construction of the
 While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
             rdfs:label "Design" .
+
+###  https://w3id.org/ammo/ont/Object
+ammo:Object rdf:type owl:Class ;
+            rdfs:subClassOf ammo:Entity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ammo:hasProperPart ;
+                              owl:someValuesFrom ammo:Object
+                            ] ;
+            rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists." ;
+            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+            rdfs:label "Object" .
+
+### https://w3id.org/ammo/ont/DesignSpecification
+ammo:DesignSpecification rdf:type owl:Class ;
+                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                       rdfs:label "Design Specification" .
+
+
+### https://w3id.org/ammo/ont/Designspecificationtype
+ammo:Designspecificationtype rdf:type owl:Class ;
+                           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                           rdfs:label "DesignSpecificationType" .
+
+###  https://w3id.org/ammo/ont/untitled-ekg#Quantity
+ammo:Quantity rdf:type owl:Class ;
+            owl:equivalentClass qudt:Quantity ;
+            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+            rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent." ;
+            rdfs:label "Quantity" .
 
 
 ###  https://w3id.org/ammo/ont/DesignedArtifact
@@ -139,6 +246,8 @@ ammo:SystemDesign rdf:type owl:Class ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                   opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
                   rdfs:label "System Design" .
+
+
 
 
 

@@ -19,4 +19,20 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 
-ammo:
+ammo:MaterialTransformation skos:exactMatch wd:Q104637425;
+    skos:note """Material transformation is the process of changing the composition of a material,"""
+ .
+
+ammo:AdditiveManufacturing skos:exactMatch wd:Q360931;
+    skos:exactMatch wd:Q229367;
+    skos:note """Additive manufacturing is the process of manufacturing a material by adding a specified amount of a specified additive to the material."""
+ .
+
+wd:Q360931 owl:equivalentClass wd:Q229367 . # EquvalentClass relation between 3d printing and additive manufacturing
+
+ammo:WorkPiece skos:exactMatch wd:Q360931 .
+
+# 3d Printer
+ammo:AdditiveManufacturingMachine skos:exactMatch wd:Q360931;
+    skos:note """Additive manufacturing machine is a machine that uses additive manufacturing to produce a workpiece."""
+ .

@@ -64,6 +64,8 @@ ammo:isRealizedIn rdf:type owl:ObjectProperty ;
                   rdfs:label "is realized in" .
 
 
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -82,25 +84,6 @@ ammo:Capability rdf:type owl:Class ;
                 prov:wasQuotedFrom "http://semanticscience.org/resource/" ;
                 rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                 rdfs:label "capability" .
-
-
-###  https://w3id.org/ammo/ont/Entity
-ammo:Entity rdf:type owl:Class ;
-            rdfs:comment "Every thing is an entity." ;
-            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-            rdfs:label "Entity" .
-
-
-###  https://w3id.org/ammo/ont/Object
-ammo:Object rdf:type owl:Class ;
-            rdfs:subClassOf ammo:Entity ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ammo:hasProperPart ;
-                              owl:someValuesFrom ammo:Object
-                            ] ;
-            rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists." ;
-            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-            rdfs:label "Object" .
 
 
 ###  https://w3id.org/ammo/ont/Process
@@ -135,3 +118,12 @@ ammo:Role rdf:type owl:Class ;
 ammo:TimeInterval rdf:type owl:Class ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                   rdfs:label "Time Interval" .
+
+
+###  https://w3id.org/ammo/ont/MaterialTransformation
+ammo:MaterialTransformation rdf:type owl:Class ;
+                            rdfs:subClassOf ammo:Process ;
+                            rdfs:comment "A material transformation is a process that transforms material from one form to another." ;
+                            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                            rdfs:label "Material Transformation"
+.
