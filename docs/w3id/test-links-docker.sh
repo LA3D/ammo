@@ -1,21 +1,147 @@
 #!/bin/bash
 
-# WARNING: This is a quick hack that depends on the verison of python PDM installed
-# Uses linkchecker (https://github.com/wummel/linkchecker) installed in pdm to check
-# links againsts a docker container running apache2 on localhost:8000
-# To use: Run docker-compose up -d and then run this script
-cmd="pdm run linkchecker"
+# Using curl as a link checker
+# https://alexwlchan.net/2022/04/checking-with-curl/
+# -H "Accept: text/turtle"
+# -H "Accept: application/n-triples"
+# -H  "Accept: application/ld+json"
 
-ONTOLOGY=ammo
-SHACL=ammo.shacl
 
-# Check root for human readable documentation
-$cmd http://localhost:8000/ammo/
+BASE_URL="${BASE_URL:-http://localhost:8000}"
 
-# Check root for shapes
-$cmd http://localhost:8000/ammo/shapes/shacl
+ERRORS=0
 
-# IRI Pattern for versionIRI https://w3id.org/ammo/ont/release/0.0.1
+for path in $(grep ^/ paths_to_check.txt)
+do
+  url="$BASE_URL$path"
+  echo -n "Checking $url... "
 
-# Check for ontology by file
-$cmd http://localhost:8000/ammo/ont/0.0.1
+  STATUS_CODE=$(curl -L \
+      --output /dev/null \
+      --silent \
+      --write-out "%{http_code}" \
+      "$url")
+
+  if (( STATUS_CODE == 200 ))
+  then
+    echo "$STATUS_CODE"
+  else
+    echo -e "\033[0;31m$STATUS_CODE !!!\033[m"
+    ERRORS=$(( ERRORS + 1 ))
+  fi
+done
+
+if (( ERRORS != 0 ))
+then
+  echo -e "\033[0;31m!!! Errors checking URLs!\033[m"
+fi
+
+ERRORS=0
+for path in $(grep ^/ paths_to_check.txt)
+do
+  url="$BASE_URL$path"
+  echo -n "Checking $url for text/turtle ... "
+
+  STATUS_CODE=$(curl -L \
+        -H "Accept: text/turtle" \
+      --output /dev/null \
+      --silent \
+      --write-out "%{http_code}" \
+      "$url")
+
+  if (( STATUS_CODE == 200 ))
+  then
+    echo "$STATUS_CODE"
+  else
+    echo -e "\033[0;31m$STATUS_CODE !!!\033[m"
+    ERRORS=$(( ERRORS + 1 ))
+  fi
+done
+
+if (( ERRORS != 0 ))
+then
+  echo -e "\033[0;31m!!! Errors checking URLs for Turtle!\033[m"
+fi
+
+ERRORS=0
+for path in $(grep ^/ paths_to_check.txt)
+do
+  url="$BASE_URL$path"
+  echo -n "Checking $url for JSON-LD ... "
+
+  STATUS_CODE=$(curl -L \
+        -H "Accept: application/ld+json" \
+      --output /dev/null \
+      --silent \
+      --write-out "%{http_code}" \
+      "$url")
+
+  if (( STATUS_CODE == 200 ))
+  then
+    echo "$STATUS_CODE"
+  else
+    echo -e "\033[0;31m$STATUS_CODE !!!\033[m"
+    ERRORS=$(( ERRORS + 1 ))
+  fi
+done
+
+if (( ERRORS != 0 ))
+then
+  echo -e "\033[0;31m!!! Errors checking URLs for JSON-LD\033[m"
+fi
+
+ERRORS=0
+for path in $(grep ^/ paths_to_check.txt)
+do
+  url="$BASE_URL$path"
+  echo -n "Checking $url for N-Triples ... "
+
+  STATUS_CODE=$(curl -L \
+        -H "Accept: application/n-triples" \
+      --output /dev/null \
+      --silent \
+      --write-out "%{http_code}" \
+      "$url")
+
+  if (( STATUS_CODE == 200 ))
+  then
+    echo "$STATUS_CODE"
+  else
+    echo -e "\033[0;31m$STATUS_CODE !!!\033[m"
+    ERRORS=$(( ERRORS + 1 ))
+  fi
+done
+
+if (( ERRORS != 0 ))
+then
+  echo -e "\033[0;31m!!! Errors checking URLs for N-Triples!\033[m"
+fi
+
+ERRORS=0
+for path in $(grep ^/ paths_to_check.txt)
+do
+  url="$BASE_URL$path"
+  echo -n "Checking $url for RDF+XML ... "
+
+  STATUS_CODE=$(curl -L \
+        -H "Accept: application/rdf+xml" \
+      --output /dev/null \
+      --silent \
+      --write-out "%{http_code}" \
+      "$url")
+
+  if (( STATUS_CODE == 200 ))
+  then
+    echo "$STATUS_CODE"
+  else
+    echo -e "\033[0;31m$STATUS_CODE !!!\033[m"
+    ERRORS=$(( ERRORS + 1 ))
+  fi
+done
+
+if (( ERRORS != 0 ))
+then
+  echo -e "\033[0;31m!!! Errors checking URLs for RDF+XML!\033[m"
+  exit 1
+fi
+

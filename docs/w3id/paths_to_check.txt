@@ -1,0 +1,5 @@
+/ammo/
+/ammo/ont
+/ammo/ont/0.0.1
+/ammo/shapes/shacl
+/ammo/shapes/shacl/0.0.1

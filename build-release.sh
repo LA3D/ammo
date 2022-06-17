@@ -46,7 +46,7 @@ $pylodecmd ./release/${VERSION}/${SHACL}.ttl -o ./release/${VERSION}/${SHACL}.ht
 
 # Generate other RDF serializations using Jena RIOT
 $RIOT -out N-TRIPLE ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.nt
-$RIOT -out RDF/XML  ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.xml
+$RIOT -out RDF/XML  ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.rdf
 $RIOT -out JSON-LD  ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.json
 
 # Copy 406.html to release directory
