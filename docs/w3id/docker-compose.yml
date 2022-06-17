@@ -1,0 +1,12 @@
+version: "3"
+services: 
+    apache: 
+        build: .
+        image: w3id-httpd
+        volumes: 
+            - ./htaccess:/var/www/html/ammo/.htaccess
+            - ./apache2.conf:/etc/apache2/apache2.conf
+        command: bash -c "service apache2 start && tail -f /dev/null"
+        ports:
+            - "8000:80"
+        container_name: httpd

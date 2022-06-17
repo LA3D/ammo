@@ -35,3 +35,10 @@ $mergecmd merge $shapefiles -f ttl -o ./release/${VERSION}
 mv ./release/${VERSION}/merged.ttl ./release/${VERSION}/${SHACL}.ttl
 echo "Generating HTML SHACL Shapes Documentation for Release ${VERSION}"
 $pylodecmd ./release/${VERSION}/${SHACL}.ttl -o ./release/${VERSION}/${SHACL}.html
+
+if [ -d "./release/latest" ]; then
+    rm -rf ./release/latest
+    cp -r ./release/${VERSION} ./release/latest
+else
+    cp -r ./release/${VERSION} ./release/latest
+fi
