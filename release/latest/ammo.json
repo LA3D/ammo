@@ -1,0 +1,1060 @@
+{
+    "@graph": [
+        {
+            "@id": "ammo:PhysicalSystem",
+            "skos:definition": "A physical object that isDescribedBy a SystemDesign .\nI.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .\nNotice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.",
+            "rdfs:subClassOf": {
+                "@id": "ammo:PhysicalObject"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "Physical System",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:PhysicalObject",
+            "skos:definition": "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary).",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "Physical Object",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "https://w3id.org/ammo/ont/",
+            "dcterms:contributor": [
+                {
+                    "@id": "_:b2"
+                },
+                {
+                    "@id": "_:b4"
+                },
+                {
+                    "@id": "_:b5"
+                },
+                {
+                    "@id": "_:b8"
+                }
+            ],
+            "owl:versionInfo": {
+                "@language": "en",
+                "@value": "0.0.1"
+            },
+            "@type": "owl:Ontology",
+            "dcterms:rights": {
+                "@language": "en",
+                "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+            },
+            "dcterms:creator": {
+                "@id": "_:b3"
+            },
+            "vann:preferredNamespaceUri": "http://w3id.org/ammo/ont/",
+            "dcterms:license": {
+                "@id": "https://spdx.org/licenses/CC-BY-4.0"
+            },
+            "sdo:license": {
+                "@language": "en",
+                "@value": "https://spdx.org/licenses/CC-BY-4.0"
+            },
+            "vann:preferredNamespacePrefix": "ammo",
+            "owl:versionIRI": {
+                "@id": "ammo:release/0.0.1"
+            },
+            "dcterms:publisher": [
+                {
+                    "@id": "_:b6"
+                },
+                {
+                    "@id": "_:b7"
+                }
+            ],
+            "dcterms:created": {
+                "@value": "2022-02-15",
+                "@type": "xsd:date"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"
+            },
+            "dcterms:modified": {
+                "@value": "2022-05-12",
+                "@type": "xsd:date"
+            },
+            "dcterms:title": {
+                "@language": "en",
+                "@value": "Additive Manufacturing for Maintancence Operations Ontology"
+            }
+        },
+        {
+            "@id": "https://w3id.org/ammo/module/system",
+            "skos:prefLabel": "ammo system module",
+            "skos:note": "Module definitons for System",
+            "@type": "opla:Module"
+        },
+        {
+            "@id": "ammo:isRealizedIn",
+            "rdfs:range": {
+                "@id": "ammo:Process"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:RealizableEntity"
+            },
+            "rdfs:label": "is realized in",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:Process",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "ammo:Entity"
+                },
+                {
+                    "@id": "_:b0"
+                }
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists.",
+            "rdfs:label": "Process",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:RealizableEntity",
+            "rdfs:subClassOf": {
+                "@id": "ammo:Attribute"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A realizable entity is an attribute that is exhibited under some condition and is realized in some process.",
+            "rdfs:label": "Realizable Entity",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:Attribute",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "An attribute is a characteristic of some entity.",
+            "rdfs:label": "Attribute",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:isPartOf",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000068"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isLocatedIn"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is part of"
+            },
+            "@type": [
+                "owl:TransitiveProperty",
+                "owl:ReflexiveProperty",
+                "owl:ObjectProperty"
+            ]
+        },
+        {
+            "@id": "ammo:isLocatedIn",
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is located in"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]"
+            },
+            "@type": [
+                "owl:ObjectProperty",
+                "owl:TransitiveProperty"
+            ],
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isSpatiotemporallyRelatedTo"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isLocationOf"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000061"
+            },
+            "sio:equivalentTo": "OBO_REL:located_in",
+            "skos:example": {
+                "@language": "en",
+                "@value": "A parasite in the interior of a person's intestine is located in their intestinal lumen."
+            }
+        },
+        {
+            "@id": "ammo:Entity",
+            "owl:equivalentClass": {
+                "@id": "sio:SIO_000000"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "Every thing is an entity."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "entity"
+            },
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:isSurroundedBy",
+            "owl:inverseOf": {
+                "@id": "ammo:surrounds"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000323"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isContainedIn"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is surrounded by"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:surrounds",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000324"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:contains"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A 'surrounds' B iff the A 'contains' B and A 'is adjacent to' B or A 'is directly connected to' B."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "surrounds"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:Role",
+            "rdfs:subClassOf": {
+                "@id": "ammo:RealizableEntity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance.",
+            "rdfs:label": "role",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:DesignSpecification",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:label": "Design Specification",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "https://w3id.org/ammo/module/process/",
+            "@type": [
+                "owl:Ontology",
+                "opla:Module"
+            ]
+        },
+        {
+            "@id": "_:b0",
+            "owl:someValuesFrom": {
+                "@id": "ammo:Process"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:hasProperPart"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "_:b1",
+            "owl:someValuesFrom": {
+                "@id": "ammo:SystemDesign"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:isDescribedBy"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "ammo:SystemDesign",
+            "rdfs:subClassOf": {
+                "@id": "ammo:Design"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations.",
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "System Design",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:isDescribedBy",
+            "rdfs:range": {
+                "@id": "ammo:Design"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Component"
+            },
+            "rdfs:label": "is described by",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "_:b2",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0001-7347-546X",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Donald Brower",
+            "sdo:affiliation": "University of Notre Dame",
+            "@type": "sdo:Person"
+        },
+        {
+            "@id": "ammo:DesignedPhysicalSystem",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "ammo:PhysicalSystem"
+                },
+                {
+                    "@id": "ammo:PhysicalArtifact"
+                },
+                {
+                    "@id": "_:b1"
+                }
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "Designed Physical System",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:PhysicalArtifact",
+            "skos:definition": "Any PhysicalObject that isDescribedBy a Plan .\nThis axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,\nFunctionalSubstance(s) are included here as well.\nImmaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "ammo:PhysicalObject"
+                },
+                {
+                    "@id": "_:b9"
+                }
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "Physical Artifact",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:designspecifcationtype",
+            "rdfs:range": {
+                "@id": "ammo:DesignSpecificationType"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:DesignSpecification"
+            },
+            "rdfs:label": "designSpecifcationType",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:DesignSpecificationType",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:label": "DesignSpecificationType",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "_:b3",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0003-4091-6059",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Charles F. Vardeman II",
+            "sdo:email": {
+                "@value": "cvardema@nd.edu",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:affiliation": "University of Notre Dame",
+            "@type": "sdo:Person"
+        },
+        {
+            "@id": "_:b4",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0003-3885-977X",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Kirsten Stor",
+            "sdo:affiliation": "Simbachain Inc",
+            "@type": "sdo:Person"
+        },
+        {
+            "@id": "_:b5",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0002-5861-1790",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Matthew Welz",
+            "sdo:affiliation": "Simbachain Inc",
+            "@type": "sdo:Person"
+        },
+        {
+            "@id": "_:b6",
+            "sdo:url": "https://simbachain.com/",
+            "sdo:name": "Simba Chain",
+            "@type": "sdo:Organization"
+        },
+        {
+            "@id": "_:b7",
+            "sdo:url": {
+                "@value": "https://crc.nd.edu",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Center for Research Computing, University of Notre Dame",
+            "owl:sameAs": {
+                "@id": "wd:Q178848"
+            },
+            "@type": "sdo:Organization"
+        },
+        {
+            "@id": "_:b8",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0001-8214-7177",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Christopher Sweet",
+            "sdo:affiliation": "University of Notre Dame",
+            "@type": "sdo:Person"
+        },
+        {
+            "@id": "_:b9",
+            "owl:someValuesFrom": {
+                "@id": "ammo:Plan"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:isDescribedBy"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "ammo:Plan",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A Description having an explicit Goal, to be achieved by executing the plan",
+            "rdfs:label": "Plan",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:Design",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A Description of the Situation, in terms of structure and function, held by an Entity for some reason.\nA design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.\nWhile designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.",
+            "rdfs:label": "Design",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:Quantity",
+            "owl:equivalentClass": {
+                "@id": "qudt:Quantity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "Quantity ODP is derived directly from QUDT and equivalent.",
+            "rdfs:label": "Quantity",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:DesignedComponent",
+            "rdfs:subClassOf": {
+                "@id": "ammo:DesignedArtifact"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:label": "Designed Component",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:DesignedArtifact",
+            "skos:note": "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite",
+            "skos:definition": "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc.",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "ammo:PhysicalArtifact"
+                },
+                {
+                    "@id": "_:b11"
+                }
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "Designed Artifact",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:isRelatedTo",
+            "sdo:comment": "'is related to' is the top level relation in SIO",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000001"
+            },
+            "rdfs:range": {
+                "@id": "sio:Entity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "rdfs:domain": {
+                "@id": "sio:Entity"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A is related to B iff there is some relation between A and B."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is related to"
+            },
+            "@type": [
+                "owl:SymmetricProperty",
+                "owl:ObjectProperty"
+            ]
+        },
+        {
+            "@id": "ammo:existsAt",
+            "rdfs:range": {
+                "@id": "ammo:TimeInterval"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/module/process/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Process"
+            },
+            "rdfs:label": "exists at",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:TimeInterval",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:label": "Time Interval",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:hasComponentPart",
+            "skos:example": {
+                "@language": "en",
+                "@value": "a human has blood as a component part"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isComponentPartOf"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000369"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:hasDirectPart"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "has component part"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:isComponentPartOf",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000313"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isDirectPartOf"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is component part of"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:hasDirectPart",
+            "skos:example": {
+                "@language": "en",
+                "@value": "a car has an engine as a direct part"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isDirectPartOf"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000273"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:hasProperPart"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "has direct part is a relation to specify a part at a particular level of granularity"
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "has direct part"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:describes",
+            "rdfs:range": {
+                "@id": "ammo:Component"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Design"
+            },
+            "rdfs:label": "describes",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:isDirectPartOf",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000310"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isProperPartOf"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "is direct part of is a relation between a specific part (at some level of granularity) and its whole."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is direct part of"
+            },
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:hasProperPart",
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:hasPart"
+            },
+            "@type": [
+                "owl:IrreflexiveProperty",
+                "owl:ObjectProperty",
+                "owl:AsymmetricProperty"
+            ],
+            "rdfs:range": {
+                "@id": "ammo:DesignSpecification"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isProperPartOf"
+            },
+            "rdfs:isDefinedBy": [
+                {
+                    "@id": "https://w3id.org/ammo/ont/"
+                },
+                {
+                    "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+                }
+            ],
+            "rdfs:domain": {
+                "@id": "ammo:Design"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000053"
+            },
+            "skos:example": {
+                "@language": "en",
+                "@value": "a car has an engine as a proper part; a car has a piston as a proper part;"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
+            },
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "has proper part"
+                },
+                "has proper part"
+            ]
+        },
+        {
+            "@id": "ammo:isSpecifiedBy",
+            "rdfs:range": {
+                "@id": "ammo:DesignSpecification"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Component"
+            },
+            "rdfs:label": "is specified by",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:Object",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "ammo:Entity"
+                },
+                {
+                    "@id": "_:b10"
+                }
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "An object is an entity that is wholly identifiable at any instant of time during which it exists.",
+            "rdfs:label": "Object",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "_:b10",
+            "owl:someValuesFrom": {
+                "@id": "ammo:Object"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:hasProperPart"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "ammo:MaterialTransformation",
+            "rdfs:subClassOf": {
+                "@id": "ammo:Process"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A material transformation is a process that transforms material from one form to another.",
+            "rdfs:label": "Material Transformation",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:isProperPartOf",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000093"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isPartOf"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole."
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is proper part of"
+            },
+            "@type": [
+                "owl:ObjectProperty",
+                "owl:IrreflexiveProperty",
+                "owl:AsymmetricProperty"
+            ]
+        },
+        {
+            "@id": "ammo:isSpatiotemporallyRelatedTo",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000322"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isRelatedTo"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B"
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is spatiotemporally related to"
+            },
+            "@type": [
+                "owl:SymmetricProperty",
+                "owl:ObjectProperty"
+            ]
+        },
+        {
+            "@id": "ammo:hasPart",
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000028"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isLocationOf"
+            },
+            "@type": [
+                "owl:TransitiveProperty",
+                "owl:ReflexiveProperty",
+                "owl:ObjectProperty"
+            ],
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "has part"
+            },
+            "skos:example": {
+                "@language": "en",
+                "@value": "a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isPartOf"
+            }
+        },
+        {
+            "@id": "_:b11",
+            "owl:someValuesFrom": {
+                "@id": "ammo:Design"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:isDescribedBy"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "ammo:ofquantity",
+            "rdfs:range": {
+                "@id": "ammo:Quantity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:QuantityDesignSpecification"
+            },
+            "rdfs:label": "ofQuantity",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:hasMaterial",
+            "rdfs:range": {
+                "@id": "ammo:Material"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:MaterialDesignSpecification"
+            },
+            "rdfs:label": "hasMaterial",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:specifies",
+            "rdfs:range": {
+                "@id": "ammo:Component"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:DesignSpecification"
+            },
+            "rdfs:label": "specifies",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:isComponentOf",
+            "rdfs:range": {
+                "@id": "ammo:DesignedPhysicalSystem"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:DesignedComponent"
+            },
+            "rdfs:label": "is component of",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:isLocationOf",
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000145"
+            },
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:isSpatiotemporallyRelatedTo"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]"
+            },
+            "rdfs:label": {
+                "@language": "en",
+                "@value": "is location of"
+            },
+            "@type": [
+                "owl:TransitiveProperty",
+                "owl:ObjectProperty"
+            ]
+        },
+        {
+            "@id": "ammo:Capability",
+            "prov:wasQuotedFrom": "http://semanticscience.org/resource/",
+            "rdfs:subClassOf": {
+                "@id": "ammo:RealizableEntity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger).",
+            "rdfs:label": "capability",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:hasComponent",
+            "rdfs:range": {
+                "@id": "ammo:DesignedComponent"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:DesignedPhysicalSystem"
+            },
+            "rdfs:label": "has component",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:isParticipantIn",
+            "rdfs:range": {
+                "@id": "ammo:Process"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Object"
+            },
+            "rdfs:label": "is participant in",
+            "@type": "owl:ObjectProperty"
+        },
+        {
+            "@id": "ammo:hasAttribute",
+            "rdfs:range": {
+                "@id": "ammo:RealizableEntity"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/module/process/"
+            },
+            "rdfs:domain": {
+                "@id": "ammo:Object"
+            },
+            "rdfs:label": "has attribute",
+            "@type": "owl:ObjectProperty"
+        }
+    ],
+    "@context": {
+        "qudt": "http://qudt.org/schema/qudt/",
+        "opla": "http://ontologydesignpatterns.org/opla-core#",
+        "ammo": "https://w3id.org/ammo/ont/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "wd": "http://wikidata.org/entity/",
+        "sio": "http://semanticscience.org/resource/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "vann": "http://purl.org/vocab/vann/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "sdo": "https://schema.org/"
+    }
+}
