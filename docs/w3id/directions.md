@@ -8,3 +8,8 @@ Instructions:
 - Copy updated readme.md to the ammo directory of the cloned w3id.org repository.
 - Copy updated htaccess file to .htaccess in cloned w3id.org repository.
 - Create pull request to https://github.com/perma-id/w3id.org for changes to be published on w3id.org.
+
+## Testing Links
+
+- [Linkchecker](https://github.com/wummel/linkchecker/blob/master/doc/install.txt)
+- [Github Action for LinkChecker](https://github.com/marketplace/actions/check-links-with-linkcheck)

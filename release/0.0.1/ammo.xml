@@ -14,28 +14,28 @@
     xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/">
+    <dcterms:publisher rdf:nodeID="A0"/>
     <owl:versionInfo xml:lang="en">0.0.1</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dcterms:rights>
-    <dcterms:creator rdf:nodeID="A0"/>
-    <dcterms:publisher rdf:nodeID="A1"/>
     <vann:preferredNamespaceUri>http://w3id.org/ammo/ont/</vann:preferredNamespaceUri>
     <dcterms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
     <sdo:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</sdo:license>
-    <dcterms:publisher rdf:nodeID="A2"/>
     <vann:preferredNamespacePrefix>ammo</vann:preferredNamespacePrefix>
     <owl:versionIRI rdf:resource="https://w3id.org/ammo/ont/release/0.0.1"/>
-    <dcterms:contributor rdf:nodeID="A3"/>
+    <dcterms:publisher rdf:nodeID="A1"/>
+    <dcterms:title xml:lang="en">Additive Manufacturing for Maintenance Operations Ontology</dcterms:title>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-15</dcterms:created>
     <dcterms:description xml:lang="en">The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
 Github: https://github.com/LA3D/ammo</dcterms:description>
+    <dcterms:contributor rdf:nodeID="A2"/>
+    <dcterms:contributor rdf:nodeID="A3"/>
     <dcterms:contributor rdf:nodeID="A4"/>
-    <dcterms:contributor rdf:nodeID="A5"/>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-12</dcterms:modified>
+    <dcterms:creator rdf:nodeID="A5"/>
     <dcterms:contributor rdf:nodeID="A6"/>
-    <dcterms:title xml:lang="en">Additive Manufacturing for Maintancence Operations Ontology</dcterms:title>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/isComponentOf">
     <rdfs:range rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
@@ -85,22 +85,10 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdfs:label>Physical Artifact</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</sdo:url>
-    <sdo:name>Center for Research Computing, University of Notre Dame</sdo:name>
-    <owl:sameAs rdf:resource="http://wikidata.org/entity/Q178848"/>
-    <rdf:type rdf:resource="https://schema.org/Organization"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/module/system">
     <skos:prefLabel>ammo system module</skos:prefLabel>
     <skos:note>Module definitons for System</skos:note>
     <rdf:type rdf:resource="http://ontologydesignpatterns.org/opla-core#Module"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0002-5861-1790</sdo:url>
-    <sdo:name>Matthew Welz</sdo:name>
-    <sdo:affiliation>Simbachain Inc</sdo:affiliation>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/DesignedPhysicalSystem">
     <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalSystem"/>
@@ -119,9 +107,10 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdfs:label>capability</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <sdo:url>https://simbachain.com/</sdo:url>
-    <sdo:name>Simba Chain</sdo:name>
+  <rdf:Description rdf:nodeID="A1">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</sdo:url>
+    <sdo:name>Center for Research Computing, University of Notre Dame</sdo:name>
+    <owl:sameAs rdf:resource="http://wikidata.org/entity/Q178848"/>
     <rdf:type rdf:resource="https://schema.org/Organization"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/describes">
@@ -163,6 +152,12 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0002-5861-1790</sdo:url>
+    <sdo:name>Matthew Welz</sdo:name>
+    <sdo:affiliation>Simbachain Inc</sdo:affiliation>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/hasDirectPart">
     <skos:example xml:lang="en">a car has an engine as a direct part</skos:example>
     <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isDirectPartOf"/>
@@ -172,11 +167,6 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <dcterms:description xml:lang="en">has direct part is a relation to specify a part at a particular level of granularity</dcterms:description>
     <rdfs:label xml:lang="en">has direct part</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Process"/>
-    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/isLocatedIn">
     <rdfs:label xml:lang="en">is located in</rdfs:label>
@@ -190,11 +180,10 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <skos:example xml:lang="en">A parasite in the interior of a person's intestine is located in their intestinal lumen.</skos:example>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-7347-546X</sdo:url>
-    <sdo:name>Donald Brower</sdo:name>
-    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
+  <rdf:Description rdf:nodeID="A8">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/SystemDesign"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/surrounds">
     <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000324"/>
@@ -240,16 +229,11 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdfs:label xml:lang="en">is component part of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Design"/>
-    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/DesignedArtifact">
     <skos:note>Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite</skos:note>
     <skos:definition>A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalArtifact"/>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A9"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
     <opla:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
     <rdfs:label>Designed Artifact</rdfs:label>
@@ -263,12 +247,6 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <dcterms:description xml:lang="en">A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B.</dcterms:description>
     <rdfs:label xml:lang="en">is surrounded by</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-8214-7177</sdo:url>
-    <sdo:name>Christopher Sweet</sdo:name>
-    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/isPartOf">
     <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000068"/>
@@ -304,6 +282,11 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdfs:label>is realized in</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Process"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/designspecifcationtype">
     <rdfs:range rdf:resource="https://w3id.org/ammo/ont/DesignSpecificationType"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
@@ -311,17 +294,17 @@ Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corp
     <rdfs:label>designSpecifcationType</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A0">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-4091-6059</sdo:url>
-    <sdo:name>Charles F. Vardeman II</sdo:name>
-    <sdo:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</sdo:email>
-    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
+  <rdf:Description rdf:nodeID="A2">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-3885-977X</sdo:url>
+    <sdo:name>Kirsten Stor</sdo:name>
+    <sdo:affiliation>Simbachain Inc</sdo:affiliation>
     <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/SystemDesign"/>
-    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A3">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-8214-7177</sdo:url>
+    <sdo:name>Christopher Sweet</sdo:name>
+    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/hasComponentPart">
     <skos:example xml:lang="en">a human has blood as a component part</skos:example>
@@ -348,6 +331,11 @@ While designs typically describe entities to be constructed, they can also be us
     <rdfs:label>Design</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Plan"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/Quantity">
     <owl:equivalentClass rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
@@ -372,12 +360,6 @@ While designs typically describe entities to be constructed, they can also be us
     <rdfs:label>has component</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-3885-977X</sdo:url>
-    <sdo:name>Kirsten Stor</sdo:name>
-    <sdo:affiliation>Simbachain Inc</sdo:affiliation>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/SystemDesign">
     <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Design"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
@@ -393,11 +375,18 @@ While designs typically describe entities to be constructed, they can also be us
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/Process">
     <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Entity"/>
-    <rdfs:subClassOf rdf:nodeID="A9"/>
+    <rdfs:subClassOf rdf:nodeID="A10"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
     <rdfs:comment>A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists.</rdfs:comment>
     <rdfs:label>Process</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-4091-6059</sdo:url>
+    <sdo:name>Charles F. Vardeman II</sdo:name>
+    <sdo:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</sdo:email>
+    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/Object">
     <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Entity"/>
@@ -406,11 +395,6 @@ While designs typically describe entities to be constructed, they can also be us
     <rdfs:comment>An object is an entity that is wholly identifiable at any instant of time during which it exists.</rdfs:comment>
     <rdfs:label>Object</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Object"/>
-    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/PhysicalSystem">
     <skos:definition>A physical object that isDescribedBy a SystemDesign .
@@ -441,6 +425,11 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <rdfs:label>is specified by</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <sdo:url>https://simbachain.com/</sdo:url>
+    <sdo:name>Simba Chain</sdo:name>
+    <rdf:type rdf:resource="https://schema.org/Organization"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/ofquantity">
     <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Quantity"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
@@ -455,17 +444,22 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <rdfs:label>is participant in</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Plan"/>
-    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/specifies">
     <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Component"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
     <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/DesignSpecification"/>
     <rdfs:label>specifies</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Design"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Object"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/ammo/ont/isDirectPartOf">
     <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000310"/>
@@ -501,5 +495,11 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <rdfs:comment>A realizable entity is an attribute that is exhibited under some condition and is realized in some process.</rdfs:comment>
     <rdfs:label>Realizable Entity</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <sdo:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-7347-546X</sdo:url>
+    <sdo:name>Donald Brower</sdo:name>
+    <sdo:affiliation>University of Notre Dame</sdo:affiliation>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
 </rdf:RDF>

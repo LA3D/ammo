@@ -497,5 +497,6 @@ $RECYCLE.BIN/
 /tests/trash directory.
 /tests/trash directory.site
 
+.pdm.toml
 
 # End of https://www.toptal.com/developers/gitignore/api/venv,python,virtualenv,pycharm+all,visualstudiocode,windows,macos,linux

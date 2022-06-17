@@ -407,7 +407,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
             sdo:name "Simba Chain" ;
             sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
+    dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
     owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;

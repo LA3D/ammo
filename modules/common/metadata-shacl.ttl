@@ -28,7 +28,7 @@
 <https://w3id.org/ammo/shapes/shacl> rdf:type owl:Ontology ;
                                owl:versionIRI <https://w3id.org/ammo/shapes/shacl/releases/0.0.1> ;
                                owl:versionInfo "0.0.1"@en ;
-                               dcterms:title "Additive Manufacturing for Maintancence Operations SHACL Shapes"@en ;
+                               dcterms:title "Additive Manufacturing for Maintenance Operations SHACL Shapes"@en ;
                                dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.

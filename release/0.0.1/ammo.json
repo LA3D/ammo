@@ -31,16 +31,16 @@
             "@id": "https://w3id.org/ammo/ont/",
             "dcterms:contributor": [
                 {
+                    "@id": "_:b6"
+                },
+                {
+                    "@id": "_:b7"
+                },
+                {
+                    "@id": "_:b0"
+                },
+                {
                     "@id": "_:b2"
-                },
-                {
-                    "@id": "_:b4"
-                },
-                {
-                    "@id": "_:b5"
-                },
-                {
-                    "@id": "_:b8"
                 }
             ],
             "owl:versionInfo": {
@@ -51,9 +51,6 @@
             "dcterms:rights": {
                 "@language": "en",
                 "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
-            },
-            "dcterms:creator": {
-                "@id": "_:b3"
             },
             "vann:preferredNamespaceUri": "http://w3id.org/ammo/ont/",
             "dcterms:license": {
@@ -67,14 +64,13 @@
             "owl:versionIRI": {
                 "@id": "ammo:release/0.0.1"
             },
-            "dcterms:publisher": [
-                {
-                    "@id": "_:b6"
-                },
-                {
-                    "@id": "_:b7"
-                }
-            ],
+            "dcterms:title": {
+                "@language": "en",
+                "@value": "Additive Manufacturing for Maintenance Operations Ontology"
+            },
+            "dcterms:creator": {
+                "@id": "_:b8"
+            },
             "dcterms:created": {
                 "@value": "2022-02-15",
                 "@type": "xsd:date"
@@ -83,13 +79,17 @@
                 "@language": "en",
                 "@value": "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"
             },
+            "dcterms:publisher": [
+                {
+                    "@id": "_:b5"
+                },
+                {
+                    "@id": "_:b3"
+                }
+            ],
             "dcterms:modified": {
                 "@value": "2022-05-12",
                 "@type": "xsd:date"
-            },
-            "dcterms:title": {
-                "@language": "en",
-                "@value": "Additive Manufacturing for Maintancence Operations Ontology"
             }
         },
         {
@@ -119,7 +119,7 @@
                     "@id": "ammo:Entity"
                 },
                 {
-                    "@id": "_:b0"
+                    "@id": "_:b1"
                 }
             ],
             "rdfs:isDefinedBy": {
@@ -291,6 +291,16 @@
             "@type": "owl:Class"
         },
         {
+            "@id": "_:b0",
+            "sdo:url": {
+                "@value": "https://orcid.org/0000-0001-8214-7177",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Christopher Sweet",
+            "sdo:affiliation": "University of Notre Dame",
+            "@type": "sdo:Person"
+        },
+        {
             "@id": "https://w3id.org/ammo/module/process/",
             "@type": [
                 "owl:Ontology",
@@ -298,7 +308,7 @@
             ]
         },
         {
-            "@id": "_:b0",
+            "@id": "_:b1",
             "owl:someValuesFrom": {
                 "@id": "ammo:Process"
             },
@@ -306,45 +316,6 @@
                 "@id": "ammo:hasProperPart"
             },
             "@type": "owl:Restriction"
-        },
-        {
-            "@id": "_:b1",
-            "owl:someValuesFrom": {
-                "@id": "ammo:SystemDesign"
-            },
-            "owl:onProperty": {
-                "@id": "ammo:isDescribedBy"
-            },
-            "@type": "owl:Restriction"
-        },
-        {
-            "@id": "ammo:SystemDesign",
-            "rdfs:subClassOf": {
-                "@id": "ammo:Design"
-            },
-            "rdfs:isDefinedBy": {
-                "@id": "https://w3id.org/ammo/ont/"
-            },
-            "rdfs:comment": "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations.",
-            "opla:extractedFrom": {
-                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
-            },
-            "rdfs:label": "System Design",
-            "@type": "owl:Class"
-        },
-        {
-            "@id": "ammo:isDescribedBy",
-            "rdfs:range": {
-                "@id": "ammo:Design"
-            },
-            "rdfs:isDefinedBy": {
-                "@id": "https://w3id.org/ammo/ont/"
-            },
-            "rdfs:domain": {
-                "@id": "ammo:Component"
-            },
-            "rdfs:label": "is described by",
-            "@type": "owl:ObjectProperty"
         },
         {
             "@id": "_:b2",
@@ -357,6 +328,18 @@
             "@type": "sdo:Person"
         },
         {
+            "@id": "_:b3",
+            "sdo:url": {
+                "@value": "https://crc.nd.edu",
+                "@type": "xsd:anyURI"
+            },
+            "sdo:name": "Center for Research Computing, University of Notre Dame",
+            "owl:sameAs": {
+                "@id": "wd:Q178848"
+            },
+            "@type": "sdo:Organization"
+        },
+        {
             "@id": "ammo:DesignedPhysicalSystem",
             "rdfs:subClassOf": [
                 {
@@ -366,7 +349,7 @@
                     "@id": "ammo:PhysicalArtifact"
                 },
                 {
-                    "@id": "_:b1"
+                    "@id": "_:b4"
                 }
             ],
             "rdfs:isDefinedBy": {
@@ -399,6 +382,22 @@
             "@type": "owl:Class"
         },
         {
+            "@id": "_:b4",
+            "owl:someValuesFrom": {
+                "@id": "ammo:SystemDesign"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:isDescribedBy"
+            },
+            "@type": "owl:Restriction"
+        },
+        {
+            "@id": "_:b5",
+            "sdo:url": "https://simbachain.com/",
+            "sdo:name": "Simba Chain",
+            "@type": "sdo:Organization"
+        },
+        {
             "@id": "ammo:designspecifcationtype",
             "rdfs:range": {
                 "@id": "ammo:DesignSpecificationType"
@@ -421,31 +420,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b3",
-            "sdo:url": {
-                "@value": "https://orcid.org/0000-0003-4091-6059",
-                "@type": "xsd:anyURI"
-            },
-            "sdo:name": "Charles F. Vardeman II",
-            "sdo:email": {
-                "@value": "cvardema@nd.edu",
-                "@type": "xsd:anyURI"
-            },
-            "sdo:affiliation": "University of Notre Dame",
-            "@type": "sdo:Person"
-        },
-        {
-            "@id": "_:b4",
-            "sdo:url": {
-                "@value": "https://orcid.org/0000-0003-3885-977X",
-                "@type": "xsd:anyURI"
-            },
-            "sdo:name": "Kirsten Stor",
-            "sdo:affiliation": "Simbachain Inc",
-            "@type": "sdo:Person"
-        },
-        {
-            "@id": "_:b5",
+            "@id": "_:b6",
             "sdo:url": {
                 "@value": "https://orcid.org/0000-0002-5861-1790",
                 "@type": "xsd:anyURI"
@@ -455,30 +430,26 @@
             "@type": "sdo:Person"
         },
         {
-            "@id": "_:b6",
-            "sdo:url": "https://simbachain.com/",
-            "sdo:name": "Simba Chain",
-            "@type": "sdo:Organization"
-        },
-        {
             "@id": "_:b7",
             "sdo:url": {
-                "@value": "https://crc.nd.edu",
+                "@value": "https://orcid.org/0000-0003-3885-977X",
                 "@type": "xsd:anyURI"
             },
-            "sdo:name": "Center for Research Computing, University of Notre Dame",
-            "owl:sameAs": {
-                "@id": "wd:Q178848"
-            },
-            "@type": "sdo:Organization"
+            "sdo:name": "Kirsten Stor",
+            "sdo:affiliation": "Simbachain Inc",
+            "@type": "sdo:Person"
         },
         {
             "@id": "_:b8",
             "sdo:url": {
-                "@value": "https://orcid.org/0000-0001-8214-7177",
+                "@value": "https://orcid.org/0000-0003-4091-6059",
                 "@type": "xsd:anyURI"
             },
-            "sdo:name": "Christopher Sweet",
+            "sdo:name": "Charles F. Vardeman II",
+            "sdo:email": {
+                "@value": "cvardema@nd.edu",
+                "@type": "xsd:anyURI"
+            },
             "sdo:affiliation": "University of Notre Dame",
             "@type": "sdo:Person"
         },
@@ -493,13 +464,18 @@
             "@type": "owl:Restriction"
         },
         {
-            "@id": "ammo:Plan",
+            "@id": "ammo:isDescribedBy",
+            "rdfs:range": {
+                "@id": "ammo:Design"
+            },
             "rdfs:isDefinedBy": {
                 "@id": "https://w3id.org/ammo/ont/"
             },
-            "rdfs:comment": "A Description having an explicit Goal, to be achieved by executing the plan",
-            "rdfs:label": "Plan",
-            "@type": "owl:Class"
+            "rdfs:domain": {
+                "@id": "ammo:Component"
+            },
+            "rdfs:label": "is described by",
+            "@type": "owl:ObjectProperty"
         },
         {
             "@id": "ammo:Design",
@@ -603,6 +579,52 @@
             },
             "rdfs:label": "Time Interval",
             "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:hasProperPart",
+            "rdfs:subPropertyOf": {
+                "@id": "ammo:hasPart"
+            },
+            "@type": [
+                "owl:IrreflexiveProperty",
+                "owl:ObjectProperty",
+                "owl:AsymmetricProperty"
+            ],
+            "rdfs:range": {
+                "@id": "ammo:DesignSpecification"
+            },
+            "owl:inverseOf": {
+                "@id": "ammo:isProperPartOf"
+            },
+            "rdfs:isDefinedBy": [
+                {
+                    "@id": "https://w3id.org/ammo/ont/"
+                },
+                {
+                    "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
+                }
+            ],
+            "rdfs:domain": {
+                "@id": "ammo:Design"
+            },
+            "owl:equivalentProperty": {
+                "@id": "sio:SIO_000053"
+            },
+            "skos:example": {
+                "@language": "en",
+                "@value": "a car has an engine as a proper part; a car has a piston as a proper part;"
+            },
+            "dcterms:description": {
+                "@language": "en",
+                "@value": "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
+            },
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "has proper part"
+                },
+                "has proper part"
+            ]
         },
         {
             "@id": "ammo:hasComponentPart",
@@ -717,52 +739,6 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "ammo:hasProperPart",
-            "rdfs:subPropertyOf": {
-                "@id": "ammo:hasPart"
-            },
-            "@type": [
-                "owl:IrreflexiveProperty",
-                "owl:ObjectProperty",
-                "owl:AsymmetricProperty"
-            ],
-            "rdfs:range": {
-                "@id": "ammo:DesignSpecification"
-            },
-            "owl:inverseOf": {
-                "@id": "ammo:isProperPartOf"
-            },
-            "rdfs:isDefinedBy": [
-                {
-                    "@id": "https://w3id.org/ammo/ont/"
-                },
-                {
-                    "@id": "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"
-                }
-            ],
-            "rdfs:domain": {
-                "@id": "ammo:Design"
-            },
-            "owl:equivalentProperty": {
-                "@id": "sio:SIO_000053"
-            },
-            "skos:example": {
-                "@language": "en",
-                "@value": "a car has an engine as a proper part; a car has a piston as a proper part;"
-            },
-            "dcterms:description": {
-                "@language": "en",
-                "@value": "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
-            },
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "has proper part"
-                },
-                "has proper part"
-            ]
-        },
-        {
             "@id": "ammo:isSpecifiedBy",
             "rdfs:range": {
                 "@id": "ammo:DesignSpecification"
@@ -804,6 +780,15 @@
             "@type": "owl:Restriction"
         },
         {
+            "@id": "ammo:Plan",
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "A Description having an explicit Goal, to be achieved by executing the plan",
+            "rdfs:label": "Plan",
+            "@type": "owl:Class"
+        },
+        {
             "@id": "ammo:MaterialTransformation",
             "rdfs:subClassOf": {
                 "@id": "ammo:Process"
@@ -814,6 +799,31 @@
             "rdfs:comment": "A material transformation is a process that transforms material from one form to another.",
             "rdfs:label": "Material Transformation",
             "@type": "owl:Class"
+        },
+        {
+            "@id": "ammo:SystemDesign",
+            "rdfs:subClassOf": {
+                "@id": "ammo:Design"
+            },
+            "rdfs:isDefinedBy": {
+                "@id": "https://w3id.org/ammo/ont/"
+            },
+            "rdfs:comment": "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations.",
+            "opla:extractedFrom": {
+                "@id": "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"
+            },
+            "rdfs:label": "System Design",
+            "@type": "owl:Class"
+        },
+        {
+            "@id": "_:b11",
+            "owl:someValuesFrom": {
+                "@id": "ammo:Design"
+            },
+            "owl:onProperty": {
+                "@id": "ammo:isDescribedBy"
+            },
+            "@type": "owl:Restriction"
         },
         {
             "@id": "ammo:isProperPartOf",
@@ -895,16 +905,6 @@
             "owl:inverseOf": {
                 "@id": "ammo:isPartOf"
             }
-        },
-        {
-            "@id": "_:b11",
-            "owl:someValuesFrom": {
-                "@id": "ammo:Design"
-            },
-            "owl:onProperty": {
-                "@id": "ammo:isDescribedBy"
-            },
-            "@type": "owl:Restriction"
         },
         {
             "@id": "ammo:ofquantity",

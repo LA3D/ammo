@@ -45,7 +45,7 @@ ammo:designspecifcationtype a owl:ObjectProperty ;
     rdfs:label "designSpecifcationType" ;
     rdfs:domain ammo:DesignSpecification ;
     rdfs:isDefinedBy ammo: ;
-    rdfs:range ammo:Designspecificationtype .
+    rdfs:range ammo:DesignSpecificationType .
 
 ammo:existsAt a owl:ObjectProperty ;
     rdfs:label "exists at" ;
@@ -74,17 +74,11 @@ ammo:hasComponentPart a owl:ObjectProperty ;
     owl:inverseOf ammo:isComponentPartOf ;
     skos:example "a human has blood as a component part"@en .
 
-ammo:hasmaterial a owl:ObjectProperty ;
+ammo:hasMaterial a owl:ObjectProperty ;
     rdfs:label "hasMaterial" ;
-    rdfs:domain ammo:Materialdesignspecification ;
+    rdfs:domain ammo:MaterialDesignSpecification ;
     rdfs:isDefinedBy ammo: ;
     rdfs:range ammo:Material .
-
-ammo:hasquantitykind a owl:ObjectProperty ;
-    rdfs:label "hasQuantityKind" ;
-    rdfs:domain ammo:Quantity ;
-    rdfs:isDefinedBy ammo: ;
-    rdfs:range ammo:Quantitykind .
 
 ammo:isComponentOf a owl:ObjectProperty ;
     rdfs:label "is component of" ;
@@ -120,7 +114,7 @@ ammo:isSurroundedBy a owl:ObjectProperty ;
 
 ammo:ofquantity a owl:ObjectProperty ;
     rdfs:label "ofQuantity" ;
-    rdfs:domain ammo:Quantitydesignspecification ;
+    rdfs:domain ammo:QuantityDesignSpecification ;
     rdfs:isDefinedBy ammo: ;
     rdfs:range ammo:Quantity .
 
@@ -138,6 +132,10 @@ ammo:Attribute a owl:Class ;
     rdfs:comment "An attribute is a characteristic of some entity." ;
     rdfs:isDefinedBy ammo: .
 
+ammo:DesignSpecificationType a owl:Class ;
+    rdfs:label "DesignSpecificationType" ;
+    rdfs:isDefinedBy ammo: .
+
 ammo:DesignedArtifact a owl:Class ;
     rdfs:label "Designed Artifact" ;
     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
@@ -148,10 +146,6 @@ ammo:DesignedArtifact a owl:Class ;
         ammo:PhysicalArtifact ;
     skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." ;
     skos:note "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite" .
-
-ammo:Designspecificationtype a owl:Class ;
-    rdfs:label "DesignSpecificationType" ;
-    rdfs:isDefinedBy ammo: .
 
 ammo:PhysicalSystem a owl:Class ;
     rdfs:label "Physical System" ;
@@ -166,6 +160,12 @@ ammo:Plan a owl:Class ;
     rdfs:label "Plan" ;
     rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan" ;
     rdfs:isDefinedBy ammo: .
+
+ammo:Quantity a owl:Class ;
+    rdfs:label "Quantity" ;
+    rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent." ;
+    rdfs:isDefinedBy ammo: ;
+    owl:equivalentClass qudt:Quantity .
 
 ammo:SystemDesign a owl:Class ;
     rdfs:label "System Design" ;
@@ -272,12 +272,6 @@ ammo:PhysicalObject a owl:Class ;
     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
     rdfs:isDefinedBy ammo: ;
     skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)." .
-
-ammo:Quantity a owl:Class ;
-    rdfs:label "Quantity" ;
-    rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent." ;
-    rdfs:isDefinedBy ammo: ;
-    owl:equivalentClass qudt:Quantity .
 
 ammo:isDirectPartOf a owl:ObjectProperty ;
     rdfs:label "is direct part of"@en ;
@@ -413,7 +407,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
             sdo:name "Simba Chain" ;
             sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dcterms:title "Additive Manufacturing for Maintancence Operations Ontology"@en ;
+    dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
     owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;

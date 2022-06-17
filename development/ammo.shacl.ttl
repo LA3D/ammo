@@ -44,7 +44,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
             sdo:name "Simba Chain" ;
             sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dcterms:title "Additive Manufacturing for Maintancence Operations SHACL Shapes"@en ;
+    dcterms:title "Additive Manufacturing for Maintenance Operations SHACL Shapes"@en ;
     vann:preferredNamespacePrefix "ammosh" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/shapes/shacl/" ;
     owl:versionIRI <https://w3id.org/ammo/shapes/shacl/releases/0.0.1> ;
