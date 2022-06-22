@@ -30,8 +30,8 @@
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
-                               owl:versionIRI <https://w3id.org/ammo/ont/0.0.1> ;
-                               owl:versionInfo "0.0.1"@en ;
+                               owl:versionIRI <https://w3id.org/ammo/ont/0.1.0> ;
+                               owl:versionInfo "0.1.0"@en ;
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
