@@ -83,7 +83,7 @@ ammo:Capability rdf:type owl:Class ;
                 rdfs:comment "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger)." ;
                 prov:wasQuotedFrom "http://semanticscience.org/resource/" ;
                 rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-                rdfs:label "capability" .
+                rdfs:label "Capability" .
 
 
 ###  https://w3id.org/ammo/ont/Process
@@ -111,11 +111,12 @@ ammo:Role rdf:type owl:Class ;
           rdfs:subClassOf ammo:RealizableEntity ;
           rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance.";
           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-          rdfs:label "role" .
+          rdfs:label "Role" .
 
 
 ###  https://w3id.org/ammo/ont/TimeInterval
 ammo:TimeInterval rdf:type owl:Class ;
+                  owl:equivalentClass time:Interval ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                   rdfs:label "Time Interval" .
 
