@@ -47,8 +47,8 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:title "Additive Manufacturing for Maintenance Operations SHACL Shapes"@en ;
     vann:preferredNamespacePrefix "ammosh" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/shapes/shacl/" ;
-    owl:versionIRI ammosh:0.0.1 ;
-    owl:versionInfo "0.0.1"@en ;
+    owl:versionIRI ammosh:0.1.0 ;
+    owl:versionInfo "0.1.0"@en ;
     sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
 
 ammosh: a owl:Ontology .
