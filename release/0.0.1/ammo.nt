@@ -105,10 +105,10 @@
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Artifact" .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
-_:B8dfb08e932cea1cebeb8470c946f4fe4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B8dfb08e932cea1cebeb8470c946f4fe4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:B8dfb08e932cea1cebeb8470c946f4fe4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Design> .
-<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8dfb08e932cea1cebeb8470c946f4fe4 .
+_:B6d65953a8f489fc52cb95feea38402dd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B6d65953a8f489fc52cb95feea38402dd <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:B6d65953a8f489fc52cb95feea38402dd <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6d65953a8f489fc52cb95feea38402dd .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2004/02/skos/core#definition> "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc." .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2004/02/skos/core#note> "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite" .
@@ -193,10 +193,10 @@ _:B8dfb08e932cea1cebeb8470c946f4fe4 <http://www.w3.org/2002/07/owl#someValuesFro
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Physical System" .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
-_:Bad03a705b4a2a7062b709e08fc569944 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bad03a705b4a2a7062b709e08fc569944 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:Bad03a705b4a2a7062b709e08fc569944 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/SystemDesign> .
-<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bad03a705b4a2a7062b709e08fc569944 .
+_:Bf1f919dad298758242e9fe8b0e058f38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf1f919dad298758242e9fe8b0e058f38 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:Bf1f919dad298758242e9fe8b0e058f38 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/SystemDesign> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf1f919dad298758242e9fe8b0e058f38 .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalSystem> .
 <https://w3id.org/ammo/ont/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -208,10 +208,10 @@ _:Bad03a705b4a2a7062b709e08fc569944 <http://www.w3.org/2002/07/owl#someValuesFro
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Artifact" .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
-_:B922a5f37701eff01a07cca9a9f760deb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B922a5f37701eff01a07cca9a9f760deb <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:B922a5f37701eff01a07cca9a9f760deb <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Plan> .
-<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B922a5f37701eff01a07cca9a9f760deb .
+_:B8b8ff091e08744aee6cf8a309901a9dc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B8b8ff091e08744aee6cf8a309901a9dc <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:B8b8ff091e08744aee6cf8a309901a9dc <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Plan> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8b8ff091e08744aee6cf8a309901a9dc .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalObject> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2004/02/skos/core#definition> "Any PhysicalObject that isDescribedBy a Plan .\nThis axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,\nFunctionalSubstance(s) are included here as well.\nImmaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here." .
 <https://w3id.org/ammo/ont/PhysicalObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -259,10 +259,10 @@ _:B922a5f37701eff01a07cca9a9f760deb <http://www.w3.org/2002/07/owl#someValuesFro
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#label> "Object" .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#comment> "An object is an entity that is wholly identifiable at any instant of time during which it exists." .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
-_:Bb4d5fdc57d8cd98a1295679cbd7791b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bb4d5fdc57d8cd98a1295679cbd7791b6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
-_:Bb4d5fdc57d8cd98a1295679cbd7791b6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Object> .
-<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb4d5fdc57d8cd98a1295679cbd7791b6 .
+_:B61a749b9f2c9ecf50ca717b946ec9df3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B61a749b9f2c9ecf50ca717b946ec9df3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:B61a749b9f2c9ecf50ca717b946ec9df3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Object> .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B61a749b9f2c9ecf50ca717b946ec9df3 .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
 <https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
 <https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
@@ -299,55 +299,55 @@ _:Bb4d5fdc57d8cd98a1295679cbd7791b6 <http://www.w3.org/2002/07/owl#someValuesFro
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists." .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
-_:B49ccaed7c7e04f2bcd54ee2abb235bb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B49ccaed7c7e04f2bcd54ee2abb235bb0 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
-_:B49ccaed7c7e04f2bcd54ee2abb235bb0 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Process> .
-<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B49ccaed7c7e04f2bcd54ee2abb235bb0 .
+_:B14258655c7ba93418cfd6b274b944d7b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B14258655c7ba93418cfd6b274b944d7b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:B14258655c7ba93418cfd6b274b944d7b <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B14258655c7ba93418cfd6b274b944d7b .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-_:Bf003a77af58e71c245eaf0d6cfc0632a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:Bf003a77af58e71c245eaf0d6cfc0632a <https://schema.org/affiliation> "University of Notre Dame" .
-_:Bf003a77af58e71c245eaf0d6cfc0632a <https://schema.org/name> "Christopher Sweet" .
-_:Bf003a77af58e71c245eaf0d6cfc0632a <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Bf003a77af58e71c245eaf0d6cfc0632a .
-_:B37d6941911e04b055243a12743df414e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:B37d6941911e04b055243a12743df414e <https://schema.org/affiliation> "University of Notre Dame" .
-_:B37d6941911e04b055243a12743df414e <https://schema.org/name> "Donald Brower" .
-_:B37d6941911e04b055243a12743df414e <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B37d6941911e04b055243a12743df414e .
-_:Be9f1c6d24ca35f00f97fc638c16f7e2b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:Be9f1c6d24ca35f00f97fc638c16f7e2b <https://schema.org/affiliation> "Simbachain Inc" .
-_:Be9f1c6d24ca35f00f97fc638c16f7e2b <https://schema.org/name> "Matthew Welz" .
-_:Be9f1c6d24ca35f00f97fc638c16f7e2b <https://schema.org/url> "https://orcid.org/0000-0002-5861-1790"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Be9f1c6d24ca35f00f97fc638c16f7e2b .
-_:Bf21301a1fb5ac0549fd49c9e93d5437c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:Bf21301a1fb5ac0549fd49c9e93d5437c <https://schema.org/affiliation> "Simbachain Inc" .
-_:Bf21301a1fb5ac0549fd49c9e93d5437c <https://schema.org/name> "Kirsten Stor" .
-_:Bf21301a1fb5ac0549fd49c9e93d5437c <https://schema.org/url> "https://orcid.org/0000-0003-3885-977X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Bf21301a1fb5ac0549fd49c9e93d5437c .
+_:B67aedac7fb12c7acc750e7d514377518 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B67aedac7fb12c7acc750e7d514377518 <https://schema.org/affiliation> "University of Notre Dame" .
+_:B67aedac7fb12c7acc750e7d514377518 <https://schema.org/name> "Christopher Sweet" .
+_:B67aedac7fb12c7acc750e7d514377518 <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B67aedac7fb12c7acc750e7d514377518 .
+_:B9aaafa7fb707e488b4da51a5027eb376 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B9aaafa7fb707e488b4da51a5027eb376 <https://schema.org/affiliation> "University of Notre Dame" .
+_:B9aaafa7fb707e488b4da51a5027eb376 <https://schema.org/name> "Donald Brower" .
+_:B9aaafa7fb707e488b4da51a5027eb376 <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B9aaafa7fb707e488b4da51a5027eb376 .
+_:Bd19d438a2551be7ca7a9874371f9afba <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bd19d438a2551be7ca7a9874371f9afba <https://schema.org/affiliation> "Simbachain Inc" .
+_:Bd19d438a2551be7ca7a9874371f9afba <https://schema.org/name> "Matthew Welz" .
+_:Bd19d438a2551be7ca7a9874371f9afba <https://schema.org/url> "https://orcid.org/0000-0002-5861-1790"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Bd19d438a2551be7ca7a9874371f9afba .
+_:Bd5258dcc7dd6fd0e958b4dfdeadf838e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bd5258dcc7dd6fd0e958b4dfdeadf838e <https://schema.org/affiliation> "Simbachain Inc" .
+_:Bd5258dcc7dd6fd0e958b4dfdeadf838e <https://schema.org/name> "Kirsten Stor" .
+_:Bd5258dcc7dd6fd0e958b4dfdeadf838e <https://schema.org/url> "https://orcid.org/0000-0003-3885-977X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Bd5258dcc7dd6fd0e958b4dfdeadf838e .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
-_:B04dcc7718b36d17759991c02f718aef5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:B04dcc7718b36d17759991c02f718aef5 <https://schema.org/affiliation> "University of Notre Dame" .
-_:B04dcc7718b36d17759991c02f718aef5 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-_:B04dcc7718b36d17759991c02f718aef5 <https://schema.org/name> "Charles F. Vardeman II" .
-_:B04dcc7718b36d17759991c02f718aef5 <https://schema.org/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/creator> _:B04dcc7718b36d17759991c02f718aef5 .
+_:Bb9d0702e84dbe721e058cf371e032fa3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bb9d0702e84dbe721e058cf371e032fa3 <https://schema.org/affiliation> "University of Notre Dame" .
+_:Bb9d0702e84dbe721e058cf371e032fa3 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:Bb9d0702e84dbe721e058cf371e032fa3 <https://schema.org/name> "Charles F. Vardeman II" .
+_:Bb9d0702e84dbe721e058cf371e032fa3 <https://schema.org/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/creator> _:Bb9d0702e84dbe721e058cf371e032fa3 .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"@en .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/modified> "2022-05-12"^^<http://www.w3.org/2001/XMLSchema#date> .
-_:B32d8939f719b880774a4082c4ec5318c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
-_:B32d8939f719b880774a4082c4ec5318c <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.org/entity/Q178848> .
-_:B32d8939f719b880774a4082c4ec5318c <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
-_:B32d8939f719b880774a4082c4ec5318c <https://schema.org/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:B32d8939f719b880774a4082c4ec5318c .
-_:B50d884e58a21e15a56451dcf84cd576d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
-_:B50d884e58a21e15a56451dcf84cd576d <https://schema.org/name> "Simba Chain" .
-_:B50d884e58a21e15a56451dcf84cd576d <https://schema.org/url> "https://simbachain.com/" .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:B50d884e58a21e15a56451dcf84cd576d .
+_:Baa4add66dd108f322b62d1c4f799869f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:Baa4add66dd108f322b62d1c4f799869f <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.org/entity/Q178848> .
+_:Baa4add66dd108f322b62d1c4f799869f <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
+_:Baa4add66dd108f322b62d1c4f799869f <https://schema.org/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:Baa4add66dd108f322b62d1c4f799869f .
+_:Bbc378e5e2fb56c06ee3f87f3c3501fe2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:Bbc378e5e2fb56c06ee3f87f3c3501fe2 <https://schema.org/name> "Simba Chain" .
+_:Bbc378e5e2fb56c06ee3f87f3c3501fe2 <https://schema.org/url> "https://simbachain.com/" .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:Bbc378e5e2fb56c06ee3f87f3c3501fe2 .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en .
 <https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" .
 <https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" .
-<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/ont/release/0.0.1> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/ont/0.0.1> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1"@en .
 <https://w3id.org/ammo/ont/> <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .

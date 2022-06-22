@@ -40,10 +40,11 @@ can be found in the [doc/w3id](doc/w3id) subdirectory.
 | @prefix dcterms            | http://purl.org/dc/terms/                                             | Dublin Core Terms                                                                           |
 | @prefix vann               | http://purl.org/vocab/vann/                                           | Vocabulary for annotating vocabulary terms                                                  |
 | @prefix cpannotationschema | http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl# | ODP annotations                                                                             |
+| @prefix gs1                | http://gs1.org/voc/                                                   | [GS1 Web Vocabulary](https://www.gs1.org/gs1-web-vocabulary)                                |
 
 ## Versions
 
-The latest version of the full ontology can be found at https://w3id.org/ammo/development/ and specific release versions can be found at https://w3id.org/ammo/release/{version number}/.
+The latest version of the full ontology can be found at https://w3id.org/ammo/ont/ and specific release versions can be found at https://w3id.org/ammo/ont/{version number}/.
 
 ## Contact
 

@@ -17,7 +17,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-
+@prefix gs1: <http://gs1.org/voc/> .
 
 
 @prefix ammo: <https://w3id.org/ammo/ont/> .
@@ -30,7 +30,7 @@
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
-                               owl:versionIRI <https://w3id.org/ammo/ont/release/0.0.1> ;
+                               owl:versionIRI <https://w3id.org/ammo/ont/0.0.1> ;
                                owl:versionInfo "0.0.1"@en ;
                                dcterms:publisher [
                                    a sdo:Organization ;

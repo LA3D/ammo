@@ -36,3 +36,20 @@ ammo:WorkPiece skos:exactMatch wd:Q360931 .
 ammo:AdditiveManufacturingMachine skos:exactMatch wd:Q360931;
     skos:note """Additive manufacturing machine is a machine that uses additive manufacturing to produce a workpiece."""
  .
+
+ # 3d PrintingProcess
+ammo:AMProcess skos:exactMatch wd:Q30592743;
+    skos:note """Engineering process used for 3D printing"""
+ .
+
+ # Fused Filiment Fabrication
+ammo:FusedFilamentFabrication skos:exactMatch wd:Q18349149;
+    skos:note """Engineering process used for 3D printing""";
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Fused_filament_fabrication>;
+.
+
+# 3D Printing Filiment
+ammo:AMFilament skos:exactMatch wd:Q30324851;
+    skos:note """Table of Materials for 3D Printing Filament""";
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_filament>;
+.

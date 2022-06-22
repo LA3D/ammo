@@ -1,0 +1,76 @@
+# baseURI: http://www.opengis.net/ont/testbed16/state
+# imports: http://www.opengis.net/ont/testbed16/event
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2006/time
+
+@prefix : <http://www.opengis.net/ont/testbed16/state#> .
+@prefix event: <http://www.opengis.net/ont/testbed16/event#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix situation: <http://www.opengis.net/ont/testbed16/situation#> .
+@prefix state: <http://www.opengis.net/ont/testbed16/state#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/ont/testbed16/state>
+  a owl:Ontology ;
+  owl:imports <http://www.opengis.net/ont/testbed16/event> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/2006/time> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+state:State
+  a owl:Class ;
+  rdfs:label "State" ;
+  rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+.
+state:Status
+  a owl:Class ;
+  rdfs:label "Status" ;
+  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+.
+state:Transition
+  a owl:Class ;
+  rdfs:label "Transition" ;
+  rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty state:fromState ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty state:toState ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty event:event ;
+    ] ;
+.
+state:fromState
+  a owl:ObjectProperty ;
+  rdfs:label "from state" ;
+  rdfs:range state:State ;
+.
+state:hasState
+  a owl:ObjectProperty ;
+  rdfs:label "has state" ;
+  rdfs:range state:State ;
+.
+state:hasTransition
+  a owl:ObjectProperty ;
+  rdfs:label "has transition" ;
+  rdfs:range state:Transition ;
+.
+state:status
+  a owl:ObjectProperty ;
+  rdfs:label "status" ;
+  rdfs:range state:Status ;
+.
+state:toState
+  a owl:ObjectProperty ;
+  rdfs:label "to state" ;
+  rdfs:range state:State ;
+.
