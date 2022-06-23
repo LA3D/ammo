@@ -44,7 +44,7 @@ can be found in the [doc/w3id](doc/w3id) subdirectory.
 
 ## Versions
 
-The latest version of the full ontology can be found at https://w3id.org/ammo/ont/ and specific release versions can be found at https://w3id.org/ammo/ont/{version number}/.
+The latest version of the full ontology can be found at https://w3id.org/ammo/ont/ and specific release versions can be found at https://w3id.org/ammo/ont/{version number}/, for example https://w3id.org/ammo/ont/0.1.0.
 
 ## Contact
 

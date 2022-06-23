@@ -1,76 +1,66 @@
-# baseURI: http://www.opengis.net/ont/testbed16/state
-# imports: http://www.opengis.net/ont/testbed16/event
-# imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/2006/time
 
-@prefix : <http://www.opengis.net/ont/testbed16/state#> .
-@prefix event: <http://www.opengis.net/ont/testbed16/event#> .
+@prefix : <https://w3id.org/ammo/ont/> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix situation: <http://www.opengis.net/ont/testbed16/situation#> .
-@prefix state: <http://www.opengis.net/ont/testbed16/state#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.opengis.net/ont/testbed16/state>
-  a owl:Ontology ;
-  owl:imports <http://www.opengis.net/ont/testbed16/event> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <http://www.w3.org/2006/time> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
-.
-state:State
+# TODO: Need to define events relative to Prov event and owl-time
+
+ammo:State
   a owl:Class ;
   rdfs:label "State" ;
   rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
 .
-state:Status
+ammo:Status
   a owl:Class ;
   rdfs:label "Status" ;
   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 .
-state:Transition
+ammo:Transition
   a owl:Class ;
   rdfs:label "Transition" ;
   rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty state:fromState ;
+      owl:onProperty ammo:fromState ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty state:toState ;
+      owl:onProperty ammo:toState ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty event:event ;
+      owl:onProperty ammo:event ;
     ] ;
 .
-state:fromState
+ammo:fromState
   a owl:ObjectProperty ;
   rdfs:label "from state" ;
-  rdfs:range state:State ;
+  rdfs:range ammo:State ;
 .
-state:hasState
+ammo:hasState
   a owl:ObjectProperty ;
   rdfs:label "has state" ;
-  rdfs:range state:State ;
+  rdfs:range ammo:State ;
 .
-state:hasTransition
+ammo:hasTransition
   a owl:ObjectProperty ;
   rdfs:label "has transition" ;
-  rdfs:range state:Transition ;
+  rdfs:range ammo:Transition ;
 .
-state:status
+ammo:status
   a owl:ObjectProperty ;
   rdfs:label "status" ;
-  rdfs:range state:Status ;
+  rdfs:range ammo:Status ;
 .
-state:toState
+ammo:toState
   a owl:ObjectProperty ;
   rdfs:label "to state" ;
-  rdfs:range state:State ;
+  rdfs:range ammo:State ;
 .

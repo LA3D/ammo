@@ -8,9 +8,11 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix wd: <http://wikidata.org/entity/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 @prefix ammo: <https://w3id.org/ammo/ont/> .
 @base <https://w3id.org/ammo/ont/> .
@@ -115,9 +117,12 @@ ammo:specifies rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/ammo/ont/Design
 ammo:Design rdf:type owl:Class ;
-            rdfs:comment """A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+            rdfs:comment """From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
 A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
 While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
+            skos:definition "A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process."@en ;
+            prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design"@en;
+            skos:exactMatch wd:Q82604 ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
             rdfs:label "Design" .
 
@@ -128,26 +133,30 @@ ammo:Object rdf:type owl:Class ;
                               owl:onProperty ammo:hasProperPart ;
                               owl:someValuesFrom ammo:Object
                             ] ;
-            rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists." ;
+            rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists."@en ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-            rdfs:label "Object" .
+            rdfs:label "Object"@en .
 
 ### https://w3id.org/ammo/ont/DesignSpecification
 ammo:DesignSpecification rdf:type owl:Class ;
+                       rdfs:comment "A design specification is a detailed document that sets out exaclty what a product or a process should present."@en;
+                       prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design_specification";
+                       skos:exactMatch wd:Q16960030;
                        rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                        rdfs:label "Design Specification" .
 
 
 ### https://w3id.org/ammo/ont/Designspecificationtype
 ammo:DesignSpecificationType rdf:type owl:Class ;
+                           rdfs:comment "Hook for vocabulary that describes the specification entity" ;
                            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-                           rdfs:label "DesignSpecificationType" .
+                           rdfs:label "Design Specification Type"@en .
 
-###  https://w3id.org/ammo/ont/untitled-ekg#Quantity
+###  https://w3id.org/ammo/ont/Quantity
 ammo:Quantity rdf:type owl:Class ;
             owl:equivalentClass qudt:Quantity ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-            rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent." ;
+            rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent."@en ;
             rdfs:label "Quantity" .
 
 
@@ -158,8 +167,8 @@ ammo:DesignedArtifact rdf:type owl:Class ;
                                         owl:onProperty ammo:isDescribedBy ;
                                         owl:someValuesFrom ammo:Design
                                       ] ;
-                      skos:definition """A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc.""" ;
-                      skos:note """Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite""" ;
+                      skos:definition """A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc."""@en ;
+                      skos:note """Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite"""@en ;
                       opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl>;
                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                       rdfs:label "Designed Artifact" .
@@ -195,18 +204,18 @@ ammo:PhysicalArtifact rdf:type owl:Class ;
                       skos:definition """Any PhysicalObject that isDescribedBy a Plan .
 This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
 FunctionalSubstance(s) are included here as well.
-Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.""" ;
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here."""@en ;
                       rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                       opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
-                      rdfs:label "Physical Artifact" .
+                      rdfs:label "Physical Artifact"@en .
 
 
 ###  https://w3id.org/ammo/ont/PhysicalObject
 ammo:PhysicalObject rdf:type owl:Class ;
-                    skos:definition """Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary).""" ;
+                    skos:definition """Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)."""@en ;
                     rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
-                    rdfs:label "Physical Object" .
+                    rdfs:label "Physical Object"@en .
 
 
 ###  https://w3id.org/ammo/ont/PhysicalSystem
@@ -214,28 +223,36 @@ ammo:PhysicalSystem rdf:type owl:Class ;
                     rdfs:subClassOf ammo:PhysicalObject ;
                     skos:definition """A physical object that isDescribedBy a SystemDesign .
 I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
-Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.""" ;
+Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system."""@en ;
                     rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
-                    rdfs:label "Physical System" .
+                    rdfs:label "Physical System"@en .
 
 
 ###  https://w3id.org/ammo/ont/Plan
 ammo:Plan rdf:type owl:Class ;
-          rdfs:comment """A Description having an explicit Goal, to be achieved by executing the plan""" ;
+          rdfs:comment """A Description having an explicit Goal, to be achieved by executing the plan"""@en ;
           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
-          rdfs:label "Plan" .
+          rdfs:label "Plan"@en .
 
 
 ###  https://w3id.org/ammo/ont/SystemDesign
 ammo:SystemDesign rdf:type owl:Class ;
                   rdfs:subClassOf ammo:Design ;
-                  rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations." ;
+                  rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations."@en ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                   opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
-                  rdfs:label "System Design" .
+                  rdfs:label "System Design"@en .
 
-
+###  https://w3id.org/ammo/ont/Material
+ammo:Material rdf:type owl:Class ;
+                  rdfs:subClassOf ammo:Object ;
+                  rdfs:comment "Substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and of which objects can be made up"@en ;
+                  rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                  prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Material"@en;
+                  rdfs:seeAlso <https://www.wikidata.org/wiki/Q214609>;
+                  opla:extractedFrom <http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation> ;
+                  rdfs:label "Material"@en .
 
 
 
