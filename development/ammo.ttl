@@ -782,7 +782,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
-    owl:versionIRI ammo:0.5.0 ;
-    owl:versionInfo "0.5.0"@en ;
+    owl:versionIRI ammo:0.5.1 ;
+    owl:versionInfo "0.5.1"@en ;
     sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
 
