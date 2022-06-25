@@ -12,6 +12,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
 @prefix ammo: <https://w3id.org/ammo/ont/> .
@@ -52,7 +53,7 @@ ammo:describes rdf:type owl:ObjectProperty ;
 
 
 ### https://w3id.org/ammo/ont/designspecifcationtype
-ammo:designspecifcationtype rdf:type owl:ObjectProperty ;
+ammo:designSpecifcationType rdf:type owl:ObjectProperty ;
                           rdfs:domain ammo:DesignSpecification ;
                           rdfs:range ammo:DesignSpecificationType ;
                           rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
@@ -93,7 +94,7 @@ ammo:isSpecifiedBy rdf:type owl:ObjectProperty ;
 
 
 ###  https://w3id.org/ammo/ont/ofquantity
-ammo:ofquantity rdf:type owl:ObjectProperty ;
+ammo:ofQuantity rdf:type owl:ObjectProperty ;
               rdfs:domain ammo:QuantityDesignSpecification ;
               rdfs:range ammo:Quantity ;
               rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
@@ -109,7 +110,12 @@ ammo:specifies rdf:type owl:ObjectProperty ;
              rdfs:label "specifies" .
 
 
-
+ammo:hasDataset rdf:type owl:ObjectProperty ;
+            rdfs:domain ammo:Design ;
+            rdfs:range  ammo:DesignDataset ;
+            rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+            rdfs:label "has dataset";
+.
 
 #################################################################
 #    Classes
@@ -117,7 +123,7 @@ ammo:specifies rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/ammo/ont/Design
 ammo:Design rdf:type owl:Class ;
-            rdfs:comment """From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+              rdfs:comment """From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
 A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
 While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
             skos:definition "A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process."@en ;
@@ -125,6 +131,12 @@ While designs typically describe entities to be constructed, they can also be us
             skos:exactMatch wd:Q82604 ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
             rdfs:label "Design" .
+
+ammo:DesignDataset rdf:type owl:Class ;
+            rdfs:label "Design Dataset" ;
+            rdfs:subClassOf dcat:Dataset ;
+            skos:definition """A collection of data, published or curated by a single agent, and available for access or download in one or more representations. """ ;
+.
 
 ###  https://w3id.org/ammo/ont/Object
 ammo:Object rdf:type owl:Class ;

@@ -74,6 +74,10 @@ The Nanomine [Ontology](https://raw.githubusercontent.com/tetherless-world/nanom
     - [product defect](https://www.wikidata.org/wiki/Q1138598)
     - [engineering tolerance](https://www.wikidata.org/wiki/Q950292)
   - [Design](https://www.wikidata.org/wiki/Q82604)
+  - [Material](https://www.wikidata.org/wiki/Q214609)
+    - [made from material](https://www.wikidata.org/wiki/Property:P186)
+    - [raw material processed](https://www.wikidata.org/wiki/Property:P10672)
+    - [3D_printing_filament](https://www.wikidata.org/wiki/Q30324851)
 
 ## Related Ontologies
 
@@ -105,3 +109,7 @@ The Cooking Recipes Ontology](https://daselab.cs.ksu.edu/sites/default/files/mom
 ![Quantity of stuff](./grafo/quantityofstuff.png)
 
 [Spatial Data on the Web Issue](https://github.com/w3c/sdw/issues/1267) "modeling units on properties instead of results"
+
+## Block-Chain Connections through GS1 crosswalks
+
+- [GS1 Core Buisness Vocabulary](https://www.gs1.org/sites/default/files/docs/epc/CBV-Standard-1-2-2-r-2017-10-12.pdf)

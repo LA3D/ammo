@@ -1,0 +1,220 @@
+@prefix : <https://w3id.org/ammo/ont/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@base <https://w3id.org/ammo/ont/> .
+
+<https://w3id.org/ammo/module/Materials> rdf:type opla:Module ;
+              skos:prefLabel "ammo materials module" ;
+              skos:note """Module definitons for materials""";
+.
+# Stainless steel - Steel
+   
+# Aluminum powder - AluminumPowder
+# PLA - PLA
+# ABS - ABS
+# GR-M3210 - GRM3210
+# Steel 4130 - Steel4130
+# GR 32510 - GR32510
+# Aluminum 3085 - Aluminum3085
+# 355-T6 - Aluminum
+# Aluminum 3085
+# Steel 4130
+# Steel 4130
+# Steel 304
+# GR 60-40-18
+# Steel cast A27
+# Steel 4140H
+# Steel ASTMA517
+# PLA
+# 3D Polymer
+# Steel 4130
+# Aluminum 6061
+
+ammo:madeFromMaterial a owl:ObjectProperty;
+    rdfs:label "made from material";
+    owl:equivalentProperty wdt:P186
+.
+
+ammo:hasBaseMaterial a owl:ObjectProperty;
+    rdfs:label "has base material";
+    rdfs:domain ammo:Material;
+    rdfs:range ammo:BaseMaterial;
+.
+
+ammo:CompositeMaterial a rdfs:Class;
+    rdfs:subClassOf ammo:Material ;
+    rdfs:label "composite material";
+    skos:definition "material made from a combination of two or more unlike substances"@en ;
+    skos:exactMatch wd:Q181790;
+.
+
+ammo:Polymer a rdfs:Class ;
+    rdfs:subClassOf ammo:Material;
+    rdfs:label "polymer";
+    skos:definition "substance composed of macromolecules with repeating structural units"@en ;
+    skos:exactMatch wd:Q81163 ;
+.
+
+ammo:Alloy a rdfs:Class ;
+    rdfs:subClassOf ammo:Material ;
+    rdfs:label "alloy" ;
+    skos:definition "mixture or metallic solid solution composed of two or more elements"@en ;
+    skos:exactMatch wd:Q37756
+.
+
+ammo:BaseMaterial a rdfs:Class;
+    rdfs:subClassOf ammo:Material ;
+    skos:definition "A material from which other materials are derived";
+    rdfs:label "base material";
+.
+
+ammo:Steel a owl:NamedIndividual, ammo:BaseMaterial, ammo:Alloy ;
+    rdfs:label "Steel"@en;
+    skos:exactMatch wd:Q11427
+.
+
+ammo:Aluminum a owl:NamedIndividual, ammo:BaseMaterial ;
+    rdfs:label "Aluminum"@en;
+    skos:exactMatch wd:Q663 ;
+.
+
+ammo:StainlessSteel a owl:NamedIndividual, ammo:Alloy ;
+    rdfs:label "Stainless Steel"@en ;
+    skos:exactMatch wd:Q447725 ;
+.
+
+ammo:AluminumPowder a owl:NamedIndividual, ammo:Material ;
+    ammo:hasBaseMaterial ammo:Aluminum ;
+    rdfs:label "Aluminum powder" ;
+.
+
+# TODO: Add `has use` `fused filament fabrication` to wikidata crosswalk
+ammo:PLA a owl:NamedIndividual, ammo:Polymer ;
+    rdfs:label "polylactic acid" ;
+    skos:exactMatch wd:Q413769 ;
+    skos:altLabel "PLA" ;
+.
+
+ammo:ABS a owl:NamedIndividual, ammo:Polymer ;
+    rdfs:label "acrylonitrile butadiene styrene" ;
+    skos:exactMatch wd:Q143496 ;
+    skos:altLabel "ABS";
+.
+
+ammo:Steel4130 a owl:NamedIndividual, ammo:Alloy;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "steel 4130";
+    skos:exactMatch wd:Q869869;
+    skos:definition "family of steel grades rich in molybdenum and chromium";
+    prov:wasQuotedFrom "https://en.wikipedia.org/wiki/41xx_steel"@en;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/41xx_steel> ;
+    skos:note """Table on wikipedia has SAE Grades and material properties"""@en;
+.
+
+ammo:GR32510 a owl:NamedIndividual, ammo:Alloy;
+    rdfs:label "GR 32510";
+    rdfs:seeAlso <https://www.matweb.com/search/datasheet.aspx?matguid=d195da8efafa474f8b6f869bbf767bae&ckck=1>
+    skos:altLabel "Malleable iron casting, Class 32510";
+    skos:closeMatch wd:Q483269 ;
+.
+
+ammo:GRM3210 a owl:NamedIndividual, ammo:Alloy ;
+    rdfs:label "GR-M3210"@en ;
+    skos:altLabel "ASTM A602 Grade M3210 Annealed";
+    rdfs:seeAlso <https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed>;
+    skos:closeMatch wd:Q483269 ;
+.
+
+ammo:Aluminum3085 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Aluminum ;
+    rdfs:label "Aluminum 3085";
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Aluminium_alloy> ;
+    skos:exactMatch wd:Q447725
+.
+
+# ----
+ammo:Steel4130 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "Steel 4130" ;
+    skos:narrower wd:Q869869 ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/41xx_steel> ;
+.
+
+ammo:Aluminum355T6 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Aluminum ;
+    rdfs:label "355-T6" ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Aluminium_alloy> ;
+.
+
+ammo:Steel304 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "Steel 304" ;
+    skos:altLabel "SAE 304 stainless steel" ;
+    skos:exactMatch wd:Q3600978 ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/SAE_304_stainless_steel>;
+.
+
+ammo:SteelA27 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "Steel cast A27" ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/SAE_steel_grades> ;
+    skos:altLabel "ASTM A27 Steel";
+.
+
+# Good template for the other steel
+ammo:SteelA36  a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "ASTM A36 steel";
+    skos:exactMatch wd:Q3247733 ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/A36_steel> ;
+.
+
+ammo:Steel4140H a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Steel ;
+    rdfs:label "Steel 4140H" ;
+    skos:altLabel "SEA 4140" ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/SAE_steel_grades>;
+.
+
+# Template for Aluminum https://www.wikidata.org/wiki/Q4641644
+ammo:Aluminum6160 a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Aluminum ;
+    rdfs:label "Aluminum 6160" ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Aluminium_alloy> ;
+    skos:closeMatch wd:Q4641644 ;
+.
+
+ammo:AluminumPowder a owl:NamedIndividual, ammo:Alloy ;
+    ammo:hasBaseMaterial ammo:Aluminum ;
+    rdfs:label "Aluminum Powder" ;
+.
+
+ammo:GRM32510 a owl:NamedIndividual, ammo:Alloy ;
+    rdfs:label "GR-M32510"@en ;
+    skos:altLabel "ASTM A602 Grade M3210 Annealed";
+    rdfs:seeAlso <https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed>;
+    skos:closeMatch wd:Q483269 ;
+.
+
+ammo:GR604018 a owl:NamedIndividual, ammo:Alloy ;
+    rdfs:label "GR 60-40-18"@en ;
+    skos:altLabel "ASTM A602 Grade M3210 Annealed";
+    rdfs:seeAlso <https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed>;
+    skos:closeMatch wd:Q483269 ;
+.
