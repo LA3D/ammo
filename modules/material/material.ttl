@@ -57,28 +57,28 @@ ammo:hasBaseMaterial a owl:ObjectProperty;
     rdfs:range ammo:BaseMaterial;
 .
 
-ammo:CompositeMaterial a rdfs:Class;
+ammo:CompositeMaterial a owl:Class;
     rdfs:subClassOf ammo:Material ;
     rdfs:label "composite material";
     skos:definition "material made from a combination of two or more unlike substances"@en ;
     skos:exactMatch wd:Q181790;
 .
 
-ammo:Polymer a rdfs:Class ;
+ammo:Polymer a owl:Class ;
     rdfs:subClassOf ammo:Material;
     rdfs:label "polymer";
     skos:definition "substance composed of macromolecules with repeating structural units"@en ;
     skos:exactMatch wd:Q81163 ;
 .
 
-ammo:Alloy a rdfs:Class ;
+ammo:Alloy a owl:Class ;
     rdfs:subClassOf ammo:Material ;
     rdfs:label "alloy" ;
     skos:definition "mixture or metallic solid solution composed of two or more elements"@en ;
     skos:exactMatch wd:Q37756
 .
 
-ammo:BaseMaterial a rdfs:Class;
+ammo:BaseMaterial a owl:Class;
     rdfs:subClassOf ammo:Material ;
     skos:definition "A material from which other materials are derived";
     rdfs:label "base material";

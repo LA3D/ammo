@@ -25,7 +25,7 @@
               rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes> ;
 .
 
-ammo:AMProcess a rdfs:Class;
+ammo:AMProcess a owl:Class;
     rdfs:subClassOf ammo:MaterialTransformation ;
     rdfs:label "Additive Manufacturing Process"@en ;
     skos:altLabel "3D Printing Process"@en;
@@ -35,12 +35,12 @@ ammo:AMProcess a rdfs:Class;
     skos:exactMatch wd:Q360931;
 .
 
-ammo:MaterialExtrusion a rdfs:Class;
+ammo:MaterialExtrusion a owl:Class;
     rdfs:subClassOf ammo:AMProcess ;
     rdfs:label "Material Extrusion";
 .
 
-ammo:FusedFilamentFabrication a rdfs:Class;
+ammo:FusedFilamentFabrication a owl:Class;
     rdfs:subClassOf ammo:MaterialExtrusion ;
     rdfs:label "Fused filament fabrication" ;
     skos:altLabel "Fused deposition modeling";
@@ -48,25 +48,25 @@ ammo:FusedFilamentFabrication a rdfs:Class;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Fused_filament_fabrication#Fused_deposition_modeling> ;
 .
 
-ammo:Robocasting a rdfs:Class;
+ammo:Robocasting a owl:Class;
     rdfs:subClassOf ammo:MaterialExtrusion ;
     rdfs:label "Robocasting";
     skos:exactMatch wd:Q18390836 ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Robocasting> ;
 .
 
-ammo:CompositeMaterialFabrication a rdfs:Class;
+ammo:CompositeMaterialFabrication a owl:Class;
     rdfs:subClassOf ammo:MaterialExtrusion ;
     rdfs:label "Composite Material Fabrication" ;
     skos:altLabel "CFF";
 .
 
-ammo:LightPolymerized a rdfs:Class;
+ammo:LightPolymerized a owl:Class;
     rdfs:subClassOf ammo:AMProcess ;
     rdfs:label "Light Polymerized"
 .
 
-ammo:Stereolithography a rdfs:Class;
+ammo:Stereolithography a owl:Class;
     rdfs:subClassOf ammo:LightPolymerized ;
     rdfs:label "Stereolithography" ;
     skos:altLabel "SLA";
@@ -75,7 +75,7 @@ ammo:Stereolithography a rdfs:Class;
 .
 
 
-ammo:DigitalLightProcessing a rdfs:Class;
+ammo:DigitalLightProcessing a owl:Class;
     rdfs:subClassOf ammo:LightPolymerized ;
     rdfs:label "Digital Light Processing"@en ;
     skos:note "Wikidata has a misdirection to Digital Light Processing Display not a printing process"@en;
@@ -84,7 +84,7 @@ ammo:DigitalLightProcessing a rdfs:Class;
     rdfs:seeAlso <https://markforged.com/resources/learn/3d-printing-basics/3d-printing-processes/what-is-digital-light-processing-dlp>;
 .
 
-ammo:CLIP a rdfs:Class;
+ammo:CLIP a owl:Class;
     rdfs:subClassOf ammo:LightPolymerized ;
     rdfs:label "Continuous Liquid Interface Production";
     skos:altLabel "Continuous Liquid Interphase Printing";
@@ -93,26 +93,26 @@ ammo:CLIP a rdfs:Class;
     skos:exactMatch wd:Q20026892;
 .
 
-ammo:PowderBed a rdfs:Class;
+ammo:PowderBed a owl:Class;
     rdfs:subClassOf ammo:AMProcess;
     rdfs:label "Powder Bed";
 .
 
-ammo:PB3DP a rdfs:Class;
+ammo:PB3DP a owl:Class;
     rdfs:subClassOf ammo:PowderBed;
     rdfs:label "Powder bed and inkjet head 3D printing";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Powder_bed_and_inkjet_head_3D_printing>;
     skos:exactMatch wd:Q25381710;
 .
 
-ammo:EMB a rdfs:Class;
+ammo:EMB a owl:Class;
     rdfs:subClassOf ammo:PowderBed;
     rdfs:label "Electron-beam additive manufacturing";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Electron-beam_additive_manufacturing>;
     skos:exactMatch wd:Q392480;
 .
 
-ammo:SLM a rdfs:Class;
+ammo:SLM a owl:Class;
     rdfs:subClassOf ammo:PowderBed;
     rdfs:label "Selective laser melting";
     skos:altLabel "direct metal laser sintering";
@@ -121,51 +121,51 @@ ammo:SLM a rdfs:Class;
     skos:exactMatch wd:Q2267983 ;
 .
 
-ammo:SHS a rdfs:Class;
+ammo:SHS a owl:Class;
     rdfs:subClassOf ammo:PowderBed;
     rdfs:label "Selective heat sintering";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Selective_heat_sintering>;
     skos:exactMatch wd:Q16964377;
 .
 
-ammo:LaminatedProcess a rdfs:Class;
+ammo:LaminatedProcess a owl:Class;
     rdfs:subClassOf ammo:AMProcess;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes#Processes>;
     rdfs:label "Laminated Process";
 .
 
-ammo:LOM a rdfs:Class;
+ammo:LOM a owl:Class;
     rdfs:subClassOf ammo:LaminatedProcess;
     rdfs:label "Laminated Object Manufacturing";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Laminated_object_manufacturing>;
     skos:exactMatch wd:Q1412809;
 .
 
-ammo:PowderFed a rdfs:Class;
+ammo:PowderFed a owl:Class;
     rdfs:subClassOf ammo:AMProcess;
     rdfs:label "Powder Fed Process";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes#Processes>;
 .
 
-ammo:DED a rdfs:Class;
+ammo:DED a owl:Class;
     rdfs:subClassOf ammo:PowderFed;
     rdfs:label "Directed Energy Deposition";
     rdfs:seeAlso <https://www.3dnatives.com/en/directed-energy-deposition-ded-3d-printing-guide-100920194/>;
 .
 
-ammo:EHLA a rdfs:Class;
+ammo:EHLA a owl:Class;
     rdfs:subClassOf ammo:PowderFed;
     rdfs:label "Extreme High-Speed Laser Cladding";
     rdfs:seeAlso <https://www.sfcnclaser.com/what-is-ultra-high-speed-laser-cladding-machines.html>;
 .
 
-ammo:WireProcess a rdfs:Class;
+ammo:WireProcess a owl:Class;
     rdfs:subClassOf ammo:AMProcess;
     rdfs:label "Wire Printing Process";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes#Processes>;
 .
 
-ammo:EBF a rdfs:Class;
+ammo:EBF a owl:Class;
     rdfs:subClassOf ammo:AMProcess;
     rdfs:label "Electron-beam freeform fabrication";
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Electron-beam_freeform_fabrication>;
