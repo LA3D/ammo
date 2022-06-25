@@ -17,6 +17,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dg: <https://w3id.org/dingo#> .
 @prefix gs1: <http://gs1.org/voc/> .
 
 
@@ -28,10 +29,10 @@
 # TODO: Add omv ontology metadata that describes formalism using omv ontology
 
 
-<https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
+<https://w3id.org/ammo/ont/> rdf:type owl:Ontology, dg:Product_or_material_produced ;
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
-                               owl:versionIRI <https://w3id.org/ammo/ont/0.1.0> ;
-                               owl:versionInfo "0.1.0"@en ;
+                               owl:versionIRI <https://w3id.org/ammo/ont/0.5.0> ;
+                               owl:versionInfo "0.5.0"@en ;
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
@@ -80,6 +81,9 @@
                                dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
 
 Contributions and Discussion Welcomed.
+
+Ontolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+
 Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
 

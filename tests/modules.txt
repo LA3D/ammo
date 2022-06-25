@@ -3,3 +3,5 @@ system,./modules/common/system.ttl
 process,./modules/common/process.ttl
 mereology,./modules/common/mereology.ttl
 state,./modules/common/state.ttl
+AMProcess,./modules/process/AMProcess.ttl
+Material,./modules/material/material.ttl

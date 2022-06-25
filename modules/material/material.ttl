@@ -129,7 +129,7 @@ ammo:Steel4130 a owl:NamedIndividual, ammo:Alloy;
 
 ammo:GR32510 a owl:NamedIndividual, ammo:Alloy;
     rdfs:label "GR 32510";
-    rdfs:seeAlso <https://www.matweb.com/search/datasheet.aspx?matguid=d195da8efafa474f8b6f869bbf767bae&ckck=1>
+    rdfs:seeAlso <https://www.matweb.com/search/datasheet.aspx?matguid=d195da8efafa474f8b6f869bbf767bae&ckck=1>;
     skos:altLabel "Malleable iron casting, Class 32510";
     skos:closeMatch wd:Q483269 ;
 .
