@@ -6,6 +6,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -38,6 +39,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <terms:publisher rdf:nodeID="genid7"/>
         <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
         <terms:title xml:lang="en">Additive Manufacturing for Maintenance Operations Ontology</terms:title>
+        <bibo:status>Work In Progress</bibo:status>
         <vann:preferredNamespacePrefix>ammo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://w3id.org/ammo/ont/</vann:preferredNamespaceUri>
         <owl:priorVersion rdf:resource="https://w3id.org/ammo/ont/0.5.0"/>
@@ -174,6 +176,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
     
 
 

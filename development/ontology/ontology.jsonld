@@ -224,6 +224,9 @@
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/ontology/bibo/status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -420,6 +423,9 @@
   "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "Additive Manufacturing for Maintenance Operations Ontology"
+  } ],
+  "http://purl.org/ontology/bibo/status" : [ {
+    "@value" : "Work In Progress"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "ammo"

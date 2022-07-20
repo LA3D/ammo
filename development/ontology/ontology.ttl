@@ -29,6 +29,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                                                    _:genid7 ;
                               <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                               <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en ;
+                              <http://purl.org/ontology/bibo/status> "Work In Progress" ;
                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" ;
                               <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" ;
                               owl:priorVersion <https://w3id.org/ammo/ont/0.5.0> ;
@@ -115,6 +116,10 @@ _:genid7 rdf:type <https://schema.org/Organization> ;
 
 ###  http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix

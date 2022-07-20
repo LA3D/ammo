@@ -44,6 +44,7 @@ _:genid7 <https://schema.org/name> "Simba Chain" .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/ontology/bibo/status> "Work In Progress" .
 <https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" .
 <https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/ammo/ont/0.5.0> .
@@ -90,6 +91,9 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # 
 # http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
