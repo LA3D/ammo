@@ -69,12 +69,53 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://usefulinc.com/ns/doap#Project"
   } ],
+  "http://www.w3.org/ns/prov#wasInformedBy" : [ {
+    "@id" : "_:genid17"
+  }, {
+    "@id" : "_:genid16"
+  } ],
   "https://schema.org/name" : [ {
     "@language" : "en",
     "@value" : "Additive with Knowledge (AWK)"
   } ]
 }, {
   "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/ns/prov#Activity" ],
+  "http://www.w3.org/ns/prov#endedAtTime" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2022-12-31T00:00:00+00:00"
+  } ],
+  "http://www.w3.org/ns/prov#startedAtTime" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2022-07-01T00:00:00+00:00"
+  } ],
+  "https://schema.org/funder" : [ {
+    "@id" : "wd:Q11223"
+  } ],
+  "https://schema.org/name" : [ {
+    "@language" : "en",
+    "@value" : "Additive with Knowledge (AWK) United States Air Force"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/ns/prov#Activity" ],
+  "http://www.w3.org/ns/prov#endedAtTime" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2021-11-01T00:00:00+00:00"
+  } ],
+  "http://www.w3.org/ns/prov#startedAtTime" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2021-11-01T00:00:00+00:00"
+  } ],
+  "https://schema.org/funder" : [ {
+    "@id" : "wd:Q9212"
+  } ],
+  "https://schema.org/name" : [ {
+    "@language" : "en",
+    "@value" : "Additive with Knowledge (AWK) United States Army"
+  } ]
+}, {
+  "@id" : "_:genid18",
   "http://www.w3.org/2002/07/owl#minCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "0"
@@ -320,6 +361,9 @@
   "@id" : "https://schema.org/email",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "https://schema.org/funder",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://schema.org/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -402,14 +446,14 @@
   } ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"
+    "@value" : "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://spdx.org/licenses/CC-BY-4.0"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2022-05-12"
+    "@value" : "2022-07-20"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "_:genid6"

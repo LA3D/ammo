@@ -20,11 +20,11 @@
 
 Contributions and Discussion Welcomed.
 
-Ontolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
 
 Github: https://github.com/LA3D/ammo"""@en ;
                               <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> ;
-                              <http://purl.org/dc/terms/modified> "2022-05-12"^^xsd:date ;
+                              <http://purl.org/dc/terms/modified> "2022-07-20"^^xsd:date ;
                               <http://purl.org/dc/terms/publisher> _:genid6 ,
                                                                    _:genid7 ;
                               <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
@@ -188,6 +188,10 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 
 ###  https://schema.org/email
 <https://schema.org/email> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/funder
+<https://schema.org/funder> rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/license
@@ -1077,8 +1081,22 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
 _:genid15 rdf:type <http://usefulinc.com/ns/doap#Project> ,
                     <http://www.w3.org/ns/prov#Activity> ;
+           <http://www.w3.org/ns/prov#wasInformedBy> _:genid16 ,
+                                                     _:genid17 ;
            <http://usefulinc.com/ns/doap#repository> <https://github.com/LA3D/ammo> ;
            <https://schema.org/name> "Additive with Knowledge (AWK)"@en .
+
+_:genid16 rdf:type <http://www.w3.org/ns/prov#Activity> ;
+           <http://www.w3.org/ns/prov#endedAtTime> "2022-12-31T00:00:00+00:00"^^xsd:dateTime ;
+           <http://www.w3.org/ns/prov#startedAtTime> "2022-07-01T00:00:00+00:00"^^xsd:dateTime ;
+           <https://schema.org/funder> <wd:Q11223> ;
+           <https://schema.org/name> "Additive with Knowledge (AWK) United States Air Force"@en .
+
+_:genid17 rdf:type <http://www.w3.org/ns/prov#Activity> ;
+           <http://www.w3.org/ns/prov#endedAtTime> "2021-11-01T00:00:00+00:00"^^xsd:dateTime ;
+           <http://www.w3.org/ns/prov#startedAtTime> "2021-11-01T00:00:00+00:00"^^xsd:dateTime ;
+           <https://schema.org/funder> <wd:Q9212> ;
+           <https://schema.org/name> "Additive with Knowledge (AWK) United States Army"@en .
 
 
 ###  https://w3id.org/ammo/ont/ABS

@@ -30,11 +30,11 @@
 
 Contributions and Discussion Welcomed.
 
-Ontolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
 
 Github: https://github.com/LA3D/ammo</terms:description>
         <terms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-12</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-20</terms:modified>
         <terms:publisher rdf:nodeID="genid6"/>
         <terms:publisher rdf:nodeID="genid7"/>
         <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
@@ -302,6 +302,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="https://schema.org/email"/>
+    
+
+
+    <!-- https://schema.org/funder -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/funder"/>
     
 
 
@@ -1678,8 +1685,24 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <rdf:Description rdf:nodeID="genid15">
         <rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <prov:wasInformedBy rdf:nodeID="genid16"/>
+        <prov:wasInformedBy rdf:nodeID="genid17"/>
         <doap:repository rdf:resource="https://github.com/LA3D/ammo"/>
         <schema:name xml:lang="en">Additive with Knowledge (AWK)</schema:name>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid16">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-12-31T00:00:00+00:00</prov:endedAtTime>
+        <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-07-01T00:00:00+00:00</prov:startedAtTime>
+        <schema:funder rdf:resource="wd:Q11223"/>
+        <schema:name xml:lang="en">Additive with Knowledge (AWK) United States Air Force</schema:name>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid17">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-01T00:00:00+00:00</prov:endedAtTime>
+        <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-01T00:00:00+00:00</prov:startedAtTime>
+        <schema:funder rdf:resource="wd:Q9212"/>
+        <schema:name xml:lang="en">Additive with Knowledge (AWK) United States Army</schema:name>
     </rdf:Description>
     
 
