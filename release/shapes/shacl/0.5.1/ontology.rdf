@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/ammo/shapes/shacl#"
+     xml:base="https://w3id.org/ammo/shapes/shacl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:shacl="http://www.w3.org/ns/shacl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/ammo/shapes/shacl">
+        <owl:versionIRI rdf:resource="https://w3id.org/ammo/shapes/shacl/0.5.1"/>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid2"/>
+        <terms:contributor rdf:nodeID="genid3"/>
+        <terms:contributor rdf:nodeID="genid4"/>
+        <terms:creator rdf:nodeID="genid5"/>
+        <terms:description xml:lang="en">The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
+
+Contributions and Discussion Welcomed.
+Github: https://github.com/LA3D/ammo</terms:description>
+        <terms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-21</terms:modified>
+        <terms:publisher rdf:nodeID="genid6"/>
+        <terms:publisher rdf:nodeID="genid7"/>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
+        <terms:title xml:lang="en">Additive Manufacturing for Maintenance Operations SHACL Shapes</terms:title>
+        <vann:preferredNamespacePrefix>ammosh</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/ammo/shapes/shacl/</vann:preferredNamespaceUri>
+        <owl:versionInfo xml:lang="en">0.5.1</owl:versionInfo>
+        <schema:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</schema:license>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:name>Christopher Sweet</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-8214-7177</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid2">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:name>Donald Brower</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-7347-546X</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>Simbachain Inc</schema:affiliation>
+        <schema:name>Matthew Welz</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0002-5861-1790</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid4">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>Simbachain Inc</schema:affiliation>
+        <schema:name>Kirsten Stor</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-3885-977X</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</schema:email>
+        <schema:name>Charles F. Vardeman II</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-4091-6059</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid6">
+        <rdf:type rdf:resource="https://schema.org/Organization"/>
+        <schema:name>Center for Research Computing, University of Notre Dame</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https//crc.nd.edu</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid7">
+        <rdf:type rdf:resource="https://schema.org/Organization"/>
+        <schema:name>Simba Chain</schema:name>
+        <schema:url>https://simbachain.com/</schema:url>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#TargetClass -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#TargetClass"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#class -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#class"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#maxCount -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#maxCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#minCount -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#minCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#name"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#nodeKind -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#nodeKind"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#path -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#path"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#property -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#resultMessage -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#resultMessage"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#severity -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#severity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetClass -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetClass"/>
+    
+
+
+    <!-- https://schema.org/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/affiliation"/>
+    
+
+
+    <!-- https://schema.org/email -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/email"/>
+    
+
+
+    <!-- https://schema.org/license -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/license"/>
+    
+
+
+    <!-- https://schema.org/name -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/name"/>
+    
+
+
+    <!-- https://schema.org/url -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/url"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#NodeShape -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#NodeShape"/>
+    
+
+
+    <!-- https://schema.org/Organization -->
+
+
+    <owl:Class rdf:about="https://schema.org/Organization"/>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+
+    <owl:Class rdf:about="https://schema.org/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://wikidata.org/entity/Q178848 -->
+
+
+    <rdf:Description rdf:about="http://wikidata.org/entity/Q178848"/>
+    
+
+
+    <!-- https://w3id.org/ammo/shapes/shacl/DesignedComponentShape -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ammo/shapes/shacl/DesignedComponentShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:TargetClass rdf:resource="https://w3id.org/ammo/ont/DesignedComponent"/>
+        <shacl:property rdf:nodeID="genid8"/>
+        <shacl:property rdf:nodeID="genid9"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid8">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Designed Physical System</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/isComponentOf"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid9">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/ComponentIdentifier"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:name>Component Identifier</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasidentifier"/>
+        <shacl:resultMessage>Each Designed Component must have 1 Component Identifier</shacl:resultMessage>
+        <shacl:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid10"/>
+        <shacl:property rdf:nodeID="genid11"/>
+        <shacl:property rdf:nodeID="genid12"/>
+        <shacl:targetClass rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid10">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/SystemIdentifier"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:name>System Identifier</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasidentifier"/>
+        <shacl:resultMessage>Each identifier MUST have 1 system identifier</shacl:resultMessage>
+        <shacl:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid11">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Subsystem</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasSubsystem"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid12">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedComponent"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Designed Component</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasComponent"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

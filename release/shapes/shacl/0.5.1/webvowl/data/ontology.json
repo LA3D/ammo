@@ -1,0 +1,198 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://www.w3.org/ns/shacl", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "Additive Manufacturing for Maintenance Operations SHACL Shapes"
+    },
+    "iri" : "https://w3id.org/ammo/shapes/shacl",
+    "version" : "0.5.1",
+    "author" : [ "_:genid2147483652" ],
+    "description" : {
+      "en" : "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "en",
+        "value" : "https://spdx.org/licenses/CC-BY-4.0",
+        "type" : "label"
+      }, {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://spdx.org/licenses/CC-BY-4.0",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483652",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483650",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483649",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483651",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483648",
+        "type" : "label"
+      } ],
+      "rights" : [ {
+        "identifier" : "rights",
+        "language" : "en",
+        "value" : "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "ammosh",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "_:genid2147483654",
+        "type" : "label"
+      }, {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "_:genid2147483653",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2022-02-21",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://w3id.org/ammo/shapes/shacl/",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.5.1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Additive Manufacturing for Maintenance Operations SHACL Shapes",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://schema.org/Organization",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/ns/shacl#NodeShape",
+    "baseIri" : "http://www.w3.org/ns/shacl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NodeShape"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape",
+      "baseIri" : "https://w3id.org/ammo/shapes/shacl",
+      "annotations" : {
+        "targetClass" : [ {
+          "identifier" : "targetClass",
+          "language" : "undefined",
+          "value" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem",
+          "type" : "iri"
+        } ],
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483658",
+          "type" : "label"
+        }, {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483657",
+          "type" : "label"
+        }, {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483655",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "DesignedPhysicalSystemShape"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/shapes/shacl/DesignedComponentShape",
+      "baseIri" : "https://w3id.org/ammo/shapes/shacl",
+      "annotations" : {
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483659",
+          "type" : "label"
+        }, {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483656",
+          "type" : "label"
+        } ],
+        "TargetClass" : [ {
+          "identifier" : "TargetClass",
+          "language" : "undefined",
+          "value" : "https://w3id.org/ammo/ont/DesignedComponent",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "DesignedComponentShape"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://schema.org/Person",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  } ]
+}

@@ -1,0 +1,480 @@
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/ammo/module/system> a opla:Module ;
+    skos:note "Module definitons for System" ;
+    skos:prefLabel "ammo system module" .
+
+ammo:Capability a owl:Class ;
+    rdfs:label "Capability" ;
+    rdfs:comment "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger)." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:RealizableEntity ;
+    prov:wasQuotedFrom "http://semanticscience.org/resource/" .
+
+ammo:MaterialTransformation a owl:Class ;
+    rdfs:label "Material Transformation" ;
+    rdfs:comment "A material transformation is a process that transforms material from one form to another." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Process .
+
+ammo:Role a owl:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:RealizableEntity .
+
+ammo:designspecifcationtype a owl:ObjectProperty ;
+    rdfs:label "designSpecifcationType" ;
+    rdfs:domain ammo:DesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignSpecificationType .
+
+ammo:existsAt a owl:ObjectProperty ;
+    rdfs:label "exists at" ;
+    rdfs:domain ammo:Process ;
+    rdfs:isDefinedBy <https://w3id.org/ammo/module/process/> ;
+    rdfs:range ammo:TimeInterval .
+
+ammo:hasAttribute a owl:ObjectProperty ;
+    rdfs:label "has attribute" ;
+    rdfs:domain ammo:Object ;
+    rdfs:isDefinedBy <https://w3id.org/module/process/> ;
+    rdfs:range ammo:RealizableEntity .
+
+ammo:hasComponentPart a owl:ObjectProperty ;
+    rdfs:label "has component part"@en ;
+    dcterms:description "has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:hasDirectPart ;
+    owl:equivalentProperty sio:SIO_000369 ;
+    owl:inverseOf ammo:isComponentPartOf ;
+    skos:example "a human has blood as a component part"@en .
+
+ammo:hasMaterial a owl:ObjectProperty ;
+    rdfs:label "hasMaterial" ;
+    rdfs:domain ammo:MaterialDesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Material .
+
+ammo:hasState a owl:ObjectProperty ;
+    rdfs:label "has state" ;
+    rdfs:range ammo:State .
+
+ammo:hasTransition a owl:ObjectProperty ;
+    rdfs:label "has transition" ;
+    rdfs:range ammo:Transition .
+
+ammo:isParticipantIn a owl:ObjectProperty ;
+    rdfs:label "is participant in" ;
+    rdfs:domain ammo:Object ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Process .
+
+ammo:isRealizedIn a owl:ObjectProperty ;
+    rdfs:label "is realized in" ;
+    rdfs:domain ammo:RealizableEntity ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Process .
+
+ammo:isSurroundedBy a owl:ObjectProperty ;
+    rdfs:label "is surrounded by"@en ;
+    dcterms:description "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isContainedIn ;
+    owl:equivalentProperty sio:SIO_000323 ;
+    owl:inverseOf ammo:surrounds .
+
+ammo:ofquantity a owl:ObjectProperty ;
+    rdfs:label "ofQuantity" ;
+    rdfs:domain ammo:QuantityDesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Quantity .
+
+ammo:specifies a owl:ObjectProperty ;
+    rdfs:label "specifies" ;
+    rdfs:domain ammo:DesignSpecification ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Component ;
+    owl:inverseOf ammo:isSpecifiedBy .
+
+ammo:status a owl:ObjectProperty ;
+    rdfs:label "status" ;
+    rdfs:range ammo:Status .
+
+<https://w3id.org/ammo/module/process/> a opla:Module,
+        owl:Ontology .
+
+ammo:Attribute a owl:Class ;
+    rdfs:label "Attribute" ;
+    rdfs:comment "An attribute is a characteristic of some entity." ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:DesignSpecificationType a owl:Class ;
+    rdfs:label "Design Specification Type"@en ;
+    rdfs:comment "Hook for vocabulary that describes the specification entity" ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:DesignedArtifact a owl:Class ;
+    rdfs:label "Designed Artifact" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:Design ],
+        ammo:PhysicalArtifact ;
+    skos:definition "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc."@en ;
+    skos:note "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite"@en .
+
+ammo:Material a owl:Class ;
+    rdfs:label "Material"@en ;
+    opla:extractedFrom <http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation> ;
+    rdfs:comment "Substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and of which objects can be made up"@en ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q214609> ;
+    rdfs:subClassOf ammo:Object ;
+    prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Material"@en .
+
+ammo:PhysicalSystem a owl:Class ;
+    rdfs:label "Physical System"@en ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:PhysicalObject ;
+    skos:definition """A physical object that isDescribedBy a SystemDesign .
+I.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .
+Notice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system."""@en .
+
+ammo:Plan a owl:Class ;
+    rdfs:label "Plan"@en ;
+    rdfs:comment "A Description having an explicit Goal, to be achieved by executing the plan"@en ;
+    rdfs:isDefinedBy ammo: .
+
+ammo:Quantity a owl:Class ;
+    rdfs:label "Quantity" ;
+    rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent."@en ;
+    rdfs:isDefinedBy ammo: ;
+    owl:equivalentClass qudt:Quantity .
+
+ammo:Status a owl:Class ;
+    rdfs:label "Status" ;
+    rdfs:subClassOf skos:Concept .
+
+ammo:SystemDesign a owl:Class ;
+    rdfs:label "System Design"@en ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:comment "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations."@en ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Design .
+
+ammo:TimeInterval a owl:Class ;
+    rdfs:label "Time Interval" ;
+    rdfs:isDefinedBy ammo: ;
+    owl:equivalentClass time:Interval .
+
+ammo:Transition a owl:Class ;
+    rdfs:label "Transition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ammo:fromState ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ammo:toState ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty ammo:event ],
+        time:TemporalEntity .
+
+ammo:describes a owl:ObjectProperty ;
+    rdfs:label "describes" ;
+    rdfs:domain ammo:Design ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Component .
+
+ammo:fromState a owl:ObjectProperty ;
+    rdfs:label "from state" ;
+    rdfs:range ammo:State .
+
+ammo:hasComponent a owl:ObjectProperty ;
+    rdfs:label "has component" ;
+    rdfs:domain ammo:DesignedPhysicalSystem ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignedComponent ;
+    owl:inverseOf ammo:isComponentOf .
+
+ammo:hasDirectPart a owl:ObjectProperty ;
+    rdfs:label "has direct part"@en ;
+    dcterms:description "has direct part is a relation to specify a part at a particular level of granularity"@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:hasProperPart ;
+    owl:equivalentProperty sio:SIO_000273 ;
+    owl:inverseOf ammo:isDirectPartOf ;
+    skos:example "a car has an engine as a direct part"@en .
+
+ammo:hasPart a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "has part"@en ;
+    dcterms:description "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isLocationOf ;
+    owl:equivalentProperty sio:SIO_000028 ;
+    owl:inverseOf ammo:isPartOf ;
+    skos:example "a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;"@en .
+
+ammo:isComponentOf a owl:ObjectProperty ;
+    rdfs:label "is component of" ;
+    rdfs:domain ammo:DesignedComponent ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignedPhysicalSystem ;
+    owl:inverseOf ammo:hasComponent .
+
+ammo:isComponentPartOf a owl:ObjectProperty ;
+    rdfs:label "is component part of"@en ;
+    dcterms:description "is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isDirectPartOf ;
+    owl:equivalentProperty sio:SIO_000313 .
+
+ammo:isLocatedIn a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is located in"@en ;
+    dcterms:description "A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]"@en ;
+    sio:equivalentTo "OBO_REL:located_in" ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isSpatiotemporallyRelatedTo ;
+    owl:equivalentProperty sio:SIO_000061 ;
+    owl:inverseOf ammo:isLocationOf ;
+    skos:example "A parasite in the interior of a person's intestine is located in their intestinal lumen."@en .
+
+ammo:isRelatedTo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "is related to"@en ;
+    dcterms:description "A is related to B iff there is some relation between A and B."@en ;
+    rdfs:domain sio:Entity ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:range sio:Entity ;
+    owl:equivalentProperty sio:SIO_000001 ;
+    sdo:comment "'is related to' is the top level relation in SIO" .
+
+ammo:surrounds a owl:ObjectProperty ;
+    rdfs:label "surrounds"@en ;
+    dcterms:description "A 'surrounds' B iff the A 'contains' B and A 'is adjacent to' B or A 'is directly connected to' B."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:contains ;
+    owl:equivalentProperty sio:SIO_000324 .
+
+ammo:toState a owl:ObjectProperty ;
+    rdfs:label "to state" ;
+    rdfs:range ammo:State .
+
+ammo:DesignedComponent a owl:Class ;
+    rdfs:label "Designed Component" ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:DesignedArtifact .
+
+ammo:DesignedPhysicalSystem a owl:Class ;
+    rdfs:label "Designed Physical System" ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:SystemDesign ],
+        ammo:PhysicalArtifact,
+        ammo:PhysicalSystem .
+
+ammo:Entity a owl:Class ;
+    rdfs:label "entity"@en ;
+    dcterms:description "Every thing is an entity."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    owl:equivalentClass sio:SIO_000000 .
+
+ammo:PhysicalArtifact a owl:Class ;
+    rdfs:label "Physical Artifact"@en ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:isDescribedBy ;
+            owl:someValuesFrom ammo:Plan ],
+        ammo:PhysicalObject ;
+    skos:definition """Any PhysicalObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here."""@en .
+
+ammo:PhysicalObject a owl:Class ;
+    rdfs:label "Physical Object"@en ;
+    opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
+    rdfs:isDefinedBy ammo: ;
+    skos:definition "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)."@en .
+
+ammo:isDirectPartOf a owl:ObjectProperty ;
+    rdfs:label "is direct part of"@en ;
+    dcterms:description "is direct part of is a relation between a specific part (at some level of granularity) and its whole."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isProperPartOf ;
+    owl:equivalentProperty sio:SIO_000310 .
+
+ammo:isLocationOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is location of"@en ;
+    dcterms:description "A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]"@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isSpatiotemporallyRelatedTo ;
+    owl:equivalentProperty sio:SIO_000145 .
+
+ammo:isPartOf a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is part of"@en ;
+    dcterms:description "is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isLocatedIn ;
+    owl:equivalentProperty sio:SIO_000068 .
+
+ammo:isProperPartOf a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:label "is proper part of"@en ;
+    dcterms:description "is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole."@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isPartOf ;
+    owl:equivalentProperty sio:SIO_000093 .
+
+ammo:isSpatiotemporallyRelatedTo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "is spatiotemporally related to"@en ;
+    dcterms:description "A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B"@en ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
+    rdfs:subPropertyOf ammo:isRelatedTo ;
+    owl:equivalentProperty sio:SIO_000322 .
+
+ammo:isSpecifiedBy a owl:ObjectProperty ;
+    rdfs:label "is specified by" ;
+    rdfs:domain ammo:Component ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:DesignSpecification ;
+    owl:inverseOf ammo:isSpecifiedBy .
+
+ammo:State a owl:Class ;
+    rdfs:label "State" ;
+    rdfs:subClassOf time:TemporalEntity .
+
+ammo:hasProperPart a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has proper part",
+        "has proper part"@en ;
+    dcterms:description "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."@en ;
+    rdfs:domain ammo:Design ;
+    rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl>,
+        ammo: ;
+    rdfs:range ammo:DesignSpecification ;
+    rdfs:subPropertyOf ammo:hasPart ;
+    owl:equivalentProperty sio:SIO_000053 ;
+    owl:inverseOf ammo:isProperPartOf ;
+    skos:example "a car has an engine as a proper part; a car has a piston as a proper part;"@en .
+
+ammo:isDescribedBy a owl:ObjectProperty ;
+    rdfs:label "is described by" ;
+    rdfs:domain ammo:Component ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:range ammo:Design ;
+    owl:inverseOf ammo:describes .
+
+ammo:DesignSpecification a owl:Class ;
+    rdfs:label "Design Specification" ;
+    rdfs:comment "A design specification is a detailed document that sets out exaclty what a product or a process should present."@en ;
+    rdfs:isDefinedBy ammo: ;
+    skos:exactMatch wd:Q16960030 ;
+    prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design_specification" .
+
+ammo:Object a owl:Class ;
+    rdfs:label "Object"@en ;
+    rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists."@en ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:hasProperPart ;
+            owl:someValuesFrom ammo:Object ],
+        ammo:Entity .
+
+ammo:RealizableEntity a owl:Class ;
+    rdfs:label "Realizable Entity" ;
+    rdfs:comment "A realizable entity is an attribute that is exhibited under some condition and is realized in some process." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:Attribute .
+
+ammo:Design a owl:Class ;
+    rdfs:label "Design" ;
+    rdfs:comment """From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.""" ;
+    rdfs:isDefinedBy ammo: ;
+    skos:definition "A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process."@en ;
+    skos:exactMatch wd:Q82604 ;
+    prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design"@en .
+
+ammo:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:comment "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ammo:hasProperPart ;
+            owl:someValuesFrom ammo:Process ],
+        ammo:Entity .
+
+ammo: a owl:Ontology ;
+    dcterms:contributor [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Christopher Sweet" ;
+            sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Donald Brower" ;
+            sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Matthew Welz" ;
+            sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Kirsten Stor" ;
+            sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ] ;
+    dcterms:created "2022-02-15"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+            sdo:name "Charles F. Vardeman II" ;
+            sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ] ;
+    dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
+
+Contributions and Discussion Welcomed.
+Github: https://github.com/LA3D/ammo"""@en ;
+    dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+    dcterms:modified "2022-05-12"^^xsd:date ;
+    dcterms:publisher [ a sdo:Organization ;
+            owl:sameAs wd:Q178848 ;
+            sdo:name "Center for Research Computing, University of Notre Dame" ;
+            sdo:url "https://crc.nd.edu"^^xsd:anyURI ],
+        [ a sdo:Organization ;
+            sdo:name "Simba Chain" ;
+            sdo:url "https://simbachain.com/" ] ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
+    vann:preferredNamespacePrefix "ammo" ;
+    vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
+    owl:versionIRI ammo:0.1.0 ;
+    owl:versionInfo "0.1.0"@en ;
+    sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+

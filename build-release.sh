@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # WARNING: This is a quick hack that depends on the verison of python PDM installed
-pdmdir=`pdm info |grep Packages | cut -d: -f2`
+pdmdir=`pdm info --packages`
 mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
 pylodecmd="pdm run pylode"
 files=$(cat tests/modules.txt | awk -F, '{print $2}')
@@ -20,42 +20,51 @@ fi
 VERSION=` grep -i versionInfo modules/common/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
 
 # Make sure the version directory exists
-if [ ! -d "./release/${VERSION}" ]; then
-    mkdir ./release/${VERSION}
+if [ ! -d "./release/ontology/${VERSION}" ]; then
+    mkdir -p ./release/ontology/${VERSION}
+else
+    rm -rf ./release/ontology/${VERSION} 
+    mkdir -p ./release/ontology/${VERSION}
 fi
 
-if [ -f "./release/${VERSION}/${ONTOLOGY}" ]; then
-    rm ./release/${VERSION}/${ONTOLOGY}.ttl
+if [ ! -d "./release/shapes/shacl/${VERSION}" ]; then
+    mkdir -p ./release/shapes/shacl/${VERSION}
+else
+   rm -rf ./release/shapes/shacl/${VERSION}
+   mkdir -p ./release/shapes/shacl/${VERSION}
 fi
 
-if [ -f "./release/${VERSION}/${SHACL}" ]; then
-    rm  ./release/${VERSION}/${SHACL}.ttl
+# Clean latest
+if [ -d "./release/ontology/latest" ]; then
+    rm -rf ./release/ontology/latest
+fi
+if [ -d "./release/shapes/shacl/latest" ]; then
+    rm -rf ./release/shapes/shacl/latest
 fi
 
 echo "Merging Ontology into Release ${VERSION}"
-$mergecmd merge $files -f ttl -o ./release/${VERSION}
-mv ./release/${VERSION}/merged.ttl ./release/${VERSION}/${ONTOLOGY}.ttl
-echo "Generating HTML Ontology Documentation for Release ${VERSION}"
-$pylodecmd ./release/${VERSION}/${ONTOLOGY}.ttl -o ./release/${VERSION}/${ONTOLOGY}.html
+$mergecmd merge $files -f ttl -o ./release/ontology/${VERSION}
+
+echo "Generating Ontology Documentation via Widoco"
+docker run -ti --rm   -v `pwd`/release/ontology/${VERSION}:/usr/local/widoco/in   -v `pwd`/release/ontology/${VERSION}:/usr/local/widoco/out/doc   dgarijo/widoco -ontFile in/merged.ttl -outFolder out -rewriteAll -webVowl 
+
+if [ -d "./release/ontology/latest" ]; then
+    rm -rf ./release/ontology/latest
+    cp -r ./release/ontology/${VERSION} ./release/ontology/latest
+else
+    cp -r ./release/ontology/${VERSION} ./release/ontology/latest
+fi
 
 echo "Merging SHACL Shapes into Release ${VERSION}"
-$mergecmd merge $shapefiles -f ttl -o ./release/${VERSION}
-mv ./release/${VERSION}/merged.ttl ./release/${VERSION}/${SHACL}.ttl
-echo "Generating HTML SHACL Shapes Documentation for Release ${VERSION}"
-$pylodecmd ./release/${VERSION}/${SHACL}.ttl -o ./release/${VERSION}/${SHACL}.html
+$mergecmd merge $shapefiles -f ttl -o ./release/shapes/shacl/${VERSION}
+#echo "Generating HTML SHACL Shapes Documentation for Release ${VERSION}"
+#$pylodecmd ./release/shapes/shacl/${VERSION}/${SHACL}.ttl -o ./release/shapes/shacl/${VERSION}/${SHACL}.html
 
-# Generate other RDF serializations using Jena RIOT
-$RIOT -out N-TRIPLE ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.nt
-$RIOT -out RDF/XML  ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.rdf
-$RIOT -out JSON-LD  ./release/${VERSION}/${ONTOLOGY}.ttl > ./release/${VERSION}/${ONTOLOGY}.json
-
-# Copy 406.html to release directory
-cp ./release/406.html ./release/${VERSION}/406.html
-
-
-if [ -d "./release/latest" ]; then
-    rm -rf ./release/latest
-    cp -r ./release/${VERSION} ./release/latest
+echo "Generating Shapes Documentation via Widoco"
+docker run -ti --rm   -v `pwd`/release/shapes/shacl/${VERSION}:/usr/local/widoco/in   -v `pwd`/release/shapes/shacl/${VERSION}:/usr/local/widoco/out/doc   dgarijo/widoco -ontFile in/merged.ttl -outFolder out -rewriteAll -webVowl 
+if [ -d "./release/shapes/shacl/latest" ]; then
+    rm -rf ./release/shapes/shacl/latest
+    cp -r ./release/shapes/shacl/${VERSION} ./release/shapes/shacl/latest
 else
-    cp -r ./release/${VERSION} ./release/latest
+    cp -r ./release/shapes/shacl/${VERSION} ./release/shapes/shacl/latest
 fi

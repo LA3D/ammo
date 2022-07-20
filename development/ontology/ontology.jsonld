@@ -62,6 +62,19 @@
   } ]
 }, {
   "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/ns/prov#Activity" ],
+  "http://usefulinc.com/ns/doap#repository" : [ {
+    "@id" : "https://github.com/LA3D/ammo"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://usefulinc.com/ns/doap#Project"
+  } ],
+  "https://schema.org/name" : [ {
+    "@language" : "en",
+    "@value" : "Additive with Knowledge (AWK)"
+  } ]
+}, {
+  "@id" : "_:genid16",
   "http://www.w3.org/2002/07/owl#minCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "0"
@@ -181,6 +194,9 @@
   "@id" : "http://org.semanticweb.owlapi/error#Error1",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/contributor",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -230,6 +246,12 @@
   } ]
 }, {
   "@id" : "http://semanticscience.org/resource/equivalentTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://usefulinc.com/ns/doap#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://usefulinc.com/ns/doap#repository",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
@@ -304,6 +326,9 @@
   "@id" : "https://schema.org/url",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "https://w3id.org/OPLaX/Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "https://w3id.org/ammo/module/AMProcess",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -334,7 +359,28 @@
   } ]
 }, {
   "@id" : "https://w3id.org/ammo/module/process/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/OPLaX/Module"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ammo/module/system",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://ontologydesignpatterns.org/opla-core#Module"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#note" : [ {
+    "@value" : "Module definitons for System"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@value" : "ammo system module"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ammo/ont/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/abstract" : [ {
+    "@value" : "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D)."
+  } ],
   "http://purl.org/dc/terms/contributor" : [ {
     "@id" : "_:genid1"
   }, {
@@ -382,33 +428,27 @@
     "@value" : "http://w3id.org/ammo/ont/"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://ontologydesignpatterns.org/opla-core#Module"
+    "@id" : "https://w3id.org/dingo#Product_or_material_produced"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "https://www.w3.org/ns/prov-o"
+  } ],
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
+    "@id" : "https://w3id.org/ammo/ont/0.5.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/ammo/ont/0.5.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
     "@value" : "0.5.1"
   } ],
+  "http://www.w3.org/ns/prov#wasGeneratedBy" : [ {
+    "@id" : "_:genid15"
+  } ],
   "https://schema.org/license" : [ {
     "@language" : "en",
     "@value" : "https://spdx.org/licenses/CC-BY-4.0"
-  } ]
-}, {
-  "@id" : "https://w3id.org/ammo/module/system",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://ontologydesignpatterns.org/opla-core#Module"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#note" : [ {
-    "@value" : "Module definitons for System"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@value" : "ammo system module"
-  } ]
-}, {
-  "@id" : "https://w3id.org/ammo/ont/",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/dingo#Product_or_material_produced"
   } ]
 }, {
   "@id" : "https://w3id.org/ammo/ont/ABS",

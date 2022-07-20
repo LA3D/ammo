@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/ammo/module/process/"
-     xml:base="https://w3id.org/ammo/module/process/"
+<rdf:RDF xmlns="https://w3id.org/ammo/ont/"
+     xml:base="https://w3id.org/ammo/ont/"
      xmlns:ont="https://w3id.org/ammo/ont/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -14,7 +15,10 @@
      xmlns:schema="https://schema.org/"
      xmlns:resource="http://semanticscience.org/resource/"
      xmlns:opla-core="http://ontologydesignpatterns.org/opla-core#">
-    <owl:Ontology rdf:about="https://w3id.org/ammo/module/process/">
+    <owl:Ontology rdf:about="https://w3id.org/ammo/ont/">
+        <owl:versionIRI rdf:resource="https://w3id.org/ammo/ont/0.5.1"/>
+        <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
+        <terms:abstract>Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D).</terms:abstract>
         <terms:contributor rdf:nodeID="genid1"/>
         <terms:contributor rdf:nodeID="genid2"/>
         <terms:contributor rdf:nodeID="genid3"/>
@@ -36,6 +40,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <terms:title xml:lang="en">Additive Manufacturing for Maintenance Operations Ontology</terms:title>
         <vann:preferredNamespacePrefix>ammo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://w3id.org/ammo/ont/</vann:preferredNamespaceUri>
+        <owl:priorVersion rdf:resource="https://w3id.org/ammo/ont/0.5.0"/>
         <owl:versionInfo xml:lang="en">0.5.1</owl:versionInfo>
         <schema:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</schema:license>
     </owl:Ontology>
@@ -99,6 +104,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-core#extractedFrom"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
     
 
 
@@ -183,6 +195,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="http://semanticscience.org/resource/equivalentTo"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#repository -->
+
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#repository"/>
     
 
 
@@ -834,6 +853,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
+    <!-- http://usefulinc.com/ns/doap#Project -->
+
+
+    <owl:Class rdf:about="http://usefulinc.com/ns/doap#Project"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
 
@@ -875,6 +901,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:Class rdf:about="https://schema.org/Person"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/Module -->
+
+
+    <owl:Class rdf:about="https://w3id.org/OPLaX/Module"/>
     
 
 
@@ -1621,7 +1654,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/module/process/">
-        <rdf:type rdf:resource="http://ontologydesignpatterns.org/opla-core#Module"/>
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
     </owl:NamedIndividual>
     
 
@@ -1631,7 +1664,14 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/">
         <rdf:type rdf:resource="https://w3id.org/dingo#Product_or_material_produced"/>
+        <prov:wasGeneratedBy rdf:nodeID="genid15"/>
     </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid15">
+        <rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <doap:repository rdf:resource="https://github.com/LA3D/ammo"/>
+        <schema:name xml:lang="en">Additive with Knowledge (AWK)</schema:name>
+    </rdf:Description>
     
 
 
@@ -1663,7 +1703,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Aluminum3085">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
         <rdfs:label>Aluminum 3085</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Aluminium_alloy"/>
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q447725"/>
@@ -1676,7 +1716,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Aluminum355T6">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
         <rdfs:label>355-T6</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Aluminium_alloy"/>
     </owl:NamedIndividual>
@@ -1688,7 +1728,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Aluminum6160">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
         <rdfs:label>Aluminum 6160</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Aluminium_alloy"/>
         <skos:closeMatch rdf:resource="http://wikidata.org/entity/Q4641644"/>
@@ -1702,7 +1742,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/AluminumPowder">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Material"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Aluminum"/>
         <rdfs:label>Aluminum Powder</rdfs:label>
         <rdfs:label>Aluminum powder</rdfs:label>
     </owl:NamedIndividual>
@@ -1801,7 +1841,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Steel304">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
         <rdfs:label>Steel 304</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/SAE_304_stainless_steel"/>
         <skos:altLabel>SAE 304 stainless steel</skos:altLabel>
@@ -1815,7 +1855,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Steel4130">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
         <rdfs:label>Steel 4130</rdfs:label>
         <rdfs:label>steel 4130</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/41xx_steel"/>
@@ -1833,7 +1873,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/Steel4140H">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
         <rdfs:label>Steel 4140H</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/SAE_steel_grades"/>
         <skos:altLabel>SEA 4140</skos:altLabel>
@@ -1846,7 +1886,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/SteelA27">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
         <rdfs:label>Steel cast A27</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/SAE_steel_grades"/>
         <skos:altLabel>ASTM A27 Steel</skos:altLabel>
@@ -1859,7 +1899,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/SteelA36">
         <rdf:type rdf:resource="https://w3id.org/ammo/ont/Alloy"/>
-        <ont:hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
+        <hasBaseMaterial rdf:resource="https://w3id.org/ammo/ont/Steel"/>
         <rdfs:label>ASTM A36 steel</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/A36_steel"/>
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q3247733"/>

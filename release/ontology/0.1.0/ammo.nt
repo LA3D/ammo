@@ -1,0 +1,410 @@
+<https://w3id.org/ammo/module/system> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ontologydesignpatterns.org/opla-core#Module> .
+<https://w3id.org/ammo/module/system> <http://www.w3.org/2004/02/skos/core#note> "Module definitons for System" .
+<https://w3id.org/ammo/module/system> <http://www.w3.org/2004/02/skos/core#prefLabel> "ammo system module" .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#label> "Capability" .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#comment> "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger)." .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/RealizableEntity> .
+<https://w3id.org/ammo/ont/Capability> <http://www.w3.org/ns/prov#wasQuotedFrom> "http://semanticscience.org/resource/" .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "Material Transformation" .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "A material transformation is a process that transforms material from one form to another." .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Role> <http://www.w3.org/2000/01/rdf-schema#label> "Role" .
+<https://w3id.org/ammo/ont/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." .
+<https://w3id.org/ammo/ont/Role> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/RealizableEntity> .
+<https://w3id.org/ammo/ont/designspecifcationtype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/designspecifcationtype> <http://www.w3.org/2000/01/rdf-schema#label> "designSpecifcationType" .
+<https://w3id.org/ammo/ont/designspecifcationtype> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/DesignSpecification> .
+<https://w3id.org/ammo/ont/designspecifcationtype> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/designspecifcationtype> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/DesignSpecificationType> .
+<https://w3id.org/ammo/ont/existsAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/existsAt> <http://www.w3.org/2000/01/rdf-schema#label> "exists at" .
+<https://w3id.org/ammo/ont/existsAt> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/existsAt> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/module/process/> .
+<https://w3id.org/ammo/ont/existsAt> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/TimeInterval> .
+<https://w3id.org/ammo/ont/hasAttribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasAttribute> <http://www.w3.org/2000/01/rdf-schema#label> "has attribute" .
+<https://w3id.org/ammo/ont/hasAttribute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Object> .
+<https://w3id.org/ammo/ont/hasAttribute> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/module/process/> .
+<https://w3id.org/ammo/ont/hasAttribute> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/RealizableEntity> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2000/01/rdf-schema#label> "has component part"@en .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://purl.org/dc/terms/description> "has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is."@en .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/hasDirectPart> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000369> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isComponentPartOf> .
+<https://w3id.org/ammo/ont/hasComponentPart> <http://www.w3.org/2004/02/skos/core#example> "a human has blood as a component part"@en .
+<https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "hasMaterial" .
+<https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/MaterialDesignSpecification> .
+<https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Material> .
+<https://w3id.org/ammo/ont/hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasState> <http://www.w3.org/2000/01/rdf-schema#label> "has state" .
+<https://w3id.org/ammo/ont/hasState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/State> .
+<https://w3id.org/ammo/ont/hasTransition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasTransition> <http://www.w3.org/2000/01/rdf-schema#label> "has transition" .
+<https://w3id.org/ammo/ont/hasTransition> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Transition> .
+<https://w3id.org/ammo/ont/isParticipantIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isParticipantIn> <http://www.w3.org/2000/01/rdf-schema#label> "is participant in" .
+<https://w3id.org/ammo/ont/isParticipantIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Object> .
+<https://w3id.org/ammo/ont/isParticipantIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/isParticipantIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/isRealizedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isRealizedIn> <http://www.w3.org/2000/01/rdf-schema#label> "is realized in" .
+<https://w3id.org/ammo/ont/isRealizedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/RealizableEntity> .
+<https://w3id.org/ammo/ont/isRealizedIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/isRealizedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is surrounded by"@en .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://purl.org/dc/terms/description> "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."@en .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isContainedIn> .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000323> .
+<https://w3id.org/ammo/ont/isSurroundedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/surrounds> .
+<https://w3id.org/ammo/ont/ofquantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/ofquantity> <http://www.w3.org/2000/01/rdf-schema#label> "ofQuantity" .
+<https://w3id.org/ammo/ont/ofquantity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/QuantityDesignSpecification> .
+<https://w3id.org/ammo/ont/ofquantity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/ofquantity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Quantity> .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/2000/01/rdf-schema#label> "specifies" .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/DesignSpecification> .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Component> .
+<https://w3id.org/ammo/ont/specifies> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isSpecifiedBy> .
+<https://w3id.org/ammo/ont/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
+<https://w3id.org/ammo/ont/status> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Status> .
+<https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ontologydesignpatterns.org/opla-core#Module> .
+<https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/ammo/ont/Attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Attribute> <http://www.w3.org/2000/01/rdf-schema#label> "Attribute" .
+<https://w3id.org/ammo/ont/Attribute> <http://www.w3.org/2000/01/rdf-schema#comment> "An attribute is a characteristic of some entity." .
+<https://w3id.org/ammo/ont/Attribute> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/DesignSpecificationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/DesignSpecificationType> <http://www.w3.org/2000/01/rdf-schema#label> "Design Specification Type"@en .
+<https://w3id.org/ammo/ont/DesignSpecificationType> <http://www.w3.org/2000/01/rdf-schema#comment> "Hook for vocabulary that describes the specification entity" .
+<https://w3id.org/ammo/ont/DesignSpecificationType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Artifact" .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+_:B9dcde010d968dcb321f5eb194caf3a7d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B9dcde010d968dcb321f5eb194caf3a7d <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:B9dcde010d968dcb321f5eb194caf3a7d <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9dcde010d968dcb321f5eb194caf3a7d .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2004/02/skos/core#definition> "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc."@en .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2004/02/skos/core#note> "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite"@en .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/2000/01/rdf-schema#label> "Material"@en .
+<https://w3id.org/ammo/ont/Material> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation> .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/2000/01/rdf-schema#comment> "Substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and of which objects can be made up"@en .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.wikidata.org/wiki/Q214609> .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Object> .
+<https://w3id.org/ammo/ont/Material> <http://www.w3.org/ns/prov#wasQuotedFrom> "https://en.wikipedia.org/wiki/Material"@en .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Physical System"@en .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalObject> .
+<https://w3id.org/ammo/ont/PhysicalSystem> <http://www.w3.org/2004/02/skos/core#definition> "A physical object that isDescribedBy a SystemDesign .\nI.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .\nNotice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system."@en .
+<https://w3id.org/ammo/ont/Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Plan> <http://www.w3.org/2000/01/rdf-schema#label> "Plan"@en .
+<https://w3id.org/ammo/ont/Plan> <http://www.w3.org/2000/01/rdf-schema#comment> "A Description having an explicit Goal, to be achieved by executing the plan"@en .
+<https://w3id.org/ammo/ont/Plan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Quantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Quantity> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity" .
+<https://w3id.org/ammo/ont/Quantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Quantity ODP is derived directly from QUDT and equivalent."@en .
+<https://w3id.org/ammo/ont/Quantity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Quantity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/Quantity> .
+<https://w3id.org/ammo/ont/Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Status> <http://www.w3.org/2000/01/rdf-schema#label> "Status" .
+<https://w3id.org/ammo/ont/Status> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/ammo/ont/SystemDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/SystemDesign> <http://www.w3.org/2000/01/rdf-schema#label> "System Design"@en .
+<https://w3id.org/ammo/ont/SystemDesign> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/SystemDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations."@en .
+<https://w3id.org/ammo/ont/SystemDesign> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/SystemDesign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "Time Interval" .
+<https://w3id.org/ammo/ont/TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/TimeInterval> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/2006/time#Interval> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#label> "Transition" .
+_:B5f0d2ee9550ca5348583d0b1b5b09761 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5f0d2ee9550ca5348583d0b1b5b09761 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5f0d2ee9550ca5348583d0b1b5b09761 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/fromState> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5f0d2ee9550ca5348583d0b1b5b09761 .
+_:B3b91ae32ff540be12dd38195be9bfb1f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3b91ae32ff540be12dd38195be9bfb1f <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3b91ae32ff540be12dd38195be9bfb1f <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/toState> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3b91ae32ff540be12dd38195be9bfb1f .
+_:B2580d3ca7fb9a56a56a6f7501e220cb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B2580d3ca7fb9a56a56a6f7501e220cb2 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B2580d3ca7fb9a56a56a6f7501e220cb2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/event> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2580d3ca7fb9a56a56a6f7501e220cb2 .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<https://w3id.org/ammo/ont/describes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/describes> <http://www.w3.org/2000/01/rdf-schema#label> "describes" .
+<https://w3id.org/ammo/ont/describes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/describes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/describes> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Component> .
+<https://w3id.org/ammo/ont/fromState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/fromState> <http://www.w3.org/2000/01/rdf-schema#label> "from state" .
+<https://w3id.org/ammo/ont/fromState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/State> .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#label> "has component" .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/DesignedComponent> .
+<https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isComponentOf> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2000/01/rdf-schema#label> "has direct part"@en .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://purl.org/dc/terms/description> "has direct part is a relation to specify a part at a particular level of granularity"@en .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/hasProperPart> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000273> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isDirectPartOf> .
+<https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2004/02/skos/core#example> "a car has an engine as a direct part"@en .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ReflexiveProperty> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has part"@en .
+<https://w3id.org/ammo/ont/hasPart> <http://purl.org/dc/terms/description> "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."@en .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isLocationOf> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000028> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isPartOf> .
+<https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/2004/02/skos/core#example> "a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;"@en .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#label> "is component of" .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/DesignedComponent> .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+<https://w3id.org/ammo/ont/isComponentOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/hasComponent> .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is component part of"@en .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://purl.org/dc/terms/description> "is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is."@en .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isDirectPartOf> .
+<https://w3id.org/ammo/ont/isComponentPartOf> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000313> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "is located in"@en .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://purl.org/dc/terms/description> "A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]"@en .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://semanticscience.org/resource/equivalentTo> "OBO_REL:located_in" .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000061> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isLocationOf> .
+<https://w3id.org/ammo/ont/isLocatedIn> <http://www.w3.org/2004/02/skos/core#example> "A parasite in the interior of a person's intestine is located in their intestinal lumen."@en .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "is related to"@en .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://purl.org/dc/terms/description> "A is related to B iff there is some relation between A and B."@en .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://semanticscience.org/resource/Entity> .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://semanticscience.org/resource/Entity> .
+<https://w3id.org/ammo/ont/isRelatedTo> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000001> .
+<https://w3id.org/ammo/ont/isRelatedTo> <https://schema.org/comment> "'is related to' is the top level relation in SIO" .
+<https://w3id.org/ammo/ont/surrounds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/surrounds> <http://www.w3.org/2000/01/rdf-schema#label> "surrounds"@en .
+<https://w3id.org/ammo/ont/surrounds> <http://purl.org/dc/terms/description> "A 'surrounds' B iff the A 'contains' B and A 'is adjacent to' B or A 'is directly connected to' B."@en .
+<https://w3id.org/ammo/ont/surrounds> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/surrounds> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/contains> .
+<https://w3id.org/ammo/ont/surrounds> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000324> .
+<https://w3id.org/ammo/ont/toState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/toState> <http://www.w3.org/2000/01/rdf-schema#label> "to state" .
+<https://w3id.org/ammo/ont/toState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/State> .
+<https://w3id.org/ammo/ont/DesignedComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Component" .
+<https://w3id.org/ammo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/DesignedComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/DesignedArtifact> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Physical System" .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+_:Bdcf80c0585535dc6d4ca5b0ea83e4990 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bdcf80c0585535dc6d4ca5b0ea83e4990 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:Bdcf80c0585535dc6d4ca5b0ea83e4990 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/SystemDesign> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdcf80c0585535dc6d4ca5b0ea83e4990 .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalSystem> .
+<https://w3id.org/ammo/ont/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "entity"@en .
+<https://w3id.org/ammo/ont/Entity> <http://purl.org/dc/terms/description> "Every thing is an entity."@en .
+<https://w3id.org/ammo/ont/Entity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://semanticscience.org/resource/SIO_000000> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Artifact"@en .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+_:B5237cd18f04723a33452b872d42295aa <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5237cd18f04723a33452b872d42295aa <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:B5237cd18f04723a33452b872d42295aa <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Plan> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5237cd18f04723a33452b872d42295aa .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalObject> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2004/02/skos/core#definition> "Any PhysicalObject that isDescribedBy a Plan .\nThis axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,\nFunctionalSubstance(s) are included here as well.\nImmaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here."@en .
+<https://w3id.org/ammo/ont/PhysicalObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/PhysicalObject> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Object"@en .
+<https://w3id.org/ammo/ont/PhysicalObject> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
+<https://w3id.org/ammo/ont/PhysicalObject> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/PhysicalObject> <http://www.w3.org/2004/02/skos/core#definition> "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary)."@en .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is direct part of"@en .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://purl.org/dc/terms/description> "is direct part of is a relation between a specific part (at some level of granularity) and its whole."@en .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isProperPartOf> .
+<https://w3id.org/ammo/ont/isDirectPartOf> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000310> .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is location of"@en .
+<https://w3id.org/ammo/ont/isLocationOf> <http://purl.org/dc/terms/description> "A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]"@en .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> .
+<https://w3id.org/ammo/ont/isLocationOf> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000145> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ReflexiveProperty> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of"@en .
+<https://w3id.org/ammo/ont/isPartOf> <http://purl.org/dc/terms/description> "is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole."@en .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isLocatedIn> .
+<https://w3id.org/ammo/ont/isPartOf> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000068> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is proper part of"@en .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://purl.org/dc/terms/description> "is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole."@en .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isPartOf> .
+<https://w3id.org/ammo/ont/isProperPartOf> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000093> .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "is spatiotemporally related to"@en .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://purl.org/dc/terms/description> "A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B"@en .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/isRelatedTo> .
+<https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000322> .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is specified by" .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Component> .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/DesignSpecification> .
+<https://w3id.org/ammo/ont/isSpecifiedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isSpecifiedBy> .
+<https://w3id.org/ammo/ont/State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/State> <http://www.w3.org/2000/01/rdf-schema#label> "State" .
+<https://w3id.org/ammo/ont/State> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#label> "has proper part" .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#label> "has proper part"@en .
+<https://w3id.org/ammo/ont/hasProperPart> <http://purl.org/dc/terms/description> "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."@en .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/DesignSpecification> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ammo/ont/hasPart> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://semanticscience.org/resource/SIO_000053> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/isProperPartOf> .
+<https://w3id.org/ammo/ont/hasProperPart> <http://www.w3.org/2004/02/skos/core#example> "a car has an engine as a proper part; a car has a piston as a proper part;"@en .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is described by" .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/Component> .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Design> .
+<https://w3id.org/ammo/ont/isDescribedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ammo/ont/describes> .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Design Specification" .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "A design specification is a detailed document that sets out exaclty what a product or a process should present."@en .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://wikidata.org/entity/Q16960030> .
+<https://w3id.org/ammo/ont/DesignSpecification> <http://www.w3.org/ns/prov#wasQuotedFrom> "https://en.wikipedia.org/wiki/Design_specification" .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#label> "Object"@en .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#comment> "An object is an entity that is wholly identifiable at any instant of time during which it exists."@en .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+_:B996613e39716790e472eb16dc5fa2b80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B996613e39716790e472eb16dc5fa2b80 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:B996613e39716790e472eb16dc5fa2b80 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Object> .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B996613e39716790e472eb16dc5fa2b80 .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
+<https://w3id.org/ammo/ont/RealizableEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/RealizableEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Realizable Entity" .
+<https://w3id.org/ammo/ont/RealizableEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "A realizable entity is an attribute that is exhibited under some condition and is realized in some process." .
+<https://w3id.org/ammo/ont/RealizableEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/RealizableEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Attribute> .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/2000/01/rdf-schema#label> "Design" .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/2000/01/rdf-schema#comment> "From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.\nA design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.\nWhile designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design." .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/2004/02/skos/core#definition> "A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process."@en .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://wikidata.org/entity/Q82604> .
+<https://w3id.org/ammo/ont/Design> <http://www.w3.org/ns/prov#wasQuotedFrom> "https://en.wikipedia.org/wiki/Design"@en .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists." .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
+_:Ba3a183179c7e75e6613aacfe3ce66dad <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Ba3a183179c7e75e6613aacfe3ce66dad <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:Ba3a183179c7e75e6613aacfe3ce66dad <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Process> .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba3a183179c7e75e6613aacfe3ce66dad .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+_:B0621261039b5e1c03b0a6ee497994ada <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B0621261039b5e1c03b0a6ee497994ada <https://schema.org/affiliation> "University of Notre Dame" .
+_:B0621261039b5e1c03b0a6ee497994ada <https://schema.org/name> "Christopher Sweet" .
+_:B0621261039b5e1c03b0a6ee497994ada <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B0621261039b5e1c03b0a6ee497994ada .
+_:Bda3b260dc80f1cea27dd06c7d3a8572b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bda3b260dc80f1cea27dd06c7d3a8572b <https://schema.org/affiliation> "University of Notre Dame" .
+_:Bda3b260dc80f1cea27dd06c7d3a8572b <https://schema.org/name> "Donald Brower" .
+_:Bda3b260dc80f1cea27dd06c7d3a8572b <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:Bda3b260dc80f1cea27dd06c7d3a8572b .
+_:B7e76612ee91fae9b3c82a83d4b3a510c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B7e76612ee91fae9b3c82a83d4b3a510c <https://schema.org/affiliation> "Simbachain Inc" .
+_:B7e76612ee91fae9b3c82a83d4b3a510c <https://schema.org/name> "Matthew Welz" .
+_:B7e76612ee91fae9b3c82a83d4b3a510c <https://schema.org/url> "https://orcid.org/0000-0002-5861-1790"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B7e76612ee91fae9b3c82a83d4b3a510c .
+_:B9a2777ef6bdeec9734554fa5b0e0b646 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B9a2777ef6bdeec9734554fa5b0e0b646 <https://schema.org/affiliation> "Simbachain Inc" .
+_:B9a2777ef6bdeec9734554fa5b0e0b646 <https://schema.org/name> "Kirsten Stor" .
+_:B9a2777ef6bdeec9734554fa5b0e0b646 <https://schema.org/url> "https://orcid.org/0000-0003-3885-977X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:B9a2777ef6bdeec9734554fa5b0e0b646 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:B1ca02f0e702b98f6c7e6530811fb32b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B1ca02f0e702b98f6c7e6530811fb32b7 <https://schema.org/affiliation> "University of Notre Dame" .
+_:B1ca02f0e702b98f6c7e6530811fb32b7 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:B1ca02f0e702b98f6c7e6530811fb32b7 <https://schema.org/name> "Charles F. Vardeman II" .
+_:B1ca02f0e702b98f6c7e6530811fb32b7 <https://schema.org/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/creator> _:B1ca02f0e702b98f6c7e6530811fb32b7 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/modified> "2022-05-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:B49971eabd74fad2d188ffe83d68c9eff <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:B49971eabd74fad2d188ffe83d68c9eff <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.org/entity/Q178848> .
+_:B49971eabd74fad2d188ffe83d68c9eff <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
+_:B49971eabd74fad2d188ffe83d68c9eff <https://schema.org/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:B49971eabd74fad2d188ffe83d68c9eff .
+_:Bcf29fbaa9197a2ebdfb27952cbee41fe <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:Bcf29fbaa9197a2ebdfb27952cbee41fe <https://schema.org/name> "Simba Chain" .
+_:Bcf29fbaa9197a2ebdfb27952cbee41fe <https://schema.org/url> "https://simbachain.com/" .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:Bcf29fbaa9197a2ebdfb27952cbee41fe .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" .
+<https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/ont/0.1.0> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0"@en .
+<https://w3id.org/ammo/ont/> <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .

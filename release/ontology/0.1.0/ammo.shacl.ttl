@@ -1,0 +1,92 @@
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix ammosh: <https://w3id.org/ammo/shapes/shacl/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/ammo/shapes/shacl> a owl:Ontology ;
+    dcterms:contributor [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Christopher Sweet" ;
+            sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Donald Brower" ;
+            sdo:url "https://orcid.org/0000-0001-7347-546X"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Matthew Welz" ;
+            sdo:url "https://orcid.org/0000-0002-5861-1790"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "Simbachain Inc" ;
+            sdo:name "Kirsten Stor" ;
+            sdo:url "https://orcid.org/0000-0003-3885-977X"^^xsd:anyURI ] ;
+    dcterms:creator [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+            sdo:name "Charles F. Vardeman II" ;
+            sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ] ;
+    dcterms:description """The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.
+
+Contributions and Discussion Welcomed.
+Github: https://github.com/LA3D/ammo"""@en ;
+    dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+    dcterms:modified "2022-02-21"^^xsd:date ;
+    dcterms:publisher [ a sdo:Organization ;
+            owl:sameAs wd:Q178848 ;
+            sdo:name "Center for Research Computing, University of Notre Dame" ;
+            sdo:url "https//crc.nd.edu"^^xsd:anyURI ],
+        [ a sdo:Organization ;
+            sdo:name "Simba Chain" ;
+            sdo:url "https://simbachain.com/" ] ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dcterms:title "Additive Manufacturing for Maintenance Operations SHACL Shapes"@en ;
+    vann:preferredNamespacePrefix "ammosh" ;
+    vann:preferredNamespaceUri "http://w3id.org/ammo/shapes/shacl/" ;
+    owl:versionIRI ammosh:0.1.0 ;
+    owl:versionInfo "0.1.0"@en ;
+    sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+
+ammosh: a owl:Ontology .
+
+ammosh:DesignedComponentShape a sh:NodeShape ;
+    sh:TargetClass ammo:DesignedComponent ;
+    sh:property [ sh:class ammo:ComponentIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Component Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasidentifier ;
+            sh:resultMessage "Each Designed Component must have 1 Component Identifier" ;
+            sh:severity sh:Violation ],
+        [ sh:class ammo:DesignedPhysicalSystem ;
+            sh:minCount 0 ;
+            sh:name "Designed Physical System" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:isComponentOf ] .
+
+ammosh:DesignedPhysicalSystemShape a sh:NodeShape ;
+    sh:property [ sh:class ammo:DesignedPhysicalSystem ;
+            sh:minCount 0 ;
+            sh:name "Subsystem" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasSubsystem ],
+        [ sh:class ammo:DesignedComponent ;
+            sh:minCount 0 ;
+            sh:name "Designed Component" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasComponent ],
+        [ sh:class ammo:SystemIdentifier ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "System Identifier" ;
+            sh:nodeKind sh:IRI ;
+            sh:path ammo:hasidentifier ;
+            sh:resultMessage "Each identifier MUST have 1 system identifier" ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ammo:DesignedPhysicalSystem .
+

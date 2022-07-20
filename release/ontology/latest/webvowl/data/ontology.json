@@ -1,0 +1,3607 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://qudt.org/schema/qudt", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/ns/dcat", "http://semanticscience.org/resource", "https://w3id.org/dingo", "http://ontologydesignpatterns.org/opla-core", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://org.semanticweb.owlapi/error", "https://w3id.org/ammo/ont", "http://www.w3.org/2006/time", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "en" : "Additive Manufacturing for Maintenance Operations Ontology"
+    },
+    "iri" : "https://w3id.org/ammo/module/process/",
+    "version" : "0.5.1",
+    "author" : [ "_:genid2147483652" ],
+    "description" : {
+      "en" : "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "en",
+        "value" : "https://spdx.org/licenses/CC-BY-4.0",
+        "type" : "label"
+      }, {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://spdx.org/licenses/CC-BY-4.0",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483652",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483649",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483650",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483648",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "_:genid2147483651",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2022-02-15",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "ammo",
+        "type" : "label"
+      } ],
+      "rights" : [ {
+        "identifier" : "rights",
+        "language" : "en",
+        "value" : "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "_:genid2147483653",
+        "type" : "label"
+      }, {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "_:genid2147483654",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2022-05-12",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://w3id.org/ammo/ont/",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.5.1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Additive Manufacturing for Maintenance Operations Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "91",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "102",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "127",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "13",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "136",
+    "type" : "owl:Class"
+  }, {
+    "id" : "129",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "140",
+    "type" : "owl:Class"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "133",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "119",
+    "type" : "owl:Class"
+  }, {
+    "id" : "145",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "147",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "6",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "38",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "150",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "95",
+    "type" : "owl:Class"
+  }, {
+    "id" : "115",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/ammo/ont/Plan",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Plan",
+      "en" : "Plan"
+    },
+    "comment" : {
+      "en" : "A Description having an explicit Goal, to be achieved by executing the plan"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/2006/time#Interval",
+    "equivalent" : [ "13" ],
+    "baseIri" : "http://www.w3.org/2006/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Interval"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/FusedFilamentFabrication",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q1475300",
+        "type" : "iri"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "Fused deposition modeling",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Fused_filament_fabrication#Fused_deposition_modeling",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FusedFilamentFabrication",
+      "undefined" : "Fused filament fabrication"
+    },
+    "attributes" : [ "external" ],
+    "id" : "14",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/CompositeMaterial",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q181790",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "material made from a combination of two or more unlike substances",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CompositeMaterial",
+      "undefined" : "composite material"
+    },
+    "attributes" : [ "external" ],
+    "id" : "16",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://semanticscience.org/resource/Entity",
+    "baseIri" : "http://semanticscience.org/resource",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "subClasses" : [ "7" ],
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/WireProcess",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/3D_printing_processes#Processes",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "WireProcess",
+      "undefined" : "Wire Printing Process"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Capability",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "wasQuotedFrom" : [ {
+        "identifier" : "wasQuotedFrom",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/resource/",
+        "type" : "label"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Capability",
+      "undefined" : "Capability"
+    },
+    "comment" : {
+      "undefined" : "A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/BaseMaterial",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "undefined",
+        "value" : "A material from which other materials are derived",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BaseMaterial",
+      "undefined" : "base material"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/ont/Steel",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q11427",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Steel",
+        "en" : "Steel"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Aluminum",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q663",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Aluminum",
+        "en" : "Aluminum"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignedPhysicalSystem",
+      "undefined" : "Designed Physical System"
+    },
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "30", "31" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/QuantityDesignSpecification",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuantityDesignSpecification"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/CLIP",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "undefined",
+        "value" : "Wikidata has the wrong subclass of additive manufacturing vs additive manufacturing process",
+        "type" : "label"
+      } ],
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q20026892",
+        "type" : "iri"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "Continuous Liquid Interphase Printing",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Continuous_Liquid_Interface_Production",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CLIP",
+      "undefined" : "Continuous Liquid Interface Production"
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignedArtifact",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Designed Artifact is extracted from DOLCE Ultra Lite Systems Lite",
+        "type" : "label"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A PhysicalArtifact that is also described by a Design. This excludes simple recycling or refunctionalization of natural objects. Most common sense 'artifacts' can be included in this class: cars, lamps, houses, chips, etc.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignedArtifact",
+      "undefined" : "Designed Artifact"
+    },
+    "subClasses" : [ "50" ],
+    "attributes" : [ "external" ],
+    "id" : "49",
+    "superClasses" : [ "30" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/LOM",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q1412809",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Laminated_object_manufacturing",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LOM",
+      "undefined" : "Laminated Object Manufacturing"
+    },
+    "attributes" : [ "external" ],
+    "id" : "52",
+    "superClasses" : [ "53" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Design",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "wasQuotedFrom" : [ {
+        "identifier" : "wasQuotedFrom",
+        "language" : "en",
+        "value" : "https://en.wikipedia.org/wiki/Design",
+        "type" : "label"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q82604",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Design",
+      "undefined" : "Design"
+    },
+    "subClasses" : [ "59" ],
+    "comment" : {
+      "undefined" : "From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.\nA design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.\nWhile designs typically describe entities to be constructed, they can also be used to describe 'refunctionalized' entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design."
+    },
+    "attributes" : [ "external" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Attribute",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Attribute",
+      "undefined" : "Attribute"
+    },
+    "subClasses" : [ "25" ],
+    "comment" : {
+      "undefined" : "An attribute is a characteristic of some entity."
+    },
+    "attributes" : [ "external" ],
+    "id" : "65"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PB3DP",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q25381710",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Powder_bed_and_inkjet_head_3D_printing",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PB3DP",
+      "undefined" : "Powder bed and inkjet head 3D printing"
+    },
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/RealizableEntity",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RealizableEntity",
+      "undefined" : "Realizable Entity"
+    },
+    "subClasses" : [ "24", "68" ],
+    "comment" : {
+      "undefined" : "A realizable entity is an attribute that is exhibited under some condition and is realized in some process."
+    },
+    "attributes" : [ "external" ],
+    "id" : "25",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Object",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Object",
+      "en" : "Object"
+    },
+    "subClasses" : [ "11" ],
+    "comment" : {
+      "en" : "An object is an entity that is wholly identifiable at any instant of time during which it exists."
+    },
+    "attributes" : [ "external" ],
+    "id" : "46",
+    "superClasses" : [ "42" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PhysicalSystem",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A physical object that isDescribedBy a SystemDesign .\nI.e., analytically: a 'natural' system whose constituents or parts are physical objects that are members of a Collection that isUnifiedBy a SystemDesign .\nNotice that such SystemDesign is not necessarily bound to a SystemImplementationWorkflow, therefore it can be a reconstruction (or theory) about the structure and functions of a natural system.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PhysicalSystem",
+      "en" : "Physical System"
+    },
+    "subClasses" : [ "29" ],
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/EBF",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q5358154",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Electron-beam_freeform_fabrication",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EBF",
+      "undefined" : "Electron-beam freeform fabrication"
+    },
+    "attributes" : [ "external" ],
+    "id" : "91",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Alloy",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q37756",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "mixture or metallic solid solution composed of two or more elements",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Alloy",
+      "undefined" : "alloy"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/ont/GRM3210",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q483269",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "ASTM A602 Grade M3210 Annealed",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GRM3210",
+        "en" : "GR-M3210"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/AluminumPowder",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "labels" : {
+        "IRI-based" : "AluminumPowder",
+        "undefined" : "Aluminum Powder"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Steel",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q11427",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Steel",
+        "en" : "Steel"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Steel4140H",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "SEA 4140",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/SAE_steel_grades",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Steel4140H",
+        "undefined" : "Steel 4140H"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Steel304",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q3600978",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "SAE 304 stainless steel",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/SAE_304_stainless_steel",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Steel304",
+        "undefined" : "Steel 304"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/GR32510",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q483269",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "Malleable iron casting, Class 32510",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://www.matweb.com/search/datasheet.aspx?matguid=d195da8efafa474f8b6f869bbf767bae&ckck=1",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GR32510",
+        "undefined" : "GR 32510"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/GRM32510",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q483269",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "ASTM A602 Grade M3210 Annealed",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GRM32510",
+        "en" : "GR-M32510"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/GR604018",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q483269",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "ASTM A602 Grade M3210 Annealed",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://matmatch.com/materials/minfm53126-astm-a602-grade-m3210-annealed",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GR604018",
+        "en" : "GR 60-40-18"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/StainlessSteel",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q447725",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "StainlessSteel",
+        "en" : "Stainless Steel"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Steel4130",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Table on wikipedia has SAE Grades and material properties",
+          "type" : "label"
+        } ],
+        "wasQuotedFrom" : [ {
+          "identifier" : "wasQuotedFrom",
+          "language" : "en",
+          "value" : "https://en.wikipedia.org/wiki/41xx_steel",
+          "type" : "label"
+        } ],
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q869869",
+          "type" : "iri"
+        } ],
+        "narrower" : [ {
+          "identifier" : "narrower",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q869869",
+          "type" : "iri"
+        } ],
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "undefined",
+          "value" : "family of steel grades rich in molybdenum and chromium",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/41xx_steel",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Steel4130",
+        "undefined" : "steel 4130"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Aluminum6160",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "closeMatch" : [ {
+          "identifier" : "closeMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q4641644",
+          "type" : "iri"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/Aluminium_alloy",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Aluminum6160",
+        "undefined" : "Aluminum 6160"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Aluminum3085",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q447725",
+          "type" : "iri"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/Aluminium_alloy",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Aluminum3085",
+        "undefined" : "Aluminum 3085"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/SteelA36",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q3247733",
+          "type" : "iri"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/A36_steel",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "SteelA36",
+        "undefined" : "ASTM A36 steel"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/SteelA27",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "ASTM A27 Steel",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/SAE_steel_grades",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "SteelA27",
+        "undefined" : "Steel cast A27"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/Aluminum355T6",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/Aluminium_alloy",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Aluminum355T6",
+        "undefined" : "355-T6"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Polymer",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q81163",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "substance composed of macromolecules with repeating structural units",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Polymer",
+      "undefined" : "polymer"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/ont/PLA",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q413769",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "PLA",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "PLA",
+        "undefined" : "polylactic acid"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/ont/ABS",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "annotations" : {
+        "exactMatch" : [ {
+          "identifier" : "exactMatch",
+          "language" : "undefined",
+          "value" : "http://wikidata.org/entity/Q143496",
+          "type" : "iri"
+        } ],
+        "altLabel" : [ {
+          "identifier" : "altLabel",
+          "language" : "undefined",
+          "value" : "ABS",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "ABS",
+        "undefined" : "acrylonitrile butadiene styrene"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "96",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PhysicalArtifact",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Any PhysicalObject that isDescribedBy a Plan .\nThis axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,\nFunctionalSubstance(s) are included here as well.\nImmaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all 'artifactual' in the weak sense assumed here.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PhysicalArtifact",
+      "en" : "Physical Artifact"
+    },
+    "subClasses" : [ "29", "49" ],
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DED",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://www.3dnatives.com/en/directed-energy-deposition-ded-3d-printing-guide-100920194/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DED",
+      "undefined" : "Directed Energy Deposition"
+    },
+    "attributes" : [ "external" ],
+    "id" : "100",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Status",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Status",
+      "undefined" : "Status"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Component",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Component"
+    },
+    "attributes" : [ "external" ],
+    "id" : "102"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignSpecificationType",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignSpecificationType",
+      "en" : "Design Specification Type"
+    },
+    "comment" : {
+      "undefined" : "Hook for vocabulary that describes the specification entity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "103"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Quantity",
+    "equivalent" : [ "110" ],
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Quantity",
+      "undefined" : "Quantity"
+    },
+    "comment" : {
+      "en" : "Quantity ODP is derived directly from QUDT and equivalent."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Process",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Process",
+      "undefined" : "Process"
+    },
+    "subClasses" : [ "61" ],
+    "comment" : {
+      "undefined" : "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists."
+    },
+    "attributes" : [ "external" ],
+    "id" : "28",
+    "superClasses" : [ "42" ]
+  }, {
+    "iri" : "http://qudt.org/schema/qudt/Quantity",
+    "equivalent" : [ "19" ],
+    "baseIri" : "http://qudt.org/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Quantity"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/SLM",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q2267983",
+        "type" : "iri"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "direct metal laser sintering",
+        "type" : "label"
+      }, {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "Selective Laser Sintering",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Selective_laser_sintering",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SLM",
+      "undefined" : "Selective laser melting"
+    },
+    "attributes" : [ "external" ],
+    "id" : "127",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/MaterialTransformation",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MaterialTransformation",
+      "undefined" : "Material Transformation"
+    },
+    "subClasses" : [ "23" ],
+    "comment" : {
+      "undefined" : "A material transformation is a process that transforms material from one form to another."
+    },
+    "attributes" : [ "external" ],
+    "id" : "61",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/LightPolymerized",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LightPolymerized",
+      "undefined" : "Light Polymerized"
+    },
+    "subClasses" : [ "56", "64", "32" ],
+    "attributes" : [ "external" ],
+    "id" : "33",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignDataset",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "undefined",
+        "value" : "A collection of data, published or curated by a single agent, and available for access or download in one or more representations. ",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignDataset",
+      "undefined" : "Design Dataset"
+    },
+    "attributes" : [ "external" ],
+    "id" : "94",
+    "superClasses" : [ "95" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Entity",
+    "equivalent" : [ "133" ],
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "description" : {
+      "en" : "Every thing is an entity."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Entity",
+      "en" : "entity"
+    },
+    "subClasses" : [ "46", "28" ],
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/TimeInterval",
+    "equivalent" : [ "12" ],
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "TimeInterval",
+      "undefined" : "Time Interval"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/LaminatedProcess",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/3D_printing_processes#Processes",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LaminatedProcess",
+      "undefined" : "Laminated Process"
+    },
+    "subClasses" : [ "52" ],
+    "attributes" : [ "external" ],
+    "id" : "53",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/MaterialDesignSpecification",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialDesignSpecification"
+    },
+    "attributes" : [ "external" ],
+    "id" : "136"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/SHS",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q16964377",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Selective_heat_sintering",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SHS",
+      "undefined" : "Selective heat sintering"
+    },
+    "attributes" : [ "external" ],
+    "id" : "129",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/MaterialExtrusion",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialExtrusion",
+      "undefined" : "Material Extrusion"
+    },
+    "subClasses" : [ "48", "14", "35" ],
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/State",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "State",
+      "undefined" : "State"
+    },
+    "attributes" : [ "external" ],
+    "id" : "73",
+    "superClasses" : [ "98" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/EMB",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q392480",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Electron-beam_additive_manufacturing",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EMB",
+      "undefined" : "Electron-beam additive manufacturing"
+    },
+    "attributes" : [ "external" ],
+    "id" : "122",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Robocasting",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q18390836",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Robocasting",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Robocasting",
+      "undefined" : "Robocasting"
+    },
+    "attributes" : [ "external" ],
+    "id" : "35",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Material",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "wasQuotedFrom" : [ {
+        "identifier" : "wasQuotedFrom",
+        "language" : "en",
+        "value" : "https://en.wikipedia.org/wiki/Material",
+        "type" : "label"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation",
+        "type" : "iri"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://www.wikidata.org/wiki/Q214609",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Material",
+      "en" : "Material"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/ont/AluminumPowder",
+      "baseIri" : "https://w3id.org/ammo/ont",
+      "labels" : {
+        "IRI-based" : "AluminumPowder",
+        "undefined" : "Aluminum Powder"
+      }
+    } ],
+    "subClasses" : [ "10", "96", "16", "26" ],
+    "comment" : {
+      "en" : "Substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and of which objects can be made up"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11",
+    "superClasses" : [ "46" ]
+  }, {
+    "iri" : "http://org.semanticweb.owlapi/error#Error1",
+    "baseIri" : "http://org.semanticweb.owlapi/error",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Error1"
+    },
+    "subClasses" : [ "39" ],
+    "attributes" : [ "external" ],
+    "id" : "140"
+  }, {
+    "iri" : "https://schema.org/Organization",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "143"
+  }, {
+    "iri" : "http://semanticscience.org/resource/SIO_000000",
+    "equivalent" : [ "42" ],
+    "baseIri" : "http://semanticscience.org/resource",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SIO_000000"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "133"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignSpecification",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "wasQuotedFrom" : [ {
+        "identifier" : "wasQuotedFrom",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Design_specification",
+        "type" : "label"
+      } ],
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q16960030",
+        "type" : "iri"
+      } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignSpecification",
+      "undefined" : "Design Specification"
+    },
+    "comment" : {
+      "en" : "A design specification is a detailed document that sets out exaclty what a product or a process should present."
+    },
+    "attributes" : [ "external" ],
+    "id" : "119"
+  }, {
+    "iri" : "https://w3id.org/dingo#Product_or_material_produced",
+    "baseIri" : "https://w3id.org/dingo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Product_or_material_produced"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/ont/",
+      "baseIri" : "https://w3id.org/ammo",
+      "labels" : { }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "145"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/SystemDesign",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SystemDesign",
+      "en" : "System Design"
+    },
+    "comment" : {
+      "en" : "The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations."
+    },
+    "attributes" : [ "external" ],
+    "id" : "59",
+    "superClasses" : [ "58" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Transition",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Transition",
+      "undefined" : "Transition"
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "140", "98" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PhysicalObject",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "extractedFrom" : [ {
+        "identifier" : "extractedFrom",
+        "language" : "undefined",
+        "value" : "http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PhysicalObject",
+      "en" : "Physical Object"
+    },
+    "subClasses" : [ "30", "31" ],
+    "attributes" : [ "external" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://ontologydesignpatterns.org/opla-core#Module",
+    "baseIri" : "http://ontologydesignpatterns.org/opla-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Module"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/ammo/module/process/",
+      "baseIri" : "https://w3id.org/ammo/module",
+      "labels" : { }
+    }, {
+      "iri" : "https://w3id.org/ammo/module/AMProcess",
+      "baseIri" : "https://w3id.org/ammo/module",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "en",
+          "value" : "Module definitons for AM Processes",
+          "type" : "label"
+        } ],
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "en",
+          "value" : "ammo process module",
+          "type" : "label"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://en.wikipedia.org/wiki/3D_printing_processes",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "AMProcess"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/module/Materials",
+      "baseIri" : "https://w3id.org/ammo/module",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "undefined",
+          "value" : "Module definitons for materials",
+          "type" : "label"
+        } ],
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "undefined",
+          "value" : "ammo materials module",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "Materials"
+      }
+    }, {
+      "iri" : "https://w3id.org/ammo/module/system",
+      "baseIri" : "https://w3id.org/ammo/module",
+      "annotations" : {
+        "note" : [ {
+          "identifier" : "note",
+          "language" : "undefined",
+          "value" : "Module definitons for System",
+          "type" : "label"
+        } ],
+        "prefLabel" : [ {
+          "identifier" : "prefLabel",
+          "language" : "undefined",
+          "value" : "ammo system module",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "system"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "147"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Role",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Role",
+      "undefined" : "Role"
+    },
+    "comment" : {
+      "undefined" : "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance."
+    },
+    "attributes" : [ "external" ],
+    "id" : "68",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "1",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "6",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "38",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://schema.org/Person",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "attributes" : [ "external" ],
+    "id" : "150"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "72",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PowderBed",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PowderBed",
+      "undefined" : "Powder Bed"
+    },
+    "subClasses" : [ "127", "66", "129", "122" ],
+    "attributes" : [ "external" ],
+    "id" : "67",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DesignedComponent",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DesignedComponent",
+      "undefined" : "Designed Component"
+    },
+    "attributes" : [ "external" ],
+    "id" : "50",
+    "superClasses" : [ "49" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/CompositeMaterialFabrication",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "CFF",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "CompositeMaterialFabrication",
+      "undefined" : "Composite Material Fabrication"
+    },
+    "attributes" : [ "external" ],
+    "id" : "48",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/PowderFed",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/3D_printing_processes#Processes",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PowderFed",
+      "undefined" : "Powder Fed Process"
+    },
+    "subClasses" : [ "100", "115" ],
+    "attributes" : [ "external" ],
+    "id" : "101",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/AMProcess",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "undefined",
+        "value" : "There is some cleanup in wikidata, Q360931 is subclass of manufacturing process, Q30592743 is subclass of production process",
+        "type" : "label"
+      } ],
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q360931",
+        "type" : "iri"
+      }, {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q30592743",
+        "type" : "iri"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "en",
+        "value" : "3D Printing Process",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/3D_printing_processes",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "AMProcess",
+      "en" : "Additive Manufacturing Process"
+    },
+    "subClasses" : [ "67", "53", "101", "33", "22", "15", "91" ],
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#Dataset",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset"
+    },
+    "subClasses" : [ "94" ],
+    "attributes" : [ "external" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/EHLA",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://www.sfcnclaser.com/what-is-ultra-high-speed-laser-cladding-machines.html",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EHLA",
+      "undefined" : "Extreme High-Speed Laser Cladding"
+    },
+    "attributes" : [ "external" ],
+    "id" : "115",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/Stereolithography",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "exactMatch" : [ {
+        "identifier" : "exactMatch",
+        "language" : "undefined",
+        "value" : "http://wikidata.org/entity/Q1022471",
+        "type" : "iri"
+      } ],
+      "altLabel" : [ {
+        "identifier" : "altLabel",
+        "language" : "undefined",
+        "value" : "SLA",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://en.wikipedia.org/wiki/Stereolithography",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Stereolithography",
+      "undefined" : "Stereolithography"
+    },
+    "attributes" : [ "external" ],
+    "id" : "56",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/DigitalLightProcessing",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Wikidata has a misdirection to Digital Light Processing Display not a printing process",
+        "type" : "label"
+      } ],
+      "wasQuotedFrom" : [ {
+        "identifier" : "wasQuotedFrom",
+        "language" : "undefined",
+        "value" : "https://markforged.com/resources/learn/3d-printing-basics/3d-printing-processes/what-is-digital-light-processing-dlp",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "DLP (Digital Light Processing) is a 3D printing technology used to rapidly produce photopolymer parts. It’s very similar to SLA with one significant difference -- where SLA machines use a laser that traces a layer, a DLP machine uses a projected light source to cure the entire layer at once. The part is formed layer by layer.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://markforged.com/resources/learn/3d-printing-basics/3d-printing-processes/what-is-digital-light-processing-dlp",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DigitalLightProcessing",
+      "en" : "Digital Light Processing"
+    },
+    "attributes" : [ "external" ],
+    "id" : "64",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "http://www.w3.org/2006/time#TemporalEntity",
+    "baseIri" : "http://www.w3.org/2006/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TemporalEntity"
+    },
+    "subClasses" : [ "39", "73" ],
+    "attributes" : [ "external" ],
+    "id" : "98"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "71",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "89",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "104",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "106",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "108",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "111",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "113",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "120",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "121",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "123",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "125",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "128",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "130",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "132",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "134",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "135",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "137",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "138",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "139",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "141",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "126",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "142",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "124",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "144",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "146",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "148",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "149",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "152",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "153",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "154",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/ammo/ont/hasPart",
+    "inverse" : "2",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasPart",
+      "en" : "has part"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "1",
+    "subproperty" : [ "4" ],
+    "attributes" : [ "transitive", "object", "external", "reflexive" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/status",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "status",
+      "undefined" : "status"
+    },
+    "domain" : "6",
+    "attributes" : [ "object", "external" ],
+    "id" : "5"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/ofQuantity",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "19",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ofQuantity",
+      "undefined" : "ofQuantity"
+    },
+    "domain" : "18",
+    "attributes" : [ "object", "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/existsAt",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "13",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/module/process/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "existsAt",
+      "undefined" : "exists at"
+    },
+    "domain" : "28",
+    "attributes" : [ "object", "external" ],
+    "id" : "27"
+  }, {
+    "range" : "15",
+    "domain" : "35",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "15",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasTransition",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "hasTransition",
+      "undefined" : "has transition"
+    },
+    "domain" : "38",
+    "attributes" : [ "object", "external" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isRealizedIn",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isRealizedIn",
+      "undefined" : "is realized in"
+    },
+    "domain" : "25",
+    "attributes" : [ "object", "external" ],
+    "id" : "40"
+  }, {
+    "range" : "42",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isLocatedIn",
+    "inverse" : "3",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]"
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ],
+      "equivalentTo" : [ {
+        "identifier" : "equivalentTo",
+        "language" : "undefined",
+        "value" : "OBO_REL:located_in",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "A parasite in the interior of a person's intestine is located in their intestinal lumen.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isLocatedIn",
+      "en" : "is located in"
+    },
+    "superproperty" : [ "44" ],
+    "domain" : "1",
+    "subproperty" : [ "2" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "43"
+  }, {
+    "range" : "42",
+    "domain" : "46",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "15",
+    "domain" : "48",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "53",
+    "domain" : "52",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B"
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSpatiotemporallyRelatedTo",
+      "en" : "is spatiotemporally related to"
+    },
+    "superproperty" : [ "54" ],
+    "domain" : "1",
+    "subproperty" : [ "3", "43" ],
+    "attributes" : [ "symmetric", "object", "external" ],
+    "id" : "44"
+  }, {
+    "range" : "33",
+    "domain" : "56",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasAttribute",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "25",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/module/process/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAttribute",
+      "undefined" : "has attribute"
+    },
+    "domain" : "46",
+    "attributes" : [ "object", "external" ],
+    "id" : "57"
+  }, {
+    "range" : "61",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "60"
+  }, {
+    "range" : "33",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "62"
+  }, {
+    "range" : "33",
+    "domain" : "64",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isComponentOf",
+    "inverse" : "70",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "29",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isComponentOf",
+      "undefined" : "is component of"
+    },
+    "domain" : "50",
+    "attributes" : [ "object", "external" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/toState",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "toState",
+      "undefined" : "to state"
+    },
+    "cardinality" : "1",
+    "domain" : "72",
+    "attributes" : [ "object", "external" ],
+    "id" : "71"
+  }, {
+    "range" : "30",
+    "domain" : "49",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "74"
+  }, {
+    "range" : "30",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "75"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasState",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "hasState",
+      "undefined" : "has state"
+    },
+    "domain" : "72",
+    "attributes" : [ "object", "external" ],
+    "id" : "76"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isRelatedTo",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "20",
+    "description" : {
+      "en" : "A is related to B iff there is some relation between A and B."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isRelatedTo",
+      "en" : "is related to"
+    },
+    "domain" : "20",
+    "subproperty" : [ "44" ],
+    "comment" : {
+      "undefined" : "'is related to' is the top level relation in SIO"
+    },
+    "attributes" : [ "symmetric", "object", "external" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isContainedIn",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isContainedIn"
+    },
+    "domain" : "1",
+    "subproperty" : [ "78" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "77"
+  }, {
+    "range" : "28",
+    "domain" : "61",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "79"
+  }, {
+    "range" : "25",
+    "domain" : "68",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "80"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isPartOf",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isPartOf",
+      "en" : "is part of"
+    },
+    "superproperty" : [ "43" ],
+    "domain" : "1",
+    "subproperty" : [ "81" ],
+    "attributes" : [ "transitive", "object", "external", "reflexive" ],
+    "id" : "2"
+  }, {
+    "range" : "25",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "82"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/madeFromMaterial",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "madeFromMaterial",
+      "undefined" : "made from material"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "84"
+  }, {
+    "range" : "31",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "85"
+  }, {
+    "range" : "46",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "86"
+  }, {
+    "range" : "49",
+    "domain" : "50",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/contains",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "contains"
+    },
+    "domain" : "1",
+    "subproperty" : [ "89" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "88"
+  }, {
+    "range" : "65",
+    "domain" : "25",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "90"
+  }, {
+    "range" : "58",
+    "domain" : "59",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "92"
+  }, {
+    "range" : "95",
+    "domain" : "94",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "93"
+  }, {
+    "range" : "98",
+    "domain" : "73",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "97"
+  }, {
+    "range" : "98",
+    "domain" : "39",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "99"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/surrounds",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "A 'surrounds' B iff the A 'contains' B and A 'is adjacent to' B or A 'is directly connected to' B."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "surrounds",
+      "en" : "surrounds"
+    },
+    "superproperty" : [ "88" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isComponentPartOf",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isComponentPartOf",
+      "en" : "is component part of"
+    },
+    "superproperty" : [ "105" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "104"
+  }, {
+    "range" : "23",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "106"
+  }, {
+    "range" : "23",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "107"
+  }, {
+    "range" : "23",
+    "domain" : "91",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "108"
+  }, {
+    "range" : "23",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "109"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/fromState",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "fromState",
+      "undefined" : "from state"
+    },
+    "cardinality" : "1",
+    "domain" : "72",
+    "attributes" : [ "object", "external" ],
+    "id" : "111"
+  }, {
+    "range" : "23",
+    "domain" : "67",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isParticipantIn",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "28",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isParticipantIn",
+      "undefined" : "is participant in"
+    },
+    "domain" : "46",
+    "attributes" : [ "object", "external" ],
+    "id" : "113"
+  }, {
+    "range" : "101",
+    "domain" : "115",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "114"
+  }, {
+    "range" : "23",
+    "domain" : "101",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "116"
+  }, {
+    "range" : "23",
+    "domain" : "53",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isSpecifiedBy",
+    "inverse" : "118",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "119",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSpecifiedBy",
+      "undefined" : "is specified by"
+    },
+    "domain" : "102",
+    "attributes" : [ "object", "external" ],
+    "id" : "118"
+  }, {
+    "range" : "101",
+    "domain" : "100",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "120"
+  }, {
+    "range" : "67",
+    "domain" : "122",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "121"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasDirectPart",
+    "inverse" : "105",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "has direct part is a relation to specify a part at a particular level of granularity"
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a car has an engine as a direct part",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDirectPart",
+      "en" : "has direct part"
+    },
+    "superproperty" : [ "4" ],
+    "domain" : "1",
+    "subproperty" : [ "124" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "123"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isDescribedBy",
+    "inverse" : "126",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "58",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDescribedBy",
+      "undefined" : "is described by"
+    },
+    "domain" : "102",
+    "attributes" : [ "object", "external" ],
+    "id" : "125"
+  }, {
+    "range" : "67",
+    "domain" : "129",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "128"
+  }, {
+    "range" : "83",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "130"
+  }, {
+    "range" : "83",
+    "domain" : "30",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "131"
+  }, {
+    "range" : "67",
+    "domain" : "66",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "132"
+  }, {
+    "range" : "67",
+    "domain" : "127",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "134"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasMaterial",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "11",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasMaterial",
+      "undefined" : "hasMaterial"
+    },
+    "domain" : "136",
+    "attributes" : [ "object", "external" ],
+    "id" : "135"
+  }, {
+    "range" : "11",
+    "domain" : "16",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "137"
+  }, {
+    "range" : "11",
+    "domain" : "96",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "138"
+  }, {
+    "range" : "140",
+    "domain" : "39",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "139"
+  }, {
+    "range" : "11",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "141"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/describes",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "102",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "describes",
+      "undefined" : "describes"
+    },
+    "domain" : "58",
+    "attributes" : [ "object", "external" ],
+    "id" : "126"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasBaseMaterial",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "hasBaseMaterial",
+      "undefined" : "has base material"
+    },
+    "domain" : "11",
+    "attributes" : [ "object", "external" ],
+    "id" : "142"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasComponentPart",
+    "inverse" : "104",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a human has blood as a component part",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasComponentPart",
+      "en" : "has component part"
+    },
+    "superproperty" : [ "123" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "124"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isSurroundedBy",
+    "inverse" : "89",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSurroundedBy",
+      "en" : "is surrounded by"
+    },
+    "superproperty" : [ "77" ],
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "78"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/specifies",
+    "inverse" : "118",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "102",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "specifies",
+      "undefined" : "specifies"
+    },
+    "domain" : "119",
+    "attributes" : [ "object", "external" ],
+    "id" : "144"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isDirectPartOf",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "is direct part of is a relation between a specific part (at some level of granularity) and its whole."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDirectPartOf",
+      "en" : "is direct part of"
+    },
+    "superproperty" : [ "81" ],
+    "domain" : "1",
+    "subproperty" : [ "104" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "105"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasComponent",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "50",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasComponent",
+      "undefined" : "has component"
+    },
+    "domain" : "29",
+    "attributes" : [ "object", "external" ],
+    "id" : "70"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isProperPartOf",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isProperPartOf",
+      "en" : "is proper part of"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "subproperty" : [ "105" ],
+    "attributes" : [ "object", "irreflexive", "external", "asymmetric" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isLocationOf",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "1",
+    "description" : {
+      "en" : "A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]"
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isLocationOf",
+      "en" : "is location of"
+    },
+    "superproperty" : [ "44" ],
+    "domain" : "1",
+    "subproperty" : [ "0" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasProperPart",
+    "inverse" : "81",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "46",
+    "description" : {
+      "en" : "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a car has an engine as a proper part; a car has a piston as a proper part;",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasProperPart",
+      "en" : "has proper part",
+      "undefined" : "has proper part"
+    },
+    "superproperty" : [ "0" ],
+    "domain" : "46",
+    "subproperty" : [ "123" ],
+    "attributes" : [ "someValues", "object", "irreflexive", "external", "asymmetric" ],
+    "id" : "146"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isDescribedBy",
+    "inverse" : "126",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "8",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDescribedBy",
+      "undefined" : "is described by"
+    },
+    "domain" : "30",
+    "attributes" : [ "someValues", "object", "external" ],
+    "id" : "148"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasProperPart",
+    "inverse" : "81",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "28",
+    "description" : {
+      "en" : "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a car has an engine as a proper part; a car has a piston as a proper part;",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasProperPart",
+      "en" : "has proper part",
+      "undefined" : "has proper part"
+    },
+    "superproperty" : [ "0" ],
+    "domain" : "28",
+    "subproperty" : [ "123" ],
+    "attributes" : [ "someValues", "object", "irreflexive", "external", "asymmetric" ],
+    "id" : "149"
+  }, {
+    "range" : "21",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "151"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasDataset",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "94",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDataset",
+      "undefined" : "has dataset"
+    },
+    "domain" : "58",
+    "attributes" : [ "object", "external" ],
+    "id" : "152"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isDescribedBy",
+    "inverse" : "126",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "58",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDescribedBy",
+      "undefined" : "is described by"
+    },
+    "domain" : "49",
+    "attributes" : [ "someValues", "object", "external" ],
+    "id" : "153"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/isDescribedBy",
+    "inverse" : "126",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "59",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDescribedBy",
+      "undefined" : "is described by"
+    },
+    "domain" : "29",
+    "attributes" : [ "someValues", "object", "external" ],
+    "id" : "154"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/hasProperPart",
+    "inverse" : "81",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "119",
+    "description" : {
+      "en" : "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."
+    },
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "a car has an engine as a proper part; a car has a piston as a proper part;",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasProperPart",
+      "en" : "has proper part",
+      "undefined" : "has proper part"
+    },
+    "superproperty" : [ "0" ],
+    "domain" : "58",
+    "subproperty" : [ "123" ],
+    "attributes" : [ "object", "irreflexive", "external", "asymmetric" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/ammo/ont/designSpecifcationType",
+    "baseIri" : "https://w3id.org/ammo/ont",
+    "range" : "103",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/ammo/ont/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "designSpecifcationType",
+      "undefined" : "designSpecifcationType"
+    },
+    "domain" : "119",
+    "attributes" : [ "object", "external" ],
+    "id" : "155"
+  } ]
+}

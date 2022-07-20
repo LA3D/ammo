@@ -50,6 +50,7 @@ function loadTOC(){
       $("#overview").load("sections/overview-en.html"); 
       $("#description").load("sections/description-en.html"); 
       $("#references").load("sections/references-en.html"); 
+      $("#changelog").load("sections/changelog-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
     </script> 
@@ -64,6 +65,10 @@ function loadTOC(){
 
 
 <dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/ammo/ont/0.5.1">https://w3id.org/ammo/ont/0.5.1</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="https://w3id.org/ammo/ont/0.5.0">https://w3id.org/ammo/ont/0.5.0</a></dd>
 <dt>Revision:</dt>
 <dd>0.5.1</dd>
 <dt>Authors:</dt>
@@ -74,10 +79,13 @@ function loadTOC(){
 
 <dt>Publisher:</dt>
 <dd><a href="https://simbachain.com/">Simba Chain</a></dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd>
+
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://spdx.org/licenses/CC-BY-4.0" target="_blank"><img src="https://img.shields.io/badge/License-https://spdx.org/licenses/CC_BY_4.0-blue.svg" alt="https://spdx.org/licenses/CC-BY-4.0" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Charles F. Vardeman II. Additive Manufacturing for Maintenance Operations Ontology. Revision: 0.5.1.</dd>
+<dd>Charles F. Vardeman II. Additive Manufacturing for Maintenance Operations Ontology. Revision: 0.5.1. Retrieved from: https://w3id.org/ammo/ont/0.5.1</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -92,6 +100,7 @@ function loadTOC(){
      <div id="description"></div>
      <div id="crossref"></div>
      <div id="references"></div>
+     <div id="changelog"></div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>

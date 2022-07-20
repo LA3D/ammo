@@ -1,50 +1,54 @@
-<https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/contributor> _:genid1 .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/ont/0.5.1> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#imports> <https://www.w3.org/ns/prov-o> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/abstract> "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D)." .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid1 .
 _:genid1 <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid1 <https://schema.org/name> "Christopher Sweet" .
 _:genid1 <https://schema.org/affiliation> "University of Notre Dame" .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
 <https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/contributor> _:genid2 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid2 .
 _:genid2 <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid2 <https://schema.org/name> "Donald Brower" .
 _:genid2 <https://schema.org/affiliation> "University of Notre Dame" .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/contributor> _:genid3 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid3 .
 _:genid3 <https://schema.org/url> "https://orcid.org/0000-0002-5861-1790"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid3 <https://schema.org/name> "Matthew Welz" .
 _:genid3 <https://schema.org/affiliation> "Simbachain Inc" .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/contributor> _:genid4 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid4 .
 _:genid4 <https://schema.org/url> "https://orcid.org/0000-0003-3885-977X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid4 <https://schema.org/name> "Kirsten Stor" .
 _:genid4 <https://schema.org/affiliation> "Simbachain Inc" .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/creator> _:genid5 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/created> "2022-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/creator> _:genid5 .
 _:genid5 <https://schema.org/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid5 <https://schema.org/name> "Charles F. Vardeman II" .
 _:genid5 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid5 <https://schema.org/affiliation> "University of Notre Dame" .
 _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"@en .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/modified> "2022-05-12"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/publisher> _:genid6 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/modified> "2022-05-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:genid6 .
 _:genid6 <https://schema.org/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid6 <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
 <https://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/publisher> _:genid7 .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:genid7 .
 _:genid7 <https://schema.org/url> "https://simbachain.com/" .
 _:genid7 <https://schema.org/name> "Simba Chain" .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
-<https://w3id.org/ammo/module/process/> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en .
-<https://w3id.org/ammo/module/process/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" .
-<https://w3id.org/ammo/module/process/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" .
-<https://w3id.org/ammo/module/process/> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.1"@en .
-<https://w3id.org/ammo/module/process/> <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations Ontology"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" .
+<https://w3id.org/ammo/ont/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/ammo/ont/0.5.0> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.1"@en .
+<https://w3id.org/ammo/ont/> <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
 # 
 # 
 # #################################################################
@@ -56,6 +60,9 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # 
 # http://ontologydesignpatterns.org/opla-core#extractedFrom
 <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/contributor
 <http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -92,6 +99,9 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # 
 # http://semanticscience.org/resource/equivalentTo
 <http://semanticscience.org/resource/equivalentTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://usefulinc.com/ns/doap#repository
+<http://usefulinc.com/ns/doap#repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2002/07/owl#minCardinality
 <http://www.w3.org/2002/07/owl#minCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -462,6 +472,9 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <http://semanticscience.org/resource/SIO_000000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://semanticscience.org/resource/SIO_000000> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/ammo/ont/Entity> .
 # 
+# http://usefulinc.com/ns/doap#Project
+<http://usefulinc.com/ns/doap#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
@@ -478,6 +491,9 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # https://schema.org/Organization
 # 
 # https://schema.org/Person
+# 
+# https://w3id.org/OPLaX/Module
+<https://w3id.org/OPLaX/Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/ammo/ont/AMProcess
 <https://w3id.org/ammo/ont/AMProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -902,11 +918,16 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/ammo/module/process/
 <https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ontologydesignpatterns.org/opla-core#Module> .
+<https://w3id.org/ammo/module/process/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/OPLaX/Module> .
 # 
 # https://w3id.org/ammo/ont/
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/dingo#Product_or_material_produced> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/ns/prov#wasGeneratedBy> _:genid15 .
+_:genid15 <https://schema.org/name> "Additive with Knowledge (AWK)"@en .
+_:genid15 <http://usefulinc.com/ns/doap#repository> <https://github.com/LA3D/ammo> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://usefulinc.com/ns/doap#Project> .
 # 
 # https://w3id.org/ammo/ont/ABS
 <https://w3id.org/ammo/ont/ABS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -1050,5 +1071,5 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/ammo/ont/SteelA36> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://en.wikipedia.org/wiki/A36_steel> .
 <https://w3id.org/ammo/ont/SteelA36> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://wikidata.org/entity/Q3247733> .
 # 
-_:genid15 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

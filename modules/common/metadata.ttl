@@ -7,6 +7,7 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -18,6 +19,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dg: <https://w3id.org/dingo#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
 @prefix gs1: <http://gs1.org/voc/> .
 
 
@@ -33,13 +35,15 @@
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
                                owl:versionIRI <https://w3id.org/ammo/ont/0.5.1> ;
                                owl:versionInfo "0.5.1"@en ;
+                               owl:priorVersion <https://w3id.org/ammo/ont/0.5.0>;
+                               owl:backwardCompatableWith <https://w3id.org/ammo/ont/0.5.0> ;
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
 		                           sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
                                    owl:sameAs wd:Q178848 ;
-                               ],
-                               [
+                               ];
+                               dcterms:publisher [
                                    a sdo:Organization ;
                                    sdo:name "Simba Chain" ;
                                    sdo:url "https://simbachain.com/";
@@ -85,11 +89,18 @@ Contributions and Discussion Welcomed.
 Ontolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
 
 Github: https://github.com/LA3D/ammo"""@en ;
+                               dcterms:abstract "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D).";
                                dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
-
+                                                             prov:wasGeneratedBy [
+                                    sdo:name "Additive with Knowledge (AWK)"@en ;
+                                     a doap:Project ;
+                                    a prov:Activity ;
+                                    doap:repository <https://github.com/LA3D/ammo> ];
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
 
                                vann:preferredNamespacePrefix "ammo" ;
                                vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
 
-                               sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+                               sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
+                               owl:imports <https://www.w3.org/ns/prov-o> ;
+.

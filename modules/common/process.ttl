@@ -16,11 +16,11 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
 
 @prefix ammo: <https://w3id.org/ammo/ont/> .
 
-<https://w3id.org/ammo/module/process/> rdf:type owl:Ontology, opla:Module .
+<https://w3id.org/ammo/module/process/> rdf:type oplax:Module .
 
 #################################################################
 #    Object Properties

@@ -1,0 +1,220 @@
+<https://w3id.org/ammo/shapes/shacl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/ammo/shapes/shacl> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/shapes/shacl/0.5.1> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid1 <https://schema.org/name> "Christopher Sweet" .
+_:genid1 <https://schema.org/affiliation> "University of Notre Dame" .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/contributor> _:genid2 .
+_:genid2 <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid2 <https://schema.org/name> "Donald Brower" .
+_:genid2 <https://schema.org/affiliation> "University of Notre Dame" .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/url> "https://orcid.org/0000-0002-5861-1790"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid3 <https://schema.org/name> "Matthew Welz" .
+_:genid3 <https://schema.org/affiliation> "Simbachain Inc" .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/contributor> _:genid4 .
+_:genid4 <https://schema.org/url> "https://orcid.org/0000-0003-3885-977X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid4 <https://schema.org/name> "Kirsten Stor" .
+_:genid4 <https://schema.org/affiliation> "Simbachain Inc" .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/url> "https://orcid.org/0000-0003-4091-6059"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid5 <https://schema.org/name> "Charles F. Vardeman II" .
+_:genid5 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid5 <https://schema.org/affiliation> "University of Notre Dame" .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\nGithub: https://github.com/LA3D/ammo"@en .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/modified> "2022-02-21"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/publisher> _:genid6 .
+_:genid6 <https://schema.org/url> "https//crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid6 <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/publisher> _:genid7 .
+_:genid7 <https://schema.org/url> "https://simbachain.com/" .
+_:genid7 <https://schema.org/name> "Simba Chain" .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/dc/terms/title> "Additive Manufacturing for Maintenance Operations SHACL Shapes"@en .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammosh" .
+<https://w3id.org/ammo/shapes/shacl> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/shapes/shacl/" .
+<https://w3id.org/ammo/shapes/shacl> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.1"@en .
+<https://w3id.org/ammo/shapes/shacl> <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#TargetClass
+<http://www.w3.org/ns/shacl#TargetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#class
+<http://www.w3.org/ns/shacl#class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#maxCount
+<http://www.w3.org/ns/shacl#maxCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#minCount
+<http://www.w3.org/ns/shacl#minCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#name
+<http://www.w3.org/ns/shacl#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#nodeKind
+<http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#path
+<http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#property
+<http://www.w3.org/ns/shacl#property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#resultMessage
+<http://www.w3.org/ns/shacl#resultMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#severity
+<http://www.w3.org/ns/shacl#severity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#targetClass
+<http://www.w3.org/ns/shacl#targetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/email
+<https://schema.org/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/license
+<https://schema.org/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/name
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/url
+<https://schema.org/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/shacl#NodeShape
+<http://www.w3.org/ns/shacl#NodeShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/Organization
+# 
+# https://schema.org/Person
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://wikidata.org/entity/Q178848
+# 
+# https://w3id.org/ammo/shapes/shacl/DesignedComponentShape
+<https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#TargetClass> <https://w3id.org/ammo/ont/DesignedComponent> .
+<https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#property> _:genid8 .
+_:genid8 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/isComponentOf> .
+_:genid8 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:genid8 <http://www.w3.org/ns/shacl#name> "Designed Physical System" .
+_:genid8 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+<https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#property> _:genid9 .
+_:genid9 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:genid9 <http://www.w3.org/ns/shacl#resultMessage> "Each Designed Component must have 1 Component Identifier" .
+_:genid9 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
+_:genid9 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:genid9 <http://www.w3.org/ns/shacl#name> "Component Identifier" .
+_:genid9 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid9 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid9 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/ComponentIdentifier> .
+# 
+# https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid10 .
+_:genid10 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:genid10 <http://www.w3.org/ns/shacl#resultMessage> "Each identifier MUST have 1 system identifier" .
+_:genid10 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
+_:genid10 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:genid10 <http://www.w3.org/ns/shacl#name> "System Identifier" .
+_:genid10 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/SystemIdentifier> .
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid11 .
+_:genid11 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasSubsystem> .
+_:genid11 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:genid11 <http://www.w3.org/ns/shacl#name> "Subsystem" .
+_:genid11 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid11 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid12 .
+_:genid12 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasComponent> .
+_:genid12 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:genid12 <http://www.w3.org/ns/shacl#name> "Designed Component" .
+_:genid12 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid12 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedComponent> .
+<https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

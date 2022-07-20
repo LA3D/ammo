@@ -1,0 +1,19 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<..\index-en.html> a prov:Entity;
+	 dc:title "Additive Manufacturing for Maintenance Operations Ontology";
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-4091-6059>;
+	 dc:creator <https://orcid.org/0000-0003-4091-6059>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0001-8214-7177>;
+	 dc:contributor <https://orcid.org/0000-0001-8214-7177>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0001-7347-546X>;
+	 dc:contributor <https://orcid.org/0000-0001-7347-546X>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0002-5861-1790>;
+	 dc:contributor <https://orcid.org/0000-0002-5861-1790>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-3885-977X>;
+	 dc:contributor <https://orcid.org/0000-0003-3885-977X>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "2022-05-12";
+.
