@@ -1,5 +1,7 @@
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ammo/ont/0.5.1> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/2002/07/owl#imports> <https://www.w3.org/ns/prov-o> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/abstract> "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D)." .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid1 .
@@ -7,7 +9,6 @@ _:genid1 <https://schema.org/url> "https://orcid.org/0000-0001-8214-7177"^^<http
 _:genid1 <https://schema.org/name> "Christopher Sweet" .
 _:genid1 <https://schema.org/affiliation> "University of Notre Dame" .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/contributor> _:genid2 .
 _:genid2 <https://schema.org/url> "https://orcid.org/0000-0001-7347-546X"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid2 <https://schema.org/name> "Donald Brower" .
@@ -30,14 +31,13 @@ _:genid5 <https://schema.org/name> "Charles F. Vardeman II" .
 _:genid5 <https://schema.org/email> "cvardema@nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid5 <https://schema.org/affiliation> "University of Notre Dame" .
 _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\n\nGithub: https://github.com/LA3D/ammo"@en .
+<https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/description> "The AMMO Ontology has been support the use of additive manufacturing for the production of parts in maintenance operations.\n\nContributions and Discussion Welcomed.\n\nOntology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes\nOntology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes\n\nGithub: https://github.com/LA3D/ammo"@en .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/license> <https://spdx.org/licenses/CC-BY-4.0> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/modified> "2022-07-20"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:genid6 .
 _:genid6 <https://schema.org/url> "https://crc.nd.edu"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 _:genid6 <https://schema.org/name> "Center for Research Computing, University of Notre Dame" .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
-<https://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/> <http://purl.org/dc/terms/publisher> _:genid7 .
 _:genid7 <https://schema.org/url> "https://simbachain.com/" .
 _:genid7 <https://schema.org/name> "Simba Chain" .
@@ -65,33 +65,6 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # http://purl.org/dc/terms/abstract
 <http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/publisher
-<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/rights
-<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://purl.org/ontology/bibo/status
 <http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -116,59 +89,23 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # http://www.w3.org/2004/02/skos/core#closeMatch
 <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://www.w3.org/2004/02/skos/core#definition
-<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://www.w3.org/2004/02/skos/core#exactMatch
 <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2004/02/skos/core#example
-<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2004/02/skos/core#narrower
 <http://www.w3.org/2004/02/skos/core#narrower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://www.w3.org/2004/02/skos/core#note
-<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2004/02/skos/core#prefLabel
-<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://www.w3.org/ns/prov#wasQuotedFrom
 <http://www.w3.org/ns/prov#wasQuotedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# https://schema.org/affiliation
-<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # https://schema.org/comment
 <https://schema.org/comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# https://schema.org/email
-<https://schema.org/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://schema.org/funder
 <https://schema.org/funder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://schema.org/license
 <https://schema.org/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# https://schema.org/name
-<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# https://schema.org/url
-<https://schema.org/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2001/XMLSchema#date
-<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 
@@ -222,6 +159,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/ont/hasBaseMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/BaseMaterial> .
 <https://w3id.org/ammo/ont/hasBaseMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "has base material" .
 # 
+# https://w3id.org/ammo/ont/hasCatalyst
+<https://w3id.org/ammo/ont/hasCatalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasCatalyst> <http://www.w3.org/2000/01/rdf-schema#label> "hasCatalyst" .
+# 
 # https://w3id.org/ammo/ont/hasComponent
 <https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ammo/ont/hasComponent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
@@ -254,6 +195,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2000/01/rdf-schema#label> "has direct part"@en .
 <https://w3id.org/ammo/ont/hasDirectPart> <http://www.w3.org/2004/02/skos/core#example> "a car has an engine as a direct part"@en .
 # 
+# https://w3id.org/ammo/ont/hasInput
+<https://w3id.org/ammo/ont/hasInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasInput> <http://www.w3.org/2000/01/rdf-schema#label> "hasInput" .
+# 
 # https://w3id.org/ammo/ont/hasMaterial
 <https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/MaterialDesignSpecification> .
@@ -261,6 +206,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ammo/ont/Material> .
 <https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/hasMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "hasMaterial" .
+# 
+# https://w3id.org/ammo/ont/hasOutput
+<https://w3id.org/ammo/ont/hasOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/hasOutput> <http://www.w3.org/2000/01/rdf-schema#label> "hasOutput" .
 # 
 # https://w3id.org/ammo/ont/hasPart
 <https://w3id.org/ammo/ont/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -421,6 +370,14 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/ont/madeFromMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ammo/ont/madeFromMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "made from material" .
 # 
+# https://w3id.org/ammo/ont/occursDuring
+<https://w3id.org/ammo/ont/occursDuring> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/occursDuring> <http://www.w3.org/2000/01/rdf-schema#label> "occursDuring" .
+# 
+# https://w3id.org/ammo/ont/occursInNeighborhood
+<https://w3id.org/ammo/ont/occursInNeighborhood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ammo/ont/occursInNeighborhood> <http://www.w3.org/2000/01/rdf-schema#label> "occursInNeighborhood" .
+# 
 # https://w3id.org/ammo/ont/ofQuantity
 <https://w3id.org/ammo/ont/ofQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ammo/ont/ofQuantity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ammo/ont/QuantityDesignSpecification> .
@@ -486,18 +443,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.w3.org/2006/time#Interval
-<http://www.w3.org/2006/time#Interval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/2006/time#Interval> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/ammo/ont/TimeInterval> .
-# 
-# http://www.w3.org/2006/time#TemporalEntity
-<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.w3.org/ns/dcat#Dataset
 <http://www.w3.org/ns/dcat#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# https://schema.org/Organization
-# 
-# https://schema.org/Person
 # 
 # https://w3id.org/OPLaX/Module
 <https://w3id.org/OPLaX/Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -547,6 +496,20 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/Capability> <http://www.w3.org/2000/01/rdf-schema#label> "Capability" .
 <https://w3id.org/ammo/ont/Capability> <http://www.w3.org/ns/prov#wasQuotedFrom> "http://semanticscience.org/resource/" .
+# 
+# https://w3id.org/ammo/ont/Catalyst
+<https://w3id.org/ammo/ont/Catalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Catalyst> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid8 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ammo/ont/Output> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ammo/ont/Input> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/ammo/ont/Catalyst> <http://www.w3.org/2000/01/rdf-schema#label> "Catalyst" .
+<https://w3id.org/ammo/ont/Catalyst> <http://www.w3.org/2004/02/skos/core#definition> "a person or thing that causes a change"@en .
 # 
 # https://w3id.org/ammo/ont/Component
 # 
@@ -601,10 +564,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # https://w3id.org/ammo/ont/DesignedArtifact
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
-<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
-_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Design> .
-_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Design> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/DesignedArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Artifact" .
@@ -621,10 +584,10 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalArtifact> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalSystem> .
-<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
-_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/SystemDesign> .
-_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/SystemDesign> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/DesignedPhysicalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Designed Physical System" .
@@ -672,6 +635,11 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/ammo/ont/FusedFilamentFabrication> <http://www.w3.org/2004/02/skos/core#altLabel> "Fused deposition modeling" .
 <https://w3id.org/ammo/ont/FusedFilamentFabrication> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://wikidata.org/entity/Q1475300> .
 # 
+# https://w3id.org/ammo/ont/Input
+<https://w3id.org/ammo/ont/Input> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Input> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialObject> .
+<https://w3id.org/ammo/ont/Input> <http://www.w3.org/2000/01/rdf-schema#label> "Input" .
+# 
 # https://w3id.org/ammo/ont/LOM
 <https://w3id.org/ammo/ont/LOM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/LOM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/LaminatedProcess> .
@@ -707,23 +675,73 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/ammo/ont/MaterialExtrusion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/AMProcess> .
 <https://w3id.org/ammo/ont/MaterialExtrusion> <http://www.w3.org/2000/01/rdf-schema#label> "Material Extrusion" .
 # 
+# https://w3id.org/ammo/ont/MaterialObject
+<https://w3id.org/ammo/ont/MaterialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/MaterialObject> <http://www.w3.org/2000/01/rdf-schema#label> "MaterialObject" .
+# 
 # https://w3id.org/ammo/ont/MaterialTransformation
 <https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Process> .
-<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "A material transformation is a process that transforms material from one form to another." .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Input> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasInput> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Output> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasOutput> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2006/time#Interval> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursDuring> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Neighborhood> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursInNeighborhood> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ammo/ont/Catalyst> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasCatalyst> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ammo/ont/Input> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasInput> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ammo/ont/Output> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasOutput> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2006/time#Interval> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursDuring> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/ammo/ont/Neighborhood> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursInNeighborhood> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "A material transformation is a process that transforms material objects another." .
 <https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/MaterialTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "Material Transformation" .
+# 
+# https://w3id.org/ammo/ont/Neighborhood
+<https://w3id.org/ammo/ont/Neighborhood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Neighborhood> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#SpatialObject> .
+<https://w3id.org/ammo/ont/Neighborhood> <http://www.w3.org/2000/01/rdf-schema#label> "Neighborhood" .
 # 
 # https://w3id.org/ammo/ont/Object
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
-<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Object> .
-_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Object> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#comment> "An object is an entity that is wholly identifiable at any instant of time during which it exists."@en .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/Object> <http://www.w3.org/2000/01/rdf-schema#label> "Object"@en .
+# 
+# https://w3id.org/ammo/ont/Output
+<https://w3id.org/ammo/ont/Output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ammo/ont/Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialObject> .
+<https://w3id.org/ammo/ont/Output> <http://www.w3.org/2000/01/rdf-schema#label> "Output" .
 # 
 # https://w3id.org/ammo/ont/PB3DP
 <https://w3id.org/ammo/ont/PB3DP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -735,10 +753,10 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/ammo/ont/PhysicalArtifact
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/PhysicalObject> .
-<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
-_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Plan> .
-_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Plan> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/isDescribedBy> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://ontologydesignpatterns.org/opla-core#extractedFrom> <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/PhysicalArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Artifact"@en .
@@ -786,10 +804,10 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/ammo/ont/Process
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/Entity> .
-<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
-_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Process> .
-_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Process> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasProperPart> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists." .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/ammo/ont/> .
 <https://w3id.org/ammo/ont/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process" .
@@ -874,14 +892,14 @@ _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/ammo/ont/Transition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://org.semanticweb.owlapi/error#Error1> .
 <https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
-<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
-_:genid13 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/fromState> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/toState> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/fromState> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/toState> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/ammo/ont/Transition> <http://www.w3.org/2000/01/rdf-schema#label> "Transition" .
 # 
 # https://w3id.org/ammo/ont/WireProcess
@@ -889,6 +907,9 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/ammo/ont/WireProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/AMProcess> .
 <https://w3id.org/ammo/ont/WireProcess> <http://www.w3.org/2000/01/rdf-schema#label> "Wire Printing Process" .
 <https://w3id.org/ammo/ont/WireProcess> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://en.wikipedia.org/wiki/3D_printing_processes#Processes> .
+# 
+# https://w3id.org/ammo/ont/:Neighborhood
+<https://w3id.org/ammo/ont/:Neighborhood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/dingo#Product_or_material_produced
 <https://w3id.org/dingo#Product_or_material_produced> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -930,23 +951,25 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/ammo/ont/
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/ammo/ont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/dingo#Product_or_material_produced> .
-<https://w3id.org/ammo/ont/> <http://www.w3.org/ns/prov#wasGeneratedBy> _:genid15 .
-_:genid15 <https://schema.org/name> "Additive with Knowledge (AWK)"@en .
-_:genid15 <http://usefulinc.com/ns/doap#repository> <https://github.com/LA3D/ammo> .
-_:genid15 <http://www.w3.org/ns/prov#wasInformedBy> _:genid17 .
-_:genid17 <https://schema.org/name> "Additive with Knowledge (AWK) United States Army"@en .
-_:genid17 <https://schema.org/funder> <wd:Q9212> .
-_:genid17 <http://www.w3.org/ns/prov#startedAtTime> "2021-11-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-_:genid17 <http://www.w3.org/ns/prov#endedAtTime> "2021-11-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
-_:genid15 <http://www.w3.org/ns/prov#wasInformedBy> _:genid16 .
-_:genid16 <https://schema.org/name> "Additive with Knowledge (AWK) United States Air Force"@en .
-_:genid16 <https://schema.org/funder> <wd:Q11223> .
-_:genid16 <http://www.w3.org/ns/prov#startedAtTime> "2022-07-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-_:genid16 <http://www.w3.org/ns/prov#endedAtTime> "2022-12-31T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://usefulinc.com/ns/doap#Project> .
+<https://w3id.org/ammo/ont/> <http://www.w3.org/ns/prov#wasGeneratedBy> _:genid27 .
+_:genid27 <https://schema.org/name> "Additive with Knowledge (AWK)"@en .
+_:genid27 <http://usefulinc.com/ns/doap#repository> <https://github.com/LA3D/ammo> .
+_:genid27 <http://www.w3.org/ns/prov#wasInformedBy> _:genid29 .
+_:genid29 <https://schema.org/name> "Additive with Knowledge (AWK) United States Army"@en .
+_:genid29 <https://schema.org/funder> <wd:Q9212> .
+_:genid29 <http://www.w3.org/2004/02/skos/core#note> "Versions 0.1.0 to version 0.5.0 were developed under this activity" .
+_:genid29 <http://www.w3.org/ns/prov#startedAtTime> "2021-11-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid29 <http://www.w3.org/ns/prov#endedAtTime> "2021-11-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+_:genid27 <http://www.w3.org/ns/prov#wasInformedBy> _:genid28 .
+_:genid28 <https://schema.org/name> "Additive with Knowledge (AWK) United States Air Force"@en .
+_:genid28 <https://schema.org/funder> <wd:Q11223> .
+_:genid28 <http://www.w3.org/2004/02/skos/core#note> "Versions 0.5.0 to 0.6.0 were developed under this activity" .
+_:genid28 <http://www.w3.org/ns/prov#startedAtTime> "2022-07-01T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid28 <http://www.w3.org/ns/prov#endedAtTime> "2022-12-31T00:00:00+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://usefulinc.com/ns/doap#Project> .
 # 
 # https://w3id.org/ammo/ont/ABS
 <https://w3id.org/ammo/ont/ABS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -1090,5 +1113,39 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://usefulinc.co
 <https://w3id.org/ammo/ont/SteelA36> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://en.wikipedia.org/wiki/A36_steel> .
 <https://w3id.org/ammo/ont/SteelA36> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://wikidata.org/entity/Q3247733> .
 # 
-_:genid18 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasCatalyst> .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Catalyst> .
+_:genid31 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialTransformation> .
+# 
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasInput> .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Input> .
+_:genid32 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialTransformation> .
+# 
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/hasOutput> .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/Output> .
+_:genid33 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialTransformation> .
+# 
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursDuring> .
+_:genid34 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2006/time#Interval> .
+_:genid34 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialTransformation> .
+# 
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ammo/ont/occursInNeighborhood> .
+_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/ammo/ont/:Neighborhood> .
+_:genid35 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ammo/ont/MaterialTransformation> .
+# 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

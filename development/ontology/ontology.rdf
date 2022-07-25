@@ -18,6 +18,8 @@
      xmlns:opla-core="http://ontologydesignpatterns.org/opla-core#">
     <owl:Ontology rdf:about="https://w3id.org/ammo/ont/">
         <owl:versionIRI rdf:resource="https://w3id.org/ammo/ont/0.5.1"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"/>
         <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
         <terms:abstract>Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D).</terms:abstract>
         <terms:contributor rdf:nodeID="genid1"/>
@@ -31,6 +33,7 @@
 Contributions and Discussion Welcomed.
 
 Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes
 
 Github: https://github.com/LA3D/ammo</terms:description>
         <terms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
@@ -116,69 +119,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://purl.org/dc/terms/contributor -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/created -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/modified -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/publisher -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/rights -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
     <!-- http://purl.org/ontology/bibo/status -->
 
 
@@ -235,24 +175,10 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#definition -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
 
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#example -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
     
 
 
@@ -263,20 +189,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#note -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
-    
-
-
     <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
 
 
@@ -284,24 +196,10 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://schema.org/affiliation -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/affiliation"/>
-    
-
-
     <!-- https://schema.org/comment -->
 
 
     <owl:AnnotationProperty rdf:about="https://schema.org/comment"/>
-    
-
-
-    <!-- https://schema.org/email -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/email"/>
     
 
 
@@ -316,39 +214,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="https://schema.org/license"/>
-    
-
-
-    <!-- https://schema.org/name -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/name"/>
-    
-
-
-    <!-- https://schema.org/url -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/url"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -440,6 +305,15 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
+    <!-- https://w3id.org/ammo/ont/hasCatalyst -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasCatalyst">
+        <rdfs:label>hasCatalyst</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ammo/ont/hasComponent -->
 
 
@@ -492,6 +366,15 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
+    <!-- https://w3id.org/ammo/ont/hasInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasInput">
+        <rdfs:label>hasInput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ammo/ont/hasMaterial -->
 
 
@@ -500,6 +383,15 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Material"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>hasMaterial</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/hasOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasOutput">
+        <rdfs:label>hasOutput</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -761,6 +653,24 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
+    <!-- https://w3id.org/ammo/ont/occursDuring -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/occursDuring">
+        <rdfs:label>occursDuring</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/occursInNeighborhood -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/occursInNeighborhood">
+        <rdfs:label>occursInNeighborhood</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ammo/ont/ofQuantity -->
 
 
@@ -886,16 +796,9 @@ Github: https://github.com/LA3D/ammo</terms:description>
     <!-- http://www.w3.org/2006/time#Interval -->
 
 
-    <owl:Class rdf:about="http://www.w3.org/2006/time#Interval">
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval">
         <owl:equivalentClass rdf:resource="https://w3id.org/ammo/ont/TimeInterval"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    </rdf:Description>
     
 
 
@@ -903,20 +806,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
-    
-
-
-    <!-- https://schema.org/Organization -->
-
-
-    <owl:Class rdf:about="https://schema.org/Organization"/>
-    
-
-
-    <!-- https://schema.org/Person -->
-
-
-    <owl:Class rdf:about="https://schema.org/Person"/>
     
 
 
@@ -999,6 +888,24 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>Capability</rdfs:label>
         <prov:wasQuotedFrom>http://semanticscience.org/resource/</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/Catalyst -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/Catalyst">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/ammo/ont/Input"/>
+                    <rdf:Description rdf:about="https://w3id.org/ammo/ont/Output"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>Catalyst</rdfs:label>
+        <skos:definition xml:lang="en">a person or thing that causes a change</skos:definition>
     </owl:Class>
     
 
@@ -1218,6 +1125,16 @@ While designs typically describe entities to be constructed, they can also be us
     
 
 
+    <!-- https://w3id.org/ammo/ont/Input -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/Input">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialObject"/>
+        <rdfs:label>Input</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ammo/ont/LOM -->
 
 
@@ -1283,14 +1200,87 @@ While designs typically describe entities to be constructed, they can also be us
     
 
 
+    <!-- https://w3id.org/ammo/ont/MaterialObject -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialObject">
+        <rdfs:label>MaterialObject</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ammo/ont/MaterialTransformation -->
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialTransformation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Process"/>
-        <rdfs:comment>A material transformation is a process that transforms material from one form to another.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasInput"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasOutput"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursDuring"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursInNeighborhood"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Neighborhood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasCatalyst"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Catalyst"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasInput"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Input"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasOutput"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursDuring"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursInNeighborhood"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Neighborhood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A material transformation is a process that transforms material objects another.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>Material Transformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/Neighborhood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/Neighborhood">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:label>Neighborhood</rdfs:label>
     </owl:Class>
     
 
@@ -1309,6 +1299,16 @@ While designs typically describe entities to be constructed, they can also be us
         <rdfs:comment xml:lang="en">An object is an entity that is wholly identifiable at any instant of time during which it exists.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label xml:lang="en">Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/Output -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/Output">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialObject"/>
+        <rdfs:label>Output</rdfs:label>
     </owl:Class>
     
 
@@ -1606,6 +1606,13 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     
 
 
+    <!-- https://w3id.org/ammo/ont/:Neighborhood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/:Neighborhood"/>
+    
+
+
     <!-- https://w3id.org/dingo#Product_or_material_produced -->
 
 
@@ -1680,27 +1687,29 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
     <owl:NamedIndividual rdf:about="https://w3id.org/ammo/ont/">
         <rdf:type rdf:resource="https://w3id.org/dingo#Product_or_material_produced"/>
-        <prov:wasGeneratedBy rdf:nodeID="genid15"/>
+        <prov:wasGeneratedBy rdf:nodeID="genid27"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid15">
+    <rdf:Description rdf:nodeID="genid27">
         <rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <prov:wasInformedBy rdf:nodeID="genid16"/>
-        <prov:wasInformedBy rdf:nodeID="genid17"/>
+        <prov:wasInformedBy rdf:nodeID="genid28"/>
+        <prov:wasInformedBy rdf:nodeID="genid29"/>
         <doap:repository rdf:resource="https://github.com/LA3D/ammo"/>
         <schema:name xml:lang="en">Additive with Knowledge (AWK)</schema:name>
     </rdf:Description>
-    <rdf:Description rdf:nodeID="genid16">
+    <rdf:Description rdf:nodeID="genid28">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
         <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-12-31T00:00:00+00:00</prov:endedAtTime>
         <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-07-01T00:00:00+00:00</prov:startedAtTime>
+        <skos:note>Versions 0.5.0 to 0.6.0 were developed under this activity</skos:note>
         <schema:funder rdf:resource="wd:Q11223"/>
         <schema:name xml:lang="en">Additive with Knowledge (AWK) United States Air Force</schema:name>
     </rdf:Description>
-    <rdf:Description rdf:nodeID="genid17">
+    <rdf:Description rdf:nodeID="genid29">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
         <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-01T00:00:00+00:00</prov:endedAtTime>
         <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-01T00:00:00+00:00</prov:startedAtTime>
+        <skos:note>Versions 0.1.0 to version 0.5.0 were developed under this activity</skos:note>
         <schema:funder rdf:resource="wd:Q9212"/>
         <schema:name xml:lang="en">Additive with Knowledge (AWK) United States Army</schema:name>
     </rdf:Description>
@@ -1939,6 +1948,43 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <rdf:Description>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
     </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasCatalyst"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Catalyst"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasInput"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Input"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasOutput"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Output"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursDuring"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursInNeighborhood"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/:Neighborhood"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
+    </owl:Restriction>
 </rdf:RDF>
 
 

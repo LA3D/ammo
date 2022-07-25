@@ -9,6 +9,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -62,6 +63,30 @@ ammo:isRealizedIn rdf:type owl:ObjectProperty ;
                   rdfs:range ammo:Process ;
                   rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
                   rdfs:label "is realized in" .
+
+###  https://w3id.org/ammo/ont/hasCatalyst
+ammo:hasCatalyst rdf:type owl:ObjectProperty ;
+             rdfs:label "hasCatalyst" .
+
+
+###  https://w3id.org/ammo/ont/hasInput
+ammo:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:label "hasInput" .
+
+
+###  https://w3id.org/ammo/ont/hasOutput
+ammo:hasOutput rdf:type owl:ObjectProperty ;
+           rdfs:label "hasOutput" .
+
+
+###  https://w3id.org/ammo/ont/occursDuring
+ammo:occursDuring rdf:type owl:ObjectProperty ;
+              rdfs:label "occursDuring" .
+
+
+###  https://w3id.org/ammo/ont/occursInNeighborhood
+ammo:occursInNeighborhood rdf:type owl:ObjectProperty ;
+                      rdfs:label "occursInNeighborhood" .
 
 
 
@@ -124,7 +149,115 @@ ammo:TimeInterval rdf:type owl:Class ;
 ###  https://w3id.org/ammo/ont/MaterialTransformation
 ammo:MaterialTransformation rdf:type owl:Class ;
                             rdfs:subClassOf ammo:Process ;
-                            rdfs:comment "A material transformation is a process that transforms material from one form to another." ;
+                            rdfs:comment "A material transformation is a process that transforms material objects another." ;
                             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:hasInput ;
+                                          owl:someValuesFrom ammo:Input
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:hasOutput ;
+                                          owl:someValuesFrom ammo:Output
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:occursDuring ;
+                                          owl:someValuesFrom <http://www.w3.org/2006/time#Interval>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:occursInNeighborhood ;
+                                          owl:someValuesFrom ammo:Neighborhood
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:hasCatalyst ;
+                                          owl:allValuesFrom ammo:Catalyst
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:hasInput ;
+                                          owl:allValuesFrom ammo:Input
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:hasOutput ;
+                                          owl:allValuesFrom ammo:Output
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:occursDuring ;
+                                          owl:allValuesFrom <http://www.w3.org/2006/time#Interval>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty ammo:occursInNeighborhood ;
+                                          owl:allValuesFrom ammo:Neighborhood
+                                        ] ;
                             rdfs:label "Material Transformation"
 .
+
+
+###  https://w3id.org/ammo/ont/Catalyst
+ammo:Catalyst rdf:type owl:Class ;
+          rdf:subClassOf ammo:Role ;
+          rdfs:subClassOf [ owl:intersectionOf ( ammo:Input
+                                                 ammo:Output
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          skos:definition "a person or thing that causes a change"@en;
+          rdfs:label "Catalyst" .
+
+
+###  https://w3id.org/ammo/ont/Input
+ammo:Input rdf:type owl:Class ;
+       rdfs:subClassOf ammo:MaterialObject ;
+       rdfs:label "Input" .
+
+###  https://w3id.org/ammo/ont/MaterialObject
+ammo:MaterialObject rdf:type owl:Class ;
+                rdfs:label "MaterialObject" .
+
+###  https://w3id.org/ammo/ont/Neighborhood
+ammo:Neighborhood rdf:type owl:Class ;
+              rdfs:subClassOf geo:SpatialObject ;
+              rdfs:label "Neighborhood" .
+
+
+###  https://w3id.org/ammo/ont/Output
+ammo:Output rdf:type owl:Class ;
+        rdfs:subClassOf ammo:MaterialObject ;
+        rdfs:label "Output" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty ammo:hasCatalyst ;
+  owl:someValuesFrom ammo:Catalyst ;
+  rdfs:subClassOf ammo:MaterialTransformation
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty ammo:hasInput ;
+  owl:someValuesFrom ammo:Input ;
+  rdfs:subClassOf ammo:MaterialTransformation
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty ammo:hasOutput ;
+  owl:someValuesFrom ammo:Output ;
+  rdfs:subClassOf ammo:MaterialTransformation
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty ammo:occursDuring ;
+  owl:someValuesFrom <http://www.w3.org/2006/time#Interval> ;
+  rdfs:subClassOf ammo:MaterialTransformation
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty ammo:occursInNeighborhood ;
+  owl:someValuesFrom ammo::Neighborhood ;
+  rdfs:subClassOf ammo:MaterialTransformation
+] .

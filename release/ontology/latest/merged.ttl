@@ -1,11 +1,16 @@
 @prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dg: <https://w3id.org/dingo#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix opla: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix sio: <http://semanticscience.org/resource/> .
@@ -177,12 +182,6 @@ ammo:Robocasting a owl:Class ;
     rdfs:subClassOf ammo:MaterialExtrusion ;
     skos:exactMatch wd:Q18390836 .
 
-ammo:Role a owl:Class ;
-    rdfs:label "Role" ;
-    rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." ;
-    rdfs:isDefinedBy ammo: ;
-    rdfs:subClassOf ammo:RealizableEntity .
-
 ammo:SHS a owl:Class ;
     rdfs:label "Selective heat sintering" ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Selective_heat_sintering> ;
@@ -348,8 +347,7 @@ ammo:status a owl:ObjectProperty ;
     rdfs:label "status" ;
     rdfs:range ammo:Status .
 
-<https://w3id.org/ammo/module/process/> a opla:Module,
-        owl:Ontology .
+<https://w3id.org/ammo/module/process/> a oplax:Module .
 
 ammo:Attribute a owl:Class ;
     rdfs:label "Attribute" ;
@@ -382,12 +380,6 @@ ammo:LaminatedProcess a owl:Class ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes#Processes> ;
     rdfs:subClassOf ammo:AMProcess .
 
-ammo:MaterialTransformation a owl:Class ;
-    rdfs:label "Material Transformation" ;
-    rdfs:comment "A material transformation is a process that transforms material from one form to another." ;
-    rdfs:isDefinedBy ammo: ;
-    rdfs:subClassOf ammo:Process .
-
 ammo:PhysicalSystem a owl:Class ;
     rdfs:label "Physical System"@en ;
     opla:extractedFrom <http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl> ;
@@ -407,6 +399,12 @@ ammo:Quantity a owl:Class ;
     rdfs:comment "Quantity ODP is derived directly from QUDT and equivalent."@en ;
     rdfs:isDefinedBy ammo: ;
     owl:equivalentClass qudt:Quantity .
+
+ammo:Role a owl:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf ammo:RealizableEntity .
 
 ammo:Status a owl:Class ;
     rdfs:label "Status" ;
@@ -520,6 +518,13 @@ ammo:toState a owl:ObjectProperty ;
     rdfs:label "to state" ;
     rdfs:range ammo:State .
 
+ammo:Catalyst a owl:Class ;
+    rdfs:label "Catalyst" ;
+    rdf:subClassOf ammo:Role ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( ammo:Input ammo:Output ) ] ;
+    skos:definition "a person or thing that causes a change"@en .
+
 ammo:DesignedComponent a owl:Class ;
     rdfs:label "Designed Component" ;
     rdfs:isDefinedBy ammo: ;
@@ -540,6 +545,13 @@ ammo:Entity a owl:Class ;
     dcterms:description "Every thing is an entity."@en ;
     rdfs:isDefinedBy <http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl> ;
     owl:equivalentClass sio:SIO_000000 .
+
+ammo:MaterialObject a owl:Class ;
+    rdfs:label "MaterialObject" .
+
+ammo:Neighborhood a owl:Class ;
+    rdfs:label "Neighborhood" ;
+    rdfs:subClassOf geo:SpatialObject .
 
 ammo:PhysicalArtifact a owl:Class ;
     rdfs:label "Physical Artifact"@en ;
@@ -570,6 +582,9 @@ ammo:PowderFed a owl:Class ;
     rdfs:label "Powder Fed Process" ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes#Processes> ;
     rdfs:subClassOf ammo:AMProcess .
+
+ammo:hasCatalyst a owl:ObjectProperty ;
+    rdfs:label "hasCatalyst" .
 
 ammo:isDirectPartOf a owl:ObjectProperty ;
     rdfs:label "is direct part of"@en ;
@@ -636,6 +651,12 @@ ammo:State a owl:Class ;
     rdfs:label "State" ;
     rdfs:subClassOf time:TemporalEntity .
 
+ammo:hasInput a owl:ObjectProperty ;
+    rdfs:label "hasInput" .
+
+ammo:hasOutput a owl:ObjectProperty ;
+    rdfs:label "hasOutput" .
+
 ammo:hasProperPart a owl:AsymmetricProperty,
         owl:IrreflexiveProperty,
         owl:ObjectProperty ;
@@ -658,6 +679,12 @@ ammo:isDescribedBy a owl:ObjectProperty ;
     rdfs:range ammo:Design ;
     owl:inverseOf ammo:describes .
 
+ammo:occursDuring a owl:ObjectProperty ;
+    rdfs:label "occursDuring" .
+
+ammo:occursInNeighborhood a owl:ObjectProperty ;
+    rdfs:label "occursInNeighborhood" .
+
 ammo:Aluminum a owl:NamedIndividual,
         ammo:BaseMaterial ;
     rdfs:label "Aluminum"@en ;
@@ -670,6 +697,10 @@ ammo:DesignSpecification a owl:Class ;
     skos:exactMatch wd:Q16960030 ;
     prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design_specification" .
 
+ammo:Input a owl:Class ;
+    rdfs:label "Input" ;
+    rdfs:subClassOf ammo:MaterialObject .
+
 ammo:Object a owl:Class ;
     rdfs:label "Object"@en ;
     rdfs:comment "An object is an entity that is wholly identifiable at any instant of time during which it exists."@en ;
@@ -678,6 +709,10 @@ ammo:Object a owl:Class ;
             owl:onProperty ammo:hasProperPart ;
             owl:someValuesFrom ammo:Object ],
         ammo:Entity .
+
+ammo:Output a owl:Class ;
+    rdfs:label "Output" ;
+    rdfs:subClassOf ammo:MaterialObject .
 
 ammo:PowderBed a owl:Class ;
     rdfs:label "Powder Bed" ;
@@ -714,6 +749,39 @@ While designs typically describe entities to be constructed, they can also be us
     skos:exactMatch wd:Q82604 ;
     prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Design"@en .
 
+ammo:MaterialTransformation a owl:Class ;
+    rdfs:label "Material Transformation" ;
+    rdfs:comment "A material transformation is a process that transforms material objects another." ;
+    rdfs:isDefinedBy ammo: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ammo:Neighborhood ;
+            owl:onProperty ammo:occursInNeighborhood ],
+        [ a owl:Restriction ;
+            owl:onProperty ammo:hasInput ;
+            owl:someValuesFrom ammo:Input ],
+        [ a owl:Restriction ;
+            owl:onProperty ammo:hasOutput ;
+            owl:someValuesFrom ammo:Output ],
+        [ a owl:Restriction ;
+            owl:onProperty ammo:occursDuring ;
+            owl:someValuesFrom time:Interval ],
+        [ a owl:Restriction ;
+            owl:onProperty ammo:occursInNeighborhood ;
+            owl:someValuesFrom ammo:Neighborhood ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ammo:Catalyst ;
+            owl:onProperty ammo:hasCatalyst ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ammo:Input ;
+            owl:onProperty ammo:hasInput ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ammo:Output ;
+            owl:onProperty ammo:hasOutput ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom time:Interval ;
+            owl:onProperty ammo:occursDuring ],
+        ammo:Process .
+
 ammo:AMProcess a owl:Class ;
     rdfs:label "Additive Manufacturing Process"@en ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/3D_printing_processes> ;
@@ -740,6 +808,7 @@ ammo:Alloy a owl:Class ;
 
 ammo: a owl:Ontology,
         dg:Product_or_material_produced ;
+    dcterms:abstract "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D)." ;
     dcterms:contributor [ a sdo:Person ;
             sdo:affiliation "University of Notre Dame" ;
             sdo:name "Christopher Sweet" ;
@@ -766,11 +835,12 @@ ammo: a owl:Ontology,
 
 Contributions and Discussion Welcomed.
 
-Ontolgy Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes
 
 Github: https://github.com/LA3D/ammo"""@en ;
     dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
-    dcterms:modified "2022-05-12"^^xsd:date ;
+    dcterms:modified "2022-07-20"^^xsd:date ;
     dcterms:publisher [ a sdo:Organization ;
             owl:sameAs wd:Q178848 ;
             sdo:name "Center for Research Computing, University of Notre Dame" ;
@@ -780,9 +850,56 @@ Github: https://github.com/LA3D/ammo"""@en ;
             sdo:url "https://simbachain.com/" ] ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
+    bibo:status "Work In Progress" ;
     vann:preferredNamespacePrefix "ammo" ;
     vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
+    owl:backwardCompatableWith ammo:0.5.0 ;
+    owl:imports <http://www.w3.org/2006/time>,
+        <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>,
+        <https://www.w3.org/ns/prov-o> ;
+    owl:priorVersion ammo:0.5.0 ;
     owl:versionIRI ammo:0.5.1 ;
     owl:versionInfo "0.5.1"@en ;
+    prov:wasGeneratedBy [ a doap:Project,
+                prov:Activity ;
+            doap:repository <https://github.com/LA3D/ammo> ;
+            prov:wasInformedBy [ a prov:Activity ;
+                    skos:note "Versions 0.5.0 to 0.6.0 were developed under this activity" ;
+                    prov:endedAtTime "2022-12-31T00:00:00+00:00"^^xsd:dateTime ;
+                    prov:startedAtTime "2022-07-01T00:00:00+00:00"^^xsd:dateTime ;
+                    sdo:funder <wd:Q11223> ;
+                    sdo:name "Additive with Knowledge (AWK) United States Air Force"@en ],
+                [ a prov:Activity ;
+                    skos:note "Versions 0.1.0 to version 0.5.0 were developed under this activity" ;
+                    prov:endedAtTime "2021-11-01T00:00:00+00:00"^^xsd:dateTime ;
+                    prov:startedAtTime "2021-11-01T00:00:00+00:00"^^xsd:dateTime ;
+                    sdo:funder <wd:Q9212> ;
+                    sdo:name "Additive with Knowledge (AWK) United States Army"@en ] ;
+            sdo:name "Additive with Knowledge (AWK)"@en ] ;
     sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ammo:MaterialTransformation ;
+    owl:onProperty ammo:hasCatalyst ;
+    owl:someValuesFrom ammo:Catalyst .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ammo:MaterialTransformation ;
+    owl:onProperty ammo:hasInput ;
+    owl:someValuesFrom ammo:Input .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ammo:MaterialTransformation ;
+    owl:onProperty ammo:hasOutput ;
+    owl:someValuesFrom ammo:Output .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ammo:MaterialTransformation ;
+    owl:onProperty ammo:occursDuring ;
+    owl:someValuesFrom time:Interval .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ammo:MaterialTransformation ;
+    owl:onProperty ammo:occursInNeighborhood ;
+    owl:someValuesFrom <https://w3id.org/ammo/ont/:Neighborhood> .
 

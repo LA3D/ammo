@@ -16,6 +16,42 @@
 }, {
   "@id" : "_:genid10",
   "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem"
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/ns/shacl#name" : [ {
+    "@value" : "Subsystem"
+  } ],
+  "http://www.w3.org/ns/shacl#nodeKind" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#IRI"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/ammo/ont/hasSubsystem"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://w3id.org/ammo/ont/DesignedComponent"
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/ns/shacl#name" : [ {
+    "@value" : "Designed Component"
+  } ],
+  "http://www.w3.org/ns/shacl#nodeKind" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#IRI"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/ammo/ont/hasComponent"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "http://www.w3.org/ns/shacl#class" : [ {
     "@id" : "https://w3id.org/ammo/ont/SystemIdentifier"
   } ],
   "http://www.w3.org/ns/shacl#maxCount" : [ {
@@ -40,42 +76,6 @@
   } ],
   "http://www.w3.org/ns/shacl#severity" : [ {
     "@id" : "http://www.w3.org/ns/shacl#Violation"
-  } ]
-}, {
-  "@id" : "_:genid11",
-  "http://www.w3.org/ns/shacl#class" : [ {
-    "@id" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem"
-  } ],
-  "http://www.w3.org/ns/shacl#minCount" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/ns/shacl#name" : [ {
-    "@value" : "Subsystem"
-  } ],
-  "http://www.w3.org/ns/shacl#nodeKind" : [ {
-    "@id" : "http://www.w3.org/ns/shacl#IRI"
-  } ],
-  "http://www.w3.org/ns/shacl#path" : [ {
-    "@id" : "https://w3id.org/ammo/ont/hasSubsystem"
-  } ]
-}, {
-  "@id" : "_:genid12",
-  "http://www.w3.org/ns/shacl#class" : [ {
-    "@id" : "https://w3id.org/ammo/ont/DesignedComponent"
-  } ],
-  "http://www.w3.org/ns/shacl#minCount" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/ns/shacl#name" : [ {
-    "@value" : "Designed Component"
-  } ],
-  "http://www.w3.org/ns/shacl#nodeKind" : [ {
-    "@id" : "http://www.w3.org/ns/shacl#IRI"
-  } ],
-  "http://www.w3.org/ns/shacl#path" : [ {
-    "@id" : "https://w3id.org/ammo/ont/hasComponent"
   } ]
 }, {
   "@id" : "_:genid2",
@@ -167,24 +167,6 @@
 }, {
   "@id" : "_:genid8",
   "http://www.w3.org/ns/shacl#class" : [ {
-    "@id" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem"
-  } ],
-  "http://www.w3.org/ns/shacl#minCount" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/ns/shacl#name" : [ {
-    "@value" : "Designed Physical System"
-  } ],
-  "http://www.w3.org/ns/shacl#nodeKind" : [ {
-    "@id" : "http://www.w3.org/ns/shacl#IRI"
-  } ],
-  "http://www.w3.org/ns/shacl#path" : [ {
-    "@id" : "https://w3id.org/ammo/ont/isComponentOf"
-  } ]
-}, {
-  "@id" : "_:genid9",
-  "http://www.w3.org/ns/shacl#class" : [ {
     "@id" : "https://w3id.org/ammo/ont/ComponentIdentifier"
   } ],
   "http://www.w3.org/ns/shacl#maxCount" : [ {
@@ -209,6 +191,24 @@
   } ],
   "http://www.w3.org/ns/shacl#severity" : [ {
     "@id" : "http://www.w3.org/ns/shacl#Violation"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://w3id.org/ammo/ont/DesignedPhysicalSystem"
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/ns/shacl#name" : [ {
+    "@value" : "Designed Physical System"
+  } ],
+  "http://www.w3.org/ns/shacl#nodeKind" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#IRI"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/ammo/ont/isComponentOf"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/contributor",

@@ -176,45 +176,45 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 <https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
 <https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#TargetClass> <https://w3id.org/ammo/ont/DesignedComponent> .
 <https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#property> _:genid8 .
-_:genid8 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/isComponentOf> .
+_:genid8 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:genid8 <http://www.w3.org/ns/shacl#resultMessage> "Each Designed Component must have 1 Component Identifier" .
+_:genid8 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
 _:genid8 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
-_:genid8 <http://www.w3.org/ns/shacl#name> "Designed Physical System" .
-_:genid8 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid8 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+_:genid8 <http://www.w3.org/ns/shacl#name> "Component Identifier" .
+_:genid8 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/ComponentIdentifier> .
 <https://w3id.org/ammo/shapes/shacl/DesignedComponentShape> <http://www.w3.org/ns/shacl#property> _:genid9 .
-_:genid9 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
-_:genid9 <http://www.w3.org/ns/shacl#resultMessage> "Each Designed Component must have 1 Component Identifier" .
-_:genid9 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
+_:genid9 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/isComponentOf> .
 _:genid9 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
-_:genid9 <http://www.w3.org/ns/shacl#name> "Component Identifier" .
-_:genid9 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid9 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid9 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/ComponentIdentifier> .
+_:genid9 <http://www.w3.org/ns/shacl#name> "Designed Physical System" .
+_:genid9 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid9 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
 # 
 # https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid10 .
-_:genid10 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
-_:genid10 <http://www.w3.org/ns/shacl#resultMessage> "Each identifier MUST have 1 system identifier" .
-_:genid10 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
+_:genid10 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasSubsystem> .
 _:genid10 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
-_:genid10 <http://www.w3.org/ns/shacl#name> "System Identifier" .
-_:genid10 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid10 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid10 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/SystemIdentifier> .
+_:genid10 <http://www.w3.org/ns/shacl#name> "Subsystem" .
+_:genid10 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid11 .
-_:genid11 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasSubsystem> .
+_:genid11 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasComponent> .
 _:genid11 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
-_:genid11 <http://www.w3.org/ns/shacl#name> "Subsystem" .
+_:genid11 <http://www.w3.org/ns/shacl#name> "Designed Component" .
 _:genid11 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid11 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
+_:genid11 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedComponent> .
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#property> _:genid12 .
-_:genid12 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasComponent> .
+_:genid12 <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+_:genid12 <http://www.w3.org/ns/shacl#resultMessage> "Each identifier MUST have 1 system identifier" .
+_:genid12 <http://www.w3.org/ns/shacl#path> <https://w3id.org/ammo/ont/hasidentifier> .
 _:genid12 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
-_:genid12 <http://www.w3.org/ns/shacl#name> "Designed Component" .
-_:genid12 <http://www.w3.org/ns/shacl#minCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid12 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/DesignedComponent> .
+_:genid12 <http://www.w3.org/ns/shacl#name> "System Identifier" .
+_:genid12 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid12 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid12 <http://www.w3.org/ns/shacl#class> <https://w3id.org/ammo/ont/SystemIdentifier> .
 <https://w3id.org/ammo/shapes/shacl/DesignedPhysicalSystemShape> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/ammo/ont/DesignedPhysicalSystem> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

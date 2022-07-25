@@ -19,6 +19,9 @@ This section provides details for each class and property defined by Additive Ma
          <a href="#https://w3id.org/ammo/ont/Capability" title="https://w3id.org/ammo/ont/Capability">Capability</a>
       </li>
       <li>
+         <a href="#https://w3id.org/ammo/ont/Catalyst" title="https://w3id.org/ammo/ont/Catalyst">Catalyst</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/ammo/ont/CompositeMaterial" title="https://w3id.org/ammo/ont/CompositeMaterial">composite material</a>
       </li>
       <li>
@@ -75,9 +78,7 @@ This section provides details for each class and property defined by Additive Ma
             title="https://w3id.org/ammo/ont/FusedFilamentFabrication">Fused filament fabrication</a>
       </li>
       <li>
-         <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">
-            <span>interval</span>
-         </a>
+         <a href="#https://w3id.org/ammo/ont/Input" title="https://w3id.org/ammo/ont/Input">Input</a>
       </li>
       <li>
          <a href="#https://w3id.org/ammo/ont/LOM" title="https://w3id.org/ammo/ont/LOM">Laminated Object Manufacturing</a>
@@ -99,7 +100,16 @@ This section provides details for each class and property defined by Additive Ma
             title="https://w3id.org/ammo/ont/MaterialTransformation">Material Transformation</a>
       </li>
       <li>
+         <a href="#https://w3id.org/ammo/ont/MaterialObject" title="https://w3id.org/ammo/ont/MaterialObject">MaterialObject</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/Neighborhood" title="https://w3id.org/ammo/ont/Neighborhood">Neighborhood</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/ammo/ont/Object" title="https://w3id.org/ammo/ont/Object">Object</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/Output" title="https://w3id.org/ammo/ont/Output">Output</a>
       </li>
       <li>
          <a href="#https://w3id.org/ammo/ont/PhysicalArtifact" title="https://w3id.org/ammo/ont/PhysicalArtifact">Physical Artifact</a>
@@ -317,6 +327,21 @@ This section provides details for each class and property defined by Additive Ma
             <a href="#https://w3id.org/ammo/ont/RealizableEntity" title="https://w3id.org/ammo/ont/RealizableEntity">Realizable Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/Catalyst">
+      <h3>Catalyst<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/Catalyst</p>
+      <div class="comment">
+         <span class="markdown">a person or thing that causes a change</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/ammo/ont/CompositeMaterial">
@@ -695,17 +720,17 @@ While designs typically describe entities to be constructed, they can also be us
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://www.w3.org/2006/time#Interval">
-      <h3>interval<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="https://w3id.org/ammo/ont/Input">
+      <h3>Input<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.w3.org/2006/time#Interval</p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/Input</p>
       <dl class="description">
-         <dt>is equivalent to</dt>
+         <dt>has super-classes</dt>
          <dd>
-            <a href="#https://w3id.org/ammo/ont/TimeInterval" title="https://w3id.org/ammo/ont/TimeInterval">Time Interval</a>
+            <a href="#https://w3id.org/ammo/ont/MaterialObject" title="https://w3id.org/ammo/ont/MaterialObject">MaterialObject</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -847,7 +872,7 @@ While designs typically describe entities to be constructed, they can also be us
       <p>
          <strong>IRI:</strong> https://w3id.org/ammo/ont/MaterialTransformation</p>
       <div class="comment">
-         <span class="markdown">A material transformation is a process that transforms material from one form to another.</span>
+         <span class="markdown">A material transformation is a process that transforms material objects another.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -865,6 +890,38 @@ While designs typically describe entities to be constructed, they can also be us
          <dd>
             <a href="#https://w3id.org/ammo/ont/AMProcess" title="https://w3id.org/ammo/ont/AMProcess">Additive Manufacturing Process</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/MaterialObject">
+      <h3>MaterialObject<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/MaterialObject</p>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/ammo/ont/Input" title="https://w3id.org/ammo/ont/Input">Input</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/ammo/ont/Output" title="https://w3id.org/ammo/ont/Output">Output</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/Neighborhood">
+      <h3>Neighborhood<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/Neighborhood</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#SpatialObject"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a>
          </dd>
       </dl>
    </div>
@@ -900,6 +957,21 @@ While designs typically describe entities to be constructed, they can also be us
             <a href="#https://w3id.org/ammo/ont/hasAttribute" title="https://w3id.org/ammo/ont/hasAttribute">has attribute</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/ammo/ont/isParticipantIn" title="https://w3id.org/ammo/ont/isParticipantIn">is participant in</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/Output">
+      <h3>Output<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/Output</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/ammo/ont/MaterialObject" title="https://w3id.org/ammo/ont/MaterialObject">MaterialObject</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1311,7 +1383,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
             <a href="http://www.w3.org/2006/time#TemporalEntity"
                target="_blank"
                title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -1420,7 +1491,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
             <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/2006/time#TemporalEntity"
                target="_blank"
                title="http://www.w3.org/2006/time#TemporalEntity">temporal entity</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -1490,7 +1560,16 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          <a href="#https://w3id.org/ammo/ont/hasTransition" title="https://w3id.org/ammo/ont/hasTransition">has transition</a>
       </li>
       <li>
+         <a href="#https://w3id.org/ammo/ont/hasCatalyst" title="https://w3id.org/ammo/ont/hasCatalyst">hasCatalyst</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/hasInput" title="https://w3id.org/ammo/ont/hasInput">hasInput</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/ammo/ont/hasMaterial" title="https://w3id.org/ammo/ont/hasMaterial">hasMaterial</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/hasOutput" title="https://w3id.org/ammo/ont/hasOutput">hasOutput</a>
       </li>
       <li>
          <a href="#https://w3id.org/ammo/ont/isComponentOf" title="https://w3id.org/ammo/ont/isComponentOf">is component of</a>
@@ -1537,6 +1616,12 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
       </li>
       <li>
          <a href="#https://w3id.org/ammo/ont/madeFromMaterial" title="https://w3id.org/ammo/ont/madeFromMaterial">made from material</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/occursDuring" title="https://w3id.org/ammo/ont/occursDuring">occursDuring</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ammo/ont/occursInNeighborhood" title="https://w3id.org/ammo/ont/occursInNeighborhood">occursInNeighborhood</a>
       </li>
       <li>
          <a href="#https://w3id.org/ammo/ont/ofQuantity" title="https://w3id.org/ammo/ont/ofQuantity">ofQuantity</a>
@@ -1979,6 +2064,22 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          </dl>
       </div>
    </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/hasCatalyst">
+      <h3>hasCatalyst<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/hasCatalyst</p>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/hasInput">
+      <h3>hasInput<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/hasInput</p>
+   </div>
    <div class="entity" id="https://w3id.org/ammo/ont/hasMaterial">
       <h3>hasMaterial<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2008,6 +2109,14 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
             </dd>
          </dl>
       </div>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/hasOutput">
+      <h3>hasOutput<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/hasOutput</p>
    </div>
    <div class="entity" id="https://w3id.org/ammo/ont/isComponentOf">
       <h3>is component of<sup class="type-op" title="object property">op</sup>
@@ -2495,6 +2604,22 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
       <p>
          <strong>IRI:</strong> https://w3id.org/ammo/ont/madeFromMaterial</p>
    </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/occursDuring">
+      <h3>occursDuring<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/occursDuring</p>
+   </div>
+   <div class="entity" id="https://w3id.org/ammo/ont/occursInNeighborhood">
+      <h3>occursInNeighborhood<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/occursInNeighborhood</p>
+   </div>
    <div class="entity" id="https://w3id.org/ammo/ont/ofQuantity">
       <h3>ofQuantity<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2631,7 +2756,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          <a href="#https://w3id.org/ammo/ont/Aluminum355T6" title="https://w3id.org/ammo/ont/Aluminum355T6">355-T6</a>
       </li>
       <li>
-         <a href="#https://w3id.org/ammo/module/process/" title="https://w3id.org/ammo/module/process/">
+         <a href="#https://w3id.org/ammo/ont/" title="https://w3id.org/ammo/ont/">
             <span></span>
          </a>
       </li>
@@ -2675,8 +2800,8 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          <a href="#https://w3id.org/ammo/ont/GRM32510" title="https://w3id.org/ammo/ont/GRM32510">GR-M32510</a>
       </li>
       <li>
-         <a href="#https://w3id.org/ammo/ont/" title="https://w3id.org/ammo/ont/">
-            <span>ont:</span>
+         <a href="#https://w3id.org/ammo/module/process/" title="https://w3id.org/ammo/module/process/">
+            <span>https://w3id.org/ammo/module/process/</span>
          </a>
       </li>
       <li>
@@ -2722,19 +2847,19 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://w3id.org/ammo/module/process/">
+   <div class="entity" id="https://w3id.org/ammo/ont/">
       <h3>:<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/ammo/module/process/</p>
+         <strong>IRI:</strong> https://w3id.org/ammo/ont/</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="http://ontologydesignpatterns.org/opla-core#Module"
+            <a href="https://w3id.org/dingo#Product_or_material_produced"
                target="_blank"
-               title="http://ontologydesignpatterns.org/opla-core#Module">module</a>
+               title="https://w3id.org/dingo#Product_or_material_produced">product or material produced</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2968,19 +3093,19 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
          </dd>
       </dl>
    </div>
-   <div class="entity" id="https://w3id.org/ammo/ont/">
-      <h3>ont:<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="https://w3id.org/ammo/module/process/">
+      <h3>https://w3id.org/ammo/module/process/<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/ammo/ont/</p>
+         <strong>IRI:</strong> https://w3id.org/ammo/module/process/</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="https://w3id.org/dingo#Product_or_material_produced"
+            <a href="https://w3id.org/OPLaX/Module"
                target="_blank"
-               title="https://w3id.org/dingo#Product_or_material_produced">product or material produced</a>
+               title="https://w3id.org/OPLaX/Module">module</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

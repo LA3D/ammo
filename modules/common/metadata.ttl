@@ -89,6 +89,7 @@
 Contributions and Discussion Welcomed.
 
 Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
+Ontology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes
 
 Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:abstract "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D).";
@@ -104,6 +105,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                         sdo:funder <wd:Q9212>;
                                         prov:startedAtTime "2021-11-01T00:00:00Z"^^xsd:dateTime;
                                         prov:endedAtTime "2021-11-01T00:00:00Z"^^xsd:dateTime ;
+                                        skos:note "Versions 0.1.0 to version 0.5.0 were developed under this activity";
                                     ],
                                     [
                                         a prov:Activity ;
@@ -111,6 +113,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                         sdo:funder <wd:Q11223>;
                                         prov:startedAtTime "2022-07-01T00:00:00Z"^^xsd:dateTime;
                                         prov:endedAtTime "2022-12-31T00:00:00Z"^^xsd:dateTime ;
+                                        skos:note "Versions 0.5.0 to 0.6.0 were developed under this activity";
                                     ];
                                     ];
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
@@ -120,5 +123,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
 
                                sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
                                owl:imports <https://www.w3.org/ns/prov-o> ;
+                               owl:imports <http://www.w3.org/2006/time>;
+                               owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
 
 .

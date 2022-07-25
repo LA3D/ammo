@@ -351,13 +351,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <shacl:property rdf:nodeID="genid9"/>
     </owl:NamedIndividual>
     <rdf:Description rdf:nodeID="genid8">
-        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
-        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
-        <shacl:name>Designed Physical System</shacl:name>
-        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-        <shacl:path rdf:resource="https://w3id.org/ammo/ont/isComponentOf"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid9">
         <shacl:class rdf:resource="https://w3id.org/ammo/ont/ComponentIdentifier"/>
         <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
         <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
@@ -366,6 +359,13 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasidentifier"/>
         <shacl:resultMessage>Each Designed Component must have 1 Component Identifier</shacl:resultMessage>
         <shacl:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid9">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Designed Physical System</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/isComponentOf"/>
     </rdf:Description>
     
 
@@ -381,6 +381,20 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <shacl:targetClass rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
     </owl:NamedIndividual>
     <rdf:Description rdf:nodeID="genid10">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Subsystem</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasSubsystem"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid11">
+        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedComponent"/>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+        <shacl:name>Designed Component</shacl:name>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasComponent"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid12">
         <shacl:class rdf:resource="https://w3id.org/ammo/ont/SystemIdentifier"/>
         <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
         <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
@@ -389,20 +403,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasidentifier"/>
         <shacl:resultMessage>Each identifier MUST have 1 system identifier</shacl:resultMessage>
         <shacl:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid11">
-        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedPhysicalSystem"/>
-        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
-        <shacl:name>Subsystem</shacl:name>
-        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasSubsystem"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid12">
-        <shacl:class rdf:resource="https://w3id.org/ammo/ont/DesignedComponent"/>
-        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
-        <shacl:name>Designed Component</shacl:name>
-        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-        <shacl:path rdf:resource="https://w3id.org/ammo/ont/hasComponent"/>
     </rdf:Description>
 </rdf:RDF>
 
