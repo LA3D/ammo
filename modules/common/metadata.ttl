@@ -35,7 +35,7 @@
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology, dg:Product_or_material_produced ;
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
                                owl:versionIRI <https://w3id.org/ammo/ont/0.5.1> ;
-                               owl:versionInfo "0.5.1"@en ;
+                               owl:versionInfo "0.6.0"@en ;
                                owl:priorVersion <https://w3id.org/ammo/ont/0.5.0>;
                                owl:backwardCompatableWith <https://w3id.org/ammo/ont/0.5.0> ;
                                dcterms:modified "2022-07-20"^^xsd:date ;

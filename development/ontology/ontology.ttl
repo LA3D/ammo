@@ -36,7 +36,7 @@ Github: https://github.com/LA3D/ammo"""@en ;
                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "ammo" ;
                               <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/ammo/ont/" ;
                               owl:priorVersion <https://w3id.org/ammo/ont/0.5.0> ;
-                              owl:versionInfo "0.5.1"@en ;
+                              owl:versionInfo "0.6.0"@en ;
                               <https://schema.org/license> "https://spdx.org/licenses/CC-BY-4.0"@en .
 
 _:genid1 rdf:type <https://schema.org/Person> ;

@@ -46,7 +46,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <vann:preferredNamespacePrefix>ammo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://w3id.org/ammo/ont/</vann:preferredNamespaceUri>
         <owl:priorVersion rdf:resource="https://w3id.org/ammo/ont/0.5.0"/>
-        <owl:versionInfo xml:lang="en">0.5.1</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">0.6.0</owl:versionInfo>
         <schema:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</schema:license>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
