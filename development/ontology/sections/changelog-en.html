@@ -2,30 +2,133 @@
 <h2 id="changes" class="list">Changes from last version</h2>
 <h3 id="changeClass" class="list">Classes</h3>
 <details><summary><u>Modified classes</u></summary>
-<ul><li><a href="#https://w3id.org/ammo/ont/MaterialTransformation">https://w3id.org/ammo/ont/MaterialTransformation</a>
+<ul><li><a href="#https://w3id.org/ammo/ont/DesignDataset">https://w3id.org/ammo/ont/DesignDataset</a>
 <ul>
-<li><li><li><li><li><li><li><li><li>Added: rdfs:comment "A material transformation is a process that transforms material objects another."^^xsd:string</li>
+<li>Added: SubClass of http://semanticscience.org/resource/Dataset</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/DesignSpecification">https://w3id.org/ammo/ont/DesignSpecification</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/DesignSpecification</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/DesignedArtifact">https://w3id.org/ammo/ont/DesignedArtifact</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialArtifact</li>
+<li></ul>
+<ul>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/PhysicalArtifact</li>
+<li></ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/DesignedPhysicalSystem">https://w3id.org/ammo/ont/DesignedPhysicalSystem</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialArtifact</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/PhysicalArtifact</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Material">https://w3id.org/ammo/ont/Material</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/MaterialEntity</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/Object</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/MaterialTransformation">https://w3id.org/ammo/ont/MaterialTransformation</a>
+<ul>
+<li><li><li><li><li>Added: SubClass of http://semanticscience.org/resource/</li>
+<li><li><li><li><li>Added: rdfs:comment "A material transformation is a process that transforms material objects another."^^xsd:string</li>
 <li></ul>
 <ul>
 <li>Deleted: rdfs:comment "A material transformation is a process that transforms material from one form to another."^^xsd:string</li>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/Process</li>
 </ul>
 </li>
-<li><a href="#https://w3id.org/ammo/ont/Transition">https://w3id.org/ammo/ont/Transition</a>
+<li><a href="#https://w3id.org/ammo/ont/PhysicalSystem">https://w3id.org/ammo/ont/PhysicalSystem</a>
 <ul>
-<li>Added: SubClass of http://org.semanticweb.owlapi/error#Error1</li>
+<li>Added: SubClass of http://semanticscience.org/resource/MaterialEntity</li>
 </ul>
 <ul>
-<li>Deleted: SubClass of http://org.semanticweb.owlapi/error#Error2</li>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/PhysicalObject</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Plan">https://w3id.org/ammo/ont/Plan</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;http://semanticscience.org/resource/Plan&gt; &lt;https://w3id.org/ammo/ont/Plan&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/QuantityDesignSpecification">https://w3id.org/ammo/ont/QuantityDesignSpecification</a>
+<ul>
+<li>Added: rdfs:label "Quantity Design Specification"^^xsd:string</li>
+<li>Added: SubClass of https://w3id.org/ammo/ont/DesignSpecification</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/SystemDesign">https://w3id.org/ammo/ont/SystemDesign</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialArtifactDesign</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://w3id.org/ammo/ont/Design</li>
 </ul>
 </li>
 </ul></details><details><summary><u>Added classes</u></summary>
-<ul><li><a href="#http://org.semanticweb.owlapi/error#Error1">http://org.semanticweb.owlapi/error#Error1</a>
+<ul><li><a href="#http://semanticscience.org/resource/">http://semanticscience.org/resource/</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/Dataset">http://semanticscience.org/resource/Dataset</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/Design">http://semanticscience.org/resource/Design</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/DesignSpecification">http://semanticscience.org/resource/DesignSpecification</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/MaterialEntity">http://semanticscience.org/resource/MaterialEntity</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/Plan">http://semanticscience.org/resource/Plan</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;http://semanticscience.org/resource/Plan&gt; &lt;https://w3id.org/ammo/ont/Plan&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://semanticscience.org/resource/Process">http://semanticscience.org/resource/Process</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/RealizableEntity">http://semanticscience.org/resource/RealizableEntity</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/SpatialRegion">http://semanticscience.org/resource/SpatialRegion</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/SpecializedMaterialEntity">http://semanticscience.org/resource/SpecializedMaterialEntity</a>
 </li>
 <li><a href="#http://usefulinc.com/ns/doap#Project">http://usefulinc.com/ns/doap#Project</a>
 </li>
 <li><a href="#http://www.opengis.net/ont/geosparql#SpatialObject">http://www.opengis.net/ont/geosparql#SpatialObject</a>
 </li>
+<li><a href="#http://www.w3.org/2006/time#Instant">http://www.w3.org/2006/time#Instant</a>
+</li>
 <li><a href="#http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/Process</li>
+<li>Added: SubClass of http://www.w3.org/2006/time#TemporalEntity</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/Entity</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/Process</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/Process</li>
+<li>Added: SubClass of http://www.w3.org/2006/time#Instant</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#Role">http://www.w3.org/ns/prov#Role</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/RealizableEntity</li>
+</ul>
 </li>
 <li><a href="#https://w3id.org/OPLaX/Module">https://w3id.org/OPLaX/Module</a>
 </li>
@@ -35,39 +138,139 @@
 </li>
 <li><a href="#https://w3id.org/ammo/ont/Input">https://w3id.org/ammo/ont/Input</a>
 <ul>
-<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialObject</li>
+<li>Added: SubClass of http://semanticscience.org/resource/MaterialEntity</li>
 </ul>
 </li>
-<li><a href="#https://w3id.org/ammo/ont/MaterialObject">https://w3id.org/ammo/ont/MaterialObject</a>
+<li><a href="#https://w3id.org/ammo/ont/MaterialArtifact">https://w3id.org/ammo/ont/MaterialArtifact</a>
+<ul>
+<li><li>Added: SubClass of http://semanticscience.org/resource/SpecializedMaterialEntity</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/MaterialArtifactDesign">https://w3id.org/ammo/ont/MaterialArtifactDesign</a>
+<ul>
+<li>Added: SubClass of http://semanticscience.org/resource/Design</li>
+</ul>
 </li>
 <li><a href="#https://w3id.org/ammo/ont/Neighborhood">https://w3id.org/ammo/ont/Neighborhood</a>
 <ul>
 <li>Added: SubClass of http://www.opengis.net/ont/geosparql#SpatialObject</li>
+<li>Added: SubClass of http://semanticscience.org/resource/SpatialRegion</li>
 </ul>
 </li>
 <li><a href="#https://w3id.org/ammo/ont/Output">https://w3id.org/ammo/ont/Output</a>
 <ul>
-<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialObject</li>
+<li>Added: SubClass of https://w3id.org/ammo/ont/MaterialArtifact</li>
 </ul>
 </li>
-<li><a href="#https://w3id.org/ammo/ont/:Neighborhood">https://w3id.org/ammo/ont/:Neighborhood</a>
+<li><a href="#https://w3id.org/ammo/ont/Technique">https://w3id.org/ammo/ont/Technique</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/prov#Activity</li>
+</ul>
 </li>
 </ul></details><details><summary><u>Deleted classes</u></summary>
-<ul><li><a href="#http://org.semanticweb.owlapi/error#Error2">http://org.semanticweb.owlapi/error#Error2</a>
+<ul><li><a href="#http://org.semanticweb.owlapi/error#Error1">http://org.semanticweb.owlapi/error#Error1</a>
+</li>
+<li><a href="#http://semanticscience.org/resource/SIO_000000">http://semanticscience.org/resource/SIO_000000</a>
+</li>
+<li><a href="#http://www.w3.org/2002/07/owl#Thing">http://www.w3.org/2002/07/owl#Thing</a>
+</li>
+<li><a href="#http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Attribute">https://w3id.org/ammo/ont/Attribute</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Capability">https://w3id.org/ammo/ont/Capability</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Design">https://w3id.org/ammo/ont/Design</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Entity">https://w3id.org/ammo/ont/Entity</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Object">https://w3id.org/ammo/ont/Object</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/PhysicalArtifact">https://w3id.org/ammo/ont/PhysicalArtifact</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/PhysicalObject">https://w3id.org/ammo/ont/PhysicalObject</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Process">https://w3id.org/ammo/ont/Process</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/RealizableEntity">https://w3id.org/ammo/ont/RealizableEntity</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Role">https://w3id.org/ammo/ont/Role</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/State">https://w3id.org/ammo/ont/State</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Status">https://w3id.org/ammo/ont/Status</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/Transition">https://w3id.org/ammo/ont/Transition</a>
 </li>
 </ul></details><h3 id="changeProp" class="list">Object Properties</h3>
 <details><summary><u>Modified object properties</u></summary>
-<ul><li><a href="#https://w3id.org/ammo/ont/surrounds">https://w3id.org/ammo/ont/surrounds</a>
+<ul><li><a href="#https://w3id.org/ammo/ont/describes">https://w3id.org/ammo/ont/describes</a>
 <ul>
-<li>Added: SubProperty of https://w3id.org/ammo/ont/contains</li>
+<li>Added: domain https://w3id.org/ammo/ont/MaterialArtifactDesign</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/ammo/ont/Design</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/existsAt">https://w3id.org/ammo/ont/existsAt</a>
+<ul>
+<li>Deleted: Range https://w3id.org/ammo/ont/TimeInterval</li>
+<li>Deleted: rdfs:label "exists at"^^xsd:string</li>
+<li>Deleted: rdfs:isDefinedBy https://w3id.org/ammo/module/process/</li>
+<li>Deleted: domain https://w3id.org/ammo/ont/Process</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasDataset">https://w3id.org/ammo/ont/hasDataset</a>
+<ul>
+<li>Added: domain https://w3id.org/ammo/ont/MaterialArtifactDesign</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/ammo/ont/Design</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasProperPart">https://w3id.org/ammo/ont/hasProperPart</a>
+<ul>
+<li>Added: domain https://w3id.org/ammo/ont/MaterialArtifactDesign</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:label "has proper part"@en</li>
+<li>Deleted: SubProperty of https://w3id.org/ammo/ont/hasPart</li>
+<li>Deleted: IrrefexiveObjectProperty IrreflexiveObjectProperty(&lt;https://w3id.org/ammo/ont/hasProperPart&gt;)</li>
+<li>Deleted: <http://purl.org/dc/terms/description> "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."@en</li>
+<li>Deleted: <http://www.w3.org/2004/02/skos/core#example> "a car has an engine as a proper part; a car has a piston as a proper part;"@en</li>
+<li>Deleted: domain https://w3id.org/ammo/ont/Design</li>
+<li>Deleted: AsymmetricObjectProperty AsymmetricObjectProperty(&lt;https://w3id.org/ammo/ont/hasProperPart&gt;)</li>
+<li>Deleted: rdfs:isDefinedBy http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl</li>
+<li>Deleted: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/ammo/ont/hasProperPart&gt; &lt;https://w3id.org/ammo/ont/isProperPartOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isDescribedBy">https://w3id.org/ammo/ont/isDescribedBy</a>
+<ul>
+<li>Added: Range https://w3id.org/ammo/ont/MaterialArtifactDesign</li>
+</ul>
+<ul>
+<li>Deleted: Range https://w3id.org/ammo/ont/Design</li>
 </ul>
 </li>
 </ul></details><details><summary><u>Added object properties</u></summary>
-<ul><li><a href="#http://www.w3.org/ns/prov#wasGeneratedBy">http://www.w3.org/ns/prov#wasGeneratedBy</a>
+<ul><li><a href="#http://www.w3.org/2006/time#hasBeginning">http://www.w3.org/2006/time#hasBeginning</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#hasEnd">http://www.w3.org/2006/time#hasEnd</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#inXSDDateTime">http://www.w3.org/2006/time#inXSDDateTime</a>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#endedAtTime">http://www.w3.org/ns/prov#endedAtTime</a>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#startedAtTime">http://www.w3.org/ns/prov#startedAtTime</a>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#wasGeneratedBy">http://www.w3.org/ns/prov#wasGeneratedBy</a>
 </li>
 <li><a href="#http://www.w3.org/ns/prov#wasInformedBy">http://www.w3.org/ns/prov#wasInformedBy</a>
 </li>
-<li><a href="#https://w3id.org/ammo/ont/contains">https://w3id.org/ammo/ont/contains</a>
+<li><a href="#https://w3id.org/ammo/ont/comprises">https://w3id.org/ammo/ont/comprises</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/ammo/ont/isComprisedOf&gt; &lt;https://w3id.org/ammo/ont/comprises&gt;)</li>
+</ul>
 </li>
 <li><a href="#https://w3id.org/ammo/ont/hasCatalyst">https://w3id.org/ammo/ont/hasCatalyst</a>
 </li>
@@ -75,13 +278,75 @@
 </li>
 <li><a href="#https://w3id.org/ammo/ont/hasOutput">https://w3id.org/ammo/ont/hasOutput</a>
 </li>
+<li><a href="#https://w3id.org/ammo/ont/isComprisedOf">https://w3id.org/ammo/ont/isComprisedOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/ammo/ont/isComprisedOf&gt; &lt;https://w3id.org/ammo/ont/comprises&gt;)</li>
+</ul>
+</li>
 <li><a href="#https://w3id.org/ammo/ont/occursDuring">https://w3id.org/ammo/ont/occursDuring</a>
 </li>
 <li><a href="#https://w3id.org/ammo/ont/occursInNeighborhood">https://w3id.org/ammo/ont/occursInNeighborhood</a>
 </li>
+</ul></details><details><summary><u>Deleted object properties</u></summary>
+<ul><li><a href="#https://w3id.org/ammo/ont/fromState">https://w3id.org/ammo/ont/fromState</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasAttribute">https://w3id.org/ammo/ont/hasAttribute</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasComponentPart">https://w3id.org/ammo/ont/hasComponentPart</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasDirectPart">https://w3id.org/ammo/ont/hasDirectPart</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasPart">https://w3id.org/ammo/ont/hasPart</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasState">https://w3id.org/ammo/ont/hasState</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/hasTransition">https://w3id.org/ammo/ont/hasTransition</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isComponentPartOf">https://w3id.org/ammo/ont/isComponentPartOf</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isContainedIn">https://w3id.org/ammo/ont/isContainedIn</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isDirectPartOf">https://w3id.org/ammo/ont/isDirectPartOf</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isLocatedIn">https://w3id.org/ammo/ont/isLocatedIn</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isLocationOf">https://w3id.org/ammo/ont/isLocationOf</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isPartOf">https://w3id.org/ammo/ont/isPartOf</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isParticipantIn">https://w3id.org/ammo/ont/isParticipantIn</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isProperPartOf">https://w3id.org/ammo/ont/isProperPartOf</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isRealizedIn">https://w3id.org/ammo/ont/isRealizedIn</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isRelatedTo">https://w3id.org/ammo/ont/isRelatedTo</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo">https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/isSurroundedBy">https://w3id.org/ammo/ont/isSurroundedBy</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/status">https://w3id.org/ammo/ont/status</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/surrounds">https://w3id.org/ammo/ont/surrounds</a>
+</li>
+<li><a href="#https://w3id.org/ammo/ont/toState">https://w3id.org/ammo/ont/toState</a>
+</li>
 </ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
 <details><summary><u>Added data properties</u></summary>
-<ul><li><a href="#http://www.w3.org/ns/prov#endedAtTime">http://www.w3.org/ns/prov#endedAtTime</a>
+<ul><li><a href="#http://www.w3.org/2006/time#inXSDDateTime">http://www.w3.org/2006/time#inXSDDateTime</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#inXSDDateTimeStamp">http://www.w3.org/2006/time#inXSDDateTimeStamp</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#inXSDDateTime</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#atTime">http://www.w3.org/ns/prov#atTime</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#inXSDDateTime</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#endedAtTime">http://www.w3.org/ns/prov#endedAtTime</a>
 </li>
 <li><a href="#http://www.w3.org/ns/prov#startedAtTime">http://www.w3.org/ns/prov#startedAtTime</a>
 </li>

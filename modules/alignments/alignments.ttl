@@ -1,0 +1,76 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+## Alignments between SIO and PROV
+## See: http://ceur-ws.org/Vol-2228/paper4.pdf
+## See: http://hadatac.org/ont/hasco/
+# For other alignments to prov
+
+# http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> a owl:Class ;
+	rdfs:subClassOf <http://semanticscience.org/resource/Process> .
+
+# 
+# http://www.w3.org/ns/prov#Entity
+
+<http://www.w3.org/ns/prov#Entity> a owl:Class ;
+	rdfs:subClassOf <http://semanticscience.org/resource/Entity> .
+
+    # http://www.w3.org/ns/prov#Influence
+
+<http://www.w3.org/ns/prov#Influence> rdfs:subClassOf <http://semanticscience.org/resource/Process> .
+
+# 
+# http://www.w3.org/ns/prov#InstantaneousEvent
+
+<http://www.w3.org/ns/prov#InstantaneousEvent> rdfs:subClassOf <http://semanticscience.org/resource/Process> .
+
+# http://www.w3.org/ns/prov#Role
+
+<http://www.w3.org/ns/prov#Role> rdfs:subClassOf <http://semanticscience.org/resource/RealizableEntity> .
+
+time:inXSDDateTimeStamp
+  rdfs:subPropertyOf time:inXSDDateTime ;
+.
+
+prov:Activity
+  rdfs:subClassOf time:TemporalEntity ;
+.
+prov:InstantaneousEvent
+  rdfs:subClassOf time:Instant ;
+.
+prov:atTime
+  rdfs:subPropertyOf time:inXSDDateTime ;
+.
+prov:endedAtTime
+  owl:propertyChainAxiom (
+      time:hasEnd
+      time:inXSDDateTime
+    ) ;
+.
+prov:startedAtTime
+  owl:propertyChainAxiom (
+      time:hasBeginning
+      time:inXSDDateTime
+    ) ;
+.

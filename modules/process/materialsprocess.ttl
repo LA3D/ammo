@@ -1,0 +1,100 @@
+@prefix : <https://w3id.org/ammo/ont/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@base <https://w3id.org/ammo/ont/> .
+
+<https://w3id.org/ammo/module/AMProcess> a oplax:module;
+    prov:wasDerivedFrom <https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/materials_processing.ttl>;
+.
+
+# Metals Processing
+ammo:MetalsProcessing a owl:Class; 
+    rdfs:subClassOf sio:Method ;
+    rdfs:label "Metals Processing"@en;
+.
+ammo:Heating a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing;
+    rdfs:label "Heating"@en;
+.
+ammo:Casting a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing; 
+    rdfs:label "Casting"@en;
+    rdfs:comment '''Inputs: melt temperature, cooling rate, temperature field.
+Property Engineered: grain size, relates to strength, creep resistance.
+Freezing front tends to affect the grain size.'''.
+
+ammo:Deforming a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing;
+    rdfs:label "Deforming"@en;
+    rdfs:comment '''Inputs: processes, tool shapes, temperature history, current temperature of the metal during deformation.
+Property Engineered: geometry, microstructure (engineering properties), surface finish.'''
+.
+
+ammo:Cutting a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing;
+    rdfs:label "Cutting"@en;
+rdfs:comment '''Inputs: tool geometry, speeds, depth of cut, lubricant.
+Property Engineered: surface finish, near surface microstructure.'''.
+
+ammo:HeatTreatment a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing;
+    rdfs:label "Heat Treatment"@en;
+    rdfs:comment '''Input controls: temperature history.
+property: microstructure (ductility, strength, fracture toughness)'''.
+
+ammo:Joining a owl:Class; 
+    rdfs:subClassOf ammo:MetalsProcessing;
+    rdfs:label "Joining"@en;
+.
+
+ammo:Bolting a owl:Class; 
+    rdfs:subClassOf ammo:Joining;
+    rdfs:label "Bolting"@en;
+.
+
+ammo:Welding a owl:Class; 
+    rdfs:subClassOf ammo:Joining;
+    rdfs:label "Welding"@en;
+.
+
+ammo:Riveting a owl:Class; 
+    rdfs:subClassOf ammo:Joining;
+    rdfs:label "Reviting"@en;
+.
+
+ammo:Soldering a owl:Class; 
+    rdfs:subClassOf ammo:Joining;
+    rdfs:label "Soldering"@en;
+.
+
+ammo:Microstructure a owl:Class; 
+    rdfs:subClassOf sio:Quality;
+    rdfs:label "Quality"@en;
+.
+
+ammo:Grain a owl:Class;
+    rdfs:subClassOf ammo:Microstructure;
+    rdfs:label "Grain"@en;
+.
+
+
+
+# Glass Processing
+ammo:GlassProcessing a owl:Class; rdfs:subClassOf sio:Method;

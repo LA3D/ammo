@@ -34,11 +34,11 @@
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology, dg:Product_or_material_produced ;
                                dcterms:title "Additive Manufacturing for Maintenance Operations Ontology"@en ;
-                               owl:versionIRI <https://w3id.org/ammo/ont/0.5.1> ;
+                               owl:versionIRI <https://w3id.org/ammo/ont/0.6.0> ;
                                owl:versionInfo "0.6.0"@en ;
                                owl:priorVersion <https://w3id.org/ammo/ont/0.5.0>;
                                owl:backwardCompatableWith <https://w3id.org/ammo/ont/0.5.0> ;
-                               dcterms:modified "2022-07-20"^^xsd:date ;
+                               dcterms:modified "2022-07-27"^^xsd:date ;
                                bibo:status "Work In Progress";
                                dcterms:publisher [
                                    a sdo:Organization ;
@@ -91,6 +91,10 @@ Contributions and Discussion Welcomed.
 Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
 Ontology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes
 
+Changelog: 0.5.0: First Development Release. Extracted mereology and core patterns from Semantic Science Integrated Ontology (SIO). Implimented Material Transformation Pattern as a Processs. Defined lightweight vocabulary for Additive Manufacturing Processes as Material Transformations.
+           0.5.1: Changed documentation genration from Pylode to Widoco. Minor typo fixes.
+           0.6.0: Changed to direct import of SIO ontology to improve integration with Wikidata and NIST Material Genome Project. Removal of duplicate classes extracted from SIO as part of 0.5.0 release. Addition and refinement of Material Processing techniques derived from Material Genome Project Nanomine. 
+
 Github: https://github.com/LA3D/ammo"""@en ;
                                dcterms:abstract "Ontology in support of additive manufacturing for maintenance operations developed as part of the America Makes Additive With Knowledge project by SimbaChain and the Notre Dame Center for Research Computing, Laboratory for Assured AI Applications Development (LA3D).";
                                dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
@@ -116,14 +120,17 @@ Github: https://github.com/LA3D/ammo"""@en ;
                                         skos:note "Versions 0.5.0 to 0.6.0 were developed under this activity";
                                     ];
                                     ];
+                               
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
 
                                vann:preferredNamespacePrefix "ammo" ;
                                vann:preferredNamespaceUri "http://w3id.org/ammo/ont/" ;
-
+                               skos:changeNote "0.5.0 - intial release of development version of ontology";
+                               skos:changeNote "0.6.0 - Direct import of SIO ontology and removal of classes extracted from SIO" ;
                                sdo:license "https://spdx.org/licenses/CC-BY-4.0"@en ;
                                owl:imports <https://www.w3.org/ns/prov-o> ;
                                owl:imports <http://www.w3.org/2006/time>;
                                owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
+                               owl:imports <http://semanticscience.org/ontology/sio-subset-labels.owl>;
 
 .

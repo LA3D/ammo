@@ -74,6 +74,7 @@ ammo:Capability rdf:type owl:Class ;
 
 ###  https://w3id.org/ammo/ont/Entity
 ammo:Entity rdf:type owl:Class ;
+            owl:equivalentClass <http://semanticscience.org/resource/Entity>;
             rdfs:comment "Every thing is an entity." ;
             rdfs:isDefinedBy <https://w3id.org/ammo/ont/> ;
             rdfs:label "Entity" .

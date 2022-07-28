@@ -1,23 +1,29 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/ammo/ont/"
      xml:base="https://w3id.org/ammo/ont/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ont="https://w3id.org/ammo/ont/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:cito="http://purl.org/spar/cito/"
      xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="https://schema.org/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:schema1="http://schema.org/"
      xmlns:resource="http://semanticscience.org/resource/"
      xmlns:opla-core="http://ontologydesignpatterns.org/opla-core#">
     <owl:Ontology rdf:about="https://w3id.org/ammo/ont/">
-        <owl:versionIRI rdf:resource="https://w3id.org/ammo/ont/0.5.1"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/ammo/ont/0.6.0"/>
+        <owl:imports rdf:resource="http://semanticscience.org/ontology/sio-subset-labels.owl"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"/>
         <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
@@ -35,9 +41,13 @@ Contributions and Discussion Welcomed.
 Ontology Versions 0.0.1 to 0.5.0 Funded by United States Army, America Makes
 Ontology Versions 0.5.0 to 0.6.0 Funded by United States Air Force, America Makes
 
+Changelog: 0.5.0: First Development Release. Extracted mereology and core patterns from Semantic Science Integrated Ontology (SIO). Implimented Material Transformation Pattern as a Processs. Defined lightweight vocabulary for Additive Manufacturing Processes as Material Transformations.
+           0.5.1: Changed documentation genration from Pylode to Widoco. Minor typo fixes.
+           0.6.0: Changed to direct import of SIO ontology to improve integration with Wikidata and NIST Material Genome Project. Removal of duplicate classes extracted from SIO as part of 0.5.0 release. Addition and refinement of Material Processing techniques derived from Material Genome Project Nanomine. 
+
 Github: https://github.com/LA3D/ammo</terms:description>
         <terms:license rdf:resource="https://spdx.org/licenses/CC-BY-4.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-20</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-27</terms:modified>
         <terms:publisher rdf:nodeID="genid6"/>
         <terms:publisher rdf:nodeID="genid7"/>
         <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
@@ -47,6 +57,8 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <vann:preferredNamespaceUri>http://w3id.org/ammo/ont/</vann:preferredNamespaceUri>
         <owl:priorVersion rdf:resource="https://w3id.org/ammo/ont/0.5.0"/>
         <owl:versionInfo xml:lang="en">0.6.0</owl:versionInfo>
+        <skos:changeNote>0.5.0 - intial release of development version of ontology</skos:changeNote>
+        <skos:changeNote>0.6.0 - Direct import of SIO ontology and removal of classes extracted from SIO</skos:changeNote>
         <schema:license xml:lang="en">https://spdx.org/licenses/CC-BY-4.0</schema:license>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
@@ -126,38 +138,10 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
-    <!-- http://semanticscience.org/resource/equivalentTo -->
-
-
-    <owl:AnnotationProperty rdf:about="http://semanticscience.org/resource/equivalentTo"/>
-    
-
-
     <!-- http://usefulinc.com/ns/doap#repository -->
 
 
     <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#repository"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#minCardinality -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minCardinality"/>
     
 
 
@@ -175,13 +159,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#narrower -->
 
 
@@ -193,13 +170,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#wasQuotedFrom"/>
-    
-
-
-    <!-- https://schema.org/comment -->
-
-
-    <owl:AnnotationProperty rdf:about="https://schema.org/comment"/>
     
 
 
@@ -229,10 +199,37 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/contains -->
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/contains"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#hasEnd"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#inXSDDateTime"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#hasBeginning"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#inXSDDateTime"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/comprises -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/comprises">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
+        <rdfs:label>comprises</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -240,7 +237,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/describes">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Design"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
         <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Component"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>describes</rdfs:label>
@@ -263,34 +260,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
     <!-- https://w3id.org/ammo/ont/existsAt -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/existsAt">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Process"/>
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/TimeInterval"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/module/process/"/>
-        <rdfs:label>exists at</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/fromState -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/fromState">
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/State"/>
-        <rdfs:label>from state</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/hasAttribute -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasAttribute">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Object"/>
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/RealizableEntity"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/module/process/"/>
-        <rdfs:label>has attribute</rdfs:label>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/existsAt"/>
     
 
 
@@ -326,42 +296,14 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/hasComponentPart -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasComponentPart">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/hasDirectPart"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isComponentPartOf"/>
-        <terms:description xml:lang="en">has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">has component part</rdfs:label>
-        <skos:example xml:lang="en">a human has blood as a component part</skos:example>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/ammo/ont/hasDataset -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasDataset">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Design"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
         <rdfs:range rdf:resource="https://w3id.org/ammo/ont/DesignDataset"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>has dataset</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/hasDirectPart -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasDirectPart">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isDirectPartOf"/>
-        <terms:description xml:lang="en">has direct part is a relation to specify a part at a particular level of granularity</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">has direct part</rdfs:label>
-        <skos:example xml:lang="en">a car has an engine as a direct part</skos:example>
     </owl:ObjectProperty>
     
 
@@ -396,58 +338,14 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/hasPart -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasPart">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isLocationOf"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isPartOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-        <terms:description xml:lang="en">has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">has part</rdfs:label>
-        <skos:example xml:lang="en">a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;</skos:example>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/ammo/ont/hasProperPart -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasProperPart">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/hasPart"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isProperPartOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Design"/>
+        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
         <rdfs:range rdf:resource="https://w3id.org/ammo/ont/DesignSpecification"/>
-        <terms:description xml:lang="en">has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label xml:lang="en">has proper part</rdfs:label>
         <rdfs:label>has proper part</rdfs:label>
-        <skos:example xml:lang="en">a car has an engine as a proper part; a car has a piston as a proper part;</skos:example>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/hasState -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasState">
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/State"/>
-        <rdfs:label>has state</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/hasTransition -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/hasTransition">
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Transition"/>
-        <rdfs:label>has transition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -465,22 +363,14 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/isComponentPartOf -->
+    <!-- https://w3id.org/ammo/ont/isComprisedOf -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isComponentPartOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isDirectPartOf"/>
-        <terms:description xml:lang="en">is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is component part of</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isComprisedOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/comprises"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
+        <rdfs:label>is comprised of</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isContainedIn -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isContainedIn"/>
     
 
 
@@ -490,130 +380,9 @@ Github: https://github.com/LA3D/ammo</terms:description>
     <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isDescribedBy">
         <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/describes"/>
         <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Component"/>
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Design"/>
+        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>is described by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isDirectPartOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isDirectPartOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isProperPartOf"/>
-        <terms:description xml:lang="en">is direct part of is a relation between a specific part (at some level of granularity) and its whole.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is direct part of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isLocatedIn -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isLocatedIn">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/isLocationOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <terms:description xml:lang="en">A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]</terms:description>
-        <resource:equivalentTo>OBO_REL:located_in</resource:equivalentTo>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is located in</rdfs:label>
-        <skos:example xml:lang="en">A parasite in the interior of a person&apos;s intestine is located in their intestinal lumen.</skos:example>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isLocationOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isLocationOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <terms:description xml:lang="en">A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is location of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isPartOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isPartOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isLocatedIn"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-        <terms:description xml:lang="en">is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is part of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isParticipantIn -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isParticipantIn">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/Object"/>
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Process"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>is participant in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isProperPartOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isProperPartOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isPartOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <terms:description xml:lang="en">is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is proper part of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isRealizedIn -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isRealizedIn">
-        <rdfs:domain rdf:resource="https://w3id.org/ammo/ont/RealizableEntity"/>
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Process"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>is realized in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isRelatedTo -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isRelatedTo">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://semanticscience.org/resource/Entity"/>
-        <rdfs:range rdf:resource="http://semanticscience.org/resource/Entity"/>
-        <terms:description xml:lang="en">A is related to B iff there is some relation between A and B.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is related to</rdfs:label>
-        <schema:comment>&apos;is related to&apos; is the top level relation in SIO</schema:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isSpatiotemporallyRelatedTo">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isRelatedTo"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <terms:description xml:lang="en">A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is spatiotemporally related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -631,19 +400,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/isSurroundedBy -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/isSurroundedBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/isContainedIn"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/ammo/ont/surrounds"/>
-        <terms:description xml:lang="en">A &apos;is surrounded by&apos; B iff the A &apos;is contained by&apos; B and A &apos;is adjacent to&apos; B or A &apos;is directly connected to&apos; B.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">is surrounded by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/ammo/ont/madeFromMaterial -->
 
 
@@ -656,9 +412,7 @@ Github: https://github.com/LA3D/ammo</terms:description>
     <!-- https://w3id.org/ammo/ont/occursDuring -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/occursDuring">
-        <rdfs:label>occursDuring</rdfs:label>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/occursDuring"/>
     
 
 
@@ -696,35 +450,33 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/status -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/status">
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/Status"/>
-        <rdfs:label>status</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/ammo/ont/surrounds -->
+    <!-- http://www.w3.org/2006/time#inXSDDateTimeStamp -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/surrounds">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ammo/ont/contains"/>
-        <terms:description xml:lang="en">A &apos;surrounds&apos; B iff the A &apos;contains&apos; B and A &apos;is adjacent to&apos; B or A &apos;is directly connected to&apos; B.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">surrounds</rdfs:label>
-    </owl:ObjectProperty>
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#inXSDDateTimeStamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#inXSDDateTime"/>
+    </rdf:Description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/toState -->
+    <!-- http://www.w3.org/ns/prov#atTime -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/ammo/ont/toState">
-        <rdfs:range rdf:resource="https://w3id.org/ammo/ont/State"/>
-        <rdfs:label>to state</rdfs:label>
-    </owl:ObjectProperty>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#atTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#inXSDDateTime"/>
+    </rdf:Description>
     
 
 
@@ -747,13 +499,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://org.semanticweb.owlapi/error#Error1 -->
-
-
-    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
-    
-
-
     <!-- http://qudt.org/schema/qudt/Quantity -->
 
 
@@ -763,19 +508,19 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- http://semanticscience.org/resource/Entity -->
+    <!-- http://semanticscience.org/resource/ -->
 
 
-    <owl:Class rdf:about="http://semanticscience.org/resource/Entity"/>
+    <owl:Class rdf:about="http://semanticscience.org/resource/"/>
     
 
 
-    <!-- http://semanticscience.org/resource/SIO_000000 -->
+    <!-- http://semanticscience.org/resource/Plan -->
 
 
-    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000000">
-        <owl:equivalentClass rdf:resource="https://w3id.org/ammo/ont/Entity"/>
-    </owl:Class>
+    <rdf:Description rdf:about="http://semanticscience.org/resource/Plan">
+        <owl:equivalentClass rdf:resource="https://w3id.org/ammo/ont/Plan"/>
+    </rdf:Description>
     
 
 
@@ -783,13 +528,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:Class rdf:about="http://usefulinc.com/ns/doap#Project"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
     
 
 
@@ -806,6 +544,53 @@ Github: https://github.com/LA3D/ammo</terms:description>
 
 
     <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Process"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Influence -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Influence">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Process"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Process"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Role -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Role">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/RealizableEntity"/>
+    </rdf:Description>
     
 
 
@@ -843,17 +628,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/Attribute -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Attribute">
-        <rdfs:comment>An attribute is a characteristic of some entity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Attribute</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/BaseMaterial -->
 
 
@@ -875,19 +649,6 @@ Github: https://github.com/LA3D/ammo</terms:description>
         <skos:altLabel>Continuous Liquid Interphase Printing</skos:altLabel>
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q20026892"/>
         <skos:note>Wikidata has the wrong subclass of additive manufacturing vs additive manufacturing process</skos:note>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/Capability -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Capability">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/RealizableEntity"/>
-        <rdfs:comment>A capability is a realizable entity whose basis lies in one or more parts or qualities and reflects possibility of an entity to behave in a specified way under certain conditions or in response to a certain stimulus (trigger).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Capability</rdfs:label>
-        <prov:wasQuotedFrom>http://semanticscience.org/resource/</prov:wasQuotedFrom>
     </owl:Class>
     
 
@@ -951,26 +712,11 @@ Github: https://github.com/LA3D/ammo</terms:description>
     
 
 
-    <!-- https://w3id.org/ammo/ont/Design -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Design">
-        <rdfs:comment>From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
-A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
-While designs typically describe entities to be constructed, they can also be used to describe &apos;refunctionalized&apos; entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Design</rdfs:label>
-        <skos:definition xml:lang="en">A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process.</skos:definition>
-        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q82604"/>
-        <prov:wasQuotedFrom xml:lang="en">https://en.wikipedia.org/wiki/Design</prov:wasQuotedFrom>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/DesignDataset -->
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/DesignDataset">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Dataset"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
         <rdfs:label>Design Dataset</rdfs:label>
         <skos:definition>A collection of data, published or curated by a single agent, and available for access or download in one or more representations. </skos:definition>
@@ -982,6 +728,7 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/DesignSpecification">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/DesignSpecification"/>
         <rdfs:comment xml:lang="en">A design specification is a detailed document that sets out exaclty what a product or a process should present.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label>Design Specification</rdfs:label>
@@ -1006,11 +753,11 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/DesignedArtifact">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialArtifact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Design"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
@@ -1037,7 +784,7 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/DesignedPhysicalSystem">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialArtifact"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalSystem"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1101,17 +848,6 @@ While designs typically describe entities to be constructed, they can also be us
     
 
 
-    <!-- https://w3id.org/ammo/ont/Entity -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Entity">
-        <terms:description xml:lang="en">Every thing is an entity.</terms:description>
-        <rdfs:isDefinedBy rdf:resource="http://semanticscience.org/ontology/sio/v1.53/sio-subset-labels.owl"/>
-        <rdfs:label xml:lang="en">entity</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/FusedFilamentFabrication -->
 
 
@@ -1129,7 +865,7 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/Input">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialObject"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/MaterialEntity"/>
         <rdfs:label>Input</rdfs:label>
     </owl:Class>
     
@@ -1172,13 +908,52 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/Material">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Object"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/MaterialEntity"/>
         <opla-core:extractedFrom rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:Material_Transformation"/>
         <rdfs:comment xml:lang="en">Substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and of which objects can be made up</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label xml:lang="en">Material</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q214609"/>
         <prov:wasQuotedFrom xml:lang="en">https://en.wikipedia.org/wiki/Material</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/MaterialArtifact -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialArtifact">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SpecializedMaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Plan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
+        <rdfs:label xml:lang="en">Material Artifact</rdfs:label>
+        <skos:definition xml:lang="en">Any MaterialObject that isDescribedBy a Plan .
+This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
+FunctionalSubstance(s) are included here as well.
+Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all &apos;artifactual&apos; in the weak sense assumed here.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/MaterialArtifactDesign -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialArtifactDesign">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Design"/>
+        <rdfs:comment>From DUL: A Description of the Situation, in terms of structure and function, held by an Entity for some reason.
+A design is usually accompanied by the rationales behind the construction of the designed Entity (i.e. of the reasons why a design is claimed to be as such). For example, the actual design (a Situation) of a car or of a law is based on both the specification (a Description) of the structure, and the rationales used to construct cars or laws.
+While designs typically describe entities to be constructed, they can also be used to describe &apos;refunctionalized&apos; entities, or to hypothesize unknown functions. For example, a cradle can be refunctionalized as a flowerpot based on a certain home design.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
+        <rdfs:label>Material Artifact Design</rdfs:label>
+        <skos:definition xml:lang="en">A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process or the result of that plan or specification in the form of a prototype, product, or process.</skos:definition>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q82604"/>
+        <prov:wasQuotedFrom xml:lang="en">https://en.wikipedia.org/wiki/Design</prov:wasQuotedFrom>
     </owl:Class>
     
 
@@ -1200,20 +975,11 @@ While designs typically describe entities to be constructed, they can also be us
     
 
 
-    <!-- https://w3id.org/ammo/ont/MaterialObject -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialObject">
-        <rdfs:label>MaterialObject</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/MaterialTransformation -->
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/MaterialTransformation">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Process"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasInput"/>
@@ -1240,6 +1006,12 @@ While designs typically describe entities to be constructed, they can also be us
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/existsAt"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasCatalyst"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Catalyst"/>
             </owl:Restriction>
@@ -1254,12 +1026,6 @@ While designs typically describe entities to be constructed, they can also be us
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasOutput"/>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/ammo/ont/Output"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursDuring"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1279,26 +1045,9 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/Neighborhood">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SpatialRegion"/>
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
         <rdfs:label>Neighborhood</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/Object -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Object">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Entity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Object"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An object is an entity that is wholly identifiable at any instant of time during which it exists.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label xml:lang="en">Object</rdfs:label>
     </owl:Class>
     
 
@@ -1307,7 +1056,7 @@ While designs typically describe entities to be constructed, they can also be us
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/Output">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialObject"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialArtifact"/>
         <rdfs:label>Output</rdfs:label>
     </owl:Class>
     
@@ -1325,45 +1074,11 @@ While designs typically describe entities to be constructed, they can also be us
     
 
 
-    <!-- https://w3id.org/ammo/ont/PhysicalArtifact -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/PhysicalArtifact">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/isDescribedBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Plan"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label xml:lang="en">Physical Artifact</rdfs:label>
-        <skos:definition xml:lang="en">Any PhysicalObject that isDescribedBy a Plan .
-This axiomatization is weak, but allows to talk of artifacts in a very general sense, i.e. including recycled objects, objects with an intentional functional change, natural objects that are given a certain function, even though they are not modified or structurally designed, etc. PhysicalArtifact(s) are not considered disjoint from PhysicalBody(s), in order to allow a dual classification when needed. E.g.,
-FunctionalSubstance(s) are included here as well.
-Immaterial (non-physical) artifacts (e.g. texts, ideas, cultural movements, corporations, communities, etc. can be modelled as social objects (see SocialObject), which are all &apos;artifactual&apos; in the weak sense assumed here.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/PhysicalObject -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/PhysicalObject">
-        <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label xml:lang="en">Physical Object</rdfs:label>
-        <skos:definition xml:lang="en">Any Object that has a proper space region. The prototypical physical object has also an associated mass, but the nature of its mass can greatly vary based on the epistemological status of the object (scientifically measured, subjectively possible, imaginary).</skos:definition>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/PhysicalSystem -->
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/PhysicalSystem">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/PhysicalObject"/>
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/MaterialEntity"/>
         <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label xml:lang="en">Physical System</rdfs:label>
@@ -1418,24 +1133,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     
 
 
-    <!-- https://w3id.org/ammo/ont/Process -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Process">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Entity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/hasProperPart"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Process"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A process is an entity that is identifiable only through the unfolding of time, has temporal parts, and unless otherwise specified/predicted, cannot be identified from any instant of time in which it exists.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Process</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/Quantity -->
 
 
@@ -1450,18 +1147,9 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     <!-- https://w3id.org/ammo/ont/QuantityDesignSpecification -->
 
 
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/QuantityDesignSpecification"/>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/RealizableEntity -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/RealizableEntity">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Attribute"/>
-        <rdfs:comment>A realizable entity is an attribute that is exhibited under some condition and is realized in some process.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Realizable Entity</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/QuantityDesignSpecification">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/DesignSpecification"/>
+        <rdfs:label>Quantity Design Specification</rdfs:label>
     </owl:Class>
     
 
@@ -1474,18 +1162,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
         <rdfs:label>Robocasting</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Robocasting"/>
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q18390836"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/Role -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Role">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/RealizableEntity"/>
-        <rdfs:comment>A role is a realizable entity that describes behaviours, rights and obligations of an entity in some particular circumstance.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
-        <rdfs:label>Role</rdfs:label>
     </owl:Class>
     
 
@@ -1516,26 +1192,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     
 
 
-    <!-- https://w3id.org/ammo/ont/State -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/State">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:label>State</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/Status -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Status">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label>Status</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/Stereolithography -->
 
 
@@ -1553,11 +1209,21 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
 
 
     <owl:Class rdf:about="https://w3id.org/ammo/ont/SystemDesign">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/Design"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialArtifactDesign"/>
         <opla-core:extractedFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl"/>
         <rdfs:comment xml:lang="en">The description of a system from the design viewpoint: how it is structured, and the functions (tasks) that it should support. This may also include aesthetic functions and refunctionalizations.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/ammo/ont/"/>
         <rdfs:label xml:lang="en">System Design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ammo/ont/Technique -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ammo/ont/Technique">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:label xml:lang="en">Technique</rdfs:label>
     </owl:Class>
     
 
@@ -1572,29 +1238,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     
 
 
-    <!-- https://w3id.org/ammo/ont/Transition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/Transition">
-        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/fromState"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/toState"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label>Transition</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/ammo/ont/WireProcess -->
 
 
@@ -1603,13 +1246,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
         <rdfs:label>Wire Printing Process</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/3D_printing_processes#Processes"/>
     </owl:Class>
-    
-
-
-    <!-- https://w3id.org/ammo/ont/:Neighborhood -->
-
-
-    <owl:Class rdf:about="https://w3id.org/ammo/ont/:Neighborhood"/>
     
 
 
@@ -1945,9 +1581,6 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/A36_steel"/>
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q3247733"/>
     </owl:NamedIndividual>
-    <rdf:Description>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-    </rdf:Description>
     
 
 
@@ -1982,7 +1615,7 @@ Notice that such SystemDesign is not necessarily bound to a SystemImplementation
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="https://w3id.org/ammo/ont/occursInNeighborhood"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/:Neighborhood"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/ammo/ont/Neighborhood"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/ammo/ont/MaterialTransformation"/>
     </owl:Restriction>
 </rdf:RDF>
